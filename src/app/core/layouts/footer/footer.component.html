@@ -1,0 +1,162 @@
+
+<footer class="chat">
+    
+    <div *ngFor='let chat of casting;  let i = index;'    class="chat-box">
+
+        <div>
+        <div  *ngIf="chat[0].userId == usersChat[i]?.id && close"  (click)="chatTogg(i,$event)" (click)="onlineStatus(chat)"  class="chatHeader">
+         
+            <div class="chatImg">
+                <img class="img-fluid" src="{{usersChat[i]?.photo}}" alt="userImg">
+
+                
+            </div>
+            <span>{{usersChat[i]?.name}}</span>
+            {{usersChat[i].latestReservation.roomNumber}}
+            <div *ngIf="chatToggle0 && x==i  && chatToggle1 " class="extra-cHeader">
+                <span class="room-status">
+                <span *ngIf='usersChat[i]?.latestReservation.roomNumber !=undefined'>Room# {{usersChat[i]?.latestReservation.roomNumber}}</span>
+                <!-- <span *ngIf='usersChat[i]?.latestReservation.checkIn !=undefined'>CheckIn: {{usersChat[i]?.latestReservation.checkIn}}</span> -->
+                <!-- <span *ngIf='usersChat[i]?.latestReservation.checkOut !=undefined'>CheckOut: {{usersChat[i]?.latestReservation.checkOut}}</span> -->
+              </span>
+
+            </div>
+            <div *ngIf="chatToggle0 && x==i  && chatToggle1  " class="divICon">
+              <i (click)="min()" class="fas fa-minus"></i>
+              <i (click)="closed()"  class="fas fa-times"></i>
+            </div> 
+        </div>
+        <div *ngIf="chatToggle0 && x==i && chatToggle1" class="chat-content" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+            <div *ngFor='let x of chat'>
+                <div class="messages" *ngIf="x.senderType=='USER'">
+                    <div class="Sender-chatImg" [ngStyle]="{ 'background-image': 'url(' + usersChat[i]?.photo + ')'}"></div>
+                    <p *ngIf="x.messageType == 'text' && x.senderType=='USER'">{{x.text}}</p>
+                    <div *ngIf="x.messageType == 'file' && x.senderType=='USER'" class="fileMessage">
+                        <img class="img-fluid" src="{{x.mediaLink}}">
+                    </div>
+                </div>
+                <div class="message-container" *ngIf="x.senderType=='ADMIN'">
+                    <div class="urMessages">
+                        <p class="admin"  (click)="seeStatus()" *ngIf="x.messageType == 'text' && x.senderType=='ADMIN'">{{x.text}}</p>
+                     
+                        <div *ngIf="x.messageType == 'file' && x.senderType=='ADMIN'" class="fileMessage">
+                            <a href="{{x.mediaLink}}" title="{{x.mediaLink}}" target="_self" download="{{x.mediaLink}}">
+                                <i class="fas fa-download fa-1x"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <span  style="color: #fff ; margin-top: -33px;     margin-right: 22px;    display: flex;justify-content: flex-end;">{{status}}</span>
+
+            <div class="typing">
+                <label for="file-input">
+                    <i class="fas fa-paperclip"></i>
+                </label>
+                <i (click)="toggleReply()" class="fas fa-comment-dots"></i>
+                <div *ngIf='replyFlag' class="savedReplies">
+                    <div *ngIf='repliesFlag' class="header">
+                        <h6>Saved Replies</h6>
+                   <div class="headerOptions">
+                    <p (click)="createToggle()" style="color: #fe9d2b;"><i  style="font-size: 10px; margin-right: 2px;"
+                        class="fas fa-plus "></i> Create</p>
+                    <i (click)="closed()" class="fas fa-times x"></i>
+                   </div> 
+                
+                    </div>
+                    
+                 <div *ngIf='repliesFlag' class="search-wrapper">
+                    <input (keyup)="serachReply(keyword.value)" #keyword class="search" type="text">
+                    <!--    <i class="fas fa-search sIcon"></i> -->
+                  </div>
+                  <div  *ngIf='repliesFlag' class="savedMessage">
+                    <div *ngFor='let s of savedReplies' class="savedFlex">
+
+                      <div class="iFlex">
+                        <p style="margin: 0;">{{s.title}}</p>
+                        <div class="replyIcon">
+                          <i (click)="edit(s.id)" class="far fa-edit"></i>
+                          <i (click)="dReply(s.id)" class="fas fa-trash"></i>
+                          <i (click)="CopySavedReply(s.reply)" class="far fa-clone"></i>
+                        </div>
+
+                      </div>
+                      <div class="savedM">
+                        <p>{{s.reply}}</p>
+                      </div>
+
+                      
+
+
+                    </div>
+                  </div>
+                  <div *ngIf="updateFlag" class="update">
+                    <h6 style="padding:10px">Edit</h6>
+                    <form #sendReply='ngForm' (ngSubmit)="updateData(sendReply,editData.id)">
+                      <div class="messageInput">
+                        <input name="title" type="text" ngModel #title='ngModel' value="{{editData?.title}}">
+                      </div>
+                      <div class="messageText">
+                        <textarea name="reply" type="text" ngModel #reply='ngModel'
+                          value="{{editData?.reply}}"></textarea>
+                      </div>
+                      <div class="btns">
+                        <div class="icon">
+                          <label for="file-input">
+                            <i class="fas fa-paperclip"></i>
+                          </label>
+
+                          <input class="upInput" id="file-input" type="file" />
+
+                        </div>
+
+                        <div class="sendBtn">
+                          <button (click)="closeEdit()" class="cancel">Cancel</button>
+                          <button class="save">Update</button>
+                        </div>
+                      </div>
+
+                    </form>
+
+                  </div>
+                  <div *ngIf="MessageFlag" class="header">
+                    <p style="padding: 10px;">Create Saved Replies</p>
+                    <div class="headerOptions">
+                      <i (click)="closed()" class="fas fa-times x"></i>
+                    </div>
+                  </div>
+                  <div *ngIf="MessageFlag">
+                    <form #sendReply='ngForm' (ngSubmit)="sendData(sendReply)">
+                      <div class="messageInput">
+                        <input name="title" type="text" ngModel #title='ngModel' placeholder="Shortcut required">
+                      </div>
+                      <div class="messageText">
+                        <textarea name="reply" type="text" ngModel #reply='ngModel'
+                          placeholder="write here"></textarea>
+                      </div>
+                      <div class="btns">
+                 
+
+                        <div class="sendBtn">
+                          <button class="cancel">Cancel</button>
+                          <button class="save">Save</button>
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+            
+
+                </div>
+                <input class="upInput" id="file-input" type="file" />
+            
+                <textarea (keyup.enter)="sendmessage(message.value,chat)" #message (keypress)="adminStatus(chat,true)" (keyup)="adminStatus(chat,false)" type="text" placeholder="write here">{{savedReplyValue}}</textarea>
+                <i class="fas fa-smile"></i>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</footer>

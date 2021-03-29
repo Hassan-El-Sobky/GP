@@ -1,0 +1,82 @@
+$bodybackGround:#1F1C19;
+$formbackgroud:#2E2C2A;
+.body
+{
+    height: 100vh;
+    background-color:$bodybackGround ;
+}
+.formContainer
+{
+    width: 800px;
+    height: 650px;
+    background-color:$formbackgroud;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.FormLogo
+{
+    color: #fff;
+    padding-top: 10px;
+}
+.FormLogo p 
+{
+    margin-top: -12px;
+    font-weight: 100;
+}
+.FormLogo .signUp
+{
+    font-size: 25px;
+    font-weight: 400;
+}
+.form-group
+{
+ width: 80%;
+}
+.form-group label
+{
+    color: #565654;
+    margin: 10px 0px;
+    font-weight: bold;
+    font-size: 11px;
+}
+.form-group input
+{
+    background-color: $formbackgroud;
+    padding: 22px;
+    font-size: 12px;
+    border: 2px solid   #565654;
+    
+}
+.form-group input:focus
+{
+    outline: #2E2C2A;
+}
+.eyeslash 
+{
+    position: relative;
+}
+.form-group i
+{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #504E4E;
+    cursor: pointer;
+    
+}
+.form-group button
+{
+  background-color: #FE9D2B;
+  margin-top: 20PX;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+.FormLogo 
+{
+    
+    margin-top: 30px;
+} 
