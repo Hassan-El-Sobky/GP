@@ -1,0 +1,68 @@
+<div class="mainContainer ">
+    <div class="py-5 text-center">
+        <div [class.logoClosed]='!menuStatus' class="logo">
+            <img [src]="Logo" alt="">
+        </div>
+        <div [class.userImageCLosed]='!menuStatus' class="userImage">
+        </div>
+        <div [class.user-dashboradClosed]='!menuStatus' class="user-dashborad text-center">
+            <p *ngIf="menuStatus">Hassan El-Sobky</p>
+
+            <i [class.dBlock]='!menuStatus' class="fas fa-cog"></i>
+            <i [class.dBlock]='!menuStatus' class="fas fa-sign-out-alt logout"></i>
+
+        </div>
+    </div>
+    <div class="dashContainer">
+        <div class="dashContetn">
+            <p *ngIf="menuStatus">Dashborad</p>
+        </div>
+
+        <div [class.tCenter]="!menuStatus" class="dashContent">
+            <i class="fas fa-tachometer-alt"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Dashborad</span>
+        </div>
+
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
+            <i class="fas fa-user"></i>
+            <span class="dashTitle" *ngIf="menuStatus">User List</span>
+        </a>
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
+            <i class="fas fa-user"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Guest List</span>
+        </a>
+        <div [class.tCenter]="!menuStatus" class="dashContent">
+            <i class="fas fa-calendar-alt"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Guest Check in Requests</span>
+        </div>
+
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
+            <i class="fas fa-comment-dots"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Chat</span>
+        </a>
+        <div [class.tCenter]="!menuStatus" class="dashContent">
+            <i class="fas fa-bell"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Notification Management</span>
+        </div>
+        <div [class.tCenter]="!menuStatus" class="dashContent">
+            <i class="fas fa-user-cog"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Guest Request Management</span>
+        </div>
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
+            <i class="fas fa-ticket-alt"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Services & Tickets managment</span>
+        </a>
+        <div [class.tCenter]="!menuStatus" class="dashContent">
+            <i class="fas fa-star"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Reviews & Reputation management</span>
+        </div>
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
+            <i class="fas fa-calendar-check"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Reservation management</span>
+        </a>
+        <div [class.tCenter]="!menuStatus" class="dashContent">
+            <i class="fas fa-calendar-alt"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Events Management</span>
+        </div>
+    </div>
+</div>

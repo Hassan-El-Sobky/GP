@@ -1,0 +1,294 @@
+.chat {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    z-index: 99999;
+    align-items: flex-end;
+}
+
+.chatHeader {
+    width: 410px;
+    background-color: #2e2c2a;
+    height: 60px;
+    margin-right: 20px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    color: #fff;
+    cursor: pointer;
+    display: flex;
+  box-shadow: -1px -3px #3b3b3b;
+
+}
+
+.chatHeader span {
+    margin-top: 25px;
+    margin-left:15px;
+}
+.chat-content {
+    height: 400px;
+    width: 410px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: relative;
+    background-color: #2e2c2a;
+    padding: 10px;
+    box-shadow: -1px -3px #3b3b3b;
+    padding-bottom: 0;
+}
+.chat-content .admin{
+    background-color: #315f6b;
+    text-align: right;
+}
+.chat-content .typing .upInput {
+    display: none;
+}
+.chat-content label {
+    cursor: pointer;
+}
+.chat-content .sender-img img {
+    width: 30px;
+    height: 30px;
+}
+.chat-content .sender-message span {
+    background-color: #353331;
+    width: 100%;
+    color: #fff;
+}
+
+.chat-content .typing {
+    position: absolute;
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    // margin-bottom: 10px;
+    padding: 10px 0;
+    background: #2e2c2a;
+}
+.chat-content .typing textarea {
+    border-radius: 7px;
+    width: 255px;
+    background-color: #1f1c19;
+    color: white;
+    border: none;
+    resize: none;
+    height: 32px;
+}
+.chat-content .typing i {
+    color: #fe9d2b;
+}
+
+.chat-content .typing i {
+    margin-left: 25px;
+    margin-right: 20px;
+}
+
+.chatImg {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 50%;
+    display: inline-block;
+ 
+    margin-top: 15px;
+}
+.chatImg img 
+{
+   border-radius: 50%;
+   height: 40px;
+   width: 40px;
+   margin-left: 9px;
+}
+.messages {
+    display: flex;
+}
+.messages .Sender-chatImg {
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 50%;
+    margin-left: 16px;
+    margin-top: 15px;
+}
+.messages p {
+    background-color: #353331;
+    color: #fff;
+    width: 80%;
+    margin-top: 10px;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+.urMessages {
+    display: flex;
+    justify-content: flex-end;
+}
+.urMessages p {
+    width: 65%;
+    text-align: right;
+    padding: 20px;
+    font-size: 14px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+.extra-cHeader {
+    margin-top: 15px;
+    margin-left: -11px;
+    display: flex;
+    flex-direction: column;
+}
+.extra-cHeader span {
+    color: #315f6b;
+    font-size: 10px;
+    margin-top: 5px;
+}
+.extra-cHeader .room-status{
+    min-width: 65px;
+}
+.extra-cHeader i {
+    margin-left: 20px;
+}
+.divICon
+{
+    margin-left: 26px;
+    margin-top: 22px;
+}
+.divICon i 
+{
+    margin-right: 15px;
+}
+.message-container .urMessages:last-child{
+    padding-bottom: 30px;
+}
+
+.fileMessage
+{
+    width: 150px;
+    height: 150px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.typing
+{
+    position: relative;
+}
+.savedReplies
+{
+    position: absolute;
+    width: 100%;
+    height: 300px;
+    background-color: black;
+    top: -300px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    border-radius: 10px;
+
+}
+i
+{
+    cursor: pointer;
+}
+.savedReplies h6 
+{
+    padding: 10px;
+}
+.savedReplies input 
+{
+    width: 95%;
+    margin-left: 10px;
+    background-color: transparent;
+    border:1px solid #353331;
+    border-radius: 10px;
+    color: #fff;
+}
+.savedFlex
+{
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+.savedFlex:hover{
+    background-color: #3b3b3b;
+}
+.iFlex
+{
+    display: flex;
+    justify-content: space-between;
+    padding: 4px;
+}
+.iFlex p 
+{
+    
+    color: #fff;
+}
+.iFlex i 
+{
+    margin-left: 0px !important;
+}
+.savedM
+{
+    padding: 6px;
+}
+.savedM p
+{
+  text-align: left !important;
+
+  color: #636363;
+}
+
+.header
+{
+    display: flex;
+    justify-content: space-between;
+}
+.header p
+{
+    color: #fff;
+}
+.headerOptions
+{
+    display: flex;
+    margin-top: 5px;
+   cursor: pointer;
+}
+.x{
+    margin-top: 5px;
+}
+.headerOptions p 
+{
+ background-color: black !important;
+}
+
+.messageText textarea
+{
+    height: 70px !important;
+    margin-left: 10px;
+    width: 95% !important;
+    margin-top: 14px;
+}
+.btns button
+{
+    width: 90px;
+    margin-left: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.sendBtn .cancel 
+{
+    background-color: #3b3b3b;
+
+}
+
+.replyIcon i
+{
+    margin-right: 12px !important;
+    color: #fff !important;
+    font-size: 12px;
+}
