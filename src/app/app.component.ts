@@ -1,5 +1,5 @@
 import { Component, OnChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenService } from './core/services/token.service';
 
 
@@ -38,8 +38,13 @@ export class AppComponent {
   //   }
   // }
 
-  constructor(public tokenService: TokenService, private router: Router ) { }
+  constructor(public tokenService: TokenService, private router: Router ) { 
 
+    if(localStorage.getItem('token')==null || localStorage.getItem('token')==null ) {
+      this.router.navigate(['authentication', 'signin']);
+    }
+  }
+  
   ngOnInit() {
 
 
