@@ -19,7 +19,6 @@ export class SignInComponent implements OnInit {
 
   ngOnInit(): void {
 
-    
   }
  
   onSubmit(form:NgForm)
@@ -39,7 +38,7 @@ export class SignInComponent implements OnInit {
           this.tokenService.setToken(res.token);
           console.log(this.tokenService.isAuthenticated());
           
-           this.router.navigate(['/test/test']);
+           this.router.navigate(['/test']);
          }
      
          

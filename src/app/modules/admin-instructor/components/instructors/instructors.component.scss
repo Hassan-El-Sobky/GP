@@ -1,0 +1,197 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-select-value,
+.mat-select-arrow {
+    color: #fff;
+}
+.mat-form-field-appearance-legacy .mat-form-field-underline {
+    background-color: transparent;
+}
+.mat-paginator-page-size-label {
+    color: #6b6968;
+}
+mat-paginator .mat-select {
+    width: 70%;
+    margin-left: 1.2rem;
+}
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    border-color: #3d3b39;
+}
+tr:last-child td.mat-cell, tr:last-child  td.mat-footer-cell, tr:last-child  th.mat-header-cell {
+    border-color: transparent;
+}
+.mat-table {
+    background: transparent;
+}
+// .userList  .ss ,.userList .tableContent  ,.userList .mainContainer ,.userList .tableContainer {
+//     height: 100%;
+// }
+// .userList .tables{
+//     height: 90%;
+
+// }
+
+*{
+    outline: none !important;
+}
+// .userList .tables{
+//     position: relative;
+// }
+// mat-paginator{
+//     position: absolute;
+//     right: 0;
+//     bottom: 0;
+// }
+
+
+
+$backGroundColor:#1F1C19;
+$tableContainerBgColor:#2E2C2A;
+$tabletextColor:#D9D9D8;
+
+h6
+{
+    color: #fff;
+}
+.inputTableSearch
+{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 20px 20px 10px 20px;
+    box-shadow:  0 1px;
+    background-color:$tableContainerBgColor ;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    position: relative;
+    z-index: 4;
+}
+.inputTableSearch p 
+{
+
+  color: #fff;
+  margin-left: 5px;
+  
+
+} 
+.inputTableSearch .form-group
+{
+    position: relative;
+    font-size: 14px;
+}
+.inputTableSearch .form-group input
+{
+    background-color: #2E2C2A;
+    border: 1px solid #aaa9a8;
+    width: 240px;
+    padding: 40x;
+    border-radius: 5px;
+    color: #fff;
+    height: 30px;
+}
+.inputTableSearch input:focus
+{
+    outline: none;
+}
+
+.fa-search
+{
+    color: #696766;;
+    position: absolute;
+    right: 15px;
+    top: 8px;
+    
+
+}
+
+.tableContent
+{
+    width: 97%;
+    margin: auto;
+    padding-top:20px;
+}
+table
+{
+    width: 98%;
+    margin: auto;
+    
+}
+th
+{
+    background-color: #354A4E;
+    color: #fff;
+
+}
+tr.mat-header-row {
+    height: 80px;
+}
+tr td
+{
+    background-color: #353331;
+    color: $tabletextColor;
+    height: 70px;
+}
+button
+{
+    background-color: #38b9DD;
+    border: none;
+    padding: 8px;
+    width: 140px;
+    border-radius: 10px;
+    color: #fff;
+}
+mat-paginator
+{
+    background-color: $tableContainerBgColor;
+    color: #fff;
+    border: none;
+    padding: 20px;
+
+}
+
+.tables
+{
+    background-color:$tableContainerBgColor ;
+  padding: 20px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+
+}
+
+.mat-elevation-z8
+{
+    box-shadow: none;
+}
+.mat-cell img {
+    max-width: 2rem;
+    margin-right: 10px;
+    border-radius: 50%;
+    height: 32px;
+}
+
+.userList
+{
+    background-color:$backGroundColor;
+    padding-bottom: 70px;
+    min-height: calc(100vh - 64px);
+
+}
+tr td i
+{
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+tr td i:hover
+{
+    color: #FE9D2B;
+}

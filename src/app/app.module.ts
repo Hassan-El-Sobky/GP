@@ -11,7 +11,12 @@ import { HeaderComponent } from './core/layouts/header/header.component';
 import { SideNavComponent } from './core/layouts/side-nav/side-nav.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
+import { InstructorsComponent } from './modules/admin-instructor/components/instructors/instructors.component';
 import { AuthGuard } from './modules/authentication/gurads/auth.guard';
+import { StudentsComponent } from './modules/admin-student/components/students/students.component';
+
+
+
 
 
 @NgModule({
@@ -19,6 +24,10 @@ import { AuthGuard } from './modules/authentication/gurads/auth.guard';
     AppComponent,
     SideNavComponent,
     HeaderComponent,
+   
+
+
+
   
 
   ],
@@ -32,7 +41,10 @@ import { AuthGuard } from './modules/authentication/gurads/auth.guard';
     MatSidenavModule,
     HttpClientModule,
   ],
-  providers: [AuthGuard],
+  providers: [
+    AuthGuard,
+  
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -23,46 +23,18 @@
             <span class="dashTitle" *ngIf="menuStatus">Dashborad</span>
         </div>
 
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
-            <i class="fas fa-user"></i>
-            <span class="dashTitle" *ngIf="menuStatus">User List</span>
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminIn/instructors'" routerLinkActive="active">
+            <i class="fas fa-users"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Instructors</span>
         </a>
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
-            <i class="fas fa-user"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Guest List</span>
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminSt/students'" routerLinkActive="active">
+            <i class="fas fa-users"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Students</span>
         </a>
-        <div [class.tCenter]="!menuStatus" class="dashContent">
-            <i class="fas fa-calendar-alt"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Guest Check in Requests</span>
-        </div>
-
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
-            <i class="fas fa-comment-dots"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Chat</span>
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/admin/courses'" routerLinkActive="active">
+            <i class="fas fa-book"></i>
+            <span class="dashTitle" *ngIf="menuStatus">Courses</span>
         </a>
-        <div [class.tCenter]="!menuStatus" class="dashContent">
-            <i class="fas fa-bell"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Notification Management</span>
-        </div>
-        <div [class.tCenter]="!menuStatus" class="dashContent">
-            <i class="fas fa-user-cog"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Guest Request Management</span>
-        </div>
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
-            <i class="fas fa-ticket-alt"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Services & Tickets managment</span>
-        </a>
-        <div [class.tCenter]="!menuStatus" class="dashContent">
-            <i class="fas fa-star"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Reviews & Reputation management</span>
-        </div>
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="" routerLinkActive="active">
-            <i class="fas fa-calendar-check"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Reservation management</span>
-        </a>
-        <div [class.tCenter]="!menuStatus" class="dashContent">
-            <i class="fas fa-calendar-alt"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Events Management</span>
-        </div>
+      
     </div>
 </div>
