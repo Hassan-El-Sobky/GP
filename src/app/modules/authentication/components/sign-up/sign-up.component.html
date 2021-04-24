@@ -3,55 +3,88 @@
   <div class="formContainer">
     <div class="container">
 
-      <form class="m-auto ">
-        <div class="d-flex justify-content-center">
-          <div class="form-group w-50 px-2 ">
-            <label for="fName">fName</label>
-            <input type="text" class="form-control" id="fName" placeholder="Enter your email">
-          </div>
-          <div class="form-group  w-50 px-2 ">
-            <label for="lName">lName</label>
-            <input type="text" class="form-control" id="lName" placeholder="Enter your email">
-          </div>
+      <form class="m-auto"  (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
+
+        <div class="form-group m-auto">
+
+          <label for="Name">Name</label>
+
+          <input [class.is-valid]="registerForm.get('name').errors == null && 
+          registerForm.get('name').touched" type="text" formControlName='name' class="form-control" id="name"
+            placeholder="Enter your Name">
+
+          <p *ngIf="registerForm.get('name').errors != null && registerForm.get('name').touched"
+            class="py-2 text-danger ">Name inValid</p>
         </div>
 
         <div class="form-group m-auto">
+
           <label for="userName">userName</label>
-          <input type="text" class="form-control" id="userName" placeholder="Enter your email">
+          <input [class.is-valid]="registerForm.get('username').errors == null && 
+          registerForm.get('username').touched" type="text" class="form-control" formControlName='username'
+            id="userName" placeholder="Enter your UserName">
+
+          <p *ngIf="registerForm.get('username').errors != null && registerForm.get('username').touched"
+            class="py-2 text-danger ">username inValid</p>
         </div>
 
         <div class="form-group m-auto">
           <label for="Email">Email</label>
-          <input type="text" class="form-control" id="Email" placeholder="Enter your email">
+          <input [class.is-valid]="registerForm.get('email').errors == null && 
+          registerForm.get('email').touched" type="text" type="text" class="form-control" formControlName='email'
+            id="Email" placeholder="Enter your email">
+
+          <p *ngIf="registerForm.get('email').errors != null && registerForm.get('email').touched"
+            class="py-2 text-danger ">E_mail inValid</p>
         </div>
 
         <div class="form-group m-auto">
           <label for="password">Password</label>
           <div class="eyeslash">
-            <input type="password" class="form-control " id="password" placeholder="Enter your password">
+            <input [class.is-valid]="registerForm.get('password').errors == null && 
+            registerForm.get('password').touched" type="password" class="form-control" formControlName='password'
+              id="password" placeholder="Enter your password">
+            <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"
+              class="py-2 text-danger ">Password inValid</p>
             <!-- <i (click)="showpassword()" class="fas fa-eye-slash"></i> -->
           </div>
         </div>
 
         <div class="form-group m-auto">
+
           <label for="cPassword">Confirm Password </label>
           <div class="eyeslash">
-            <input type="password" class="form-control" id="cPassword" placeholder="Enter your password">
+
+            <input [class.is-valid]="registerForm.get('rePassword').errors == null && 
+            registerForm.get('rePassword').touched" type="password" class="form-control" id="cPassword"
+              formControlName='rePassword' placeholder="Enter your password">
+            <p *ngIf="registerForm.get('rePassword').errors != null && registerForm.get('rePassword').touched"
+              class="py-2 text-danger ">inValid</p>
             <!-- <i (click)="reshowpassword()" class="fas fa-eye-slash"></i> -->
           </div>
         </div>
+
         <div class="form-group m-auto">
-          <input type="radio" id="male" name="gender" value="male">
+          <input type="radio" formControlName='gender' id="male" name="gender" value="male">
           <label class="px-1" for="male">Male</label>
-          <input type="radio" id="female" name="gender" value="female">
+          <input type="radio" formControlName='gender' id="female" name="gender" value="female">
           <label class="px-1" for="female">Female</label>
         </div>
 
+        <div class="form-group m-auto ">
+          <select class="btn btn-dark" name="role" formControlName='role' id="">
+            <option autofocus value="admin">Admin</option>
+            <option value="student">Student</option>
+            <option value="instructor">Instrutor</option>
+          </select>
+        </div>
+
         <div class="form-group m-auto py-3">
-          <button class=" w-100">Sign Up</button>
+          <button type="submit" class=" w-100">Sign Up</button>
         </div>
       </form>
     </div>
-  </div>
 
+  </div>
 </section>
+<!--  [disabled]='registerForm.invalid' -->

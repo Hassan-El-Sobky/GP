@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +11,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     AuthenticationRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthenticationModule { }

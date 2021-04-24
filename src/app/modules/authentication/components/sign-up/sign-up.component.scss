@@ -1,5 +1,6 @@
 $bodybackGround:#1F1C19;
-$formbackgroud:#2E2C2A;
+// $formbackgroud:#2E2C2A;
+$formbackgroud:#ffff;
 .body
 {
     height: 100vh;
@@ -8,7 +9,7 @@ $formbackgroud:#2E2C2A;
 .formContainer
 {
     width: 800px;
-    height: 650px;
+    height: 750px;
     background-color:$formbackgroud;
     position: absolute;
     top: 50%;

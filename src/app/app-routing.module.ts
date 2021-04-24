@@ -43,7 +43,15 @@ const routes: Routes = [
         (m) => m.AdminStudentModule
       ),
     
-  }, 
+  },
+  {
+    path: 'student',
+    loadChildren: () =>
+      import('./modules/Student-course/student-course.module').then(
+        (m) => m.StudentCourseModule
+      ),
+    
+  },
 ];
 
 @NgModule({

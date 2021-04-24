@@ -14,6 +14,11 @@ export class AuthenticationService {
   {
       return this._httpClient.post('https://lmsapis.herokuapp.com/signin',userInfo);
   }
+  
+  register(userInfo:any): Observable<any>
+  {
+    return this._httpClient.post('https://lmsapis.herokuapp.com/signup',userInfo);
+  }
 
   loggedIn()
   {
