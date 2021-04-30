@@ -1,19 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TestRoutingModule } from './test-routing.module';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatSortModule} from '@angular/material/sort';
 
+
+import {ConfirmDialogModule} from 'primeng/confirmdialog';
+import { MessagesModule } from 'primeng/messages';
 @NgModule({
   declarations: [...TestRoutingModule.componentsDeclarations],
   imports: [
     CommonModule,
     TestRoutingModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule
-  ]
+
+  ],
+
 })
 export class TestModule { }
