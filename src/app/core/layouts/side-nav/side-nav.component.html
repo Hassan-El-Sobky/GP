@@ -20,7 +20,7 @@
 
         <div [class.tCenter]="!menuStatus" class="dashContent">
             <i class="fas fa-tachometer-alt"></i>
-            <span class="dashTitle" *ngIf="menuStatus">Dashborad</span>
+            <span class="dashTitle"   [routerLink]="'/adminAnaylsis/dashboard'"   *ngIf="menuStatus">Dashborad</span>
         </div>
 
         <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminIn/instructors'" routerLinkActive="active">

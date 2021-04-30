@@ -52,6 +52,14 @@ const routes: Routes = [
       ),
     
   },
+  {
+    path: 'adminAnaylsis',
+    loadChildren: () =>
+      import('./modules/admin-dasboard/admin-dashborad.module').then(
+        (m) => m.AdminDashboradModule
+      ),
+    
+  },
 ];
 
 @NgModule({
