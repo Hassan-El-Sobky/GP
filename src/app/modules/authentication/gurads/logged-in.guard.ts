@@ -14,7 +14,7 @@ export class LoggedInGuard implements CanActivate {
         state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
         const token = this.tokenService.getToken();
         if (token !== null && token !== undefined) {
-            this.router.navigate(['test/test']);
+            this.router.navigate(['adminAnaylsis/dashboard']);
             return false;
         }
         return true;

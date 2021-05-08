@@ -3,32 +3,27 @@ import { TestService } from '../../services/test.service';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { Table } from 'primeng/table';
+import { ConfirmationService, ConfirmEventType, PrimeNGConfig } from 'primeng/api';
+import { MessageService } from 'primeng/api';
+
 
 @Component({
   selector: 'app-admin-pannel',
   templateUrl: './admin-pannel.component.html',
-  styleUrls: ['./admin-pannel.component.scss']
+  styles: [`
+  :host ::ng-deep button {
+      margin-right: .25em;
+  }
+`],
+providers: [ConfirmationService],
+  styleUrls: ['./admin-pannel.component.scss'],
+ 
 })
 export class AdminPannelComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name', 'username', 'email','gender'];
-  dataSource:any;
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-  constructor(private _testS:TestService) { }
+constructor(){}
+ngOnInit(){
 
-  ngOnInit(): void {
-
- this.getI()
-  }
-
-  getI()
-  {
-    this._testS.getIns().subscribe(res=>{
-     this.dataSource = new MatTableDataSource<any>(res.allStudents);
-     this.dataSource.paginator = this.paginator;
-     this.dataSource.sort = this.sort;
-      console.log(res.allStudents);
-      
-    })
-  }
 }
+}
+
