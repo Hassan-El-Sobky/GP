@@ -7,5 +7,20 @@ import { Observable } from 'rxjs';
 })
 export class AdminDashboradService {
 
-  constructor() { }
+  constructor(private _httpClient:HttpClient) { }
+  
+  getAllcourses(): Observable<any>
+  {
+      return this._httpClient.get('https://lmsapis.herokuapp.com/allCourses');
+  };
+
+  getAllStudents(): Observable<any>
+  {
+      return this._httpClient.get('https://lmsapis.herokuapp.com/allStudents');
+  };
+
+  getAllInstructors(): Observable<any>
+  {
+      return this._httpClient.get('https://lmsapis.herokuapp.com/allInstructors');
+  };
 }
