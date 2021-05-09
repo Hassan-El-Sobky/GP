@@ -6,10 +6,11 @@ import { MatPaginatorModule} from '@angular/material/paginator';
 import { MatInputModule } from '@angular/material/input';
 
 import { AdminCoursesRoutingModule } from './admin-courses-routing.module';
+import { DeletedialogComponent } from './components/deletedialog/deletedialog.component';
 
 
 @NgModule({
-  declarations: [... AdminCoursesRoutingModule.componentsDeclarations],
+  declarations: [... AdminCoursesRoutingModule.componentsDeclarations, DeletedialogComponent],
   imports: [
     CommonModule,
     AdminCoursesRoutingModule,
