@@ -9,12 +9,14 @@ $formbackgroud:#F9F8F8;
 .formContainer
 {
     width: 800px;
-    height: 650px;
+    height: auto;
     background-color:$formbackgroud;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    border-radius: 15px;
+    
 }
 .FormLogo
 {
@@ -46,6 +48,7 @@ $formbackgroud:#F9F8F8;
     background-color: $formbackgroud;
     padding: 22px;
     font-size: 12px;
+    height: 20px;
     border: 2px solid   #565654;
     color: black;
 }
@@ -69,15 +72,10 @@ input:focus
 .form-group button
 {
   background-color: #FF4007;
-  margin-top: 20PX;
+  margin: 30PX 0px;
   padding: 10px;
   border-radius: 10px;
   border: none;
-}
-.FormLogo
-{
-
-    margin-top: 30px;
 }
 
 .signUp

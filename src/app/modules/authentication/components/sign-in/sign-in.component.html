@@ -2,19 +2,15 @@
 
   <div class="formContainer">
     <div class="container ">
-      <div class="FormLogo text-center">
-        <p class="signUp">Please Log-in!</p>
-      </div>
 
       <form class="m-auto" #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
-        <div>
-          Please provide a valid data
-        </div>
         <div class="form-group m-auto">
           <label for="Email">Email</label>
           <input type="text" name="email" ngModel #email='ngModel' ng class="form-control" id="Email"
             placeholder="Enter your email">
-
+            <div *ngIf="email.touched && email.invalid " class="is-warning">
+              <span> Name is required</span>
+             </div>
         </div>
 
         <div class="form-group m-auto">
@@ -23,6 +19,9 @@
             <input type="password" name="password" ngModel #password='ngModel' class="form-control " id="password"
               placeholder="Enter your password">
           </div>
+          <div *ngIf="password.touched && password.invalid " class="is-invalid">
+            <span> Name is required</span>
+           </div>
         </div>
         <div class="keepMe m-auto py-3">
           <div class="checkbox">
@@ -39,7 +38,9 @@
       </form>
      
     </div>
-    <button [routerLink]="['/authentication','signup']" class="btn btn-dark ">signUp</button>
+   <div class="m-auto d-flex justify-content-center "> 
+     <button [routerLink]="['/authentication','signup']" class="btn btn-dark ">signUp</button>
+    </div>
   </div>
 
 

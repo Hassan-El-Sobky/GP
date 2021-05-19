@@ -60,6 +60,14 @@ const routes: Routes = [
       ),
     
   },
+  {
+    path: 'adminAdmin',
+    loadChildren: () =>
+      import('./modules/admin-admin/admin-admin.module').then(
+        (m) => m.AdminAdminModule
+      ),
+    
+  },
 ];
 
 @NgModule({

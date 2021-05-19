@@ -15,7 +15,6 @@ import { AdminCoursesRoutingModule } from './admin-courses-routing.module';
     AdminCoursesRoutingModule,
     MatTableModule,
     MatPaginatorModule,
-
     MatSortModule
   ]
 })

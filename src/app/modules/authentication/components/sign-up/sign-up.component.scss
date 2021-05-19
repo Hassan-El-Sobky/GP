@@ -1,37 +1,25 @@
-$bodybackGround:#1F1C19;
+$bodybackGround:transparent;
 // $formbackgroud:#2E2C2A;
 $formbackgroud:#ffff;
 .body
 {
     height: 100vh;
-    background-color:$bodybackGround ;
+    background-color:$bodybackGround;
 }
 .formContainer
 {
     width: 800px;
-    height: 750px;
+    height:auto;
     background-color:$formbackgroud;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    margin: 10px 0px;
+    border-radius: 15px;
+}
 
-}
-.FormLogo
-{
-    color: #fff;
-    padding-top: 10px;
-}
-.FormLogo p 
-{
-    margin-top: -12px;
-    font-weight: 100;
-}
-.FormLogo .signUp
-{
-    font-size: 25px;
-    font-weight: 400;
-}
+
 .form-group
 {
  width: 80%;
@@ -39,7 +27,7 @@ $formbackgroud:#ffff;
 .form-group label
 {
     color: #565654;
-    margin: 10px 0px;
+    margin: 5px 0px;
     font-weight: bold;
     font-size: 11px;
 }
@@ -49,6 +37,7 @@ $formbackgroud:#ffff;
     padding: 22px;
     font-size: 12px;
     border: 2px solid   #565654;
+    height: 20px;
     
 }
 .form-group input:focus
@@ -63,7 +52,7 @@ $formbackgroud:#ffff;
 {
     position: absolute;
     right: 15px;
-    top: 15px;
+    top: 25px;
     color: #504E4E;
     cursor: pointer;
     
@@ -76,8 +65,13 @@ $formbackgroud:#ffff;
   border-radius: 10px;
   border: none;
 }
-.FormLogo 
+.form-group p
 {
+    height: 5px;
+}
+
+// .FormLogo 
+// {
     
-    margin-top: 30px;
-} 
+//     margin-top: 30px;
+// } 

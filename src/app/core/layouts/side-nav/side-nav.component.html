@@ -18,16 +18,18 @@
             <p *ngIf="menuStatus">Dashborad</p>
         </div>
 
-        <div [class.tCenter]="!menuStatus" class="dashContent">
+        <div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminAnaylsis/dashboard'">
             <i class="fas fa-tachometer-alt"></i>
-            <span class="dashTitle"   [routerLink]="'/adminAnaylsis/dashboard'"   *ngIf="menuStatus">Dashborad</span>
+            <span class="dashTitle" *ngIf="menuStatus">Dashborad</span>
         </div>
 
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminIn/instructors'" routerLinkActive="active">
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminIn/instructors'"
+            routerLinkActive="active">
             <i class="fas fa-users"></i>
             <span class="dashTitle" *ngIf="menuStatus">Instructors</span>
         </a>
-        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminSt/students'" routerLinkActive="active">
+        <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminSt/students'"
+            routerLinkActive="active">
             <i class="fas fa-users"></i>
             <span class="dashTitle" *ngIf="menuStatus">Students</span>
         </a>
@@ -35,6 +37,6 @@
             <i class="fas fa-book"></i>
             <span class="dashTitle" *ngIf="menuStatus">Courses</span>
         </a>
-      
+
     </div>
 </div>

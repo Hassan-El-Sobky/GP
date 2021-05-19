@@ -1,4 +1,7 @@
-<mat-toolbar *ngIf="tokenService.isAuthenticated() == true" >
+<mat-toolbar *ngIf="tokenService.isAuthenticated() == true">
+
+
+
     <!-- *ngIf="tokenService.isAuthenticated() == true" -->
     <i (click)="onToolbarMenuToggle()" class="fas fa-bars"></i>
     <span class="comp">Messages</span>
@@ -37,25 +40,25 @@
 
     </div>
     <div class="user">
-        <h6>Hassan El-Sobky</h6>
+        <h6 (click)="expaded()">Hassan El-Sobky</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
             <div class="expanded-info">
-                <i class="fas fa-user"></i>
-                <span [routerLink]=""(click)='veiwOnly()'>My Profile</span>
+                <i [routerLink]="['/adminAdmin/adminProfile']" class="fas fa-user"></i>
+                <span [routerLink]="['/adminAdmin/adminProfile']" (click)='veiwOnly()'>My Profile</span>
                 <span>
                     <div class="online">
 
                     </div>
                 </span>
             </div>
-            <div class="expanded-info">
-                <i  class="far fa-edit"></i>
+            <!-- <div class="expanded-info">
+                <i class="far fa-edit"></i>
                 <span [routerLink]="" (click)='veiwEdit()'>Edit Profile</span>
-            </div>
-            <div class="expanded-info">
+            </div> -->
+            <div [routerLink]="['/adminAdmin/addAdmin']" class="expanded-info">
                 <i class="fas fa-plus"></i>
-                <span>Add Admin</span>
+                <span >Add Admin</span>
             </div>
             <div class="expanded-info">
                 <i style="color: #38B9DD;" class="fas fa-sign-out-alt"></i>

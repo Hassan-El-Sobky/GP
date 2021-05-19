@@ -5,14 +5,14 @@
   
           <div class="tableContent">
             <div class="inputTableSearch">
-              <h6>Student List</h6>
+              <h6 class="">Student List</h6>
               <div class="form-group">
                 <!-- <input placeholder=" Search..." #searchName (change)=""> -->
-                <!-- <input placeholder=" Search..." #searchName> -->
+                <input placeholder=" Search..." #searchName>
                 <i class="fas fa-search"></i>
               </div>
             </div>
-            <div class="tables">
+            <div class="tables ">
               <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                   <ng-container matColumnDef="name">

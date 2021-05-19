@@ -11,7 +11,7 @@ body {
 
 .mat-select-value,
 .mat-select-arrow {
-    color: #fff;
+    color: #111;
 }
 .mat-form-field-appearance-legacy .mat-form-field-underline {
     background-color: transparent;
@@ -54,13 +54,14 @@ tr:last-child td.mat-cell, tr:last-child  td.mat-footer-cell, tr:last-child  th.
 
 
 
-$backGroundColor:#1F1C19;
-$tableContainerBgColor:#2E2C2A;
-$tabletextColor:#D9D9D8;
+$backGroundColor:#fff;
+$tableContainerBgColor:#fff;
+$tabletextColor:#111;
 
 h6
 {
-    color: #fff;
+    color: #111;
+    font-size:25px;
 }
 .inputTableSearch
 {
@@ -78,7 +79,7 @@ h6
 .inputTableSearch p 
 {
 
-  color: #fff;
+  color: #111;
   margin-left: 5px;
   
 
@@ -90,12 +91,12 @@ h6
 }
 .inputTableSearch .form-group input
 {
-    background-color: #2E2C2A;
-    border: 1px solid #aaa9a8;
+    background-color: transparent;
+    border: 1px solid #111;
     width: 240px;
     padding: 40x;
     border-radius: 5px;
-    color: #fff;
+    color: #1111;
     height: 30px;
 }
 .inputTableSearch input:focus
@@ -105,7 +106,7 @@ h6
 
 .fa-search
 {
-    color: #696766;;
+    color: #111;;
     position: absolute;
     right: 15px;
     top: 8px;
@@ -127,8 +128,8 @@ table
 }
 th
 {
-    background-color: #354A4E;
-    color: #fff;
+    background-color: #FE9D2B;
+    color: #111;
 
 }
 tr.mat-header-row {
@@ -136,7 +137,7 @@ tr.mat-header-row {
 }
 tr td
 {
-    background-color: #353331;
+    background-color: transparent;
     color: $tabletextColor;
     height: 70px;
 }
@@ -152,7 +153,7 @@ button
 mat-paginator
 {
     background-color: $tableContainerBgColor;
-    color: #fff;
+    color: #111;
     border: none;
     padding: 20px;
 
@@ -164,6 +165,7 @@ mat-paginator
   padding: 20px;
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
+  text-align:justify;
 
 }
 
@@ -190,8 +192,10 @@ tr td i
     cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
+    transition: transform 0.1s;
 }
 tr td i:hover
 {
     color: #FE9D2B;
+    transform: rotate(25deg);
 }

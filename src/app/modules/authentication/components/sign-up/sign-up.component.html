@@ -1,9 +1,9 @@
 <section class="body">
 
   <div class="formContainer">
-    <div class="container">
+    <div class="container  ">
 
-      <form class="m-auto"  (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
+      <form class="m-auto my-2"  (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
 
         <div class="form-group m-auto">
 
@@ -46,7 +46,8 @@
               id="password" placeholder="Enter your password">
             <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"
               class="py-2 text-danger ">Password inValid</p>
-            <!-- <i (click)="showpassword()" class="fas fa-eye-slash"></i> -->
+            <i class="fas fa-eye-slash"></i>
+            <!-- (click)="showpassword()"  -->
           </div>
         </div>
 
@@ -60,7 +61,8 @@
               formControlName='rePassword' placeholder="Enter your password">
             <p *ngIf="registerForm.get('rePassword').errors != null && registerForm.get('rePassword').touched"
               class="py-2 text-danger ">inValid</p>
-            <!-- <i (click)="reshowpassword()" class="fas fa-eye-slash"></i> -->
+            <i  class="fas fa-eye-slash"></i>
+            <!-- (click)="reshowpassword()" -->
           </div>
         </div>
 

@@ -19,16 +19,12 @@ import { StudentsComponent } from './modules/admin-student/components/students/s
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     SideNavComponent,
     HeaderComponent,
-   
-
-
-
-  
 
   ],
 
