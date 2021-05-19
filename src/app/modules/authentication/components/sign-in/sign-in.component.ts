@@ -38,7 +38,7 @@ export class SignInComponent implements OnInit {
           this.tokenService.setToken(res.token);
           console.log(this.tokenService.isAuthenticated());
           
-           this.router.navigate(['/test']);
+          //  this.router.navigate(['/test']);
          }
      
          

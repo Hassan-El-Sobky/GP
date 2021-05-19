@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { AdminCoursesService } from '../../services/admin-courses.service';
+import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 
 @Component({
   selector: 'app-courses',
@@ -17,7 +19,7 @@ export class CoursesComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  constructor(private _allCourses:AdminCoursesService) {
+  constructor(private _allCourses:AdminCoursesService,public dialog: MatDialog) {
     // this.dataSource = new MatTableDataSource<any>();
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
@@ -53,6 +55,20 @@ export class CoursesComponent implements OnInit {
        
      })
      
+   }
+
+   openDialog(id:any)
+   {
+    const dialogRef = this.dialog.open(DeletedialogComponent, {
+      data:{i:id},
+      height: '200px',
+      width: '200px',
+  });
+         
+  dialogRef.afterClosed().subscribe(result => {
+
+  });
+    
    }
   ngOnInit(): void {
   }

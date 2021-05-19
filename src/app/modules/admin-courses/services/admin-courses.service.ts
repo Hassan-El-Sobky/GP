@@ -17,4 +17,8 @@ export class AdminCoursesService {
     return this._http.patch(`https://lmsapis.herokuapp.com/enableCourse/${id}`,data)
   }
 
+  deleteCourse(id:any,token:any):Observable<any> {
+    return this._http.delete(`https://lmsapis.herokuapp.com/removeCourse/${id}`,token)
+  }
+
 }
