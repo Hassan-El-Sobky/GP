@@ -27,18 +27,21 @@ export class DeletedialogComponent implements OnInit {
   delete(id:any)
   {
      let data={
-    token:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYWRtaW4iLCJ1c2VybmFtZSI6Imhhc3NhbiIsImlhdCI6MTYxOTgyMzU3MH0.Uwnu_dQxAqkIXeSfvNA6hSp2fX2H00tfFU31FMl4ZGQ"
+    token:localStorage.getItem('accessToken')
     }
-   console.log(id);
+    console.log(data);
+    console.log(id);
+    
+    
    this._adminCousrsServices.deleteCourse(id,data).subscribe(res=>{
-      console.log(res.message);
-      // if(res.message="course Removed")
-      // {
-      //   this._adminCousrsServices.getAllCourses();
-      // } else {
-      //   console.log('there is error in token');
-        
-      // }
+     
+       if(res.message="there is error in token")
+       {
+         console.log('Feeh Error fel token');
+        } else {
+          
+          this._adminCousrsServices.getAllCourses();
+      }
    })
    this.dialogRef.close();
   }
