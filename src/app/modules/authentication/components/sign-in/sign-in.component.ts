@@ -37,15 +37,22 @@ export class SignInComponent implements OnInit {
        this._authentication.logIn(userInfo).subscribe(res=>{
          console.log(res);
          this.status=res.status
+         console.log(this.status);
+         
          
          if(res.token)
          {
           this.tokenService.setToken(res.token);
+
+           console.log(this.tokenService.isAuthenticated());
+
           localStorage.setItem('username',res.message);
           console.log(this.tokenService.isAuthenticated());
           this._generalService.userName=res.message;
           console.log(this._generalService.userName);
-          
+
+          this.router.navigate(['adminAnaylsis/dashboard']);
+
           //  this.router.navigate(['/test']);
          }
      

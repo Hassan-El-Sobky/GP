@@ -11,6 +11,8 @@
             <div *ngIf="email.touched && email.invalid " class="is-warning">
               <span> Name is required</span>
              </div>
+
+             <p *ngIf="status=='mail inCorrect'" class="text-danger errMessage ">{{status}}</p>
         </div>
 
         <div class="form-group m-auto">
@@ -24,6 +26,7 @@
           <div *ngIf="password.touched && password.invalid " class="is-invalid">
             <span> Name is required</span>
            </div>
+           <p *ngIf="status=='Password inCorrect'" class="text-danger errMessage">{{status}}</p>
         </div>
         <div class="keepMe m-auto py-3">
           <div class="checkbox">
