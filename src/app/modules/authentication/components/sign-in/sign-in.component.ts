@@ -35,31 +35,22 @@ export class SignInComponent implements OnInit {
        
 
        this._authentication.logIn(userInfo).subscribe(res=>{
-<<<<<<< HEAD
-         console.log(res);  
-      
-=======
          console.log(res);
          this.status=res.status
          
->>>>>>> 0fa8aaf7451913f7c309397b7e5720b9f98636d8
          if(res.token)
          {
           this.tokenService.setToken(res.token);
-<<<<<<< HEAD
+
            console.log(this.tokenService.isAuthenticated());
-           
-=======
+
           localStorage.setItem('username',res.message);
           console.log(this.tokenService.isAuthenticated());
           this._generalService.userName=res.message;
           console.log(this._generalService.userName);
-<<<<<<< HEAD
+
          
-=======
->>>>>>> ff6db49409e1c8e3a41b2b6892af3532e1381d19
->>>>>>> 0fa8aaf7451913f7c309397b7e5720b9f98636d8
-          
+
           //  this.router.navigate(['/test']);
          }
      
