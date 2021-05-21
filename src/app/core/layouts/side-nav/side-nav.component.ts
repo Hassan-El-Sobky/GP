@@ -11,6 +11,7 @@ export class SideNavComponent implements OnInit {
   contentMargin = 315;
   Logo: string = 'assets/logo.PNG'
   @Input() menuStatus: boolean = false;
+  userName=localStorage.getItem('username');
   constructor() { }
 
   ngOnInit() {

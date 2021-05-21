@@ -2,12 +2,12 @@
   
     <div class="py-5 text-center">
         <div [class.logoClosed]='!menuStatus' class="logo">
-            <img [src]="Logo" alt="">
+            <img [src]="" alt="">
         </div>
         <div [class.userImageCLosed]='!menuStatus' class="userImage">
         </div>
         <div [class.user-dashboradClosed]='!menuStatus' class="user-dashborad text-center">
-            <p *ngIf="menuStatus">Hassan El-Sobky</p>
+            <p *ngIf="menuStatus">{{userName}}</p>
 
             <i [class.dBlock]='!menuStatus' class="fas fa-cog"></i>
             <i [class.dBlock]='!menuStatus' class="fas fa-sign-out-alt logout"></i>

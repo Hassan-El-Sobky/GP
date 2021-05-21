@@ -40,7 +40,7 @@
 
     </div>
     <div class="user">
-        <h6 (click)="expaded()">Hassan El-Sobky</h6>
+        <h6 (click)="expaded()">{{userName}}</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
             <div class="expanded-info">
