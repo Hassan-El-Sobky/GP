@@ -1,36 +1,34 @@
-
 <!-- ------------------Courses Analysis Start-------------------------- -->
 
 <section id="All">
-    <h3 class="">All</h3>
-    <div class="container w-50">
+    <div class="container">
+        <div class="row">
+            <!----------------------------------- Courses Analysis Start-------------------------------------- -->
 
+            <div class="col-md-4 courses ">
+                <button [routerLink]="'/admin/courses'" class="btn btn-dark">Courses
+                    <br><span>Number of Courses :{{numOfCourse}}</span></button>
+            </div>
+            <!----------------------------------- Courses Analysis End-------------------------------------- -->
+            <!-- --------------------------- ----------Students Analysis Start-------------------------------------------------------->
+            <div class="col-md-4 student">
+
+                <button [routerLink]="'/adminSt/students'" class="btn btn-dark">Students
+                    <br><span>Number of Students :{{numOfSutudents}}</span></button>
+
+            </div>
+            <!-- -----------------------------------Students Analysis End  ---------------------------------------------->
+            <!-- --------------------------------------Instructors Analysis Start--------------------------------------------------->
+            <div class="col-md-4">
+
+                <button [routerLink]="'/adminIn/instructors'" class="btn btn-dark">Instructors
+                    <br><span>Number of Instructors :{{numOfInstructors}} </span>
+                </button>
+            </div>
+            <!--------------------------------------- Instructors Analysis End------------------------------------------------------------------ -->
+        </div>
+    </div>
+    <div class="w-50 m-auto">
         <p-chart type="pie" [data]="data"></p-chart>
-
     </div>
 </section>
-<!-------------------------- Courses Analysis End-------------------------------------- -->
-
-<!-- -----------------------------------Students Analysis Start ---------------------------------------------->
-
-<!-- <section id="students">
-    <h3 class="">Students</h3>
-    <div class="container w-50">
-
-        <p-chart type="pie" [data]="data"></p-chart>
-
-    </div>
-</section> -->
-<!-- --------------------------- ----------Students Analysis End-------------------------------------------------------->
-
-<!-- --------------------------------------Instructors Analysis Start--------------------------------------------------->
-
-<!-- <section id="instructors">
-    <h3 class="">Instructors</h3>
-    <div class="container w-50">
-
-        <p-chart type="pie" [data]="data"></p-chart>
-
-    </div>
-</section> -->
-<!--------------------------------------- Instructors Analysis End------------------------------------------------------------------ -->
