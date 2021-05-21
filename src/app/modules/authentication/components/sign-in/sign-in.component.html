@@ -18,7 +18,9 @@
           <div class="eyeslash">
             <input type="password" name="password" ngModel #password='ngModel' class="form-control " id="password"
               placeholder="Enter your password">
+              
           </div>
+         
           <div *ngIf="password.touched && password.invalid " class="is-invalid">
             <span> Name is required</span>
            </div>
@@ -43,7 +45,4 @@
      <a  class="px-1 sign_Up " [routerLink]="['/authentication','signup']" >SignUp</a>
     </div>
   </div>
-
-
-
 </section>

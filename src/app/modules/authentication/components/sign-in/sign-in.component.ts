@@ -12,6 +12,7 @@ import { TokenService } from 'src/app/core/services/token.service';
 })
 export class SignInComponent implements OnInit {
 
+  status: any;
   constructor(private _authentication:AuthenticationService,
     private tokenService: TokenService,
     private router: Router
@@ -32,11 +33,14 @@ export class SignInComponent implements OnInit {
        
 
        this._authentication.logIn(userInfo).subscribe(res=>{
-         console.log(res);  
+         console.log(res);
+         this.status=res.status
+         
          if(res.token)
          {
           this.tokenService.setToken(res.token);
-          console.log(this.tokenService.isAuthenticated());
+           console.log(this.tokenService.isAuthenticated());
+           
           
           //  this.router.navigate(['/test']);
          }
