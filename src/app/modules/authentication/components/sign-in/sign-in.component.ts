@@ -41,15 +41,10 @@ export class SignInComponent implements OnInit {
          if(res.token)
          {
           this.tokenService.setToken(res.token);
-<<<<<<< HEAD
-           console.log(this.tokenService.isAuthenticated());
-           
-=======
           localStorage.setItem('username',res.message);
           console.log(this.tokenService.isAuthenticated());
           this._generalService.userName=res.message;
           console.log(this._generalService.userName);
->>>>>>> ff6db49409e1c8e3a41b2b6892af3532e1381d19
           
           //  this.router.navigate(['/test']);
          }
