@@ -8,9 +8,9 @@
       <form class="m-auto" #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
         <div class="form-group m-auto">
           <label for="Email">Email</label>
-          <input type="text" name="email" ngModel #email='ngModel' ng class="form-control" id="Email"
+          <input required type="text" name="email" ngModel #email='ngModel' ng class="form-control" id="Email"
             placeholder="Enter your email">
-            <div *ngIf="email.touched && email.invalid " class="is-warning">
+            <div  *ngIf="email.touched && email.invalid " class="a">
               <span> Name is required</span>
              </div>
 
@@ -20,13 +20,11 @@
         <div class="form-group m-auto">
           <label for="password">Password</label>
           <div class="eyeslash">
-            <input type="password" name="password" ngModel #password='ngModel' class="form-control " id="password"
+            <input required type="password" name="password" ngModel #password='ngModel' class="form-control " id="password"
               placeholder="Enter your password">
-              
-          </div>
-         
-          <div *ngIf="password.touched && password.invalid " class="is-invalid">
-            <span> Name is required</span>
+          </div>  
+          <div *ngIf="password.touched && password.invalid " class="a">
+            <span> Password is required</span>
            </div>
            <p *ngIf="status=='Password inCorrect'" class="text-danger errMessage">{{status}}</p>
         </div>
@@ -39,7 +37,7 @@
         </div>
 
         <div class="form-group m-auto ">
-          <button type="submit" class=" w-100">Sign In</button>
+          <button [disabled]='!signInForm.valid' type="submit" class=" w-100">Sign In</button>
         </div>
 
       </form>

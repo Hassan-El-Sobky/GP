@@ -8,7 +8,7 @@ import { Router } from '@angular/router'
   styleUrls: ['./sign-up.component.scss']
 })
 export class SignUpComponent implements OnInit {
-
+  logoImage: string ='/assets/logo.png';
   registerForm:any;
   constructor(private _authServ: AuthenticationService, private _Router: Router) {
    }
