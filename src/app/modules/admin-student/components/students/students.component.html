@@ -41,11 +41,9 @@
 
                   <ng-container matColumnDef="action">
                     <th mat-header-cell *matHeaderCellDef> action </th>
-                    <td mat-cell *matCellDef="let element"> 
-                      <i class="far fa-edit"></i>
-                      <i class="fas fa-trash"></i>  
-                    </td>
+                    <td mat-cell *matCellDef="let element"> <i (click)="openDialog(element._id)" class="fas fa-trash-alt"></i> </td>
                   </ng-container>
+
   
                   <ng-container matColumnDef="view-detials">
                     <th mat-header-cell *matHeaderCellDef> </th>

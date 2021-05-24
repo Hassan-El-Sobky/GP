@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import { DeletedialogComponent } from 'src/app/modules/admin-student/components/deletedialog/deletedialog.component';
 import { AdminStudentsService } from '../../services/admin-students.service';
 
 @Component({
@@ -10,12 +12,12 @@ import { AdminStudentsService } from '../../services/admin-students.service';
   styleUrls: ['./students.component.scss']
 })
 export class StudentsComponent implements OnInit {
-  displayedColumns: string[] = [ 'name', 'username', 'email','Gender'];
+  displayedColumns: string[] = [ 'name', 'username', 'email','Gender','action'];
   dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   
-  constructor(private _adminStu:AdminStudentsService) { }
+  constructor(private _adminStu:AdminStudentsService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getAllStu();
@@ -30,5 +32,23 @@ export class StudentsComponent implements OnInit {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     })
+  }
+
+
+  openDialog(id:any)
+  {
+    console.log(id);
+    
+   const dialogRef = this.dialog.open(DeletedialogComponent, {
+     data:{i:id},
+     height: '200px',
+     width: '200px',
+ });
+        
+ dialogRef.afterClosed().subscribe(result => {
+     
+      this.getAllStu();
+ });
+   
   }
 }
