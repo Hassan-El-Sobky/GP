@@ -9,10 +9,18 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SideNavComponent implements OnInit {
   sideBarToggle: boolean = true;
   contentMargin = 315;
-  Logo: string = 'assets/logo.PNG'
+  logoImage: string ='/assets/logo.png';
   @Input() menuStatus: boolean = false;
   userName=localStorage.getItem('username');
-  constructor() { }
+  role=localStorage.getItem('role');
+  X:any
+  constructor() {
+
+   if(this.role=="admin")
+    { 
+         this.X="Admin";
+    }
+   }
 
   ngOnInit() {
   }

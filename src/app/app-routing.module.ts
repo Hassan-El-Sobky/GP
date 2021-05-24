@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.guard';
+import { AuthGuard } from './modules/authentication/gurads/auth.guard';
 
 
 const routes: Routes = [
@@ -26,7 +28,7 @@ const routes: Routes = [
       import('./modules/admin-courses/admin-courses.module').then(
         (m) => m.AdminCoursesModule
       ),
-    
+      canActivate: [AuthGuard,AdminGuradGuard]
   },
   {
     path: 'adminIn',
@@ -34,7 +36,7 @@ const routes: Routes = [
       import('./modules/admin-instructor/admin-instrucotrs.module').then(
         (m) => m.AdminInstrucotrsModule
       ),
-    
+      canActivate: [AuthGuard,AdminGuradGuard]
   }, 
   {
     path: 'adminSt',
@@ -42,7 +44,7 @@ const routes: Routes = [
       import('./modules/admin-student/admin-student.module').then(
         (m) => m.AdminStudentModule
       ),
-    
+      canActivate: [AuthGuard,AdminGuradGuard]
   },
   {
     path: 'student',
@@ -50,7 +52,7 @@ const routes: Routes = [
       import('./modules/Student-course/student-course.module').then(
         (m) => m.StudentCourseModule
       ),
-    
+      canActivate: [AuthGuard,AdminGuradGuard]
   },
   {
     path: 'adminAnaylsis',
@@ -58,6 +60,7 @@ const routes: Routes = [
       import('./modules/admin-dasboard/admin-dashborad.module').then(
         (m) => m.AdminDashboradModule
       ),
+      canActivate: [AuthGuard,AdminGuradGuard]
     
   },
   {

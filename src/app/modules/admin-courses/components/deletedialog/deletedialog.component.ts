@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { AdminCoursesService } from '../../services/admin-courses.service';
+import { async } from '@angular/core/testing';
 
 @Component({
   selector: 'app-deletedialog',
@@ -11,7 +12,7 @@ export class DeletedialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DeletedialogComponent>,@Inject(MAT_DIALOG_DATA) public data:any,
   private _adminCousrsServices:AdminCoursesService) { }
-  token:any;
+  token=localStorage.getItem('accessToken');
   ngOnInit(): void {
     this.token=localStorage.getItem("accessToken");
     console.log(typeof(this.token));
@@ -24,24 +25,18 @@ export class DeletedialogComponent implements OnInit {
     this.dialogRef.close();
     
   }
-  delete(id:any)
+ async delete(id:any)
   {
-     let data={
-    token:localStorage.getItem('accessToken')
+    let data={
+    token:this.token
     }
     console.log(data);
     console.log(id);
     
     
    this._adminCousrsServices.deleteCourse(id,data).subscribe(res=>{
-     
-       if(res.message="there is error in token")
-       {
-         console.log('Feeh Error fel token');
-        } else {
-          
-          this._adminCousrsServices.getAllCourses();
-      }
+      console.log(res.message);
+      
    })
    this.dialogRef.close();
   }

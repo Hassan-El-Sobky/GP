@@ -2,7 +2,7 @@
   
     <div class="py-5 text-center">
         <div [class.logoClosed]='!menuStatus' class="logo">
-            <img [src]="" alt="">
+            <img [src]="logoImage" alt="">
         </div>
         <div [class.userImageCLosed]='!menuStatus' class="userImage">
         </div>
@@ -18,12 +18,34 @@
         <div class="dashContetn">
             <p *ngIf="menuStatus">Dashborad</p>
         </div>
-
-        <div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminAnaylsis/dashboard'">
+<div *ngIf="role=='admin'">
+        <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminAnaylsis/dashboard'"   routerLinkActive="active">
             <i class="fas fa-tachometer-alt"></i>
             <span class="dashTitle" *ngIf="menuStatus">Dashborad</span>
         </div>
 
+<!--  -->
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminIn/instructors'"  routerLinkActive="active">
+    <i class="fas fa-users"></i>
+    <span class="dashTitle" *ngIf="menuStatus">Instructors</span>
+</div>
+
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminSt/students'"  routerLinkActive="active">
+    <i class="fas fa-users"></i>
+    <span class="dashTitle" *ngIf="menuStatus">Students</span>
+</div>
+
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/admin/courses'"   routerLinkActive="active">
+    <i class="fas fa-book"></i>
+    <span class="dashTitle" *ngIf="menuStatus">Courses</span>
+</div>
+
+</div>
+
+
+<!--  -->
+        
+<!-- 
         <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/adminIn/instructors'"
             routerLinkActive="active">
             <i class="fas fa-users"></i>
@@ -37,7 +59,7 @@
         <a [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/admin/courses'" routerLinkActive="active">
             <i class="fas fa-book"></i>
             <span class="dashTitle" *ngIf="menuStatus">Courses</span>
-        </a>
+        </a> -->
 
     </div>
 
