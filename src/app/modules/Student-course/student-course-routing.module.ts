@@ -1,9 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StudentComponent } from './component/student/student.component';
+import { CoursesComponent } from './component/courses/courses.component';
+import { AssignmentsComponent } from './component/assignments/assignments.component';
+import { ExamsComponent } from './component/exams/exams.component';
+import { MaterialsComponent } from './component/materials/materials.component';
+import { QuizzesComponent } from './component/quizzes/quizzes.component';
+import { CourseInfoComponent } from './component/course-info/course-info.component';
+
+
+
 
 const routes: Routes = [
-  { path:'student',component:StudentComponent}
+  { path: 'course', component: CoursesComponent },
+  { path: 'assigments', component: AssignmentsComponent },
+  { path: 'exams', component: ExamsComponent },
+  { path: 'materials', component: MaterialsComponent },
+  { path: 'quizzes', component: QuizzesComponent },
+  { path: 'course-info', component:CourseInfoComponent },
+
 ];
 
 @NgModule({
@@ -11,5 +25,11 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class StudentCourseRoutingModule {
-  public static componentDeclration = [StudentComponent]
+  public static componentDeclration = [CoursesComponent,
+    AssignmentsComponent,
+    ExamsComponent,
+    MaterialsComponent,
+    QuizzesComponent,
+    CourseInfoComponent
+  ]
   }

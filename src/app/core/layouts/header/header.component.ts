@@ -16,14 +16,23 @@ export class HeaderComponent implements OnInit {
   flagNotiction: boolean = false;
   userName=localStorage.getItem('username')
   role=localStorage.getItem('role');
-  
+  X:any
   
   @Output() menuStatus = new EventEmitter();
   constructor(public tokenService: TokenService,private router:Router,private _generalService:GeneralService) {
         
-        console.log(this.userName);
-        
+    console.log(this.userName);
+    if(this.role=="admin")
+    { 
+         this.X="Admin";
+    
+    }
+
    }
+
+        
+  
+  
 
   ngOnInit() {
   }

@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { StudentCourseRoutingModule } from './student-course-routing.module';
-import { StudentComponent } from './component/student/student.component';
+import {MatTableModule} from '@angular/material/table';
+
 
 
 @NgModule({
-  declarations: [...StudentCourseRoutingModule.componentDeclration, StudentComponent],
+  declarations: [...StudentCourseRoutingModule.componentDeclration,],
   imports: [
     CommonModule,
-    StudentCourseRoutingModule
+    StudentCourseRoutingModule,
+    MatTableModule
   ]
 })
 export class StudentCourseModule { }

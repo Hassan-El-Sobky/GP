@@ -6,14 +6,11 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatDialogModule} from '@angular/material/dialog';
-
 import { HeaderComponent } from './core/layouts/header/header.component';
 import { SideNavComponent } from './core/layouts/side-nav/side-nav.component';
 import {MatIconModule} from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
-import { InstructorsComponent } from './modules/admin-instructor/components/instructors/instructors.component';
 import { AuthGuard } from './modules/authentication/gurads/auth.guard';
-import { StudentsComponent } from './modules/admin-student/components/students/students.component';
 import { DeletedialogComponent } from './modules/admin-courses/components/deletedialog/deletedialog.component';
 import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.guard';
 

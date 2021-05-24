@@ -41,6 +41,25 @@
 </div>
 
 </div>
+<div *ngIf="role=='student'">
+    <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/student/course'"   routerLinkActive="active">
+        <i class="fas fa-tachometer-alt"></i>
+        <span class="dashTitle" *ngIf="menuStatus">Courses</span>
+    </div>
+
+<!--  -->
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"  routerLinkActive="active">
+<i class="fas fa-users"></i>
+<span class="dashTitle" *ngIf="menuStatus">Registered Courses</span>
+</div>
+
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"  routerLinkActive="active">
+<i class="fas fa-users"></i>
+<span class="dashTitle" *ngIf="menuStatus">Schedule</span>
+</div>
+
+
+</div>
 
 
 <!--  -->

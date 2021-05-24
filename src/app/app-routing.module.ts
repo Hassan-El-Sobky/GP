@@ -21,7 +21,7 @@ const routes: Routes = [
       ),
 
   },
-
+  /*                  Admin Paths Start                */
   {
     path: 'admin',
     loadChildren: () =>
@@ -46,14 +46,7 @@ const routes: Routes = [
       ),
       canActivate: [AuthGuard,AdminGuradGuard]
   },
-  {
-    path: 'student',
-    loadChildren: () =>
-      import('./modules/Student-course/student-course.module').then(
-        (m) => m.StudentCourseModule
-      ),
-      canActivate: [AuthGuard,AdminGuradGuard]
-  },
+ 
   {
     path: 'adminAnaylsis',
     loadChildren: () =>
@@ -71,6 +64,22 @@ const routes: Routes = [
       ),
     
   },
+  /*               Admin paths end                      */
+  {
+    path: 'courses',
+    loadChildren: () =>
+      import('./modules/all-courses/all-courses.module').then(
+        (m) => m.AllCoursesModule
+      ),
+  },
+  /*               Student Paths Start                   */
+  {
+    path: 'student',
+    loadChildren: () =>
+      import('./modules/Student-course/student-course.module').then(
+        (m) => m.StudentCourseModule
+      ),
+  }
 ];
 
 @NgModule({

@@ -6,7 +6,9 @@
     <i (click)="onToolbarMenuToggle()" class="fas fa-bars"></i>
     <span class="comp">Messages</span>
     <span class="example-spacer"></span>
-
+        <div class="home">
+            <a  [routerLink]="['/courses/home']" >Home</a>
+        </div>
 
     <div class="psearch ">
         <div class="icon">
@@ -56,7 +58,8 @@
                 <i class="far fa-edit"></i>
                 <span [routerLink]="" (click)='veiwEdit()'>Edit Profile</span>
             </div> -->
-            <div [routerLink]="['/adminAdmin/addAdmin']" class="expanded-info">
+
+            <div *ngIf="role=='admin'" [routerLink]="['/adminAdmin/addAdmin']" class="expanded-info">
                 <i class="fas fa-plus"></i>
                 <span >Add Admin</span>
             </div>
