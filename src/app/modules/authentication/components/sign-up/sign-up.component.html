@@ -2,7 +2,9 @@
 
   <div class="formContainer">
     <div class="container  ">
-
+      <div class="text-center mt-5">
+        <img [src]="logoImage" class="img-fluid logo" alt="">
+       </div>
       <form class="m-auto my-2"  (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
 
         <div class="form-group m-auto">
