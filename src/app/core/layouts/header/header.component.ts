@@ -15,10 +15,13 @@ export class HeaderComponent implements OnInit {
   flagExpanded: boolean = false;
   flagNotiction: boolean = false;
   userName=localStorage.getItem('username')
+  role=localStorage.getItem('role');
+  
+  
   @Output() menuStatus = new EventEmitter();
   constructor(public tokenService: TokenService,private router:Router,private _generalService:GeneralService) {
         
-        console.log(this._generalService.userName);
+        console.log(this.userName);
         
    }
 
@@ -26,6 +29,8 @@ export class HeaderComponent implements OnInit {
   }
   logout() {
      this.tokenService.logout();
+     localStorage.removeItem('username');
+     localStorage.removeItem('role');
      location.reload(true);
      this.router.navigate(['/authentication/signin']);
   }

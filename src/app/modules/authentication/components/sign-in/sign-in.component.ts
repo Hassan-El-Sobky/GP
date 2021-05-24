@@ -12,7 +12,7 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
+  logoImage: string ='/assets/logo.png';
   status: any;
   constructor(private _authentication:AuthenticationService,
     private tokenService: TokenService,
@@ -46,11 +46,13 @@ export class SignInComponent implements OnInit {
 
            console.log(this.tokenService.isAuthenticated());
 
-          localStorage.setItem('username',res.message);
+            localStorage.setItem('username',res.uname);
+             localStorage.setItem('role',res.roole);
           console.log(this.tokenService.isAuthenticated());
           this._generalService.userName=res.message;
           console.log(this._generalService.userName);
-
+      
+        
           this.router.navigate(['adminAnaylsis/dashboard']);
 
           //  this.router.navigate(['/test']);

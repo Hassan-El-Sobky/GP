@@ -15,6 +15,7 @@ import { InstructorsComponent } from './modules/admin-instructor/components/inst
 import { AuthGuard } from './modules/authentication/gurads/auth.guard';
 import { StudentsComponent } from './modules/admin-student/components/students/students.component';
 import { DeletedialogComponent } from './modules/admin-courses/components/deletedialog/deletedialog.component';
+import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.guard';
 
 
 
@@ -44,6 +45,7 @@ import { DeletedialogComponent } from './modules/admin-courses/components/delete
   ],
   providers: [
     AuthGuard,
+    AdminGuradGuard
   ],
   bootstrap: [AppComponent]
 })

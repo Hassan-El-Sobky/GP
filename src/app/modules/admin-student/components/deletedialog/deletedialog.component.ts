@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { AdminCoursesService } from '../../services/admin-courses.service';
-import { async } from '@angular/core/testing';
+import { AdminCoursesService } from 'src/app/modules/admin-courses/services/admin-courses.service';
+import { AdminStudentsService } from './../../services/admin-students.service';
 
 @Component({
   selector: 'app-deletedialog',
@@ -11,7 +11,7 @@ import { async } from '@angular/core/testing';
 export class DeletedialogComponent implements OnInit {
 
   constructor(public dialogRef: MatDialogRef<DeletedialogComponent>,@Inject(MAT_DIALOG_DATA) public data:any,
-  private _adminCousrsServices:AdminCoursesService) { }
+  private _adminStudentServices:AdminStudentsService) { }
   token=localStorage.getItem('accessToken');
   ngOnInit(): void {
     this.token=localStorage.getItem("accessToken");
@@ -25,7 +25,7 @@ export class DeletedialogComponent implements OnInit {
     this.dialogRef.close();
     
   }
- async delete(id:any)
+ delete(id:any)
   {
     let data={
     token:this.token
@@ -34,7 +34,7 @@ export class DeletedialogComponent implements OnInit {
     console.log(id);
     
     
-   this._adminCousrsServices.deleteCourse(id,data).subscribe(res=>{
+   this._adminStudentServices.deleteStudent(id,data).subscribe(res=>{
       console.log(res.message);
       
    })

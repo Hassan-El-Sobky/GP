@@ -2,7 +2,9 @@
 
   <div class="formContainer">
     <div class="container ">
-
+      <div class="text-center mt-5">
+         <img [src]="logoImage" class="img-fluid logo" alt="">
+        </div>
       <form class="m-auto" #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
         <div class="form-group m-auto">
           <label for="Email">Email</label>

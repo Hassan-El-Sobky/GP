@@ -66,7 +66,8 @@ export class CoursesComponent implements OnInit {
   });
          
   dialogRef.afterClosed().subscribe(result => {
-
+      
+       this.getAllCourses();
   });
     
    }

@@ -188,16 +188,16 @@ mat-paginator
     min-height: calc(100vh - 64px);
 
 }
-// tr td i
-// {
-//     cursor: pointer;
-//     margin-left: 10px;
-//     margin-right: 10px;
-//     transition: transform 0.1s;
-// }
-// tr td i:hover
-// {
-//     color: #FE9D2B;
-//     transform: rotate(25deg);
+    tr td i
+    {
+        cursor: pointer;
+        margin-left: 10px;
+        margin-right: 10px;
+        transition: transform 0.1s;
+    }
+    tr td i:hover
+    {
+        color: #FE9D2B;
+        transform: rotate(25deg);
 
-// }
+    }
