@@ -79,6 +79,14 @@ const routes: Routes = [
       import('./modules/Student-course/student-course.module').then(
         (m) => m.StudentCourseModule
       ),
+  },
+   /*               Instructor Paths Start                   */
+   {
+    path: 'instructor',
+    loadChildren: () =>
+      import('./modules/Instructor-course/instructor-course.module').then(
+        (m) => m.InstructorCourseModule
+      ),
   }
 ];
 
