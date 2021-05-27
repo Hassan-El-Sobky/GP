@@ -34,8 +34,8 @@ export class AddCourseComponent implements OnInit {
       courseCode: new FormControl(null, [Validators.required,]),
       courseDepartment: new FormControl(null, [Validators.required,]),
       prerequisite: new FormControl(null, [Validators.required,]),
-      token:new FormControl(localStorage.getItem('accessToken')) 
-
+      token:new FormControl(localStorage.getItem('accessToken')) ,
+      username:new FormControl(localStorage.getItem('userName'))
     })
     return this.addCourseForm;
   }

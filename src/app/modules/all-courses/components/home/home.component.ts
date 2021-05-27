@@ -7,8 +7,10 @@ import { AvailableCoursesService } from '../../Services/available-courses.servic
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  allCoursesArr = [];
+  allCoursesArr :any;
   num: any;
+  courseDeafult:string='assets/images/course.jpg';
+  student=localStorage.getItem('role');
   constructor(private _allCourses: AvailableCoursesService) { }
   getAllAvailabel()
   {
@@ -17,20 +19,24 @@ export class HomeComponent implements OnInit {
       this.num=data.numOfAvailableCourses
       console.log(data.allAvailableCourses);
      console.log(data.numOfAvailableCourses);
+     this.allCoursesArr=data.allAvailableCourses;
      
    })
+  
   }
 
   getAll()
   {
-    this._allCourses.getAllCourses().subscribe((data) => {
+//  this._allCourses.getAllCourses().subscribe((data) => {
       // this.allCoursesArr = data.data.allAvailableCourses
-      console.log(data);
+      // this.allCoursesArr=data.allCourses;
+      // console.log(this.allCoursesArr);
+      
     //   this.num=data.numOfAvailableCourses
     //   console.log(data.allAvailableCourses);
     //  console.log(data.numOfAvailableCourses);
      
-   })
+  // })
   }
 
   getAllpending()
@@ -49,7 +55,21 @@ export class HomeComponent implements OnInit {
     this.getAllAvailabel()
     this.getAllpending()
     this.getAllAvailabel()
+    this.getAll();
   }
-  
+  registerd(courseCode:any) 
+  {
+ 
+   const data={
+    username:localStorage.getItem('username'),
+    courseCode:courseCode,
+    token:localStorage.getItem('accessToken')
+   }
+   this._allCourses.studentRegisterCourse(data).subscribe(res=>{
+    console.log(res);
+    
+   })
+   
+  }
  
 }

@@ -1,10 +1,20 @@
-<div class="container-fluid">
-    <div class="jumbotron">
-        <h1 class="display-4">We have {{num}} courses :)</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-        <hr class="my-4">
-        <p></p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-      </div>
-      
+<div class="container">
+ <div class="row">
+  <div *ngFor="let x of allCoursesArr" class="col-md-3 mt-3">
+  <div  class="card " style="width: 18rem;">
+    <img [src]="courseDeafult" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h2>{{x?.courseName}}</h2>
+      <p class="card-text">{{x?.courseDepartment}}</p>
+      <p>{{x?.prerequisite}}</p>
+
+      <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="btn btn-primary">Register</a>
+    </div>
+  </div>
+</div>
+
+ </div>
+
+
+
 </div>

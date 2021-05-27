@@ -6,7 +6,13 @@
         <app-side-nav  [menuStatus]="menuOpened"></app-side-nav>
     </mat-sidenav>
     <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}">
-        <app-header (menuStatus)="GetMenuStatus($event)"></app-header>
+
+            
+        <app-header  (menuStatus)="GetMenuStatus($event)"></app-header>
+        <div *ngIf='LoaderService.isLoading | async' class="loader-container">
+            <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
+            <mat-spinner></mat-spinner>
+        </div>
          <!-- <div *ngIf='LoaderService.isLoading | async'  class="loader-container">
              <mat-spinner></mat-spinner>
          </div> -->

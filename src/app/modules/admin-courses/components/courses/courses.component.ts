@@ -48,7 +48,7 @@ export class CoursesComponent implements OnInit {
      let data=
      { 
        token:token,
-       state:"avaiable"
+       state:"available"
      }
      this._allCourses.udpatedState(id,data).subscribe(res=>{
        console.log(res);

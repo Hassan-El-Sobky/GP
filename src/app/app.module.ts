@@ -9,11 +9,13 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { HeaderComponent } from './core/layouts/header/header.component';
 import { SideNavComponent } from './core/layouts/side-nav/side-nav.component';
 import {MatIconModule} from '@angular/material/icon';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './modules/authentication/gurads/auth.guard';
 import { DeletedialogComponent } from './modules/admin-courses/components/deletedialog/deletedialog.component';
 import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.guard';
 
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { LoaderInterInterceptor } from './loader/loader-inter.interceptor';
 
 
 
@@ -36,13 +38,15 @@ import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.gua
     MatSidenavModule,
     HttpClientModule,
     MatDialogModule,  
+    MatProgressSpinnerModule
   ],
   entryComponents: [
     DeletedialogComponent
   ],
   providers: [
     AuthGuard,
-    AdminGuradGuard
+    AdminGuradGuard,
+    {provide:HTTP_INTERCEPTORS,useClass:LoaderInterInterceptor,multi:true}
   ],
   bootstrap: [AppComponent]
 })

@@ -65,16 +65,15 @@
 
 <div *ngIf="role=='instructor'">
     <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/instructor/addCourse'"   routerLinkActive="active">
-        <i class="fas fa-tachometer-alt"></i>
+        <i class="fas fa-book"></i>
         <span class="dashTitle" *ngIf="menuStatus">AddCourse</span>
     </div>
 
 <!--  -->
-<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"  routerLinkActive="active">
-<i class="fas fa-users"></i>
-<span class="dashTitle" *ngIf="menuStatus">Registered Courses</span>
+<div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"   routerLinkActive="active">
+    <i class="fas fa-book"></i>
+    <span class="dashTitle" *ngIf="menuStatus">My Courses</span>
 </div>
-
 <div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"  routerLinkActive="active">
 <i class="fas fa-users"></i>
 <span class="dashTitle" *ngIf="menuStatus">Schedule</span>
