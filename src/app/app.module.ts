@@ -13,11 +13,11 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './modules/authentication/gurads/auth.guard';
 import { DeletedialogComponent } from './modules/admin-courses/components/deletedialog/deletedialog.component';
 import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.guard';
-
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderInterInterceptor } from './loader/loader-inter.interceptor';
 
-
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 
@@ -38,10 +38,12 @@ import { LoaderInterInterceptor } from './loader/loader-inter.interceptor';
     MatSidenavModule,
     HttpClientModule,
     MatDialogModule,  
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatProgressBarModule,
+    MatFormFieldModule
   ],
   entryComponents: [
-    DeletedialogComponent
+    DeletedialogComponent,
   ],
   providers: [
     AuthGuard,

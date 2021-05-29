@@ -1,0 +1,47 @@
+<section id="courses-content">
+    <div class="container-fluid">
+        <div class="row my-5">
+            <div class="col-md-3 my-2 ">
+                <div class="course-item card text-center">
+                    <img src="../../../../../assets/images/books.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Materials</h5>
+                    </div>
+                    <a  [routerLink]="['/instructor','courseMaterials',id]" class="btn btn-primary">Course info</a>
+                </div>
+            </div>
+
+            <div class="col-md-3 my-2">
+                <div class="course-item card text-center">
+                    <img src="../../../../../assets/images/assignment.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Assignments</h5>
+                        
+                    </div>
+                    <a [routerLink]='"/student/assigments"' class="btn btn-primary">Course info</a>
+                </div>
+            </div>
+
+            <div class="col-md-3 my-2">
+                <div class="course-item card text-center">
+                    <img src="../../../../../assets/images/q.jpg.crdownload" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">exams</h5>
+                    </div>
+                    <a [routerLink]='"/student/exams"' class="btn btn-primary">Course info</a>
+                </div>
+            </div>
+
+            <div class="col-md-3 my-2">
+                <div class="course-item card text-center">
+                    <img src="../../../../../assets/images/exx.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Quizzes</h5>
+                    </div>
+                    <a [routerLink]='"/student/quizzes"' class="btn btn-primary">Course info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

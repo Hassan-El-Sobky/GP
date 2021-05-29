@@ -64,15 +64,15 @@
 
 
 <div *ngIf="role=='instructor'">
-    <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/instructor/addCourse'"   routerLinkActive="active">
+    <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/instructor/myCourse'"   routerLinkActive="active">
         <i class="fas fa-book"></i>
-        <span class="dashTitle" *ngIf="menuStatus">AddCourse</span>
+        <span class="dashTitle" *ngIf="menuStatus">My Course</span>
     </div>
 
 <!--  -->
 <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"   routerLinkActive="active">
     <i class="fas fa-book"></i>
-    <span class="dashTitle" *ngIf="menuStatus">My Courses</span>
+    <span class="dashTitle" *ngIf="menuStatus">...Courses</span>
 </div>
 <div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"  routerLinkActive="active">
 <i class="fas fa-users"></i>

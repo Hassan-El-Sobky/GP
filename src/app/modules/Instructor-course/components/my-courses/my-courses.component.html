@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+     <div *ngFor="let x of courses" class="col-md-3 mt-3">
+     <div  class="card " style="width: 18rem;">
+       <img [src]="courseDeafult" class="card-img-top" alt="...">
+       <div class="card-body">
+         <h2>{{x?.courseName}} </h2>
+         <p class="card-text">{{x?.courseDepartment}}</p>
+         <p>{{x?.prerequisite}}</p>
+        
+         <div  *ngIf="x.state=='available'" >
+            <span class="text-success">Status:{{x.state}}</span>
+         </div>
+         <a  [routerLink]="['/instructor','courseDetails',x._id]" class="btn btnInf">Course-Info</a>
+       </div>
+     </div>
+   </div>
+   
+    </div>
+   
+   
+   
+   </div>

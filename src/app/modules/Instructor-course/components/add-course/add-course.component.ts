@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 
 @Component({
@@ -10,9 +11,10 @@ import { InstAddCourseService } from '../../services/inst-add-course.service';
 export class AddCourseComponent implements OnInit {
 
   addCourseForm: any
-  
+  animal:any;
+  name:any;
 
-  constructor(private _addCourse: InstAddCourseService) {
+  constructor(private _addCourse: InstAddCourseService,public dialog: MatDialog) {
     this.form();
   }
 
@@ -35,7 +37,7 @@ export class AddCourseComponent implements OnInit {
       courseDepartment: new FormControl(null, [Validators.required,]),
       prerequisite: new FormControl(null, [Validators.required,]),
       token:new FormControl(localStorage.getItem('accessToken')) ,
-      username:new FormControl(localStorage.getItem('userName'))
+      username:new FormControl(localStorage.getItem('username'))
     })
     return this.addCourseForm;
   }
@@ -46,4 +48,6 @@ export class AddCourseComponent implements OnInit {
     
   }
 
+ 
+  
 }

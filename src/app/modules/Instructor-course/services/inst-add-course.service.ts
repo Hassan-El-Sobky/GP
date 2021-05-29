@@ -13,4 +13,20 @@ export class InstAddCourseService {
   {
    return this._http.post("https://lmsapis.herokuapp.com/addCourse",data)
   }
+
+  instructorCourses(username:any):Observable<any>
+  {
+         return this._http.get(`https://lmsapis.herokuapp.com/insrtuctorCourses/${username}`);
+  }
+ 
+
+  
+  specificCourse(id:any):Observable<any>
+  {
+         return this._http.get(`https://lmsapis.herokuapp.com/course/:courseId/${id}`);
+  }
+
+  lecUpload(data:any):Observable<any>{
+    return this._http.post("https://lmsapis.herokuapp.com/uploadLecture",data);
+  }
 }

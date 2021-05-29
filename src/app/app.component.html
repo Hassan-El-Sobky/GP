@@ -10,12 +10,12 @@
             
         <app-header  (menuStatus)="GetMenuStatus($event)"></app-header>
         <div *ngIf='LoaderService.isLoading | async' class="loader-container">
-            <!-- <mat-progress-bar mode="indeterminate"></mat-progress-bar> -->
-            <mat-spinner></mat-spinner>
+            
+            <mat-spinner></mat-spinner> 
         </div>
-         <!-- <div *ngIf='LoaderService.isLoading | async'  class="loader-container">
-             <mat-spinner></mat-spinner>
-         </div> -->
+        <div *ngIf='LoaderService.isLoading | async'  class="loaderr">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+         </div> 
      <router-outlet></router-outlet> 
    
     </mat-sidenav-content>
