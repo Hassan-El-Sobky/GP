@@ -59,7 +59,7 @@ export class MaterialsComponent implements OnInit {
       formData.append("uploadDate",`${this.d}`);
       formData.append("description","aaaaaaaa");
       formData.append("courseCode","L122");
-      formData.append("lectureCode","L1");
+      formData.append("lectureCode","L111");
       formData.append("token",`${localStorage.getItem('accessToken')}`);
       formData.append("username",`${localStorage.getItem('username')}`);
       formData.append("lectureFile", file);

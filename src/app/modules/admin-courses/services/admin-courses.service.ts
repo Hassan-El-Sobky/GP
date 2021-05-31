@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -20,6 +20,11 @@ export class AdminCoursesService {
   deleteCourse(id:any,data:any):Observable<any>{
     //return this._http.delete(`https://lmsapis.herokuapp.com/removeCourse/${id}`,data) 
     return this._http.request('delete', `https://lmsapis.herokuapp.com/removeCourse/${id}`,{body:data});
+  }
+
+  courseSearch(name:any):Observable<any>
+  {
+       return this._http.get(`https://lmsapis.herokuapp.com/searchCourse/`,{params:new HttpParams().set('coursename',`${name}`)});
   }
 
 }

@@ -74,4 +74,14 @@ export class CoursesComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  courseSearch(name:any)
+  {
+   this._allCourses.courseSearch(name).subscribe(res=>{
+    this.dataSource = new MatTableDataSource<any>(res.searchResult);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+   })
+    
+  }
+
 }
