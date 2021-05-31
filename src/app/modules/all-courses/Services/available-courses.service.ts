@@ -29,4 +29,9 @@ export class AvailableCoursesService {
    return this._Http.post('https://lmsapis.herokuapp.com/registerCourse',data);
   }
 
+  courseSearch(name: any)
+  {
+    return this._Http.get(`https://lmsapis.herokuapp.com/searchCourse/?coursename=${name}`);
+  }
+
 }

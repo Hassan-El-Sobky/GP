@@ -2,10 +2,15 @@
     <div class="container my-5">
         <div class="row">
 
+            <!-- Button trigger modal -->
+
+  
+
             <div class="col-md-8 my-5 m-auto">
 
 
 
+              
                 <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData(addCourseForm)">
                     <div class="form-group">
                         <label for="">Course Name</label>
@@ -34,7 +39,6 @@
 
                     <button type="submit" [disabled]='addCourseForm.invalid'  class="btn btn-primary my-2">Submit</button>
                 </form>
-
 
 
 
