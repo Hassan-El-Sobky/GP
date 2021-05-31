@@ -11,10 +11,11 @@ import { InstAddCourseService } from '../../services/inst-add-course.service';
 export class AddCourseComponent implements OnInit {
 
   addCourseForm: any
-  animal:any;
-  name:any;
+  animal: any;
+  name: any;
 
-  constructor(private _addCourse: InstAddCourseService,public dialog: MatDialog) {
+
+  constructor(private _addCourse: InstAddCourseService, public dialog: MatDialog) {
     this.form();
   }
 
@@ -22,7 +23,7 @@ export class AddCourseComponent implements OnInit {
   getCourseData(addCourseForm: any) {
     if (addCourseForm.valid == true) {
       console.log(addCourseForm.value);
-      
+
       this._addCourse.addCourse(addCourseForm.value).subscribe((data) => {
         console.log(data);
 
@@ -36,18 +37,25 @@ export class AddCourseComponent implements OnInit {
       courseCode: new FormControl(null, [Validators.required,]),
       courseDepartment: new FormControl(null, [Validators.required,]),
       prerequisite: new FormControl(null, [Validators.required,]),
-      token:new FormControl(localStorage.getItem('accessToken')) ,
-      username:new FormControl(localStorage.getItem('username'))
-    })
+      token: new FormControl(localStorage.getItem('accessToken')),
+      username: new FormControl(localStorage.getItem('username'))
+    }
+    
+    )
     return this.addCourseForm;
-  }
-
-  ngOnInit(): void {
-   
-  
     
   }
+      
+
+
+
+
+  ngOnInit(): void {
 
  
-  
+
+  }
+
+
+
 }

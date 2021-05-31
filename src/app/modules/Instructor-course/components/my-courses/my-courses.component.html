@@ -1,5 +1,10 @@
 <div class="container">
     <div class="row">
+
+    <div class="div m-2">
+      <button [routerLink]="['/instructor','addCourse']"  class="btn btn-primary float-end">Add</button>
+  </div>
+
      <div *ngFor="let x of courses" class="col-md-3 mt-3">
      <div  class="card " style="width: 18rem;">
        <img [src]="courseDeafult" class="card-img-top" alt="...">
