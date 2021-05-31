@@ -1,4 +1,6 @@
+import { ChangeDetectorRef } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { StudentCoursesService } from '../../services/student-courses.service';
 
 @Component({
   selector: 'app-courses',
@@ -6,10 +8,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./courses.component.scss']
 })
 export class CoursesComponent implements OnInit {
-
-  constructor() { }
-
+  username=localStorage.getItem('username');
+  constructor(private _stuServices:StudentCoursesService,  private cdref: ChangeDetectorRef) { }
+  stuCoursesArr:any
   ngOnInit(): void {
+    this._stuServices.getStudent(this.username).subscribe(res=>{
+      console.log(res);
+        this.stuCoursesArr=res.studentCourses
+    })
+  
   }
+  ngAfterContentChecked() {
 
+    this.cdref.detectChanges();
+
+  }
 }
+function ngAfterContentChecked() {
+  throw new Error('Function not implemented.');
+}
+

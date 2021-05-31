@@ -12,11 +12,11 @@ import { CourseInfoComponent } from './component/course-info/course-info.compone
 
 const routes: Routes = [
   { path: 'course', component: CoursesComponent },
-  { path: 'assigments', component: AssignmentsComponent },
-  { path: 'exams', component: ExamsComponent },
-  { path: 'materials', component: MaterialsComponent },
-  { path: 'quizzes', component: QuizzesComponent },
-  { path: 'course-info', component:CourseInfoComponent },
+  { path: 'assigments/:id', component: AssignmentsComponent },
+  { path: 'exams/:id', component: ExamsComponent },
+  { path: 'materials/:id', component: MaterialsComponent },
+  { path: 'quizzes/:id', component: QuizzesComponent },
+  { path: 'course-info/:id', component:CourseInfoComponent },
 
 ];
 

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { StudentCourseRoutingModule } from './student-course-routing.module';
 import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 
 
 
@@ -11,7 +13,10 @@ import {MatTableModule} from '@angular/material/table';
   imports: [
     CommonModule,
     StudentCourseRoutingModule,
-    MatTableModule
+    MatTableModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule
   ]
 })
 export class StudentCourseModule { }

@@ -3,43 +3,43 @@
         <div class="row my-5">
             <div class="col-md-3 my-2 ">
                 <div class="course-item card text-center">
-                    <img src="../../../../../assets/images/sq.jpg" class="card-img-top" alt="">
+                    <img src="../../../../../assets/images/books.jpg" class="card-img-top" alt="">
                     <div class="card-body">
 
                         <h5 class="card-title">Materials</h5>
                     </div>
-                    <a [routerLink]='"/student/materials"' class="btn btn-primary">Course info</a>
+                    <a [routerLink]="['/student/materials',id]" class="btn btn-primary">Materials</a>
                 </div>
             </div>
 
             <div class="col-md-3 my-2">
                 <div class="course-item card text-center">
-                    <img src="../../../../../assets/images/sq.jpg" class="card-img-top" alt="">
+                    <img src="../../../../../assets/images/assignment.jpg" class="card-img-top" alt="">
                     <div class="card-body text-center">
                         <h5 class="card-title">Assignments</h5>
                         
                     </div>
-                    <a [routerLink]='"/student/assigments"' class="btn btn-primary">Course info</a>
+                    <a [routerLink]="['/student/assigments',id]" class="btn btn-primary">Assignments</a>
                 </div>
             </div>
 
             <div class="col-md-3 my-2">
                 <div class="course-item card text-center">
-                    <img src="../../../../../assets/images/sq.jpg" class="card-img-top" alt="">
+                    <img src="../../../../../assets/images/exx.jpg" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">exams</h5>
                     </div>
-                    <a [routerLink]='"/student/exams"' class="btn btn-primary">Course info</a>
+                    <a [routerLink]="['/student/exams',id]" class="btn btn-primary">Exams</a>
                 </div>
             </div>
 
             <div class="col-md-3 my-2">
                 <div class="course-item card text-center">
-                    <img src="../../../../../assets/images/sq.jpg" class="card-img-top" alt="">
+                    <img src="../../../../../assets/images/ex.jpg" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class="card-title">Quizzes</h5>
                     </div>
-                    <a [routerLink]='"/student/quizzes"' class="btn btn-primary">Course info</a>
+                    <a [routerLink]='["/student/quizzes",id]' class="btn btn-primary">Quizzes</a>
                 </div>
             </div>
         </div>
