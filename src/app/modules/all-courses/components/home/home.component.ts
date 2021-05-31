@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AvailableCoursesService } from '../../Services/available-courses.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
   num: any;
   courseDeafult:string='assets/images/course.jpg';
   student=localStorage.getItem('role');
-  constructor(private _allCourses: AvailableCoursesService) { }
+  constructor(private _allCourses: AvailableCoursesService , private _router:Router) { }
   getAllAvailabel()
   {
     this._allCourses.getAllAvailabeCourses().subscribe((data) => {
@@ -65,7 +66,9 @@ export class HomeComponent implements OnInit {
     courseCode:courseCode,
     token:localStorage.getItem('accessToken')
    }
-   this._allCourses.studentRegisterCourse(data).subscribe(res=>{
+    this._allCourses.studentRegisterCourse(data).subscribe(res => {
+      this._router.navigate(['/student/course']);
+     
     console.log(res);
     
    })
