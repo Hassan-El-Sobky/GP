@@ -12,5 +12,5 @@ body {
     font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 .modal-backdrop {
-    z-index: 99999999;
+   position: static !important;
 }
