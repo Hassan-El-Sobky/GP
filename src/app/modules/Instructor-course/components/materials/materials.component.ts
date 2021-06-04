@@ -68,6 +68,9 @@ export class MaterialsComponent implements OnInit {
           
         })
 
+        console.log(formData);
+        
+
   }
           
       //  const data={title:"test" , uploadDate:Date.now() , description:"Hiii" 

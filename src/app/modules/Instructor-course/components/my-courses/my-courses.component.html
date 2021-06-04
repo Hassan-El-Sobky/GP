@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row">
-
-    <div class="div m-2">
+    <div class="float-end my-2 mr-4" >
+      <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
+        class="btn btn-primary float-end">Add</button>
+    </div>
+  
 
      <div *ngFor="let x of courses | 
      paginate: { 
@@ -16,33 +19,21 @@
          <h2>{{x?.courseName}} </h2>
          <p class="card-text">{{x?.courseDepartment}}</p>
          <p>{{x?.prerequisite}}</p>
- 
-         <div  *ngIf="x.state=='available'" >
-      <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
-        class="btn btn-primary float-end">Add</button>
-    </div>
+     <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
+       </div>
 
-    <div *ngFor="let x of courses" class="col-md-3 mt-3">
-      <div class="card " style="width: 18rem;">
-        <img [src]="courseDeafult" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h2>{{x?.courseName}} </h2>
-          <p class="card-text">{{x?.courseDepartment}}</p>
-          <p>{{x?.prerequisite}}</p>
 
-          <div *ngIf="x.state=='available'">
-            <span class="text-success">Status:{{x.state}}</span>
-          </div>
-          <a [routerLink]="['/instructor','courseDetails',x._id]" class="btn btnInf">Course-Info</a>
-        </div>
-      </div>
-    </div>
+  </div>
+  </div>
 
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+  
+  
   </div>
 
 
 
-</div>
 
 <!-- Modal -->
 <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -55,7 +46,7 @@
       <div class="modal-body">
         <div class="m-auto">
 
-          <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData(addCourseForm)">
+          <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData()">
             <div class="form-group">
               <label for="">Course Name</label>
               <input [class.is-valid]="addCourseForm.get('courseName').errors == null && 
@@ -102,9 +93,9 @@
 
             <button type="submit" [disabled]='addCourseForm.invalid' class="btn btn-primary m-2">Submit</button>
 
-            <input type="file" name="file-input" accept="images/*" id="file-input" class="file-input__input"
+            <input type="file"  [disabled]='addCourseForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
               name="photo"/> 
-              <!-- (change)='selectFile($event)'  -->
+       
             <label class="file-input__label" for="file-input">
 
               <span>Upload</span></label>
@@ -120,16 +111,9 @@
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
       </div>
     </div>
-<<<<<<< HEAD
    
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <pagination-controls  (pageChange)="page = $event"></pagination-controls>
     
-    
-    </div>
    
    </div>
-=======
   </div>
 </div>
->>>>>>> 135332c1cd56128c1a207171fd6cca64fcd0c08e

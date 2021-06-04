@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 
 
@@ -15,35 +15,105 @@ export class MyCoursesComponent implements OnInit {
   page:number=1;
   addCourseForm: any
   courses:any
-  constructor(private _services:InstAddCourseService) { 
+    fileName = '';
+  constructor(private _services:InstAddCourseService,private fb:FormBuilder) { 
         this._services.instructorCourses(this.username).subscribe(res=>{
           console.log(res.instructorCourses);
           this.courses=res.instructorCourses
           this.totalLength=res.instructorCourses.length;
         })
-    this.form();
+        this.addCourseForm = this.fb.group({
+          courseName:  [null,Validators.required,],
+          courseCode: [null,Validators.required,],
+          courseDepartment: [null,Validators.required],
+         prerequisite: [null,Validators.required],
+        //  courseImage:[null,Validators.required]
+        },
        
+        )
+       
+  }
+  sendFile:any
+  d= Date.now
+  selectFile(event:any)
+  {
+    const file:File = event.target.files[0];
+    this.sendFile=file
+    // if (file) {
+
+    //   this.fileName = file.name;
+    //   this.addCourseForm.patchValue({
+    //    courseImage:file
+    //   })
+    //   this.addCourseForm.get('courseImage').updateValueAndValidity();
+
+      // let formData=new FormData();
+      // formData.append('courseName',`${this.addCourseForm.get('courseName').value}`);
+      // formData.append('courseCode',`${this.addCourseForm.get('courseCode').value}`);
+      // formData.append('courseDepartment',`${this.addCourseForm.get('courseDepartment').value}`);
+      // formData.append('prerequisite',`${this.addCourseForm.get('prerequisite').value}`);
+      // formData.append('token',`${localStorage.getItem('accessToken')}`);
+      // formData.append('username',`${localStorage.getItem('username')}`);
+      // formData.append('courseImage',file)
+      // this._services.addCourse(formData).subscribe((data) => {
+      //   console.log(data);
+            
+      // })
+   console.log(file);
+   
+
+  
   }
 
   getCourseData(addCourseForm: any) {
-    if (addCourseForm.valid == true) {
-      console.log(addCourseForm.value);
+    
+     // console.log(addCourseForm.value);
+    
+      // this._services.addCourse(addCourseForm.value).subscribe((data) => {
+      //   console.log(data);
 
-      this._services.addCourse(addCourseForm.value).subscribe((data) => {
-        console.log(data);
+      // });
+     
+      let formData=new FormData();
+      formData.append('courseName',`${this.addCourseForm.get('courseName').value}`);
+      formData.append('courseCode',`${this.addCourseForm.get('courseCode').value}`);
+      formData.append('courseDepartment',`${this.addCourseForm.get('courseDepartment').value}`);
+      formData.append('prerequisite',`${this.addCourseForm.get('prerequisite').value}`);
+      formData.append('token',`${localStorage.getItem('accessToken')}`);
+      formData.append('username',`${localStorage.getItem('username')}`);
+      formData.append('courseImage',`${this.sendFile}`);
+      console.log(this.sendFile);
+      
+  //  console.log(this.addCourseForm.get('courseName').value);
+  //   console.log(this.addCourseForm.get('courseImage').value);
+    // let constData={
+    //   courseName:this.addCourseForm.get('courseName').value,
+    //   courseCode:this.addCourseForm.get('courseCode').value,
+    //   courseDepartment:this.addCourseForm.get('courseDepartment').value,
+    //   prerequisite:this.addCourseForm.get('prerequisite').value,
+    //   token:`${localStorage.getItem('accessToken')}`,
+    //   username:`${localStorage.getItem('username')}`,
+    //   courseImage:this.addCourseForm.get('courseImage').value
+    
+    // }
+   console.log(formData);
+   
+        this._services.addCourse(formData).subscribe((data) => {
+          console.log(data);
+              
+        })
 
-      });
-    }
+
+    
   }
 
   form() {
-    this.addCourseForm = new FormGroup({
-      "courseName": new FormControl(null, [Validators.required,]),
-      "courseCode": new FormControl(null, [Validators.required,]),
-      "courseDepartment": new FormControl(null, [Validators.required,]),
-     "prerequisite": new FormControl(null, [Validators.required,]),
-      "token": new FormControl(localStorage.getItem('accessToken')),
-     " username": new FormControl(localStorage.getItem('username'))
+    this.addCourseForm = this.fb.group({
+      courseName:  [null,Validators.required,],
+      courseCode: [null,Validators.required,],
+      courseDepartment: [null,Validators.required],
+     prerequisite: [null,Validators.required],
+     courseImage:[null,Validators.required]
     },
    
     )
@@ -53,6 +123,10 @@ export class MyCoursesComponent implements OnInit {
     
   }
 
+ 
+
+
+  
   ngOnInit(): void {
   }
   showId(x:any)

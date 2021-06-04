@@ -81,8 +81,9 @@
   </div>
   <div class="col-md-4">
     <input  type="file" name="file-input" accept="images/*" id="file-input" class="file-input__input" name="photo"
+    (change)='selectFile($event)'
     />
-    <!-- (change)='selectFile($event)'  -->
+    
     <label class="file-input__label" for="file-input">
 
         <span>Upload</span></label>
