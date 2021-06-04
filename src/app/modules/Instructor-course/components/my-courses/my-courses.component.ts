@@ -9,12 +9,14 @@ import { InstAddCourseService } from '../../services/inst-add-course.service';
 export class MyCoursesComponent implements OnInit {
   courseDeafult:string='assets/images/course.jpg';
   username=localStorage.getItem('username')
-  
+  totalLength:any;
+  page:number=1;
   courses:any
   constructor(private _services:InstAddCourseService) { 
         this._services.instructorCourses(this.username).subscribe(res=>{
           console.log(res.instructorCourses);
           this.courses=res.instructorCourses
+          this.totalLength=res.instructorCourses.length;
         })
        
   }

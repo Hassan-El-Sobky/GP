@@ -23,7 +23,7 @@ export class InstAddCourseService {
   
   specificCourse(id:any):Observable<any>
   {
-         return this._http.get(`https://lmsapis.herokuapp.com/course/:courseId/${id}`);
+         return this._http.get(`https://lmsapis.herokuapp.com/course/${id}`);
   }
 
   lecUpload(data:any):Observable<any>{

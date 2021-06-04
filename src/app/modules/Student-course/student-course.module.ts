@@ -5,6 +5,7 @@ import { StudentCourseRoutingModule } from './student-course-routing.module';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -16,7 +17,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatTableModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    NgxPaginationModule
   ]
 })
 export class StudentCourseModule { }

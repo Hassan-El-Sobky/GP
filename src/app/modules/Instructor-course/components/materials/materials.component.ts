@@ -24,7 +24,10 @@ export class MaterialsComponent implements OnInit {
   displayedColumns: string[] = [ 'name', 'Action'];
   dataSource = ELEMENT_DATA;
   id:any
-  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService) { }
+  courseCode:any
+  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService) {
+    this.getCourse();
+   }
 
   ngOnInit(): void {
   }
@@ -36,8 +39,8 @@ export class MaterialsComponent implements OnInit {
       this.id = params.get('id');
       console.log(this.id);  
       this._instServ.specificCourse(this.id).subscribe(res=>{
-        console.log(res);
-        
+        console.log(res.course.courseCode);
+        this.courseCode=res.course.courseCode
       })
     })
   }
@@ -58,8 +61,7 @@ export class MaterialsComponent implements OnInit {
       formData.append("title","test");
       formData.append("uploadDate",`${this.d}`);
       formData.append("description","aaaaaaaa");
-      formData.append("courseCode","L122");
-      formData.append("lectureCode","L111");
+      formData.append("courseCode",`${this.courseCode}`);
       formData.append("token",`${localStorage.getItem('accessToken')}`);
       formData.append("username",`${localStorage.getItem('username')}`);
       formData.append("lectureFile", file);

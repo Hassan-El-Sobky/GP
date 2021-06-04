@@ -9,6 +9,8 @@ import { AvailableCoursesService } from '../../Services/available-courses.servic
 })
 export class HomeComponent implements OnInit {
   allCoursesArr :any;
+  totalLength:any;
+  page:number=1;
   num: any;
   courseDeafult:string='assets/images/course.jpg';
   student=localStorage.getItem('role');
@@ -21,6 +23,7 @@ export class HomeComponent implements OnInit {
       console.log(data.allAvailableCourses);
      console.log(data.numOfAvailableCourses);
      this.allCoursesArr=data.allAvailableCourses;
+     this.totalLength=data.allAvailableCourses.length;
      
    })
   

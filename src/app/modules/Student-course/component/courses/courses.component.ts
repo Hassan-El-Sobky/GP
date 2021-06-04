@@ -11,10 +11,13 @@ export class CoursesComponent implements OnInit {
   username=localStorage.getItem('username');
   constructor(private _stuServices:StudentCoursesService,  private cdref: ChangeDetectorRef) { }
   stuCoursesArr:any
+  totalLength:any;
+  page:number=1;
   ngOnInit(): void {
     this._stuServices.getStudent(this.username).subscribe(res=>{
       console.log(res);
-        this.stuCoursesArr=res.studentCourses
+        this.stuCoursesArr=res.studentCourses;
+        this.totalLength=res.studentCourses.length;
     })
   
   }

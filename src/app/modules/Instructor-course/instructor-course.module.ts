@@ -9,6 +9,7 @@ import { MyCoursesComponent } from './components/my-courses/my-courses.component
 import { CoursedetailsComponent } from './components/coursedetails/coursedetails.component';
 import { MaterialsComponent } from './components/materials/materials.component';
 import {MatTableModule} from '@angular/material/table';
+import {NgxPaginationModule} from 'ngx-pagination';
 @NgModule({
   declarations: [... InstructorCourseRoutingModule.componentsDeclarations, MyCoursesComponent, CoursedetailsComponent, MaterialsComponent ],
   imports: [
@@ -18,7 +19,8 @@ import {MatTableModule} from '@angular/material/table';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    NgxPaginationModule
   ]
 })
 export class InstructorCourseModule {

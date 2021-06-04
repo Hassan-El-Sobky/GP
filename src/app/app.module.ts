@@ -16,7 +16,7 @@ import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.gua
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderInterInterceptor } from './loader/loader-inter.interceptor';
-
+import {NgxPaginationModule} from 'ngx-pagination';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 
@@ -40,7 +40,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatDialogModule,  
     MatProgressSpinnerModule,
     MatProgressBarModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgxPaginationModule
   ],
   entryComponents: [
     DeletedialogComponent,
