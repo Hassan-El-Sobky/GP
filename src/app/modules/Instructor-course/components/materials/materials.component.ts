@@ -46,6 +46,7 @@ export class MaterialsComponent implements OnInit {
     })
   }
   fileName = '';
+  d= Date.now
   selectFile(event:any)
   {
     const file:File = event.target.files[0];

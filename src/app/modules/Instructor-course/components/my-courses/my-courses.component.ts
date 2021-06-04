@@ -11,12 +11,9 @@ import { InstAddCourseService } from '../../services/inst-add-course.service';
 export class MyCoursesComponent implements OnInit {
   courseDeafult:string='assets/images/course.jpg';
   username=localStorage.getItem('username')
-<<<<<<< HEAD
   totalLength:any;
   page:number=1;
-=======
   addCourseForm: any
->>>>>>> 135332c1cd56128c1a207171fd6cca64fcd0c08e
   courses:any
   constructor(private _services:InstAddCourseService) { 
         this._services.instructorCourses(this.username).subscribe(res=>{
