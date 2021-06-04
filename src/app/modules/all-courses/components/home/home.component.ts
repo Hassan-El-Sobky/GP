@@ -55,12 +55,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  ngOnInit(): void {
-    this.getAllAvailabel()
-    this.getAllpending()
-    this.getAllAvailabel()
-    this.getAll();
-  }
+  
   registerd(courseCode:any) 
   {
  
@@ -76,6 +71,24 @@ export class HomeComponent implements OnInit {
     
    })
    
+  }
+
+  courseSearch(name:any)
+  {
+    // this._allCourses.courseSearch(name).subscribe((res) => {
+    //   console.log(res.searchResult);
+      
+    //   this.allCoursesArr = res.searchResult;
+
+    // })
+    
+  }
+
+  ngOnInit(): void {
+    this.getAllAvailabel()
+    this.getAllpending()
+    this.getAllAvailabel()
+    this.getAll();
   }
  
 }
