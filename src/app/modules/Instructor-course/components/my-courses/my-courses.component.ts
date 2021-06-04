@@ -27,6 +27,7 @@ export class MyCoursesComponent implements OnInit {
           courseCode: [null,Validators.required,],
           courseDepartment: [null,Validators.required],
          prerequisite: [null,Validators.required],
+         courseImage:[null,Validators.required]
         //  courseImage:[null,Validators.required]
         },
        
@@ -37,8 +38,9 @@ export class MyCoursesComponent implements OnInit {
   d= Date.now
   selectFile(event:any)
   {
-    const file:File = event.target.files[0];
-    this.sendFile=file
+    // const file:File = event.target.files[0];
+    // this.sendFile=file
+
     // if (file) {
 
     //   this.fileName = file.name;
@@ -59,15 +61,20 @@ export class MyCoursesComponent implements OnInit {
       //   console.log(data);
             
       // })
-   console.log(file);
-   
+  
+      if (event.target.files.length > 0) {
+        const file = event.target.files[0];
+        this.addCourseForm.patchValue({
+          courseImage:event.target.files[0]
+        });
+      } 
 
   
   }
 
   getCourseData(addCourseForm: any) {
     
-     // console.log(addCourseForm.value);
+     console.log(addCourseForm.value);
     
       // this._services.addCourse(addCourseForm.value).subscribe((data) => {
       //   console.log(data);
@@ -81,8 +88,10 @@ export class MyCoursesComponent implements OnInit {
       formData.append('prerequisite',`${this.addCourseForm.get('prerequisite').value}`);
       formData.append('token',`${localStorage.getItem('accessToken')}`);
       formData.append('username',`${localStorage.getItem('username')}`);
-      formData.append('courseImage',`${this.sendFile}`);
-      console.log(this.sendFile);
+      formData.append('courseImage',`${this.addCourseForm.get('courseImage').value}`);
+      
+console.log(this.addCourseForm.get('courseImage').value);
+
       
   //  console.log(this.addCourseForm.get('courseName').value);
   //   console.log(this.addCourseForm.get('courseImage').value);

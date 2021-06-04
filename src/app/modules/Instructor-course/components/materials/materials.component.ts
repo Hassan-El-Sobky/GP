@@ -25,6 +25,7 @@ export class MaterialsComponent implements OnInit {
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   id:any
   courseCode:any
+  lecturesArr:any
   constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService) {
     this.getCourse();
    }
@@ -42,7 +43,20 @@ export class MaterialsComponent implements OnInit {
       this._instServ.specificCourse(this.id).subscribe(res=>{
         console.log(res.course.courseCode);
         this.courseCode=res.course.courseCode
+     
+
+
+
       })
+     this._instServ.courseLectures(this.id).subscribe(res=>{
+
+
+       this.dataSource = new MatTableDataSource<any>(res.lectures);
+       this.dataSource.paginator = this.paginator;
+       this.dataSource.sort = this.sort;
+       console.log(res.lectures);
+     })
+   
     })
   }
   fileName = '';

@@ -12,8 +12,9 @@ import {MatTableModule} from '@angular/material/table';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { AssignmentsComponent } from './components/assignments/assignments.component';
 @NgModule({
-  declarations: [... InstructorCourseRoutingModule.componentsDeclarations, MyCoursesComponent, CoursedetailsComponent, MaterialsComponent ],
+  declarations: [... InstructorCourseRoutingModule.componentsDeclarations, MyCoursesComponent, CoursedetailsComponent, MaterialsComponent, AssignmentsComponent ],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,

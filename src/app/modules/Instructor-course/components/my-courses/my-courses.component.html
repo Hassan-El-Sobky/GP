@@ -46,7 +46,7 @@
       <div class="modal-body">
         <div class="m-auto">
 
-          <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData()">
+          <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData(addCourseForm)">
             <div class="form-group">
               <label for="">Course Name</label>
               <input [class.is-valid]="addCourseForm.get('courseName').errors == null && 
@@ -93,7 +93,7 @@
 
             <button type="submit" [disabled]='addCourseForm.invalid' class="btn btn-primary m-2">Submit</button>
 
-            <input type="file"  [disabled]='addCourseForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
+            <input type="file" formControlName="courseImage"  [disabled]='addCourseForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
               name="photo"/> 
        
             <label class="file-input__label" for="file-input">

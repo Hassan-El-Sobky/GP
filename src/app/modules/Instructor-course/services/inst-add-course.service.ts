@@ -29,4 +29,20 @@ export class InstAddCourseService {
   lecUpload(data:any):Observable<any>{
     return this._http.post("https://lmsapis.herokuapp.com/uploadLecture",data);
   }
+  
+  courseLectures(id:any):Observable<any>
+  {
+       return this._http.get(`http://lmsapis.herokuapp.com/allLectures/${id}`);
+  }
+  courseAssigments(id:any):Observable<any>
+  {
+    return this._http.get(`http://lmsapis.herokuapp.com/allAssigment/${id}`);
+  }
+  // https://lmsapis.herokuapp.com/uploadassigments
+
+  assUpload(data:any):Observable<any>
+  {
+    return this._http.post("https://lmsapis.herokuapp.com/uploadassigments",data);
+  }
+
 }
