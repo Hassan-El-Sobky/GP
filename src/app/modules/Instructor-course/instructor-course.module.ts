@@ -13,8 +13,9 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { AssignmentsComponent } from './components/assignments/assignments.component';
+import { CourseStudentsComponent } from './components/course-students/course-students.component';
 @NgModule({
-  declarations: [... InstructorCourseRoutingModule.componentsDeclarations, MyCoursesComponent, CoursedetailsComponent, MaterialsComponent, AssignmentsComponent ],
+  declarations: [... InstructorCourseRoutingModule.componentsDeclarations, MyCoursesComponent, CoursedetailsComponent, MaterialsComponent, AssignmentsComponent, CourseStudentsComponent ],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,

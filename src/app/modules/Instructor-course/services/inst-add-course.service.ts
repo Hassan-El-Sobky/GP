@@ -44,5 +44,15 @@ export class InstAddCourseService {
   {
     return this._http.post("https://lmsapis.herokuapp.com/uploadassigments",data);
   }
+  
+  coursesAssignment(id:any):Observable<any>
+  {
+    return this._http.get(`http://lmsapis.herokuapp.com/allAssigment/${id}`);
+  }
+
+  courseStudent(id:any):Observable<any>
+  {
+     return this._http.get(`https://lmsapis.herokuapp.com/courseStudents/${id}`);
+  }
 
 }

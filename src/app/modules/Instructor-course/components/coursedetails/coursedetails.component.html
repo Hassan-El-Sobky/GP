@@ -42,6 +42,18 @@
                     <a [routerLink]='"/student/quizzes"' class="btn btn-primary">Course info</a>
                 </div>
             </div>
+
+            <div class="col-md-3 my-2">
+                <div class="course-item card text-center">
+                    <img src="" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Students</h5>
+                    </div>
+                    <a [routerLink]="['/instructor','courseStudents',id]" class="btn btn-primary">Course info</a>
+                </div>
+            </div>
+
+
         </div>
     </div>
 </section>

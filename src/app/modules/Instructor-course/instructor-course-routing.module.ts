@@ -7,12 +7,14 @@ import { CoursedetailsComponent } from './components/coursedetails/coursedetails
 import { MaterialsComponent } from './components/materials/materials.component';
 import { MyCoursesComponent } from './components/my-courses/my-courses.component';
 import { AssignmentsComponent } from './components/assignments/assignments.component';
+import { CourseStudentsComponent } from './components/course-students/course-students.component';
 const routes: Routes = [
   {path:'addCourse',component:AddCourseComponent},
   {path:'myCourse',component:MyCoursesComponent},
   {path:'courseDetails/:id',component:CoursedetailsComponent},
   {path:'courseMaterials/:id',component:MaterialsComponent},
-  {path:'courseAssignments/:id',component:AssignmentsComponent}
+  {path:'courseAssignments/:id',component:AssignmentsComponent},
+  {path:'courseStudents/:id',component:CourseStudentsComponent}
 ];
 
 @NgModule({
