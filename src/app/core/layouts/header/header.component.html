@@ -7,16 +7,9 @@
     <span class="comp">Learing Gate</span>
     <span class="example-spacer"></span>
         <div class="home">
-            <a  [routerLink]="['/courses/home']" >Home</a>
+            <a class="nav-link"  [routerLink]="['/courses/home']" >Home</a>
         </div>
 
-    <div class="psearch ">
-        <div class="icon">
-            <i class="fas fa-search "></i>
-        </div>
-        <input class="search input-field" placeholder="Search">
-
-    </div>
     <div class="not-icon">
         <div class="noti-fic">
             <i (click)="notiExpanded()" class="far fa-bell "></i>
@@ -41,6 +34,9 @@
         </div>
 
     </div>
+    
+
+
     <div class="user">
         <h6 (click)="expaded()">{{userName}}</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
@@ -69,13 +65,16 @@
             </div>
         </div>
     </div>
+    
+    <div class="psearch ">
+     
+        <input class="search input-field form-control " placeholder="Search">
+        <div class="icon">
+            <i class="fas fa-search "></i>
+        </div>
 
-
-
-    <div class="u-img " style="background-image: url(../../assets/photo.jpeg);">
-        <!--<img [src]="[imgSrc]" alt="ss">-->
     </div>
-    <div>
-        <i style="margin-left: 15px;" class="fas fa-cog"></i>
-    </div>
+
+
+
 </mat-toolbar>

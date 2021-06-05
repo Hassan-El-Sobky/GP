@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
+import {Location} from '@angular/common';
 import { DeletedialogComponent } from 'src/app/modules/admin-student/components/deletedialog/deletedialog.component';
 import { AdminStudentsService } from '../../services/admin-students.service';
 
@@ -17,12 +18,16 @@ export class StudentsComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   
-  constructor(private _adminStu:AdminStudentsService,public dialog: MatDialog) { }
+  constructor(private _adminStu:AdminStudentsService,public dialog: MatDialog,private _location: Location) { }
 
   ngOnInit(): void {
     this.getAllStu();
   }
 
+  backClicked() {
+  
+    this._location.back();
+  }
 
 
   getAllStu()

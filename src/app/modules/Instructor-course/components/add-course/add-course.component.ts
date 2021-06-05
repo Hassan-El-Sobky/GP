@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import {Location} from '@angular/common';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 
 @Component({
@@ -15,7 +16,7 @@ export class AddCourseComponent implements OnInit {
   name: any;
 
 
-  constructor(private _addCourse: InstAddCourseService, public dialog: MatDialog) {
+  constructor(private _addCourse: InstAddCourseService, public dialog: MatDialog,private _location: Location) {
     this.form();
   }
 
@@ -30,6 +31,11 @@ export class AddCourseComponent implements OnInit {
       });
     }
   }
+  
+ backClicked() {
+  this._location.back();
+}
+
 
   form() {
     this.addCourseForm = new FormGroup({

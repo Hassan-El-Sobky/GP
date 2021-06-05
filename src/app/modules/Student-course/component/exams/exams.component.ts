@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Location} from '@angular/common';
 
 export interface PeriodicElement {
   name: string;
@@ -21,8 +22,10 @@ export class ExamsComponent implements OnInit {
   displayedColumns: string[] = [ 'name', 'Action'];
   dataSource = ELEMENT_DATA;
  
-  constructor() { }
-
+  constructor(private _location: Location) { }
+  backClicked() {
+    this._location.back();
+  }
   ngOnInit(): void {
   }
 

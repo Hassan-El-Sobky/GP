@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import {Location} from '@angular/common';
+
 import { AvailableCoursesService } from '../../Services/available-courses.service';
 
 @Component({
@@ -14,7 +16,7 @@ export class HomeComponent implements OnInit {
   num: any;
   courseDeafult:string='assets/images/course.jpg';
   student=localStorage.getItem('role');
-  constructor(private _allCourses: AvailableCoursesService , private _router:Router) { }
+  constructor(private _allCourses: AvailableCoursesService , private _router:Router,private _location: Location) { }
   getAllAvailabel()
   {
     this._allCourses.getAllAvailabeCourses().subscribe((data) => {
@@ -27,6 +29,9 @@ export class HomeComponent implements OnInit {
      
    })
   
+  }
+  backClicked() {
+    this._location.back();
   }
 
   getAll()

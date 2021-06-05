@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AdminInstructorsService } from '../../services/admin-instructors.service';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
+import {Location} from '@angular/common';
 import {MatTableDataSource} from '@angular/material/table';
 @Component({
   selector: 'app-instructors',
@@ -10,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class InstructorsComponent implements OnInit {
 
-  constructor(private _adminIns:AdminInstructorsService) { }
+  constructor(private _adminIns:AdminInstructorsService,private _location: Location) { }
   displayedColumns: string[] = ['name','username', 'email','Gender','action','view-detials'];
   dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -20,6 +21,9 @@ export class InstructorsComponent implements OnInit {
     this.getInst();
   }
 
+ backClicked() {
+    this._location.back();
+  }
 
 
   getInst()

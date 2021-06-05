@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-coursedetails',
@@ -10,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CoursedetailsComponent implements OnInit {
   booksicon="assets/images/booksicon.jgp"
   id:any
-  constructor(private _activated:ActivatedRoute) { 
+  constructor(private _activated:ActivatedRoute,private _location: Location) { 
     this.getId();
   }
 
@@ -23,5 +23,9 @@ export class CoursedetailsComponent implements OnInit {
       
     });
   }
+  backClicked() {
+    this._location.back();
+  }
+
  
 }
