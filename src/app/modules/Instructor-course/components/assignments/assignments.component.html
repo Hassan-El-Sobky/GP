@@ -1,0 +1,142 @@
+<section class="userList">
+    <div class="ss">
+      <div class="float-end my-2 mr-4" >
+        <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
+          class="btn btn-primary float-end">Add</button>
+      </div>
+      <div class="tableContainer">
+        <div class="mainContainer">
+  
+          <div class="tableContent">
+            <div class="inputTableSearch">
+              <h6>Course List</h6>
+              <div class="form-group">
+                <!-- <input placeholder=" Search..." #searchName (change)=""> -->
+                <input placeholder=" Search..." #searchName>
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+            <div class="tables">
+              <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                  <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef>title</th>
+                    <td mat-cell *matCellDef="let element"> {{element?.title}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="desc">
+                    <th mat-header-cell *matHeaderCellDef > description </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.description}} </td>
+                  </ng-container>
+  
+  
+                  <ng-container matColumnDef="url">
+                    <th mat-header-cell *matHeaderCellDef> Download Assignments </th>
+                    <td mat-cell *matCellDef="let element"> <a class="text-dark" href="{{element?.fileUrl}}" download><i class="fas fa-download"></i></a> </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="action">
+                    <th mat-header-cell *matHeaderCellDef> action </th>
+                    <td mat-cell *matCellDef="let element"> <i  class="fas fa-trash-alt"></i> </td>
+                  </ng-container>
+  
+            
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[10,15,20]"
+                 showFirstLastButtons>
+              </mat-paginator>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+    
+    </div>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData()">
+            <div class="form-group">
+              <label for="">Title</label>
+              <input [class.is-valid]="addCourseForm.get('title').errors == null && 
+              addCourseForm.get('title').touched" type="text" formControlName="title" class="form-control"
+                name="title" placeholder="Title">
+              <span *ngIf="addCourseForm.get('title').errors != null && addCourseForm.get('title').touched"
+                class="py-2 text-danger ">Title is Invalid</span>
+  
+            </div>
+            
+            <div class="form-group">
+              <label for="">Assignment Code</label>
+              <input [class.is-valid]="addCourseForm.get('asscode').errors == null && 
+              addCourseForm.get('asscode').touched" type="text" formControlName="asscode" class="form-control"
+                name="title" placeholder="#1">
+              <span *ngIf="addCourseForm.get('asscode').errors != null && addCourseForm.get('asscode').touched"
+                class="py-2 text-danger ">AssignmentCode is Invalid</span>
+
+            </div>
+
+
+
+            <div class="form-group">
+              <label for="">Upload Date:</label>
+              <input [class.is-valid]="addCourseForm.get('uploadDate').errors == null && 
+              addCourseForm.get('uploadDate').touched" type="date" formControlName="uploadDate"
+                class="form-control" name="uploadDate">
+              <span
+                *ngIf="addCourseForm.get('uploadDate').errors != null && addCourseForm.get('uploadDate').touched"
+                class="py-2 text-danger ">uploadDate Invalid</span>
+
+            </div>
+
+            <div class="form-group">
+              <label for="">Description:</label>
+              <textarea [class.is-valid]="addCourseForm.get('description').errors == null && 
+              addCourseForm.get('description').touched" type="text" formControlName="description"
+                class="form-control" name="description" placeholder="Description"></textarea>
+
+              <span
+                *ngIf="addCourseForm.get('description').errors != null && addCourseForm.get('description').touched"
+                class="py-2 text-danger ">Description is Invalid</span>
+            </div>
+
+           <div class="my-2">
+                <label for="file-input" >Upload Lecture</label>
+                <br>
+            <input type="file" formControlName="courseImage"  [disabled]='addCourseForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
+            name="photo"/> 
+     
+          <label class="file-input__label" for="file-input">
+
+            <span>Upload</span></label>
+           </div>
+   
+            <button type="submit" [disabled]='addCourseForm.invalid' class="btn btn-primary m-2">Submit</button>
+
+      
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+  

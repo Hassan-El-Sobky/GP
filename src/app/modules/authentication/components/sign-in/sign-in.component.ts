@@ -13,6 +13,7 @@ import { GeneralService } from 'src/app/services/general.service';
 })
 export class SignInComponent implements OnInit {
   logoImage: string ='/assets/logo.png';
+  student: string ='/assets/sect1.svg';
   status: any;
   constructor(private _authentication:AuthenticationService,
     private tokenService: TokenService,

@@ -90,6 +90,7 @@
                     class="py-2 text-danger ">Course Name is Invalid</span>
                 </div>
 
+<<<<<<< HEAD
                 <input type="file" [disabled]='addCourseForm.invalid' (change)='selectFile($event)' name="file-input"
                   accept="images/*" id="file-input" class="file-input__input" name="photo" />
 
@@ -100,6 +101,22 @@
                 <button type="submit" (click)='getCourseData()' [disabled]='addCourseForm.invalid'
                   class="btn btn-primary m-2">Submit</button>
 
+=======
+           <div class="my-2">
+                <label for="file-input" >Upload CoursePhoto</label>
+                <br>
+            <input type="file" formControlName="courseImage"  [disabled]='addCourseForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
+            name="photo"/> 
+     
+          <label class="file-input__label" for="file-input">
+
+            <span>Upload</span></label>
+           </div>
+   
+            <button type="submit" [disabled]='addCourseForm.invalid' class="btn btn-primary m-2">Submit</button>
+
+      
+>>>>>>> c6654f841b2f182ad02aeeced4e112bd38147baf
 
 
               </form>

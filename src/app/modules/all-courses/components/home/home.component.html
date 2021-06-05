@@ -1,19 +1,19 @@
 <div class="container">
- <div class="row">
-  <div *ngFor="let x of allCoursesArr| 
-  paginate: { 
-  itemsPerPage:4,
-  currentPage: page,
-  totalItems: totalLength 
-}" 
-  
-  class="col-md-3 mt-3">
+ 
   <input class="form-control m-2 serch float-end" placeholder=" Search..." #searchName (keyup)="courseSearch(searchName.value)">
   <div class="clearfix"></div>
   <div class="row ">
 
   
-  <div *ngFor="let x of allCoursesArr" class="col-md-3 mt-3">
+    <div class="row">
+      <div *ngFor="let x of allCoursesArr| 
+      paginate: { 
+      itemsPerPage:8,
+      currentPage: page,
+      totalItems: totalLength 
+    }" 
+      
+      class="col-md-3 mt-3">
   <div  class="card " style="width: 18rem;">
     <img [src]="courseDeafult" class="card-img-top" alt="...">
     <div class="card-body">
