@@ -1,119 +1,121 @@
 <div class="container">
   <div class="row">
-    <div class="float-end my-2 mr-4" >
+    <div class="float-end my-2 mr-4">
       <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
         class="btn btn-primary float-end">Add</button>
     </div>
-  
 
-     <div *ngFor="let x of courses | 
+
+    <div *ngFor="let x of courses | 
      paginate: { 
      itemsPerPage:4,
      currentPage: page,
      totalItems: totalLength 
-   }" 
-    class="col-md-3 mt-3">
-     <div  class="card " style="width: 18rem;">
-       <img src="{{x?.imageUrl}}" class="card-img-top" alt="...">
-       <div class="card-body">
-         <h2>{{x?.courseName}} </h2>
-         <p class="card-text">{{x?.courseDepartment}}</p>
-         <p>{{x?.prerequisite}}</p>
-     <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
-       </div>
-
-
-  </div>
-  </div>
-
-  <div style="display: flex; justify-content: center; align-items: center;">
-    <pagination-controls  (pageChange)="page = $event"></pagination-controls>
-  
-  
-  </div>
-
-
-
-
-<!-- Modal -->
-<div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="m-auto">
-
-          <form [formGroup]='addCourseForm' (ngSubmit)="getCourseData()">
-            <div class="form-group">
-              <label for="">Course Name</label>
-              <input [class.is-valid]="addCourseForm.get('courseName').errors == null && 
-              addCourseForm.get('courseName').touched" type="text" formControlName="courseName" class="form-control"
-                name="courseName">
-              <span *ngIf="addCourseForm.get('courseName').errors != null && addCourseForm.get('courseName').touched"
-                class="py-2 text-danger ">Course Name is Invalid</span>
-
-            </div>
-
-            <div class="form-group">
-              <label for="">Course Code :</label>
-              <input [class.is-valid]="addCourseForm.get('courseCode').errors == null && 
-              addCourseForm.get('courseCode').touched" type="text" formControlName="courseCode" class="form-control"
-                name="courseCode">
-              <span *ngIf="addCourseForm.get('courseCode').errors != null && addCourseForm.get('courseCode').touched"
-                class="py-2 text-danger ">Course Name is Invalid</span>
-
-            </div>
-
-            <div class="form-group">
-              <label for="">Course Department:</label>
-              <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
-              addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
-                class="form-control" name="courseDepartment">
-              <span
-                *ngIf="addCourseForm.get('courseDepartment').errors != null && addCourseForm.get('courseDepartment').touched"
-                class="py-2 text-danger ">Course Name is Invalid</span>
-
-            </div>
-
-            <div class="form-group">
-              <label for="">Prerequisite:</label>
-              <input [class.is-valid]="addCourseForm.get('prerequisite').errors == null && 
-              addCourseForm.get('prerequisite').touched" type="text" formControlName="prerequisite"
-                class="form-control" name="prerequisite">
-
-              <span
-                *ngIf="addCourseForm.get('prerequisite').errors != null && addCourseForm.get('prerequisite').touched"
-                class="py-2 text-danger ">Course Name is Invalid</span>
-            </div>
-
-
-
-            <button type="submit" [disabled]='addCourseForm.invalid' class="btn btn-primary m-2">Submit</button>
-
-            <input type="file"  [disabled]='addCourseForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
-              name="photo"/> 
-       
-            <label class="file-input__label" for="file-input">
-
-              <span>Upload</span></label>
-
-          </form>
-
-
-
-
+   }" class="col-md-3 mt-3">
+      <div class="card " style="width: 18rem;">
+        <img src="{{x?.imageUrl}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2>{{x?.courseName}} </h2>
+          <p class="card-text">{{x?.courseDepartment}}</p>
+          <p>{{x?.prerequisite}}</p>
+          <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+
       </div>
     </div>
-   
-    
-   
-   </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="m-auto">
+
+              <form [formGroup]='addCourseForm'>
+                <div class="form-group">
+                  <label for="">Course Name</label>
+                  <input [class.is-valid]="addCourseForm.get('courseName').errors == null && 
+              addCourseForm.get('courseName').touched" type="text" formControlName="courseName" class="form-control"
+                    name="courseName">
+                  <span
+                    *ngIf="addCourseForm.get('courseName').errors != null && addCourseForm.get('courseName').touched"
+                    class="py-2 text-danger ">Course Name is Invalid</span>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="">Course Code :</label>
+                  <input [class.is-valid]="addCourseForm.get('courseCode').errors == null && 
+              addCourseForm.get('courseCode').touched" type="text" formControlName="courseCode" class="form-control"
+                    name="courseCode">
+                  <span
+                    *ngIf="addCourseForm.get('courseCode').errors != null && addCourseForm.get('courseCode').touched"
+                    class="py-2 text-danger ">Course Name is Invalid</span>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="">Course Department:</label>
+                  <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+              addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                    class="form-control" name="courseDepartment">
+                  <span
+                    *ngIf="addCourseForm.get('courseDepartment').errors != null && addCourseForm.get('courseDepartment').touched"
+                    class="py-2 text-danger ">Course Name is Invalid</span>
+
+                </div>
+
+                <div class="form-group">
+                  <label for="">Prerequisite:</label>
+                  <input [class.is-valid]="addCourseForm.get('prerequisite').errors == null && 
+              addCourseForm.get('prerequisite').touched" type="text" formControlName="prerequisite"
+                    class="form-control" name="prerequisite">
+
+                  <span
+                    *ngIf="addCourseForm.get('prerequisite').errors != null && addCourseForm.get('prerequisite').touched"
+                    class="py-2 text-danger ">Course Name is Invalid</span>
+                </div>
+
+                <input type="file" [disabled]='addCourseForm.invalid' (change)='selectFile($event)' name="file-input"
+                  accept="images/*" id="file-input" class="file-input__input" name="photo" />
+
+                <label class="file-input__label" for="file-input">
+
+                  <span>Upload</span></label>
+
+                <button type="submit" (click)='getCourseData()' [disabled]='addCourseForm.invalid'
+                  class="btn btn-primary m-2">Submit</button>
+
+
+
+              </form>
+
+
+
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
   </div>
-</div>
