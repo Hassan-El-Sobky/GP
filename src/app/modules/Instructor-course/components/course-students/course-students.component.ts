@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 import {MatTableDataSource} from '@angular/material/table';
 @Component({
@@ -16,7 +17,7 @@ export class CourseStudentsComponent implements OnInit {
   addCourseForm: any
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService) {
+  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private _location: Location) {
     this.getCourse()
    }
 
@@ -32,6 +33,10 @@ export class CourseStudentsComponent implements OnInit {
      this.getStudents();
     })
   }
+  backClicked() {
+    this._location.back();
+  }
+
  
   getStudents()
   {

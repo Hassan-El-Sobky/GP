@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row my-5 m-auto  ">
 
-            <div *ngFor="let  arr of stuCoursesArr | 
+            <div *ngFor="let  x of stuCoursesArr | 
             paginate: { 
             itemsPerPage:4,
             currentPage: page,
@@ -10,7 +10,7 @@
           }"
           class="col-md-3 my-2 ">
                 
-                <div *ngFor="let x of arr" class="course-item card text-center ">
+                <div  class="course-item card text-center ">
                     <img src="../../../../../assets/images/sq.jpg" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class=" card-title">{{x?.courseName}}</h5>

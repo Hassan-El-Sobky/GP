@@ -8,6 +8,7 @@ import { StudentCoursesService } from '../../../Student-course/services/student-
 import { ActivatedRoute } from '@angular/router';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 import { FormBuilder, Validators } from '@angular/forms';
+import {Location} from '@angular/common';
 
 
 
@@ -27,7 +28,7 @@ export class MaterialsComponent implements OnInit {
   id:any
   courseCode:any
   lecturesArr:any
-  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder) {
+  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder,private _location: Location) {
     this.getCourse();
 
     this.addCourseForm = this.fb.group({
@@ -39,7 +40,10 @@ export class MaterialsComponent implements OnInit {
     },
    
     )
-   }
+  }
+  backClicked() {
+    this._location.back();
+  }
   
 
   ngOnInit(): void {

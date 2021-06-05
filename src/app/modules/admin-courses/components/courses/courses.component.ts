@@ -4,6 +4,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { AdminCoursesService } from '../../services/admin-courses.service';
+import {Location} from '@angular/common';
 import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 
 @Component({
@@ -19,7 +20,7 @@ export class CoursesComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  constructor(private _allCourses:AdminCoursesService,public dialog: MatDialog) {
+  constructor(private _allCourses:AdminCoursesService,public dialog: MatDialog,private _location: Location) {
     // this.dataSource = new MatTableDataSource<any>();
     // this.dataSource.paginator = this.paginator;
     // this.dataSource.sort = this.sort;
@@ -27,7 +28,11 @@ export class CoursesComponent implements OnInit {
 
 
     
-   }
+  }
+  backClicked() {
+    this._location.back();
+  }
+
 
    getAllCourses()
    {

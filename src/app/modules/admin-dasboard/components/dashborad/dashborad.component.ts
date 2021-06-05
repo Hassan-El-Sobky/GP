@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminDashboradService } from '../../services/admin-dashborad.service'
 
+
 @Component({
   selector: 'app-dashborad',
   templateUrl: './dashborad.component.html',
@@ -20,8 +21,8 @@ export class DashboradComponent implements OnInit {
     this.getAllInstructors();
     this.getAllCourse();
     this.getAllStudents();
-
   }
+
 
   getAllInstructors() {
     this._adminServices.getAllInstructors().subscribe((data) => {

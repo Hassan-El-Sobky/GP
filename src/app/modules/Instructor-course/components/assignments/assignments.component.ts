@@ -3,6 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
+import {Location} from '@angular/common';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
@@ -21,7 +22,7 @@ export class AssignmentsComponent implements OnInit {
   id:any
    uploadForm:any;
    addCourseForm:any
-  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder) {
+  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder,private _location: Location) {
     this.getCourse();
     this.addCourseForm = this.fb.group({
       title:  [null,Validators.required],
@@ -33,7 +34,10 @@ export class AssignmentsComponent implements OnInit {
     },
    
     )
-   }
+  }
+  backClicked() {
+    this._location.back();
+  }
    filex:any
    selectFile(event:any)
    {

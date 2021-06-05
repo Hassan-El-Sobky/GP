@@ -1,5 +1,5 @@
-$color: black;
-$bgColor: white;
+$color: white;
+$bgColor: black;
 
 * {
     box-sizing: border-box;
@@ -8,6 +8,8 @@ $bgColor: white;
 mat-toolbar {
     background-color: $bgColor;
     color: $color;
+    width: 100%;
+    height: 90px;
 }
 mat-toolbar i {
     margin-right: 25px;
@@ -15,6 +17,11 @@ mat-toolbar i {
 }
 mat-icon {
     color: #abaaa9;
+}
+.home a 
+{
+    color:white;
+    cursor: pointer;
 }
 
 .example-spacer {
@@ -26,25 +33,26 @@ mat-icon {
     display: flex;
     justify-content: center;
 }
-input {
-    border-color: $color;
-    border-radius: 0px 15px 0px 15px;
-    padding: 0px 10px;
-    background-color: $bgColor;
-    color: $color;
+input { 
+    padding: 5px 5px;
+    background-color: white;
+    color: white;
+    border-top:0px transparent ;
+    position: relative;
 }
 input:focus {
     outline: none;
 }
 .icon {
     background-color: transparent;
-    position: relative;
-    left: 90%;
+    color: black;
+    position: absolute;
+    right: 2%;
 }
 .icon i {
-    margin-top: 6px;
-    cursor: auto;
-    margin: auto;
+    margin:5px 5px;
+    cursor:auto ;
+ 
 }
 .u-img {
     padding: 20px;
@@ -56,7 +64,8 @@ img {
 }
 
 .user {
-    padding: 0pc 10px 0px 0px;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 2px;
     display: flex;
     color: $color;
     justify-content: center;
@@ -78,7 +87,7 @@ img {
     color: $color;
     position: absolute;
     top: 45px;
-    left: -40px;
+    left: 50px;
     z-index: 5;
 }
 .expanded .expanded-info {
@@ -99,19 +108,19 @@ img {
 .notification {
     height: 250px;
     width: 350px;
-    background-color: $bgColor;
+    background-color:$bgColor;
     color: $color;
     overflow-y: scroll;
     position: absolute;
     top: 45px;
-    right: 40px;
+    right: -70px;
     border: 5px solid $bgColor;
     font-size: 14px;
     padding: 15px;
     z-index: 5;
 }
 .notification-info {
-    background-color: #f2f2f2;
+    background-color:$bgColor;
     width: 150;
     margin: 10px 0;
     border-radius: 6px;
@@ -138,18 +147,19 @@ img {
 }
 ::-webkit-scrollbar {
     width: 4px;
-    background-color: white;
+    background-color: black;
 }
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px white;
+    -webkit-box-shadow: inset 0 0 6px black;
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: black;
+    background-color: white;
     border-radius: 10px;
 }
 .notification-info:hover {
-    background-color: #fe9d2b;
+    background-color: $color;
+    color: $bgColor;
 }
 .online {
     background-color: green;

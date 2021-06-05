@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import {MatPaginator} from '@angular/material/paginator';
-import {MatSort} from '@angular/material/sort';
+import { MatSort } from '@angular/material/sort';
+import {Location} from '@angular/common';
 import {MatTableDataSource} from '@angular/material/table';
 import { AdminCoursesService } from 'src/app/modules/admin-courses/services/admin-courses.service';
 import { StudentCoursesService } from '../../services/student-courses.service';
@@ -22,12 +23,16 @@ export class AssignmentsComponent implements OnInit {
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  constructor(private _allCourses:AdminCoursesService,private _studentCourseS:StudentCoursesService) {
+  constructor(private _allCourses:AdminCoursesService,private _studentCourseS:StudentCoursesService,private _location: Location) {
     this.getAllCourses()
    }
 
   ngOnInit(): void {
   }
+  backClicked() {
+    this._location.back();
+  }
+
 
   getAllCourses()
    {

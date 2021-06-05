@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import {Location} from '@angular/common';
+
 import { AdmiProfileService } from '../../services/admin-profile.service';
 
 
@@ -11,7 +13,7 @@ import { AdmiProfileService } from '../../services/admin-profile.service';
 export class AddAdminComponent implements OnInit {
   defaultImage: string = '/assets/images/squared.jpg';
   flag: any;
-  constructor(private _addAdmin:AdmiProfileService) {
+  constructor(private _addAdmin:AdmiProfileService,private _location: Location) {
     this.flag="male"
    }
 
@@ -36,6 +38,10 @@ export class AddAdminComponent implements OnInit {
    console.log(data);
    
   }
+  backClicked() {
+    this._location.back();
+  }
+
   selectFile(event:any)
   {
      if(event.target.files)
