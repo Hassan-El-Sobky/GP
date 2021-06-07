@@ -22,4 +22,14 @@ export class StudentCoursesService {
   {
     return this._http.post("https://lmsapis.herokuapp.com/uploadassigmentsSolution",data);
   }
+
+  getLectures(id:any):Observable<any>
+  {
+     return this._http.get(`http://lmsapis.herokuapp.com/allLectures/${id}`);
+  }
+
+  getassignments(id:any):Observable<any>
+  {
+     return this._http.get(`http://lmsapis.herokuapp.com/allAssigment/${id}`);
+  }
 }
