@@ -32,4 +32,9 @@ export class StudentCoursesService {
   {
      return this._http.get(`http://lmsapis.herokuapp.com/allAssigment/${id}`);
   }
+  
+  specificCourse(id:any):Observable<any>
+  {
+         return this._http.get(`https://lmsapis.herokuapp.com/course/${id}`);
+  }
 }

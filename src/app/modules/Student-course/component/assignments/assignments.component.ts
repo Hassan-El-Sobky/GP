@@ -18,10 +18,10 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AssignmentsComponent implements OnInit {
 
-  displayedColumns: string[] = [ 'cCode', 'prerequisite','courseDepartment','status'];
+  displayedColumns: string[] = [ 'cCode', 'prerequisite','courseDepartment','status','upload'];
   defaultImage: string = '/assets/images/default image.png';
   dataSource:any;
-
+  courseCode:any
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   constructor(private _activated:ActivatedRoute,private _allCourses:AdminCoursesService,private _studentCourseS:StudentCoursesService,private _location: Location) {
@@ -40,7 +40,11 @@ id:any
     this._activated.paramMap.subscribe(params => {
       this.id = params.get('id');
       console.log(this.id);  
-
+    this._studentCourseS.specificCourse(this.id).subscribe(res=>{
+            this.courseCode=res.course.courseCode
+            console.log(this.courseCode);
+            
+    })
 
      this._studentCourseS.getassignments(this.id).subscribe(res=>{
         this.dataSource = new MatTableDataSource<any>(res.assigments);
@@ -77,4 +81,53 @@ id:any
   //       })
 
   // } }
+fileName:any 
+  selectFile(event:any,code:any)
+  {
+    const file:File = event.target.files[0];
+    if (file) {
+
+      this.fileName = file.name;
+      const formData = new FormData();
+      
+      console.log(code);
+      console.log(file);
+      
+      
+       formData.append("username",`${localStorage.getItem('username')}`);
+      formData.append("additionPoint",`No additon Point`);
+      formData.append("assigmentCode",code);
+      formData.append("token",`${localStorage.getItem('accessToken')}`);
+      formData.append("courseCode",`${this.courseCode}`);   
+      formData.append("assigmentSolutionFile",file);
+    
+      this._studentCourseS.uploadAss(formData).subscribe(res=>{
+
+        console.log(res);
+        
+      })
+
+      
+        
+
+   }
+          
+      //  const data={title:"test" , uploadDate:Date.now() , description:"Hiii" 
+      //  , courseCode:"L122", lectureCode:"1" , token:localStorage.getItem('accessToken') ,username:localStorage.getItem('username'),
+      //   lectureFile:x}
+      //   this._instServ.lecUpload(data).subscribe(res=>{
+      //     console.log(res);
+          
+      //   })
+     
+  }
+
+
+
+
+
+
+
+
+
 }
