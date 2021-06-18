@@ -38,4 +38,11 @@ export class AvailableCoursesService {
   {
          return this._Http.get(`https://lmsapis.herokuapp.com/course/${id}`);
   }
+
+  userProfile(id:any):Observable<any>
+  {
+    return this._Http.get(`http://lmsapis.herokuapp.com/userProfile/${id}`);
+  }
+
+  
 }

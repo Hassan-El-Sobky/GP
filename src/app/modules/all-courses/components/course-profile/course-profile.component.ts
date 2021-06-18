@@ -11,6 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class CourseProfileComponent implements OnInit {
   id: any
   course: any;
+  insName:any
   courseDeafult:string='assets/images/course.jpg';
   constructor(private _location: Location, private _courseData: AvailableCoursesService, private _activated: ActivatedRoute) {
     this.getCourseData()
@@ -21,11 +22,16 @@ export class CourseProfileComponent implements OnInit {
   {
     this._activated.paramMap.subscribe(params => {
       this.id = params.get('id');
-      console.log(this.id);
+   
       this._courseData.specificCourse(this.id).subscribe((data) => {
         this.course = data.course;
-        console.log(data);
-        
+        let insId=data.course.instructorId
+
+        this._courseData.userProfile(insId).subscribe(res=>{
+          this.insName=res.user.name
+         
+            
+        })
         
       })
       
