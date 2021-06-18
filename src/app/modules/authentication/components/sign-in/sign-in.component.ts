@@ -12,7 +12,7 @@ import { GeneralService } from 'src/app/services/general.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-  logoImage: string ='/assets/logo.png';
+  logoImage: string ='/assets/logo1.png';
   student: string ='/assets/sect1.svg';
   status: any;
   constructor(private _authentication:AuthenticationService,
