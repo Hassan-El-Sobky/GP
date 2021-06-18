@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AllCoursesRoutingModule } from './all-courses-routing.module';
 import {NgxPaginationModule} from 'ngx-pagination';
 
+
 @NgModule({
   declarations: [...AllCoursesRoutingModule.componentDeclration],
   imports: [

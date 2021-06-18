@@ -24,6 +24,7 @@
       <p>{{x?.prerequisite}}</p>
 
       <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="btn btn-primary">Register</a>
+      <a [routerLink]="['/courses/courseProfile',x._id]"  class="btn btn-primary m-2">profile</a>
     </div>
   </div>
 </div>

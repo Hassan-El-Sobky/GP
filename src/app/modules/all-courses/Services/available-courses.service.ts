@@ -34,4 +34,8 @@ export class AvailableCoursesService {
     return this._Http.get(`https://lmsapis.herokuapp.com/searchCourse/?coursename=${name}`);
   }
 
+  specificCourse(id:any):Observable<any>
+  {
+         return this._Http.get(`https://lmsapis.herokuapp.com/course/${id}`);
+  }
 }
