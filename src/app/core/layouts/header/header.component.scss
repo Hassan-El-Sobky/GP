@@ -1,5 +1,7 @@
-$color: white;
-$bgColor: black;
+
+$color: black;
+$bgColor:#fa8a0a;
+// $bgColor: #101820ff;
 
 * {
     box-sizing: border-box;
@@ -82,9 +84,9 @@ img {
     border-radius: 50%;
 }
 .expanded {
-    background-color: $bgColor;
+    background-color: #101820ff;
     width: 215px;
-    color: $color;
+    color: white;
     position: absolute;
     top: 45px;
     left: 50px;
@@ -105,20 +107,23 @@ img {
     cursor: pointer;
     margin-left: 30px;
 }
+
 .notification {
+   
     height: 250px;
     width: 350px;
-    background-color:$bgColor;
-    color: $color;
+    background-color:#101820ff;
+    color: white;
     overflow-y: scroll;
     position: absolute;
     top: 45px;
     right: -70px;
-    border: 5px solid $bgColor;
+    border: 5px solid #101820ff;
     font-size: 14px;
     padding: 15px;
     z-index: 5;
 }
+
 .notification-info {
     background-color:$bgColor;
     width: 150;
@@ -186,7 +191,7 @@ img {
 }
 
 .notifaction-no {
-    background-color: #fe9d2b;
+    background-color:white;
     position: absolute;
     top: 3px;
     left: 8px;

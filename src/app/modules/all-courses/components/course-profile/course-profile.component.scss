@@ -1,4 +1,4 @@
-
+@import url(../../../../../styles.scss);
 .card
 {
     overflow: hidden;
@@ -50,7 +50,5 @@ margin-left: 40px;
 }
 .card-text span
 {
-    font-weight: 500;
-    font-size: 14px;
     color:#fe9d2b ;
 }

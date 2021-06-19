@@ -24,6 +24,8 @@ export class CourseProfileComponent implements OnInit {
       this.id = params.get('id');
    
       this._courseData.specificCourse(this.id).subscribe((data) => {
+        console.log(data.course);
+        
         this.course = data.course;
         let insId=data.course.instructorId
 

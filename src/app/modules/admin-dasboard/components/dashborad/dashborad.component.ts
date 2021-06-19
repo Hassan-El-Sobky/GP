@@ -7,12 +7,15 @@ import { AdminDashboradService } from '../../services/admin-dashborad.service'
   templateUrl: './dashborad.component.html',
   styleUrls: ['./dashborad.component.scss']
 })
+
 export class DashboradComponent implements OnInit {
 
   data: any;
   numOfSutudents: any;
   numOfInstructors: any;
   numOfCourse: any;
+  chartOptions: any;
+
 
   constructor(private _adminServices: AdminDashboradService) {
 
@@ -28,6 +31,7 @@ export class DashboradComponent implements OnInit {
     this._adminServices.getAllInstructors().subscribe((data) => {
       this.numOfInstructors = data.numOfInstructors;
       this.charts();
+      // this.barChar();
     });
 
   }
@@ -35,6 +39,7 @@ export class DashboradComponent implements OnInit {
     this._adminServices.getAllcourses().subscribe((data) => {
       this.numOfCourse = data.numOfCourses;
       this.charts();
+      // this.barChar();
     });
 
   }
@@ -42,6 +47,7 @@ export class DashboradComponent implements OnInit {
     this._adminServices.getAllStudents().subscribe((data) => {
       this.numOfSutudents = data.numOfStudent;
       this.charts();
+      // this.barChar();
     });
 
   }
@@ -65,7 +71,63 @@ export class DashboradComponent implements OnInit {
           ]
         }]
     };
+    
   }
+  barChar() {
+    this.data = {
+      labels: ['Students', 'Courses', 'Instructors'],
+      datasets: [{
+        type: 'line',
+        label: 'Dataset 1',
+        borderColor: '#42A5F5',
+        borderWidth: 2,
+        fill: false,
+        data: [
+          this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
+      }, {
+        type: 'bar',
+        label: 'Dataset 2',
+        backgroundColor: '#66BB6A',
+        data: [
+          this.numOfSutudents, this.numOfCourse, this.numOfInstructors],
+        borderColor: 'white',
+        borderWidth: 2
+      }, {
+        type: 'bar',
+        label: 'Dataset 3',
+        backgroundColor: '#FFA726',
+        data: [
+          this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
+      }]
+    };
+    this.chartOptions = {
+      responsive: true,
+      title: {
+        display: true,
+        text: 'Combo Bar Line Chart'
+      },
+      tooltips: {
+        mode: 'index',
+        intersect: true
+      }
+    };
+
+    // this.config = this.configService.config;
+    // this.updateChartOptions();
+    // this.subscription = this.configService.configUpdate$.subscribe(config => {
+    //   this.config = config;
+    //   this.updateChartOptions();
+    // });
+  }
+
+  // updateChartOptions() {
+  //   if (this.config.dark)
+  //     this.applyDarkTheme();
+  //   else
+  //     this.applyLightTheme();
+  // }
+
+  
 
   ngOnInit(): void {
   }
