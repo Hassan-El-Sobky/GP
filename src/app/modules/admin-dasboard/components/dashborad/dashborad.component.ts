@@ -31,7 +31,7 @@ export class DashboradComponent implements OnInit {
     this._adminServices.getAllInstructors().subscribe((data) => {
       this.numOfInstructors = data.numOfInstructors;
       this.charts();
-      // this.barChar();
+      this.barChar();
     });
 
   }
@@ -39,7 +39,7 @@ export class DashboradComponent implements OnInit {
     this._adminServices.getAllcourses().subscribe((data) => {
       this.numOfCourse = data.numOfCourses;
       this.charts();
-      // this.barChar();
+     this.barChar();
     });
 
   }
@@ -47,7 +47,7 @@ export class DashboradComponent implements OnInit {
     this._adminServices.getAllStudents().subscribe((data) => {
       this.numOfSutudents = data.numOfStudent;
       this.charts();
-      // this.barChar();
+      this.barChar();
     });
 
   }
@@ -82,22 +82,19 @@ export class DashboradComponent implements OnInit {
         borderColor: '#42A5F5',
         borderWidth: 2,
         fill: false,
-        data: [
-          this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
+        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
       }, {
         type: 'bar',
         label: 'Dataset 2',
         backgroundColor: '#66BB6A',
-        data: [
-          this.numOfSutudents, this.numOfCourse, this.numOfInstructors],
+        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors],
         borderColor: 'white',
         borderWidth: 2
       }, {
         type: 'bar',
         label: 'Dataset 3',
         backgroundColor: '#FFA726',
-        data: [
-          this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
+        data: [ this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
       }]
     };
     this.chartOptions = {

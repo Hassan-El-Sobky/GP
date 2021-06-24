@@ -4,6 +4,8 @@ import {MatPaginator} from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {Location} from '@angular/common';
 import {MatTableDataSource} from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
+import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 @Component({
   selector: 'app-instructors',
   templateUrl: './instructors.component.html',
@@ -11,7 +13,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class InstructorsComponent implements OnInit {
 
-  constructor(private _adminIns:AdminInstructorsService,private _location: Location) { }
+  constructor(private _adminIns:AdminInstructorsService,private _location: Location,public dialog: MatDialog) { }
   displayedColumns: string[] = ['name','username', 'email','Gender','action','view-detials'];
   dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
@@ -24,6 +26,7 @@ export class InstructorsComponent implements OnInit {
  backClicked() {
     this._location.back();
   }
+  
 
 
   getInst()
@@ -35,6 +38,19 @@ export class InstructorsComponent implements OnInit {
       console.log(res.allInstructors);
       
     })
+  }
+  openDialog(id: any) {
+    const dialogRef = this.dialog.open(DeletedialogComponent, {
+      data: { i: id },
+      height: '180px',
+      width: '250px',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+
+      this.getInst();
+    });
+
   }
 
 }

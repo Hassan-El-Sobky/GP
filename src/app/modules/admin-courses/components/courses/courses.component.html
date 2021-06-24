@@ -17,7 +17,7 @@
               <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                   <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef > Coures Name </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize" > Coures Name </th>
                     <!-- <td mat-cell *matCellDef="let element"> {{element.guest.name}} </td> -->
                     <td mat-cell *matCellDef="let element">
                       <!-- <img *ngIf="element.guest?.photo != null" [src]="element.guest?.photo">
@@ -27,24 +27,24 @@
                   </ng-container>
   
                   <ng-container matColumnDef="cCode">
-                    <th mat-header-cell *matHeaderCellDef> Course Code</th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize"> Course Code</th>
                     <td mat-cell *matCellDef="let element"> {{element?.courseCode}} </td>
                   </ng-container>
   
                   <ng-container matColumnDef="prerequisite">
-                    <th mat-header-cell *matHeaderCellDef > Prerequisite </th>
-                    <td mat-cell *matCellDef="let element"> {{element?.prerequisite}} </td>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize" > Prerequisite </th>
+                    <td mat-cell *matCellDef="let element" > {{element?.prerequisite}} </td>
                   </ng-container>
 
 
                   <ng-container matColumnDef="courseDepartment">
-                    <th mat-header-cell *matHeaderCellDef> Department </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize"> Department </th>
                     <td mat-cell *matCellDef="let element"> {{element?.courseDepartment}} </td>
                   </ng-container>
 
 
                   <ng-container matColumnDef="status">
-                    <th mat-header-cell *matHeaderCellDef > Status </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize" > Status </th>
                     <td mat-cell *matCellDef="let element"> {{element?.state}} </td>
                   </ng-container>
                   
@@ -55,7 +55,7 @@
              
 
                   <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef> action </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize"> action </th>
                     <td mat-cell *matCellDef="let element"> <i (click)="openDialog(element._id)" class="fas fa-trash-alt"></i> </td>
                   </ng-container>
   

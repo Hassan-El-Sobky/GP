@@ -6,10 +6,10 @@ import { AdminInstrucotrsRoutingModule } from './admin-instrucotrs-routing.modul
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
-import { AddInstructorComponent } from './components/add-instructor/add-instructor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
-  declarations: [...AdminInstrucotrsRoutingModule.componentDecleartion, AddInstructorComponent],
+  declarations: [...AdminInstrucotrsRoutingModule.componentDecleartion],
   imports: [
     CommonModule,
     AdminInstrucotrsRoutingModule,

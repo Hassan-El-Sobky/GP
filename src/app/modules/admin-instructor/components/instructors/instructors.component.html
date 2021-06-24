@@ -12,13 +12,13 @@
                  <input placeholder=" Search..." #searchName>
                 <i class="fas fa-search"></i>
               </div>
-              <button  [routerLink]="['/adminIn','addInstructors']">Add Instructor</button>
+              <button  class="btn btn-secondary" [routerLink]="['/adminIn','addInstructors']">Add Instructor</button>
             </div>
             <div class="tables">
               <div class="mat-elevation-z8">
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
                   <ng-container matColumnDef="name">
-                    <th mat-header-cell *matHeaderCellDef > Name </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize" > Name </th>
                     <!-- <td mat-cell *matCellDef="let element"> {{element.guest.name}} </td> -->
                     <td mat-cell *matCellDef="let element">
                       <!-- <img *ngIf="element.guest?.photo != null" [src]="element.guest?.photo">
@@ -28,24 +28,24 @@
                   </ng-container>
   
                   <ng-container matColumnDef="username">
-                    <th mat-header-cell *matHeaderCellDef>User Name</th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize">User Name</th>
                     <td mat-cell *matCellDef="let element"> {{element?.username}} </td>
                   </ng-container>
   
                   <ng-container matColumnDef="email">
-                    <th mat-header-cell *matHeaderCellDef > Email </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize" > Email </th>
                     <td mat-cell *matCellDef="let element"> {{element?.email}} </td>
                   </ng-container>
                   <ng-container matColumnDef="Gender">
-                    <th mat-header-cell *matHeaderCellDef > Gender </th>
+                    <th mat-header-cell *matHeaderCellDef  class="text-capitalize"> Gender </th>
                     <td mat-cell *matCellDef="let element"> {{element?.gender}} </td>
                   </ng-container>
 
                   <ng-container matColumnDef="action">
-                    <th mat-header-cell *matHeaderCellDef> action </th>
+                    <th mat-header-cell *matHeaderCellDef class="text-capitalize"> actions </th>
                     <td mat-cell *matCellDef="let element"> 
                       <i class="far fa-edit"></i>
-                      <i class="fas fa-trash"></i>  
+                      <i (click)="openDialog(element._id)" class="fas fa-trash"></i>  
                     </td>
                   </ng-container>
   

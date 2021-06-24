@@ -7,7 +7,7 @@
         <div [class.userImageCLosed]='!menuStatus' class="userImage">
         </div>
         <div [class.user-dashboradClosed]='!menuStatus' class="user-dashborad text-center">
-            <p *ngIf="menuStatus">{{userName}}</p>
+            <p *ngIf="menuStatus" class="text-capitalize">{{userName}}</p>
 
             <i [class.dBlock]='!menuStatus' class="fas fa-cog"></i>
             <i [class.dBlock]='!menuStatus' class="fas fa-sign-out-alt logout"></i>

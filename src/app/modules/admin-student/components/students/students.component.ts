@@ -46,8 +46,8 @@ export class StudentsComponent implements OnInit {
     
    const dialogRef = this.dialog.open(DeletedialogComponent, {
      data:{i:id},
-     height: '200px',
-     width: '200px',
+     height: '180px',
+     width: '250px',
  });
         
  dialogRef.afterClosed().subscribe(result => {

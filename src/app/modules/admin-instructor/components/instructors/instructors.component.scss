@@ -96,7 +96,7 @@ h6
     width: 240px;
     padding: 40x;
     border-radius: 5px;
-    color: #1111;
+    color: #000000;
     height: 30px;
 }
 .inputTableSearch input:focus
@@ -140,7 +140,7 @@ tr td
     color: $tabletextColor;
     height: 70px;
 }
-button
+.tables button
 {
     background-color: #38b9DD;
     border: none;
@@ -149,7 +149,7 @@ button
     border-radius: 10px;
     color: #fff;
 }
-mat-paginator
+.mat-paginator
 {
     background-color: $tableContainerBgColor;
     color: #111;
@@ -198,4 +198,10 @@ tr td i:hover
     color: #FE9D2B;
    transform: rotate(25deg);
   
+}
+
+th
+{
+    font-size: 18px;
+
 }

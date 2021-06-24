@@ -7,7 +7,7 @@
     <span class="comp">Learing Gate</span>
     <span class="example-spacer"></span>
         <div class="home">
-            <a class="nav-link"  [routerLink]="['/courses/home']" >Home</a>
+            <a class="nav-link"   [routerLink]="['/courses/home']" >Home</a>
         </div>
 
     <div class="not-icon">
@@ -38,7 +38,7 @@
 
 
     <div class="user">
-        <h6 (click)="expaded()">{{userName}}</h6>
+        <h6 (click)="expaded()" class="text-capitalize">{{userName}}</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
             <div class="expanded-info">
