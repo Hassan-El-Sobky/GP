@@ -1,0 +1,67 @@
+<form [formGroup]="exam"  class="container mt-3"  (ngSubmit)="onSubmit(exam)">
+    <div class="row justify-content-center">
+    <!---Survey Section -->
+    <div formArrayName="sections">
+        <div class="container border mb-4 p-3" *ngFor="let section of getSections(exam); let i = index">
+            <div class="ui raised segments" [formGroupName]="i">
+                <h4 class="ui header">Questions</h4>      
+                <!-- Question segment -->
+                <!---Survey Section -->
+<hr>
+<div class="container">
+<div class="row">
+    <div class="col-md-12">
+        <div class="question-container" formArrayName="questions">
+            <div [formGroupName]="j" *ngFor="let question of getQuestions(section); let j = index">
+                <h4>Question {{j+ 1}}</h4>
+                <input class="form-control"  type="text" placeholder="Untitled Question" formControlName="question">
+
+<hr>
+<a class="btn btn-primary float-end my-2" (click)="add(i,j)">Add Option</a>
+<div class="clearfix"></div>
+                <!-- Option Addation -->
+                <div formArrayName="answer">
+                    <div [formGroupName]="k" *ngFor="let option of getOptions(question); let k=index">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input class="form-control"  type="text" placeholder="Option 1" formControlName="option">
+                            </div>
+                            <div class="col-md-4">
+                                <select class="form-control" value="true" name="" id="" formControlName="correct">
+                                    <option  value="true">True</option>
+                                    <option value="false">False</option>
+                                </select>
+                            </div>
+                                  
+                    <div class="col-md-4">
+                        <span *ngIf = "getOptions(question).length > 1" class="btn btn-danger btn-sm" (click) = "removeOption(i,j)">Remove Option</span>
+                    </div>
+                        </div>
+                
+                    </div>
+   
+     
+                    <!-- End Option Addition -->
+                    <!-- Option Addtion -->
+                    <!-- End Option Addition -->
+
+                </div><br>
+            
+            <span *ngIf = "getQuestions(section).length > 1" class="btn btn-danger btn-sm" (click) = "removeQuestion(i)">Remove Question</span>
+            </div><br>
+        </div>
+        <!-- End Question -->
+    </div>
+</div>
+<a class="btn btn-primary" (click)="addQuestion(i)">Add Question</a>
+</div>
+            </div><br>
+                  
+
+        </div>
+    </div>
+    <!-- End Section -->
+    <button class="btn btn-primary">Done</button>
+</div>
+
+</form>

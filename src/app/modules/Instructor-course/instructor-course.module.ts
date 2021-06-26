@@ -12,9 +12,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { ExamQuestionsComponent } from './components/exam-questions/exam-questions.component';
 import { QuizQuestionsComponent } from './components/quiz-questions/quiz-questions.component';
+import { CreateexamComponent } from './components/createexam/createexam.component';
 
 @NgModule({
-  declarations: [...InstructorCourseRoutingModule.componentsDeclarations],
+  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,
