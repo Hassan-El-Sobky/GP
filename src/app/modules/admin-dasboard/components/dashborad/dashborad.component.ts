@@ -11,6 +11,7 @@ import { AdminDashboradService } from '../../services/admin-dashborad.service'
 export class DashboradComponent implements OnInit {
 
   data: any;
+  dataa: any;
   numOfSutudents: any;
   numOfInstructors: any;
   numOfCourse: any;
@@ -24,13 +25,15 @@ export class DashboradComponent implements OnInit {
     this.getAllInstructors();
     this.getAllCourse();
     this.getAllStudents();
+    this.charts();
+
   }
 
 
   getAllInstructors() {
     this._adminServices.getAllInstructors().subscribe((data) => {
       this.numOfInstructors = data.numOfInstructors;
-      this.charts();
+    
       this.barChar();
     });
 
@@ -38,7 +41,7 @@ export class DashboradComponent implements OnInit {
   getAllCourse() {
     this._adminServices.getAllcourses().subscribe((data) => {
       this.numOfCourse = data.numOfCourses;
-      this.charts();
+    
      this.barChar();
     });
 
@@ -46,7 +49,7 @@ export class DashboradComponent implements OnInit {
   getAllStudents() {
     this._adminServices.getAllStudents().subscribe((data) => {
       this.numOfSutudents = data.numOfStudent;
-      this.charts();
+    
       this.barChar();
     });
 
@@ -54,11 +57,11 @@ export class DashboradComponent implements OnInit {
   // 3 function get all information about the instructors,courses and students took only the count of each to fill the data of the chart 
 
   charts() {
-    this.data = {
+    this.dataa = {
       labels: ['Students', 'Courses', 'Instructors'],
       datasets: [
         {
-          data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors],
+          dataa: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors],
           backgroundColor: [
             "#FF6384",
             "#36A2EB",

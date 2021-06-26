@@ -3,7 +3,7 @@
   <div class="row">
     <div class="float-end my-2 mr-4">
       <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
-        class="btn btn-primary float-end">Add</button>
+        class="btn btn-secondary float-end">Add</button>
     </div>
 
 
@@ -12,16 +12,16 @@
      itemsPerPage:4,
      currentPage: page,
      totalItems: totalLength 
-   }" class="col-md-3 mt-3">
-      <div class="card " style="width: 18rem;">
+   }" class="col-md-3 mt-3" >
+      <div [routerLink]="['/instructor/courseDetails',x._id]" class="card " style="width: 18rem;">
         <img src="{{x?.imageUrl}}" class="card-img-top" alt="...">
         <div class="card-body">
           <h2>{{x?.courseName}} </h2>
           <p class="card-text">{{x?.courseDepartment}}</p>
           <p>{{x?.prerequisite}}</p>
-          <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
+          
         </div>
-
+        <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
 
       </div>
     </div>
@@ -91,18 +91,6 @@
                     class="py-2 text-danger ">Course Name is Invalid</span>
                 </div>
 
-<<<<<<< HEAD
-                <input type="file" [disabled]='addCourseForm.invalid' (change)='selectFile($event)' name="file-input"
-                  accept="images/*" id="file-input" class="file-input__input" name="photo" />
-
-                <label class="file-input__label" for="file-input">
-
-                  <span>Upload</span></label>
-
-                <button type="submit" (click)='getCourseData()' [disabled]='addCourseForm.invalid'
-                  class="btn btn-primary m-2">Submit</button>
-
-=======
            <div class="my-2">
                 <label for="file-input" >Upload CoursePhoto</label>
                 <br>
@@ -117,7 +105,6 @@
             <button type="submit" [disabled]='addCourseForm.invalid' class="btn btn-primary m-2">Submit</button>
 
       
->>>>>>> c6654f841b2f182ad02aeeced4e112bd38147baf
 
 
               </form>

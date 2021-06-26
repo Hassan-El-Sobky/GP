@@ -3,7 +3,7 @@
     <i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
     <div class="float-end my-2 mr-4" >
       <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
-        class="btn btn-primary float-end">Add</button>
+        class="btn btn-secondary add_button float-right">Add</button>
     </div>
     <div class="tableContainer">
       <div class="mainContainer">
@@ -23,31 +23,31 @@
 
 
                 <ng-container matColumnDef="cCode">
-                  <th mat-header-cell *matHeaderCellDef>title</th>
+                  <th mat-header-cell *matHeaderCellDef class="text-capitalize">title</th>
                   <td mat-cell *matCellDef="let element"> {{element?.title}} </td>
                 </ng-container>
 
                 <ng-container matColumnDef="prerequisite">
-                  <th mat-header-cell *matHeaderCellDef > description </th>
+                  <th mat-header-cell *matHeaderCellDef  class="text-capitalize"> description </th>
                   <td mat-cell *matCellDef="let element"> {{element?.description}} </td>
                 </ng-container>
 
 
                 <ng-container matColumnDef="status">
-                  <th mat-header-cell *matHeaderCellDef > Upload Date </th>
+                  <th mat-header-cell *matHeaderCellDef class="text-capitalize" > Upload Date </th>
                   <td mat-cell *matCellDef="let element"> {{element?.uploadDate}} </td>
                 </ng-container>
 
 
                 <ng-container matColumnDef="courseDepartment">
-                  <th mat-header-cell *matHeaderCellDef> Download Lecture </th>
+                  <th mat-header-cell *matHeaderCellDef class="text-capitalize"> Download Lecture </th>
                   <td mat-cell *matCellDef="let element"> <a class="text-dark" href="{{element?.fileUrl}}" download><i class="fas fa-download"></i></a> </td>
                 </ng-container>
 
    
 
                 <ng-container matColumnDef="action">
-                  <th mat-header-cell *matHeaderCellDef> action </th>
+                  <th mat-header-cell *matHeaderCellDef class="text-capitalize"> action </th>
                   <td mat-cell *matCellDef="let element"> <i  class="fas fa-trash-alt"></i> </td>
                 </ng-container>
 
