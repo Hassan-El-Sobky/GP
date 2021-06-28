@@ -70,11 +70,11 @@
     </div>
 
 <!--  -->
-<div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"   routerLinkActive="active">
+<!-- <div  [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"   routerLinkActive="active">
     <i class="fas fa-book"></i>
     <span class="dashTitle" *ngIf="menuStatus">...Courses</span>
-</div>
-<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="''"  routerLinkActive="active">
+</div> -->
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/instructor/schedule'"  routerLinkActive="active">
 <i class="fas fa-users"></i>
 <span class="dashTitle" *ngIf="menuStatus">Schedule</span>
 </div>

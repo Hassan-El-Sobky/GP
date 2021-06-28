@@ -18,7 +18,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderInterInterceptor } from './loader/loader-inter.interceptor';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 
 
 @NgModule({
@@ -41,7 +41,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatFormFieldModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ScheduleModule
   ],
   entryComponents: [
     DeletedialogComponent,
@@ -49,7 +50,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
   providers: [
     AuthGuard,
     AdminGuradGuard,
-    {provide:HTTP_INTERCEPTORS,useClass:LoaderInterInterceptor,multi:true}
+    {provide:HTTP_INTERCEPTORS,useClass:LoaderInterInterceptor,multi:true},
+    DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService
   ],
   bootstrap: [AppComponent]
 })

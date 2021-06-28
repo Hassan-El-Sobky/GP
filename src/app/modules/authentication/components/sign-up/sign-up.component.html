@@ -82,6 +82,18 @@
             <option value="instructor">Instrutor</option>
           </select>
         </div>
+
+        <div class="my-2">
+          <label for="file-input" >Upload Photo</label>
+          <br>
+      <input type="file" formControlName="userImage"  [disabled]='registerForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
+      name="photo"/> 
+
+    <label class="file-input__label" for="file-input">
+
+      <span>Upload</span></label>
+     </div>
+
        
         <div class="form-group m-auto py-3">
           <button  [disabled]='registerForm.invalid'  type="submit" class=" w-100">Sign Up</button>

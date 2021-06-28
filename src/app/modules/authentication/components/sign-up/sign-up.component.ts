@@ -10,6 +10,7 @@ import { Router } from '@angular/router'
 export class SignUpComponent implements OnInit {
   logoImage: string ='/assets/logo.png';
   registerForm:any;
+filex:any
   constructor(private _authServ: AuthenticationService, private _Router: Router) {
    }
  
@@ -17,8 +18,21 @@ export class SignUpComponent implements OnInit {
 
   getRegisterInfo(registerForm:any) {
     
+    
+
+    let formData=new FormData();
+    formData.append('name',`${this.registerForm.get('name').value}`);
+    formData.append('email',`${this.registerForm.get('email').value}`);
+    formData.append('username',`${this.registerForm.get('username').value}`);
+    formData.append('role',`${this.registerForm.get('role').value}`);
+    formData.append('gender',`${this.registerForm.get('gender').value}`);
+    formData.append('password',`${this.registerForm.get('password').value}`);
+    formData.append('rePassword',`${this.registerForm.get('rePassword').value}`);
+    formData.append('userImage',this.filex);
+    console.log(registerForm.value);
+    
     if (registerForm.valid == true) {
-      this._authServ.register(registerForm.value).subscribe((data) => {
+      this._authServ.register(formData).subscribe((data) => {
         console.log(data);
         this._Router.navigate(['authentication', 'signin'])
         if (data.message == `user${data.username}Created`) {
@@ -29,7 +43,16 @@ export class SignUpComponent implements OnInit {
         }
       })
     }
+    
 
+  }
+  
+  selectFile(event:any)
+  {
+     const file:File = event.target.files[0];
+     this.filex=file
+  console.log(this.filex);
+  
   }
   ngOnInit(): void {
     this.registerForm = new FormGroup({
@@ -39,7 +62,8 @@ export class SignUpComponent implements OnInit {
       "role": new FormControl(null, [Validators.required,]),
       "gender": new FormControl(null, [Validators.required,]),
       "password": new FormControl(null, [Validators.required,]),
-      "rePassword": new FormControl(null, [Validators.required,])
+      "rePassword": new FormControl(null, [Validators.required,]),
+      "userImage":new FormControl(null,[Validators.required])
     });
   }
 

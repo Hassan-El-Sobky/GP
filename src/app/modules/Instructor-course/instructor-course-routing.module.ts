@@ -13,6 +13,7 @@ import { QuizzesComponent } from './components/quizzes/quizzes.component';
 import { ExamQuestionsComponent } from './components/exam-questions/exam-questions.component';
 import { QuizQuestionsComponent } from './components/quiz-questions/quiz-questions.component';
 import { CreateexamComponent } from './components/createexam/createexam.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
 const routes: Routes = [
   {path:'addCourse',component:AddCourseComponent},
   {path:'myCourse',component:MyCoursesComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'courseExams/:id', component: ExamsComponent },
   { path: 'examQuestions', component: ExamQuestionsComponent },
   {path:'quizQuestions',component:QuizQuestionsComponent},
-  {path:'createexam/:id',component:CreateexamComponent}
+  {path:'createexam/:id',component:CreateexamComponent},
+  {path:'schedule',component:ScheduleComponent}
 ];
 
 @NgModule({

@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~11.0.4",
     "@angular/platform-browser-dynamic": "~11.0.4",
     "@angular/router": "~11.0.4",
+    "@syncfusion/ej2-angular-schedule": "^19.1.69",
     "chart.js": "^2.9.4",
     "ngx-pagination": "^5.1.0",
     "primeicons": "^4.1.0",

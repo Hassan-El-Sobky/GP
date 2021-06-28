@@ -13,9 +13,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { ExamQuestionsComponent } from './components/exam-questions/exam-questions.component';
 import { QuizQuestionsComponent } from './components/quiz-questions/quiz-questions.component';
 import { CreateexamComponent } from './components/createexam/createexam.component';
+import { ScheduleComponent } from './components/schedule/schedule.component';
+import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 
 @NgModule({
-  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent],
+  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,
@@ -26,8 +28,13 @@ import { CreateexamComponent } from './components/createexam/createexam.componen
     MatTableModule,
     NgxPaginationModule,
     MatPaginatorModule,
-    MatSortModule
-  ]
+    MatSortModule,
+    ScheduleModule
+  ],
+  providers: [
+  
+    DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService
+  ],
 })
 export class InstructorCourseModule {
 
