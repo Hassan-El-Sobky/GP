@@ -37,4 +37,9 @@ export class StudentCoursesService {
   {
          return this._http.get(`https://lmsapis.herokuapp.com/course/${id}`);
   }
+
+  getProfile(username:any):Observable<any>
+  {
+    return this._http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`)
+  }
 }

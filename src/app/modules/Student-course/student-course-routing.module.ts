@@ -6,6 +6,7 @@ import { ExamsComponent } from './component/exams/exams.component';
 import { MaterialsComponent } from './component/materials/materials.component';
 import { QuizzesComponent } from './component/quizzes/quizzes.component';
 import { CourseInfoComponent } from './component/course-info/course-info.component';
+import { ProfileComponent } from './component/profile/profile.component';
 
 
 
@@ -16,7 +17,10 @@ const routes: Routes = [
   { path: 'exams/:id', component: ExamsComponent },
   { path: 'materials/:id', component: MaterialsComponent },
   { path: 'quizzes/:id', component: QuizzesComponent },
-  { path: 'course-info/:id', component:CourseInfoComponent },
+  { path: 'course-info/:id', component: CourseInfoComponent },
+  { path: 'profile/:username', component: ProfileComponent },
+
+  
 
 ];
 
@@ -30,6 +34,7 @@ export class StudentCourseRoutingModule {
     ExamsComponent,
     MaterialsComponent,
     QuizzesComponent,
-    CourseInfoComponent
+    CourseInfoComponent,
+    ProfileComponent
   ]
   }

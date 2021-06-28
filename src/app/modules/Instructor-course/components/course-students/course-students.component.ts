@@ -11,7 +11,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./course-students.component.scss']
 })
 export class CourseStudentsComponent implements OnInit {
-  displayedColumns: string[] = ['username','role','action'];
+  displayedColumns: string[] = ['username','role','action','view-detials'];
   defaultImage: string = '/assets/images/default image.png';
   dataSource:any;
   addCourseForm: any

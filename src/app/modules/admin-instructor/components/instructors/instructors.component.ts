@@ -31,7 +31,8 @@ export class InstructorsComponent implements OnInit {
 
   getInst()
   {
-    this._adminIns.getAllInstructors().subscribe(res=>{
+    this._adminIns.getAllInstructors().subscribe(res => {
+      console.log(res);
       this.dataSource = new MatTableDataSource<any>(res.allInstructors);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
