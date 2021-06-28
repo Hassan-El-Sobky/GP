@@ -13,7 +13,7 @@ import { AdminStudentsService } from '../../services/admin-students.service';
   styleUrls: ['./students.component.scss']
 })
 export class StudentsComponent implements OnInit {
-  displayedColumns: string[] = [ 'name', 'username', 'email','Gender','action'];
+  displayedColumns: string[] = [ 'name', 'username', 'email','Gender','action','view-detials'];
   dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
@@ -32,7 +32,9 @@ export class StudentsComponent implements OnInit {
 
   getAllStu()
   {
-    this._adminStu.getStudent().subscribe(res=>{
+    this._adminStu.getStudent().subscribe(res => {
+      console.log(res);
+      
       this.dataSource = new MatTableDataSource<any>(res.allStudents);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;

@@ -13,4 +13,5 @@ export class AdmiProfileService {
   {
    return this._http.post("https://lmsapis.herokuapp.com/addAdmin",data)
   }
+
 }

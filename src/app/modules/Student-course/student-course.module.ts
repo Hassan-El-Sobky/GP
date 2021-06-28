@@ -9,8 +9,10 @@ import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
+
+
 @NgModule({
-  declarations: [...StudentCourseRoutingModule.componentDeclration,],
+  declarations: [...StudentCourseRoutingModule.componentDeclration],
   imports: [
     CommonModule,
     StudentCourseRoutingModule,
