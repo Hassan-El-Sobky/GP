@@ -54,7 +54,15 @@ export class StudentsComponent implements OnInit {
         
  dialogRef.afterClosed().subscribe(result => {
      
-      this.getAllStu();
+    setTimeout(()=>{
+      this._adminStu.getStudent().subscribe(res => {
+        console.log(res);
+        
+        this.dataSource = new MatTableDataSource<any>(res.allStudents);
+        this.dataSource.paginator = this.paginator;
+        this.dataSource.sort = this.sort;
+      })
+    },500)
  });
    
   }

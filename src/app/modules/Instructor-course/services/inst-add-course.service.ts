@@ -59,4 +59,14 @@ export class InstAddCourseService {
   {
     return this._http.post(`https://lmsapis.herokuapp.com/createAssesment`,data);
   }
+
+  deleteass(id:any,data:any):Observable<any>{
+    //return this._http.delete(`https://lmsapis.herokuapp.com/removeCourse/${id}`,data) 
+    return this._http.request('delete', `https://lmsapis.herokuapp.com/deleteAssigment/${id}`,{body:data});
+  }
+
+  deleteLecture(id:any,data:any):Observable<any>{
+    //return this._http.delete(`https://lmsapis.herokuapp.com/removeCourse/${id}`,data) 
+    return this._http.request('delete', `https://lmsapis.herokuapp.com/deleteLecture/${id}`,{body:data});
+  }
 }

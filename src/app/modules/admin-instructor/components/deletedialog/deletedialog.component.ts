@@ -24,21 +24,23 @@ export class DeletedialogComponent implements OnInit {
     this.dialogRef.close();
     
   }
-//  delete(id:any)
-//   {
-//     let data={
-//     token:this.token
-//     }
-//     console.log(data);
-//     console.log(id);
+ delete(id:any)
+  {
+    let data={
+    token:this.token
+    }
+    console.log(data);
+    console.log(id);
+    
+  
     
     
-//    this._adminInstructorServices.deleteStudent(id,data).subscribe(res=>{
-//       console.log(res.message);
-      
-//    })
-//    this.dialogRef.close();
-//   }
+  this._adminInstructorServices.deleteInstructor(id,data).subscribe(res=>{
+    console.log(res);
+    
+  })
+   this.dialogRef.close();
+  }
 
-  // 
+  
 }

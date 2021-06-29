@@ -19,4 +19,8 @@ export class AdminInstructorsService {
   {
    return this._http.post("https://lmsapis.herokuapp.com/addInstructor",data)
   }
+  deleteInstructor(id:any,data:any):Observable<any>{
+    //return this._http.delete(`https://lmsapis.herokuapp.com/removeCourse/${id}`,data) 
+    return this._http.request('delete', ` https://lmsapis.herokuapp.com/removeUser/${id}`,{body:data});
+  }
 }

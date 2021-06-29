@@ -5,7 +5,7 @@ import { MatSort } from '@angular/material/sort';
 import {Location} from '@angular/common';
 import {MatTableDataSource} from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
+import { DeletedialogComponent } from 'src/app/modules/admin-instructor/components/deletedialog/deletedialog.component';
 @Component({
   selector: 'app-instructors',
   templateUrl: './instructors.component.html',
@@ -48,8 +48,16 @@ export class InstructorsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-
-      this.getInst();
+      setTimeout(() =>{
+        this._adminIns.getAllInstructors().subscribe(res => {
+          console.log(res);
+          this.dataSource = new MatTableDataSource<any>(res.allInstructors);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          console.log(res.allInstructors);
+          
+        })
+      },500)
     });
 
   }

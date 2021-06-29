@@ -2,8 +2,6 @@
 <div class="clr"></div>
 <p class="text-muted">Are you sure ? </p>
 <div  mat-dialog-actions>
-  <button class="btn btn-danger m-1" mat-button (click)="delete(data.i)"  cdkFocusInitial>Ok</button>
+  <button class="btn btn-danger m-1" mat-button  (click)="delete(data.i,data.courseId)" cdkFocusInitial>Ok</button>
   <button class="btn btn-success m-1"  mat-button (click)="onNoClick()">No Thanks</button>
 </div>
-
-<!-- (click)="delete(data.i)" -->

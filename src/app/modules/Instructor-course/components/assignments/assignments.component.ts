@@ -7,6 +7,9 @@ import {Location} from '@angular/common';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import { MatDialog } from '@angular/material/dialog';
+import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
+
 @Component({
   selector: 'app-assignments',
   templateUrl: './assignments.component.html',
@@ -22,7 +25,9 @@ export class AssignmentsComponent implements OnInit {
   id:any
    uploadForm:any;
    addCourseForm:any
-  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder,private _location: Location) {
+  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder,private _location: Location
+    , public dialog: MatDialog
+    ) {
     this.getCourse();
     this.addCourseForm = this.fb.group({
       title:  [null,Validators.required],
@@ -133,6 +138,20 @@ getAllAss()
     console.log(res.assigments);
     
   })
+}
+
+openDialog(id: any) {
+  const dialogRef = this.dialog.open(DeletedialogComponent, {
+    data: { i: id ,courseId:this.id},
+    height: '180px',
+    width: '250px',   
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+
+    this.getAllAss();
+  });
+
 }
 
 }

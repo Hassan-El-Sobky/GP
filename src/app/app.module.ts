@@ -19,6 +19,7 @@ import { LoaderInterInterceptor } from './loader/loader-inter.interceptor';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
+import { DeletelecturedialogComponent } from './modules/Instructor-course/components/deletelecturedialog/deletelecturedialog.component';
 
 
 @NgModule({
@@ -46,6 +47,7 @@ import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleMo
   ],
   entryComponents: [
     DeletedialogComponent,
+    DeletelecturedialogComponent
   ],
   providers: [
     AuthGuard,

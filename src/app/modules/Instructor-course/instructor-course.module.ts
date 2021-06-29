@@ -15,9 +15,11 @@ import { QuizQuestionsComponent } from './components/quiz-questions/quiz-questio
 import { CreateexamComponent } from './components/createexam/createexam.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
+import { DeletedialogComponent } from './components/deletedialog/deletedialog.component';
+import { DeletelecturedialogComponent } from './components/deletelecturedialog/deletelecturedialog.component';
 
 @NgModule({
-  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent],
+  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,

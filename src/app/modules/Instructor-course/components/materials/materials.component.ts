@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 import { FormBuilder, Validators } from '@angular/forms';
 import {Location} from '@angular/common';
+import { DeletelecturedialogComponent } from '../deletelecturedialog/deletelecturedialog.component';
 
 
 
@@ -28,7 +29,9 @@ export class MaterialsComponent implements OnInit {
   id:any
   courseCode:any
   lecturesArr:any
-  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder,private _location: Location) {
+  constructor(private _activated:ActivatedRoute,private _instServ:InstAddCourseService,private fb:FormBuilder,
+    private _location: Location
+    , public dialog: MatDialog) {
     this.getCourse();
 
     this.addCourseForm = this.fb.group({
@@ -158,6 +161,20 @@ console.log(this.filex);
     
     return this.addCourseForm;
     
+  }
+
+  openDialog(id: any) {
+    const dialogRef = this.dialog.open(DeletelecturedialogComponent, {
+      data: { i: id ,courseId:this.id},
+      height: '180px',
+      width: '250px',   
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+  
+      this.cousresLectures();
+    });
+  
   }
 
 }
