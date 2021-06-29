@@ -9,7 +9,7 @@
               <h6 class="">Student List</h6>
               <div class="form-group">
                 <!-- <input placeholder=" Search..." #searchName (change)=""> -->
-                <input  placeholder=" Search..." #searchName>
+                <input  placeholder=" Search..." (keyup)='studentsearch(searchName.value)'  #searchName>
                 <i class="fas fa-search"></i>
               </div>
             </div>

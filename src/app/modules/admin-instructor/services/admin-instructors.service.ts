@@ -19,4 +19,9 @@ export class AdminInstructorsService {
   {
    return this._http.post("https://lmsapis.herokuapp.com/addInstructor",data)
   }
+
+  instructorsearch(name: any): Observable<any>
+  {
+    return this._http.get('')
+  }
 }

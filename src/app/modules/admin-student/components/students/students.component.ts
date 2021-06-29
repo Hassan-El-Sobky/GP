@@ -58,4 +58,14 @@ export class StudentsComponent implements OnInit {
  });
    
   }
+  studentsearch(name: any) {
+
+    this._adminStu.studentsearch(name).subscribe(res => {
+      this.dataSource = new MatTableDataSource<any>(res.searchResult);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+
+  }
+
 }
