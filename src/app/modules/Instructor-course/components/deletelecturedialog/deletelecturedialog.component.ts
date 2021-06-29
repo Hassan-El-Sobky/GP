@@ -26,8 +26,11 @@ delete(id:any,cId:any)
     const data={
       token:localStorage.getItem('accessToken'),
       username:localStorage.getItem('username'),
-      courseCode:cId
-    } 
+      courseId: cId
+      
+  }
+  console.log(data);
+  
         this._instS.deleteLecture(id,data).subscribe(res=>{
           console.log(res);
           

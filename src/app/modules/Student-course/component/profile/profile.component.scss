@@ -41,9 +41,24 @@ h3,h4
 .ig
 {
     background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
-    color: black;
+    ;
 }
 .li
 {
     color: rgb(0, 115, 176);
+}
+.email
+{
+    color:rgba($color: orange, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+}
+.email span 
+{ 
+
+    color: black;
+
 }

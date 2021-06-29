@@ -20,7 +20,7 @@ export class AdminStudentsService {
 
   studentsearch(name: any):Observable<any>
     {
-    return this._http.get('')
+    return this._http.get(`https://lmsapis.herokuapp.com/searchStudent/?username=${name}`)
     }
    
   

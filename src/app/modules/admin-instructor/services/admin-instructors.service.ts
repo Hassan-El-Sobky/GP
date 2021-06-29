@@ -25,6 +25,6 @@ export class AdminInstructorsService {
   }
   instructorsearch(name: any): Observable<any>
   {
-    return this._http.get('')
+    return this._http.get(`https://lmsapis.herokuapp.com/searchInstructor/?username=${name}`)
   }
 }
