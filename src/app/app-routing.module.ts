@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AdminGuradGuard } from './modules/authentication/gurads/admin-gurad.guard';
 import { AuthGuard } from './modules/authentication/gurads/auth.guard';
+import { InstructorGuard } from './modules/authentication/gurads/instructor.guard';
 
 
 const routes: Routes = [
@@ -62,7 +63,7 @@ const routes: Routes = [
       import('./modules/admin-admin/admin-admin.module').then(
         (m) => m.AdminAdminModule
       ),
-    
+      canActivate: [AuthGuard,AdminGuradGuard]
   },
   /*               Admin paths end                      */
   {
@@ -87,6 +88,7 @@ const routes: Routes = [
       import('./modules/Instructor-course/instructor-course.module').then(
         (m) => m.InstructorCourseModule
       ),
+      canActivate:[AuthGuard]
   }
 ];
 
