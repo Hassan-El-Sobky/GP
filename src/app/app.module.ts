@@ -20,7 +20,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 import { DeletelecturedialogComponent } from './modules/Instructor-course/components/deletelecturedialog/deletelecturedialog.component';
-
+import { InstructorGuard } from './modules/authentication/gurads/instructor.guard';
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { DeletelecturedialogComponent } from './modules/Instructor-course/compon
   ],
 
   imports: [
-    BrowserModule,
+
+  BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     MatToolbarModule,
@@ -52,6 +53,7 @@ import { DeletelecturedialogComponent } from './modules/Instructor-course/compon
   providers: [
     AuthGuard,
     AdminGuradGuard,
+    InstructorGuard,
     {provide:HTTP_INTERCEPTORS,useClass:LoaderInterInterceptor,multi:true},
     DayService, WeekService, WorkWeekService, MonthService, AgendaService, MonthAgendaService, TimelineViewsService, TimelineMonthService
   ],

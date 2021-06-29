@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
          email:form.value.email,
          password:form.value.password
        }
-
+     
        console.log(userInfo);
        
 
@@ -39,7 +39,22 @@ export class SignInComponent implements OnInit {
          console.log(res);
          this.status=res.status
          console.log(this.status);
-         
+        console.log(res);
+        this._generalService.userName=res.uname
+        if(res.message=="instructor")
+        {
+      
+          this.router.navigate(["instructor","myCourse"])
+        }
+
+        if(res.message=="admin") {
+          this.router.navigate(["adminAnaylsis","dashboard"])
+        }
+
+        if(res.message=="student")
+        {
+          this.router.navigate(["student","course"])
+        }
          
          if(res.token)
          {
@@ -53,8 +68,8 @@ export class SignInComponent implements OnInit {
           this._generalService.userName=res.message;
           console.log(this._generalService.userName);
       
-        
-          this.router.navigate(['adminAnaylsis/dashboard']);
+       
+          
 
           //  this.router.navigate(['/test']);
          }

@@ -11,17 +11,13 @@ import { MessageService } from 'primeng/api';
 @Component({
   selector: 'app-admin-pannel',
   templateUrl: './admin-pannel.component.html',
-  styles: [`
-  :host ::ng-deep button {
-      margin-right: .25em;
-  }
-`],
-providers: [ConfirmationService],
   styleUrls: ['./admin-pannel.component.scss'],
  
 })
 export class AdminPannelComponent implements OnInit {
-constructor(){}
+  userName=localStorage.getItem('username')
+constructor(){
+}
 ngOnInit(){
 
 }

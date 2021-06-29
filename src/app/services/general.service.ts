@@ -6,5 +6,6 @@ import { Injectable } from '@angular/core';
 export class GeneralService {
 
   public userName:any;
+  public token:any;
   constructor() { }
 }
