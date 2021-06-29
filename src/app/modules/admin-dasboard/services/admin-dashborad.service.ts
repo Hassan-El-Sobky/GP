@@ -23,4 +23,13 @@ export class AdminDashboradService {
   {
       return this._httpClient.get('https://lmsapis.herokuapp.com/allInstructors');
   };
+  getAllPendingCourses(): Observable<any>
+  {
+    return this._httpClient.get('https://lmsapis.herokuapp.com/allPendingCourses ');
+  }
+
+  getAllAvalCourses(): Observable<any>
+  {
+    return this._httpClient.get(' https://lmsapis.herokuapp.com/allAvailableCourses')
+  }
 }
