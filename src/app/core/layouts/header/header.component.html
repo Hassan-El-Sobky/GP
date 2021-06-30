@@ -16,10 +16,10 @@
     <div class="home">
         <a class="nav-link" [routerLink]="['/courses/courses']">Courses</a>
     </div>
-    <div class="home">
+    <div  *ngIf="tokenService.isAuthenticated() !== true" class="home">
         <a class="nav-link" [routerLink]="['/authentication/signin']">SignIn</a>
     </div>
-    <div class="home">
+    <div   *ngIf="tokenService.isAuthenticated() !== true"class="home">
         <a class="nav-link" [routerLink]="['/authentication/signup']">SignUp</a>
     </div>
 

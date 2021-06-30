@@ -317,7 +317,21 @@ img {
 //     height: 50px;
 //     width: 50px;
 // }
+
 .trans
 {
     background-color: transparent !important;
+    position: fixed;
+    top: 0;
+
+    .comp
+    {
+        font-size: 40px;
+        font-size: 900;   
+        color:#fa8a0a ;
+    }
+    a
+    {
+        color:#fa8a0a ;
+    }
 }
