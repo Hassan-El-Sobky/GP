@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import {Location} from '@angular/common';
 
 import { AvailableCoursesService } from '../../Services/available-courses.service';
+import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
   selector: 'app-home',
@@ -10,13 +11,18 @@ import { AvailableCoursesService } from '../../Services/available-courses.servic
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  allCoursesArr :any;
+  allCoursesArr: any;
+  firstfive:any=[]
   totalLength:any;
   page:number=1;
   num: any;
   courseDeafult:string='assets/images/course.jpg';
   student=localStorage.getItem('role');
-  constructor(private _allCourses: AvailableCoursesService , private _router:Router,private _location: Location) { }
+  constructor(private _allCourses: AvailableCoursesService, private _router: Router, private _location: Location) {
+    
+    this.getAllAvailabel()
+  }
+  
   getAllAvailabel()
   {
     this._allCourses.getAllAvailabeCourses().subscribe((data) => {
@@ -25,7 +31,13 @@ export class HomeComponent implements OnInit {
       console.log(data.allAvailableCourses);
      console.log(data.numOfAvailableCourses);
      this.allCoursesArr=data.allAvailableCourses;
-     this.totalLength=data.allAvailableCourses.length;
+      this.totalLength = data.allAvailableCourses.length;
+      for (let i = 0; i < 5; i++)
+      {
+        this.firstfive.push(this.allCoursesArr[i])  
+      }
+      console.log(this.firstfive);
+      
      
    })
   
@@ -33,67 +45,43 @@ export class HomeComponent implements OnInit {
   backClicked() {
     this._location.back();
   }
+  
 
-  getAll()
-  {
-//  this._allCourses.getAllCourses().subscribe((data) => {
-      // this.allCoursesArr = data.data.allAvailableCourses
-      // this.allCoursesArr=data.allCourses;
-      // console.log(this.allCoursesArr);
-      
-    //   this.num=data.numOfAvailableCourses
-    //   console.log(data.allAvailableCourses);
-    //  console.log(data.numOfAvailableCourses);
-     
-  // })
+  customOptions: OwlOptions = {
+    loop: true,
+    mouseDrag: true,
+    touchDrag: true,
+    pullDrag: true,
+    dots: false,
+    navSpeed: 700,
+    navText: ['', ''],
+    responsive: {
+      0: {
+        items: 1
+      },
+      400: {
+        items: 2
+      },
+      740: {
+        items: 3
+      },
+      940: {
+        items: 4
+      }
+    },
+    nav: true
   }
 
-  getAllpending()
-  {
-    this._allCourses.getAllpending().subscribe((data) => {
-      // this.allCoursesArr = data.data.allAvailableCourses
-      this.num=data.numOfAvailableCourses
-      console.log(data);
-    //  console.log(data.numOfAvailableCourses);
-     
-   })
-  }
+
+
 
 
   
-  registerd(courseCode:any) 
-  {
- 
-   const data={
-    username:localStorage.getItem('username'),
-    courseCode:courseCode,
-    token:localStorage.getItem('accessToken')
-   }
-    this._allCourses.studentRegisterCourse(data).subscribe(res => {
-      this._router.navigate(['/student/course']);
-     
-    console.log(res);
-    
-   })
-   
-  }
 
-  courseSearch(name:any)
-  {
-    // this._allCourses.courseSearch(name).subscribe((res) => {
-    //   console.log(res.searchResult);
-      
-    //   this.allCoursesArr = res.searchResult;
 
-    // })
-    
-  }
 
   ngOnInit(): void {
-    this.getAllAvailabel()
-    this.getAllpending()
-    this.getAllAvailabel()
-    this.getAll();
+
   }
  
 }

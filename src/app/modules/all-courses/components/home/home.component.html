@@ -1,40 +1,71 @@
-<i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
-<div class="container">
- 
+<section class="home">
+  <div class="overlay">
+    <div class="content  p-3">
 
-  <input class="form-control m-2 serch float-end" placeholder=" Search..." #searchName (keyup)="courseSearch(searchName.value)">
-  <div class="clearfix"></div>
-  <div class="row ">
+      <div class="header mb-5 ">
+        <p>Togther We Can Do It </p>
+      </div>
 
-  
-    <div class="row">
-      <div *ngFor="let x of allCoursesArr| 
-      paginate: { 
-      itemsPerPage:8,
-      currentPage: page,
-      totalItems: totalLength 
-    }" 
-      
-      class="col-md-3 mt-3">
-  <div  class="card " style="width: 18rem;">
-    <img [src]="courseDeafult" class="card-img-top" alt="...">
-    <div class="card-body">
-      <h2>{{x?.courseName}}</h2>
-      <p class="card-text">{{x?.courseDepartment}}</p>
-      <p>{{x?.prerequisite}}</p>
-
-      <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="btn btn-primary">Register</a>
-      <a [routerLink]="['/courses/courseProfile',x._id]"  class="btn btn-warning m-2">preview..</a>
+      <div class="sbar ">
+        <div class="search-container m-auto">
+          <input type="text" name="search" placeholder="Search..." class="search-input">
+          <a href="#" class="search-btn">
+            <i class="fas fa-search"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div style="display: flex; justify-content: center; align-items: center;">
-  <pagination-controls  (pageChange)="page = $event"></pagination-controls>
+</section>
+<section class="define">
+  <div class="d_header">
+    <h1>What is<span>LG</span> </h1>
+
+  </div>
+  <div class="container">
+    <div class="row first">
+      <div class="col-md-8 ">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sit quod, delectus commodi aperiam ea
+          libero, odio totam rem omnis aspernatur dolor eius. Praesentium accusantium veritatis debitis nemo nam,
+          aliquam dolor, labore unde tempore saepe, placeat amet velit deleniti! Similique amet recusandae incidunt
+          quidem id.</p>
+      </div>
+      <div class="col-md-4">
+        <img src="../../../../../assets/images/laptop.png" class="border rounded-2" alt="">
+      </div>
 
 
-</div>
- </div>
+    </div>
 
 
+    <div class="av_header">
+      <h2>Multiable Availabe Courses</h2>
+    </div>
 
-</div>
+    <div class="row">
+      <div class="col-md-12">
+        <owl-carousel-o [options]="customOptions">
+
+          <ng-template *ngFor="let course of firstfive" carouselSlide>
+            <div class="card " style="width: 18rem;">
+              <img [src]="courseDeafult" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h2>{{course?.courseName}}</h2>
+                <p class="card-tecourset">{{course?.courseDepartment}}</p>
+                <p>{{course?.prerequisite}}</p>
+
+                <a *ngIf="student=='student'" (click)="registerd(course?.courseCode)"
+                  class="btn btn-primary">Register</a>
+                <a [routerLink]="['/courses/courseProfile',course._id]" class="btn btn-warning m-2">preview</a>
+              </div>
+            </div>
+          </ng-template>
+        </owl-carousel-o>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>

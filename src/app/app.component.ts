@@ -42,7 +42,7 @@ export class AppComponent {
   constructor(public tokenService: TokenService, private router: Router ,public LoaderService:LoaderService ) { 
 
     if(localStorage.getItem('token')==null || localStorage.getItem('token')==null ) {
-      this.router.navigate(['authentication', 'signin']);
+      this.router.navigate(['courses', 'Home']);
     }
   }
   
