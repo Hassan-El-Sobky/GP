@@ -70,7 +70,15 @@ export class CoursesComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
 
-      this.getAllCourses();
+      setTimeout(() => {
+        this._allCourses.getAllCourses().subscribe(res => {
+          this.dataSource = new MatTableDataSource<any>(res.allCourses);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          console.log(res.allCourses);
+    
+        })
+      }, 500);
     });
 
   }
@@ -83,6 +91,8 @@ export class CoursesComponent implements OnInit {
       this.dataSource = new MatTableDataSource<any>(res.searchResult);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      console.log(res);
+      
     })
 
   }

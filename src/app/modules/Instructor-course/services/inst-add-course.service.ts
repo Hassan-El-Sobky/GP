@@ -69,4 +69,6 @@ export class InstAddCourseService {
     //return this._http.delete(`https://lmsapis.herokuapp.com/removeCourse/${id}`,data) 
     return this._http.request('delete', `https://lmsapis.herokuapp.com/deleteLecture/${id}`,{body:data});
   }
+
+  
 }
