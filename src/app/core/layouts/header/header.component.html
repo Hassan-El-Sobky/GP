@@ -1,16 +1,30 @@
-<mat-toolbar *ngIf="tokenService.isAuthenticated() == true">
+<mat-toolbar [class.trans]="tokenService.isAuthenticated() == false"  >
 
 
-
+<!--  -->
     <!-- *ngIf="tokenService.isAuthenticated() == true" -->
-    <i (click)="onToolbarMenuToggle()" class="fas fa-bars"></i>
+    <i  *ngIf="tokenService.isAuthenticated() == true" (click)="onToolbarMenuToggle()" class="fas fa-bars"></i>
     <span class="comp">Learing Gate</span>
     <span class="example-spacer"></span>
-        <div class="home">
-            <a class="nav-link"   [routerLink]="['/courses/home']" >Courses</a>
-        </div>
+    
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/courses/Home']">Home</a>
+    </div>
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/courses/Home']">About</a>
+    </div>
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/courses/courses']">Courses</a>
+    </div>
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/authentication/signin']">SignIn</a>
+    </div>
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/authentication/signup']">SignUp</a>
+    </div>
 
-    <div class="not-icon">
+
+    <div *ngIf="tokenService.isAuthenticated() == true" class="not-icon">
         <div class="noti-fic">
             <i (click)="notiExpanded()" class="far fa-bell "></i>
             <span (click)="notiExpanded()" class="notifaction-no">1</span>
@@ -34,10 +48,10 @@
         </div>
 
     </div>
-    
 
 
-    <div class="user">
+
+    <div *ngIf="tokenService.isAuthenticated() == true" class="user">
         <h6 (click)="expaded()" class="text-capitalize">{{userName}}</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
@@ -57,7 +71,7 @@
 
             <div *ngIf="role=='admin'" [routerLink]="['/adminAdmin/addAdmin']" class="expanded-info">
                 <i class="fas fa-plus"></i>
-                <span >Add Admin</span>
+                <span>Add Admin</span>
             </div>
             <div class="expanded-info">
                 <i style="color: #38B9DD;" class="fas fa-sign-out-alt"></i>
@@ -65,9 +79,9 @@
             </div>
         </div>
     </div>
-    
-    <div class="psearch ">
-     
+
+    <div  *ngIf="tokenService.isAuthenticated() == true" class="psearch ">
+
         <input class="search input-field form-control " placeholder="Search">
         <div class="icon">
             <i class="fas fa-search "></i>
