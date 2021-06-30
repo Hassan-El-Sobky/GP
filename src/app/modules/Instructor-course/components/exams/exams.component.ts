@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { InstAddCourseService } from '../../services/inst-add-course.service';
 
 @Component({
   selector: 'app-exams',
@@ -9,7 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExamsComponent implements OnInit {
  courseId:any
-  constructor(private _location: Location ,private _activated:ActivatedRoute) { }
+ courseExams:any
+  constructor(private _location: Location ,private _activated:ActivatedRoute,private _instS:InstAddCourseService) 
+  {
+    
+   }
 
   ngOnInit(): void {
     this.getId();
@@ -22,8 +27,14 @@ export class ExamsComponent implements OnInit {
     this._activated.paramMap.subscribe(params => {
       this.courseId = params.get('id');
       console.log(this.courseId);
-      
+       this.getExams()
     });
   }
 
+  getExams() {
+   this._instS.getExamsById(this.courseId).subscribe(res=>{
+     console.log(res.courseExams);
+      this.courseExams=res.courseExams;
+   })
+  }
 }

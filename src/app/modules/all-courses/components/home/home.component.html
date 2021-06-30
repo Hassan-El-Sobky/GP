@@ -55,8 +55,7 @@
                 <p class="card-tecourset">{{course?.courseDepartment}}</p>
                 <p>{{course?.prerequisite}}</p>
 
-                <a *ngIf="student=='student'" (click)="registerd(course?.courseCode)"
-                  class="btn btn-primary">Register</a>
+      
                 <a [routerLink]="['/courses/courseProfile',course._id]" class="btn btn-warning m-2">preview</a>
               </div>
             </div>

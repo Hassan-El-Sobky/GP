@@ -112,35 +112,19 @@ export class CreateexamComponent implements OnInit {
   
   }
 
-  onSubmit(form:any){
+  onSubmit(form:any,title:any,open:any,due:any){
  const questions=form.value.sections[0].questions;
 let data={
   token:localStorage.getItem('accessToken'),
-     openDate:"fsadfsad" , 
-       dueDate:"fadsfasd" , 
-     title:"4333aathExam",
+     openDate:open , 
+       dueDate:due , 
+     title:title,
        category:"exam" ,
-       fullMark:"652" ,
        username:localStorage.getItem('username'),
        courseId:this.courseId,
        questions:questions
 }
-// { "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiaW5zdHJ1Y3RvciIsInVzZXJuYW1lIjoiam9lIiwiaWF0IjoxNjI0NTY1OTcxfQ.lIJKq6dAphR6KTagMyU3s5tPa7CUVldTN6_qNfkVPqk",
-//    "openDate":"fsadfsad" , 
-//     "dueDate":"fadsfasd" , 
-//     "title":"4thExam",
-//     "category":"exam" ,
-//     "fullMark":"652" ,
-//     "username":"joe",
-//     "courseId":"60ba0a3c89d3b40015b94ae8",
-//     "questions":[{"question":"fdasfasdf","answer":[{"option":"mmm","correct":true},
-//     {"option":"momodfs","correct":false},
-//     {"option":"ewrqw","correct":false},
-//     {"option":"ewrqwerqwqwer","correct":false}]},{"question":"fdasfasdf","answer":[{"option":"mmm","correct":true},
-//     {"option":"momodfs","correct":false},
-//     {"option":"ewrqw","correct":false},
-//     {"option":"ewrqwerqwqwer","correct":false},{"option":"dgfhgjhgdjtyrwtedsgfdgfdhfyutdf","correct":false}]}]
-//     }
+
     this._inSer.createAssments(data).subscribe(res=>{
      console.log(res);
       
