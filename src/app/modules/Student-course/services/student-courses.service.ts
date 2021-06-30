@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -42,4 +42,24 @@ export class StudentCoursesService {
   {
     return this._http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`)
   }
+
+  getExamsById(courseId:any):Observable<any>{
+    return this._http.get(`https://lmsapis.herokuapp.com/courseExams/${courseId}`)
+  }
+
+  besmallah(data:any):Observable<any>{
+    const headers=new HttpHeaders().set('token',"b0d1e7ed7cfd48a0b4db678cf5d70343")
+    return this._http.post(`https://api.luxand.cloud/subject/v2`,data,{headers:headers})
+  }  
+  
+  faceVerifed(faceId:any,data:any):Observable<any>{
+    const headers=new HttpHeaders().set('token',"b0d1e7ed7cfd48a0b4db678cf5d70343")
+    return this._http.post(`https://api.luxand.cloud/photo/verify/${faceId}`,data,{headers:headers})
+  }
+
+  getSpecificExam(id:any):Observable<any>{
+
+    return this._http.get(`https://lmsapis.herokuapp.com/solveAssesment/${id}`);
+  }
+
 }

@@ -23,7 +23,7 @@ const routes: Routes = [
   { path: 'courseStudents/:id', component: CourseStudentsComponent },
   { path: 'courseQuizzes/:id', component: QuizzesComponent },
   { path: 'courseExams/:id', component: ExamsComponent },
-  { path: 'examQuestions', component: ExamQuestionsComponent },
+  { path: 'examQuestions/:id', component: ExamQuestionsComponent },
   {path:'quizQuestions',component:QuizQuestionsComponent},
   {path:'createexam/:id',component:CreateexamComponent},
   {path:'schedule',component:ScheduleComponent}

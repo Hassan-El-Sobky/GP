@@ -7,6 +7,8 @@ import { MaterialsComponent } from './component/materials/materials.component';
 import { QuizzesComponent } from './component/quizzes/quizzes.component';
 import { CourseInfoComponent } from './component/course-info/course-info.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import { ExamQuestionsComponent } from '../Instructor-course/components/exam-questions/exam-questions.component';
+import { ExamquestionsComponent } from './component/examquestions/examquestions.component';
 
 
 
@@ -19,6 +21,7 @@ const routes: Routes = [
   { path: 'quizzes/:id', component: QuizzesComponent },
   { path: 'course-info/:id', component: CourseInfoComponent },
   { path: 'profile/:username', component: ProfileComponent },
+  {path:'examquestion/:id',component:ExamquestionsComponent}
 
   
 

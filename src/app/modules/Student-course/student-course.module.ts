@@ -6,13 +6,15 @@ import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { WebcamModule } from 'ngx-webcam';
+import { ExamquestionsComponent } from './component/examquestions/examquestions.component';
 
 
 
 
 
 @NgModule({
-  declarations: [...StudentCourseRoutingModule.componentDeclration],
+  declarations: [...StudentCourseRoutingModule.componentDeclration, ExamquestionsComponent],
   imports: [
     CommonModule,
     StudentCourseRoutingModule,
@@ -20,7 +22,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    WebcamModule
   ]
 })
 export class StudentCourseModule { }

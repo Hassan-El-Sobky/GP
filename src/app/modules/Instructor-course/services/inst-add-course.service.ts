@@ -70,5 +70,8 @@ export class InstAddCourseService {
     return this._http.request('delete', `https://lmsapis.herokuapp.com/deleteLecture/${id}`,{body:data});
   }
 
-  
+  getExamsById(courseId:any):Observable<any>{
+    return this._http.get(`https://lmsapis.herokuapp.com/courseExams/${courseId}`)
+  }
+
 }

@@ -21,6 +21,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 import { DeletelecturedialogComponent } from './modules/Instructor-course/components/deletelecturedialog/deletelecturedialog.component';
 import { InstructorGuard } from './modules/authentication/gurads/instructor.guard';
+import { WebcamModule } from 'ngx-webcam';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { InstructorGuard } from './modules/authentication/gurads/instructor.guar
     MatProgressBarModule,
     MatFormFieldModule,
     NgxPaginationModule,
-    ScheduleModule
+    ScheduleModule,
+  
   ],
   entryComponents: [
     DeletedialogComponent,
