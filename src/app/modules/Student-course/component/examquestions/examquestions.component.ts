@@ -22,9 +22,9 @@ flag:boolean=false;
      
     this.getId();
 
-    setInterval(()=>{
-      this.flag=true
-    },50000)
+    // setInterval(()=>{
+    //   this.flag=true
+    // },50000)
    }
    
   getId(){
