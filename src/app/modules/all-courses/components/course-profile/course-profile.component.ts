@@ -14,6 +14,8 @@ export class CourseProfileComponent implements OnInit {
   course: any;
   username:any
   insName:any
+
+  role=localStorage.getItem("role");
   courseDeafult:string='assets/images/course.jpg';
   constructor(private _location: Location, private _courseData: AvailableCoursesService, private _activated: ActivatedRoute,public tokenService: TokenService) {
     this.getCourseData()
