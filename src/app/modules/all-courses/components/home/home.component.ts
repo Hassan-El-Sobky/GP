@@ -72,7 +72,16 @@ export class HomeComponent implements OnInit {
     nav: true
   }
 
+  courseSearch(name:any)
+  {
+    // this._allCourses.courseSearch(name).subscribe((res) => {
+    //   console.log(res.searchResult);
+      
+    //  this.allCoursesArr = res.searchResult;
 
+    //})
+    
+  }
 
 
 

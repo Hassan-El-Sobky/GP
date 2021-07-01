@@ -8,7 +8,7 @@
 
       <div class="sbar ">
         <div class="search-container m-auto">
-          <input type="text" name="search" placeholder="Search..." class="search-input">
+          <input type="text" name="search" placeholder="Search..." class="search-input" #searchName (keyup)="courseSearch(searchName.value)"> 
           <a href="#" class="search-btn">
             <i class="fas fa-search"></i>
           </a>
