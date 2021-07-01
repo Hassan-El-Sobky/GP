@@ -22,41 +22,53 @@
     <h1>What is<span>LG</span> </h1>
 
   </div>
+  <div class="about m-3">
   <div class="container">
-    <div class="row first">
-      <div class="col-md-8 ">
-
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum sit quod, delectus commodi aperiam ea
-          libero, odio totam rem omnis aspernatur dolor eius. Praesentium accusantium veritatis debitis nemo nam,
-          aliquam dolor, labore unde tempore saepe, placeat amet velit deleniti! Similique amet recusandae incidunt
-          quidem id.</p>
+    <div class="row">
+     
+      <div class="col-md-8">
+        <div class="description">
+          <p class="lead p-2 m-2">LG is your best way to get all your education needs just by one click!.</p>
+           <p class="lead p-2 m-2">Here you can learn anything you want, here you can be anything you want, here you
+            can communicate with everything.. here you can touch your dreams !!</p>
+            <p class="lead p-2 m-2">By one click you will able to learn, teach, test yourself with more 
+              security and you will be able to monitor all your activities !
+            </p>
+        </div>
       </div>
+
       <div class="col-md-4">
-        <img src="../../../../../assets/images/laptop.png" class="border rounded-2" alt="">
+      <div class="image">
+          <img src="../../../../../assets/images/laptop.png" class="img-fluid rounded" alt="">
+        </div>
       </div>
-
 
     </div>
-
+  </div>
+</div>
 
     <div class="av_header">
       <h2>Multiable Availabe Courses</h2>
     </div>
-
-    <div class="row second">
+    <div class="muCourses">
+    <div class="container p-2">
+    <div class="row">
       <div class="col-md-12">
         <owl-carousel-o [options]="customOptions">
 
           <ng-template *ngFor="let course of firstfive" carouselSlide>
-            <div class="card " style="width: 18rem;">
-              <img [src]="courseDeafult" class="card-img-top" alt="...">
+            <div class="card mx-2 p-2">
+              <img [src]="courseDeafult" class="card-img-top imageCard" alt="...">
               <div class="card-body">
-                <h2>{{course?.courseName}}</h2>
-                <p class="card-tecourset">{{course?.courseDepartment}}</p>
-                <p>{{course?.prerequisite}}</p>
+                <h2 class="mb-1">{{course?.courseName}}</h2>
+                <p class="card-tecourset mb-1">{{course?.courseDepartment}}</p>
+                <p class="mb-2">{{course?.prerequisite}}</p>
+                <div class="button_cont" align="center">
+                  <a [routerLink]="['/courses/courseProfile',course._id]" class="example_b w-100" >Course info</a>
+              </div>
 
       
-                <a [routerLink]="['/courses/courseProfile',course._id]" class="btn btn-warning m-2">preview</a>
+                <!-- <a [routerLink]="['/courses/courseProfile',course._id]" class="btn btn-warning m-2">preview</a> -->
               </div>
             </div>
           </ng-template>
@@ -67,4 +79,6 @@
     </div>
 
   </div>
+</div>
+
 </section>

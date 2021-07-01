@@ -1,28 +1,24 @@
-$bodybackGround: #95B8FE;
+$bodybackGround: #f1f1f1;
 // $formbackgroud:#2E2C2A;
 $formbackgroud:#ffff;
 .body
 {
-    height: 100vh;
-    background-color:$bodybackGround;
+   
+    
 }
 .formContainer
 {
-    width: 800px;
-    height:auto;
-    background-color:$formbackgroud;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    margin: 10px 0px;
+   background-color: white;
     border-radius: 15px;
+    
 }
 
 
 .form-group
 {
- width: 80%;
+  
+ 
+ text-align: center; 
 }
 .form-group label
 {
@@ -59,8 +55,9 @@ $formbackgroud:#ffff;
 }
 .form-group button
 {
+  
   background-color: #95B8FE;
-  margin-top: 20PX;
+  
   padding: 10px;
   border-radius: 25px;
   border: none;

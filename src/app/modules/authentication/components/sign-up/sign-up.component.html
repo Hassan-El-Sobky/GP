@@ -1,68 +1,112 @@
-<section class="body">
+<section class="body py-2">
 
-  <div class="formContainer">
-    <div class="container  ">
-      <div class="text-center mt-5">
+  <div class="formContainer p-3 m-auto mt-5 w-50">
+    
+      <div class="text-center">
         <img [src]="logoImage" class="img-fluid logo" alt="">
       </div>
-      <div class="center">
+     
         <form class="my-2" (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
 
           <div class="inputbox my-4 m-auto w-50">
-
-
-
-            <input [class.is-valid]="registerForm.get('name').errors == null && 
-          registerForm.get('name').touched" type="text" formControlName='name' class="form-control" id="name">
-            <span for="Name">Name</span>
+            <span for="Name">Name :</span>
+            <input [class.is-valid]="registerForm.get('name').errors == null && registerForm.get('name').touched" type="text" formControlName='name' class="form-control" id="name">
             <p *ngIf="registerForm.get('name').errors != null && registerForm.get('name').touched"
               class="p-3 text-danger ">Name invalid</p>
           </div>
 
           <div class="inputbox my-4 m-auto w-50">
-
-
-            <input [class.is-valid]="registerForm.get('username').errors == null && 
-          registerForm.get('username').touched" type="text" class="form-control" formControlName='username'
-              id="userName">
-            <span for="userName">userName</span>
+            <span for="userName">User Name:</span>
+            <input [class.is-valid]="registerForm.get('username').errors == null && registerForm.get('username').touched" type="text" class="form-control" formControlName='username' id="userName">
+           
             <p *ngIf="registerForm.get('username').errors != null && registerForm.get('username').touched"
               class="p-3 text-danger ">username invalid</p>
           </div>
 
           <div class="inputbox my-4 m-auto w-50 ">
-
-            <input [class.is-valid]="registerForm.get('email').errors == null && registerForm.get('email').touched"
-              type="text" type="text" class="form-control" formControlName='email' id="Email">
-            <span for="Email">Email</span>
+            <span for="Email">Email :</span>
+            <input [class.is-valid]="registerForm.get('email').errors == null && registerForm.get('email').touched" type="text" type="text" class="form-control" formControlName='email' id="Email">
+            
             <p *ngIf="registerForm.get('email').errors != null && registerForm.get('email').touched"
               class="p-3 text-danger ">Email invalid</p>
           </div>
-          <div class="inputbox my-4 m-auto w-50">
 
+          <div class="inputbox my-4 m-auto w-50">
             <div class="eyeslash">
-              <input [class.is-valid]="registerForm.get('mobilePhone').errors == null && 
-            registerForm.get('mobilePhone').touched" type="number" class="form-control" formControlName='mobilePhone'
-                id="mobilePhone">
               <span for="mobilePhone">Phone Number :</span>
+              <input [class.is-valid]="registerForm.get('mobilePhone').errors == null && registerForm.get('mobilePhone').touched" type="number" class="form-control" formControlName='mobilePhone' id="mobilePhone">
+              
               <p *ngIf="registerForm.get('mobilePhone').errors != null && registerForm.get('mobilePhone').touched"
                 class="p-3 text-danger ">PhoneNumber is invalid</p>
             </div>
           </div>
 
           <div class="inputbox my-4 m-auto w-50">
-
             <div class="eyeslash">
-              <input [class.is-valid]="registerForm.get('password').errors == null && 
-            registerForm.get('password').touched" type="password" class="form-control" formControlName='password'
-                id="password">
-              <span for="password">Password</span>
+              <span for="password">Password :</span>
+              <input [class.is-valid]="registerForm.get('password').errors == null && registerForm.get('password').touched" type="password" class="form-control" formControlName='password' id="password">
+              
               <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"
                 class="p-3 text-danger ">Password invalid</p>
-
               <!-- (click)="showpassword()"  -->
             </div>
           </div>
+
+          <div class="inputbox my-4 m-auto w-50">
+            <div class="eyeslash">
+              <span for="cPassword">Confirm Password :</span>
+              <input [class.is-valid]="registerForm.get('rePassword').errors == null && registerForm.get('rePassword').touched" type="password" class="form-control" id="cPassword" formControlName='rePassword'>
+              
+              <p *ngIf="registerForm.get('rePassword').errors != null && registerForm.get('rePassword').touched"
+                class="p-3 text-danger ">invalid</p>
+
+              <!-- (click)="reshowpassword()" -->
+            </div>
+          </div>
+
+          <div class=" mt-4 text-center ">
+            <div class="my-2 m-auto w-50">
+              <label for="file-input">Upload Photo</label>
+              <br>
+              <input type="file" formControlName="userImage" [disabled]='registerForm.invalid'
+                (change)='selectFile($event)' name="file-input" accept="images/*" id="file-input"
+                class="file-input__input" name="photo" />
+
+              <label class="file-input__label" for="file-input">
+
+                <span>Upload</span></label>
+            </div>
+
+            <div class="form-check form-check-inline ">
+              <input type="radio" class="form-check-input" formControlName='gender' id="male" name="gender"
+                value="male">
+              <label class="px-1 form-check-label" for="male">Male</label>
+            </div>
+            <div class="form-check form-check-inline ">
+              <input class="form-check-input" type="radio" formControlName='gender' id="female" name="gender"
+                value="female">
+              <label class="px-1 form-check-label" for="female">Female</label>
+            </div>
+          </div>
+
+
+
+          <!-- <div class="inputbox my-4  m-auto w-50 ">
+          <select class="btn " for='' name="role" formControlName='role' id="">
+            <option id="" selected value="student">Student</option>
+          </select>
+        </div> -->
+        <div class="form-group">
+          <button [disabled]='registerForm.invalid' type="submit" class=" w-65">Sign Up</button>
+        </div> 
+          
+        </form>
+        
+    
+
+  </div>
+</section>
+<!-- -->
 
           <div class="inputbox my-4 m-auto w-50">
 

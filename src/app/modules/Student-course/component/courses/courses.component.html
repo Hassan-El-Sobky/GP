@@ -1,6 +1,7 @@
 <section id="Courses">
     <div class="container-fluid">
-        <div class="row my-5 m-auto  ">
+
+        <div class="row my-5 m-auto">
 
             <div *ngFor="let  x of stuCoursesArr | 
             paginate: { 
@@ -10,14 +11,17 @@
           }"
           class="col-md-3 my-2 ">
                 
-                <div  class="course-item card text-center ">
+                <div  class="course-item card text-center p-3">
                     <img src="../../../../../assets/images/sq.jpg" class="card-img-top" alt="">
                     <div class="card-body">
                         <h5 class=" card-title">{{x?.courseName}}</h5>
                         <p>{{x.courseDepartment}}</p>
 
                     </div>
-                    <a [routerLink]="['/student/course-info',x._id]" class="btn btn-primary">Course info</a>
+                    <div class="button_cont" align="center">
+                        <a [routerLink]="['/student/course-info',x._id]" class="example_b w-100" >Course info</a>
+                    </div>
+                    <!-- <a [routerLink]="['/student/course-info',x._id]" class="btn draw-border">Course info</a> -->
                 </div>
             </div>
 
@@ -32,7 +36,6 @@
         </div>
     </div>
 </section>
-
 
             
               
