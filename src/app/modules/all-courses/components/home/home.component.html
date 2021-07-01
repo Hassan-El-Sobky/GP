@@ -3,12 +3,12 @@
     <div class="content  p-3">
 
       <div class="header mb-5 ">
-        <p>Togther We Can Do It </p>
+        <h3>Togther We Can Do It !!</h3>
       </div>
 
       <div class="sbar ">
         <div class="search-container m-auto">
-          <input type="text" name="search" placeholder="Search..." class="search-input">
+          <input type="text" name="search" placeholder="Search..." class="search-input" #searchName (keyup)="courseSearch(searchName.value)"> 
           <a href="#" class="search-btn">
             <i class="fas fa-search"></i>
           </a>
@@ -28,7 +28,9 @@
      
       <div class="col-md-8">
         <div class="description">
-          <p class="lead p-2 m-2">LG is your best way to get all your education needs just by one click!.</p>
+          <p class="lead p-2 m-2">LG is your best way to get all your education needs just by one click!. It is a
+            e-learning website make the communication between instructor. student and courses more easier.
+          </p>
            <p class="lead p-2 m-2">Here you can learn anything you want, here you can be anything you want, here you
             can communicate with everything.. here you can touch your dreams !!</p>
             <p class="lead p-2 m-2">By one click you will able to learn, teach, test yourself with more 

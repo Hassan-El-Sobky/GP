@@ -1,3 +1,4 @@
+<div class="muCourses">
 <div class="container">
   <div class="row">
     <div class="float-end my-2 mr-4">
@@ -11,16 +12,19 @@
      itemsPerPage:4,
      currentPage: page,
      totalItems: totalLength 
-   }" class="col-md-3 my-5">
-      <div [routerLink]="['/instructor/courseDetails',x._id]" class="card " style="width: 18rem;">
-        <img src="{{x?.imageUrl}}" class="card-img-top" alt="...">
+   }" class="col-md-3 p-2 mb-2">
+      <div [routerLink]="['/instructor/courseDetails',x._id]" class="card p-3">
+        <img src="{{x?.imageUrl}}" class="card-img-top imageCard" alt="...">
         <div class="card-body">
           <h2>{{x?.courseName}} </h2>
           <p class="card-text">{{x?.courseDepartment}}</p>
           <p>{{x?.prerequisite}}</p>
 
         </div>
-        <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
+        <div class="button_cont" align="center">
+          <a [routerLink]="['/instructor/courseDetails',x._id]" class="example_b w-100" >Course info</a>
+      </div>
+        <!-- <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button> -->
 
       </div>
     </div>
@@ -125,3 +129,6 @@
 
       </div>
     </div>
+  </div>
+</div>
+</div>
