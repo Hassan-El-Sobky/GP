@@ -8,6 +8,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { WebcamModule } from 'ngx-webcam';
 import { ExamquestionsComponent } from './component/examquestions/examquestions.component';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -23,7 +24,8 @@ import { ExamquestionsComponent } from './component/examquestions/examquestions.
     MatPaginatorModule,
     MatSortModule,
     NgxPaginationModule,
-    WebcamModule
+    WebcamModule,
+    CarouselModule,
   ]
 })
 export class StudentCourseModule { }

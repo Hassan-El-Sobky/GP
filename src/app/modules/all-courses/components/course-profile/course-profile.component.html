@@ -1,8 +1,9 @@
-<i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
+<i class="fas fa-arrow-left back_button m-2 " *ngIf="tokenService.isAuthenticated() == true" (click)='backClicked() '></i>
 
 <div class="container-fluid my-4">
     <div class="card mb-3">
         <div class="row g-0">
+            <i class="fas fa-arrow-left back_button m-2  " *ngIf="tokenService.isAuthenticated() == false" (click)='backClicked() '></i>
             <div class="col-md-3 image">
                 <img [src]="courseDeafult" alt="...">
             </div>

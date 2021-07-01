@@ -27,7 +27,8 @@ filex:any
     formData.append('role',`${this.registerForm.get('role').value}`);
     formData.append('gender',`${this.registerForm.get('gender').value}`);
     formData.append('password',`${this.registerForm.get('password').value}`);
-    formData.append('rePassword',`${this.registerForm.get('rePassword').value}`);
+    formData.append('rePassword', `${this.registerForm.get('rePassword').value}`);
+    formData.append('mobilePhone',`${this.registerForm.get('mobilePhone').value}`);
     formData.append('userImage',this.filex);
     console.log(registerForm.value);
     
@@ -59,9 +60,10 @@ filex:any
       "name": new FormControl(null, [Validators.required,]),
       "email": new FormControl(null, [Validators.required,]),
       "username": new FormControl(null, [Validators.required,]),
-      "role": new FormControl(null, [Validators.required,]),
+      "role": new FormControl("student", [Validators.required,]),
       "gender": new FormControl(null, [Validators.required,]),
       "password": new FormControl(null, [Validators.required,]),
+      "mobilePhone": new FormControl(null, [Validators.required,]),
       "rePassword": new FormControl(null, [Validators.required,]),
       "userImage":new FormControl(null,[Validators.required])
     });

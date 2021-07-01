@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AvailableCoursesService } from '../../Services/available-courses.service';
 import {Location} from '@angular/common';
-
+import { TokenService} from '../../../../core/services/token.service'
 @Component({
   selector: 'app-courses',
   templateUrl: './courses.component.html',
@@ -18,7 +18,7 @@ export class CoursesComponent implements OnInit {
   num: any;
   courseDeafult:string='assets/images/course.jpg';
   student=localStorage.getItem('role');
-  constructor(private _allCourses: AvailableCoursesService , private _router:Router,private _location: Location) { }
+  constructor(private _allCourses: AvailableCoursesService , private _router:Router,private _location: Location,public tokenService: TokenService) { }
   getAllAvailabel()
   {
     this._allCourses.getAllAvailabeCourses().subscribe((data) => {

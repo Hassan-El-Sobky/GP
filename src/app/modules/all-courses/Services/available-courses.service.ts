@@ -39,10 +39,22 @@ export class AvailableCoursesService {
          return this._Http.get(`https://lmsapis.herokuapp.com/course/${id}`);
   }
 
-  userProfile(id:any):Observable<any>
+  userProfile(username:any):Observable<any>
   {
-    return this._Http.get(`http://lmsapis.herokuapp.com/userProfile/${id}`);
+    return this._Http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`);
   }
+
+  
+ getcourseStudents(courseId:any): Observable<any> /*el students ely msgleen course mo3yn*/ 
+ {
+  return this._Http.get(`http://lmsapis.herokuapp.com/courseStudents/courseId=${courseId}`)
+  
+ }
+ getCourselectures(courseId:any): Observable<any>
+ {
+   return this._Http.get(`http://lmsapis.herokuapp.com/allAssigment/courseId=${courseId}`)
+ }
+
 
   
 }

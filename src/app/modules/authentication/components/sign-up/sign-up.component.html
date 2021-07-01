@@ -4,10 +4,10 @@
     <div class="container  ">
       <div class="text-center mt-5">
         <img [src]="logoImage" class="img-fluid logo" alt="">
-       </div>
-      <form class="m-auto my-2"  (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
+      </div>
+      <form class="my-2" (ngSubmit)='getRegisterInfo(registerForm)' [formGroup]="registerForm">
 
-        <div class="form-group m-auto">
+        <div class="form-group m-auto w-50">
 
           <label for="Name">Name</label>
 
@@ -16,10 +16,10 @@
             placeholder="Enter your Name">
 
           <p *ngIf="registerForm.get('name').errors != null && registerForm.get('name').touched"
-            class="py-2 text-danger ">Name inValid</p>
+            class="py-2 text-danger ">Name invalid</p>
         </div>
 
-        <div class="form-group m-auto">
+        <div class="form-group m-auto w-50">
 
           <label for="userName">userName</label>
           <input [class.is-valid]="registerForm.get('username').errors == null && 
@@ -27,33 +27,43 @@
             id="userName" placeholder="Enter your UserName">
 
           <p *ngIf="registerForm.get('username').errors != null && registerForm.get('username').touched"
-            class="py-2 text-danger ">username inValid</p>
+            class="py-2 text-danger ">username invalid</p>
         </div>
 
-        <div class="form-group m-auto">
+        <div class="form-group m-auto w-50 ">
           <label for="Email">Email</label>
           <input [class.is-valid]="registerForm.get('email').errors == null && 
           registerForm.get('email').touched" type="text" type="text" class="form-control" formControlName='email'
             id="Email" placeholder="Enter your email">
 
           <p *ngIf="registerForm.get('email').errors != null && registerForm.get('email').touched"
-            class="py-2 text-danger ">E_mail inValid</p>
+            class="py-2 text-danger ">Email invalid</p>
+        </div>
+        <div class="form-group m-auto w-50">
+          <label for="mobilePhone">Phone Number :</label>
+          <div class="eyeslash">
+            <input [class.is-valid]="registerForm.get('mobilePhone').errors == null && 
+            registerForm.get('mobilePhone').touched" type="number" class="form-control" formControlName='mobilePhone'
+              id="mobilePhone" placeholder="Enter your password">
+            <p *ngIf="registerForm.get('mobilePhone').errors != null && registerForm.get('mobilePhone').touched"
+              class="py-2 text-danger ">PhoneNumber is invalid</p>
+          </div>
         </div>
 
-        <div class="form-group m-auto">
+        <div class="form-group m-auto w-50">
           <label for="password">Password</label>
           <div class="eyeslash">
             <input [class.is-valid]="registerForm.get('password').errors == null && 
             registerForm.get('password').touched" type="password" class="form-control" formControlName='password'
               id="password" placeholder="Enter your password">
             <p *ngIf="registerForm.get('password').errors != null && registerForm.get('password').touched"
-              class="py-2 text-danger ">Password inValid</p>
+              class="py-2 text-danger ">Password invalid</p>
             <i class="fas fa-eye-slash"></i>
             <!-- (click)="showpassword()"  -->
           </div>
         </div>
 
-        <div class="form-group m-auto">
+        <div class="form-group m-auto w-50">
 
           <label for="cPassword">Confirm Password </label>
           <div class="eyeslash">
@@ -62,41 +72,50 @@
             registerForm.get('rePassword').touched" type="password" class="form-control" id="cPassword"
               formControlName='rePassword' placeholder="Enter your password">
             <p *ngIf="registerForm.get('rePassword').errors != null && registerForm.get('rePassword').touched"
-              class="py-2 text-danger ">inValid</p>
-            <i  class="fas fa-eye-slash"></i>
+              class="py-2 text-danger ">invalid</p>
+            <i class="fas fa-eye-slash"></i>
             <!-- (click)="reshowpassword()" -->
           </div>
         </div>
+        <div class=" mt-4 text-center ">
+          <div class="my-2 m-auto w-50">
+            <label for="file-input">Upload Photo</label>
+            <br>
+            <input type="file" formControlName="userImage" [disabled]='registerForm.invalid'
+              (change)='selectFile($event)' name="file-input" accept="images/*" id="file-input"
+              class="file-input__input" name="photo" />
 
-        <div class="form-group m-auto">
-          <input type="radio" formControlName='gender' id="male" name="gender" value="male">
-          <label class="px-1" for="male">Male</label>
-          <input type="radio" formControlName='gender' id="female" name="gender" value="female">
-          <label class="px-1" for="female">Female</label>
+            <label class="file-input__label" for="file-input">
+
+              <span>Upload</span></label>
+          </div>
+
+          <div class="form-check form-check-inline ">
+            <input type="radio" class="form-check-input" formControlName='gender' id="male" name="gender" value="male">
+            <label class="px-1 form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline ">
+            <input class="form-check-input" type="radio" formControlName='gender' id="female" name="gender"
+              value="female">
+            <label class="px-1 form-check-label" for="female">Female</label>
+          </div>
         </div>
 
-        <div class="form-group m-auto ">
-          <select class="btn btn-dark" name="role" formControlName='role' id="">
-            <option autofocus value="admin">Admin</option>
-            <option value="student">Student</option>
-            <option value="instructor">Instrutor</option>
+
+
+        <!-- <div class="form-group  m-auto w-50 ">
+          <select class="btn " for='' name="role" formControlName='role' id="">
+            <option id="" selected value="student">Student</option>
           </select>
-        </div>
+        </div> -->
+        <div class="text-center dd">
 
-        <div class="my-2">
-          <label for="file-input" >Upload Photo</label>
-          <br>
-      <input type="file" formControlName="userImage"  [disabled]='registerForm.invalid'   (change)='selectFile($event)'   name="file-input" accept="images/*" id="file-input" class="file-input__input"
-      name="photo"/> 
+         
 
-    <label class="file-input__label" for="file-input">
 
-      <span>Upload</span></label>
-     </div>
-
-       
-        <div class="form-group m-auto py-3">
-          <button  [disabled]='registerForm.invalid'  type="submit" class=" w-100">Sign Up</button>
+          <div class="form-group m-auto py-3">
+            <button [disabled]='registerForm.invalid' type="submit" class=" w-65">Sign Up</button>
+          </div>
         </div>
       </form>
     </div>

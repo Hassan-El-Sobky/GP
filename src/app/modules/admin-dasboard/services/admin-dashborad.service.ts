@@ -30,6 +30,17 @@ export class AdminDashboradService {
 
   getAllAvalCourses(): Observable<any>
   {
-    return this._httpClient.get(' https://lmsapis.herokuapp.com/allAvailableCourses')
+    return this._httpClient.get('https://lmsapis.herokuapp.com/allAvailableCourses')
   }
+
+ getcourseStudents(courseId:any): Observable<any> /*el students ely msgleen course mo3yn*/ 
+  {
+   return this._httpClient.get(`http://lmsapis.herokuapp.com/courseStudents/courseId=${courseId}`)
+   
+  }
+  getCourselectures(courseId:any): Observable<any>
+  {
+    return this._httpClient.get(`http://lmsapis.herokuapp.com/allAssigment/courseId=${courseId}`)
+  }
+
 }

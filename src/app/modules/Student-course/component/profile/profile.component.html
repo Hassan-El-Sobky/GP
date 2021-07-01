@@ -6,26 +6,47 @@
             <div class="offset-2 m-auto col-md-8">
                 <div class="d-flex justify-content-center align-content-center imd_div">
                     <img src="../../../../../assets/images/default image.png" class=" img " alt="">
-                   
+
                 </div>
-               
+
                 <div class="text-center body  d-flex justify-content-center">
 
                     <h3>{{name}}</h3>
                     <h4><span>( </span>{{username}}<span> )</span> </h4>
                 </div>
-                
+
+            </div>
+            <div *ngIf="role == 'admin' " class="col-md-12">
+                <p>{{status}}</p>
+                <owl-carousel-o [options]="customOptions">
+
+                    <ng-template *ngFor="let course of courses" carouselSlide>
+                        <div class="card " style="width: 18rem;">
+                            <img [src]="courseDeafult" class="card-img-top" alt="...">
+                            <div class="card-body">
+                               
+                                <h2>{{course?.courseName}}</h2>
+                                <p class="card-tecourset">{{course?.courseDepartment}}</p>
+                                <p>{{course?.prerequisite}}</p>
+
+
+                                <a [routerLink]="['/courses/courseProfile',course._id]"
+                                    class="btn btn-warning m-2">preview</a>
+                            </div>
+                        </div>
+                    </ng-template>
+                </owl-carousel-o>
+
+
             </div>
 
-
-          
         </div>
 
         <div class="icons card-footer">
             <div class="fb">
                 <i class="fab fa-facebook-square fa-2x"></i>
             </div>
-            <div  class="tt">
+            <div class="tt">
                 <i class="fab fa-twitter-square fa-2x"></i>
             </div>
             <div class="ig">
@@ -35,7 +56,7 @@
                 <i class="fab fa-linkedin fa-2x"></i>
             </div>
             <div class="email">
-                <i class="far fa-envelope fa-2x">  </i> <span class="px-1">  {{email}}</span>
+                <i class="far fa-envelope fa-2x"> </i> <span class="px-1"> {{email}}</span>
             </div>
         </div>
     </div>

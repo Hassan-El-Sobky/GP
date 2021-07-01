@@ -1,60 +1,59 @@
 <section class="body py-3">
   <div class="formContainer">
     <div class=" ">
-    <div class="row">
-      <div class="col-md-6">
-        <form class="m-auto formCust" #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
-          <div class="text-center mt-5">
-            <img [src]="logoImage" class="img-fluid logo" alt="">
-           </div>
-          <div class="form-group m-auto">
-            <label for="Email">Email</label>
-            <input required type="text" name="email" ngModel #email='ngModel' ng class="form-control" id="Email"
-              placeholder="Enter your email">
-              <div  *ngIf="email.touched && email.invalid " class="a">
-                <span> Name is required</span>
-               </div>
-  
-               <p *ngIf="status=='mail inCorrect'" class="text-danger errMessage ">{{status}}</p>
-          </div>
-  
-          <div class="form-group m-auto">
-            <label for="password">Password</label>
-            <div class="eyeslash">
-              <input required type="password" name="password" ngModel #password='ngModel' class="form-control " id="password"
-                placeholder="Enter your password">
-            </div>  
-            <div *ngIf="password.touched && password.invalid " class="a">
-              <span> Password is required</span>
-             </div>
-             <p *ngIf="status=='Password inCorrect'" class="text-danger errMessage">{{status}}</p>
-          </div>
-          <div class="keepMe m-auto py-3">
-            <div class="checkbox">
-              <input type="checkbox" id="keepme">
-              <label for="keepme">Keep me signed</label>
-            </div>
-            <span routerLink="../forgetpassword">Forget password?</span>
-          </div>
-  
-          <div class="form-group m-auto ">
-            <button [disabled]='!signInForm.valid' type="submit" class=" w-100">Sign In</button>
-          </div>
-  
-        </form>
-        <div class="m-auto d-flex justify-content-center "> 
-          <p>you don't have an account ? </p>
-          <a  class="px-1 sign_Up " [routerLink]="['/authentication','signup']" >SignUp</a>
-         </div>
+      <div class="row">
+        <div class="col-md-6 samir_blur ">
 
-      </div>
-      <div class="col-md-6">
-        <div class="content-wrap">
-          <img src="../../../../../assets/images/sect1.svg" class="img-fluid" alt="">
+          <form class="formCust  " #signInForm="ngForm" (ngSubmit)="onSubmit(signInForm)">
+            <div class="text-center mt-5 ">
+              <img [src]="logoImage" class="img-fluid logo" alt="">
+            </div>
+
+            
+
+            <div class="form-group bg-text w-50 m-auto ">
+              <label for="Email">Email</label>
+              <input required type="text" name="email" ngModel #email='ngModel' ng class="form-control" id="Email"
+                placeholder="Enter your email">
+              <div *ngIf="email.touched && email.invalid " class="a">
+                <span> Name is required</span>
+              </div>
+
+              <p *ngIf="status=='mail inCorrect'" class="text-danger errMessage ">{{status}}</p>
+            </div>
+
+            <div class="form-group bg-text w-50 m-auto ">
+              <label for="password">Password</label>
+              <div class="eyeslash">
+                <input required type="password" name="password" ngModel #password='ngModel' class="form-control "
+                  id="password" placeholder="Enter your password">
+              </div>
+              <div *ngIf="password.touched && password.invalid " class="a">
+                <span> Password is required</span>
+              </div>
+              <p *ngIf="status=='Password inCorrect'" class="text-danger errMessage">{{status}}</p>
+            </div>
+
+
+            <div class="form-group text-center m-auto">
+              <button [disabled]='!signInForm.valid' type="submit" class="w-50">Sign In</button>
+            </div>
+
+            <div class="m-auto d-flex justify-content-center ">
+              <p> For New Accounts </p>
+              <a class="px-1 sign_Up " [routerLink]="['/authentication','signup']">SignUp</a>
+            </div>
+          </form>
+         
+
+        </div>
+        <div class="col-md-6">
+          <div class="content-wrap">
+            <img src="../../../../../assets/images/sect1.svg" class="img-fluid" alt="">
+          </div>
         </div>
       </div>
-    </div>
-  
+
     </div>
 
   </div>
