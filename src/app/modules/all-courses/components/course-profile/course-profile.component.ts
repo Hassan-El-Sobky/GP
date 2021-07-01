@@ -17,6 +17,10 @@ export class CourseProfileComponent implements OnInit {
   courseDeafult:string='assets/images/course.jpg';
   constructor(private _location: Location, private _courseData: AvailableCoursesService, private _activated: ActivatedRoute,public tokenService: TokenService) {
     this.getCourseData()
+
+
+    
+
    }
   
 

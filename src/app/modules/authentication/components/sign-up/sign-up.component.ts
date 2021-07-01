@@ -28,10 +28,11 @@ filex:any
     formData.append('gender',`${this.registerForm.get('gender').value}`);
     formData.append('password',`${this.registerForm.get('password').value}`);
     formData.append('rePassword', `${this.registerForm.get('rePassword').value}`);
-    formData.append('mobilePhone',`${this.registerForm.get('mobilePhone').value}`);
+    formData.append('mobilePhone',`0${this.registerForm.get('mobilePhone').value}`);
     formData.append('userImage',this.filex);
     console.log(registerForm.value);
     
+
     if (registerForm.valid == true) {
       this._authServ.register(formData).subscribe((data) => {
         console.log(data);

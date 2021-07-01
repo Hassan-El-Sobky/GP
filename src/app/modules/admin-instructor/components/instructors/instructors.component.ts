@@ -14,7 +14,7 @@ import { DeletedialogComponent } from 'src/app/modules/admin-instructor/componen
 export class InstructorsComponent implements OnInit {
 
   constructor(private _adminIns:AdminInstructorsService,private _location: Location,public dialog: MatDialog) { }
-  displayedColumns: string[] = ['name','username', 'email','Gender','action','view-detials'];
+  displayedColumns: string[] = ['name','username', 'email','action','view-detials'];
   dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

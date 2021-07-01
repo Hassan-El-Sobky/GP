@@ -52,3 +52,19 @@ margin-left: 40px;
 {
     color:#fe9d2b ;
 }
+
+.courseInf {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fe9d2b;
+    padding: 50px;
+    border-radius: 11px;
+   cursor: pointer;
+    border: 3px solid #F1F1FE;
+}
+.courseInf h3 
+{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

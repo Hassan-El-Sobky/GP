@@ -49,8 +49,8 @@ export class ProfileComponent implements OnInit {
       else
       {
         
-        this.courses = data.studentCourses
-        if (data.studentCourses.length==0)
+        this.courses = data.registeredCourses
+        if (data.registeredCourses.length==0)
         {
           this.status="This Student Has not Registered Any Courses Yet"
         }
