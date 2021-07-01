@@ -2,13 +2,13 @@ $bodybackGround: #fff;
 $formbackgroud: #f9f8f8;
 
 .body {
-    background-color: $bodybackGround;
+   height: 100vh;
     overflow: hidden;
-    background-color: #58595b;
+    background-color: #fff2d9;
 }
 .formContainer {
-    height: 100%;
-
+    margin-top: 50px;
+    // height: 100%;
     // position: absolute;
     // top: 50%;
     // left: 50%;

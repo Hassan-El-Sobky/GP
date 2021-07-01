@@ -320,18 +320,23 @@ img {
 
 .trans
 {
-    background-color: transparent !important;
+    background-color: rgba(0,0,0,0.7) !important;
     position: fixed;
     top: 0;
+    background-attachment: fixed;
+    
 
     .comp
     {
         font-size: 40px;
-        font-size: 900;   
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        font-weight: 500;
         color:#fa8a0a ;
+        
     }
     a
     {
         color:#fa8a0a ;
+        
     }
 }
