@@ -6,73 +6,76 @@
       </div>
       <form #createForm="ngForm" (ngSubmit)="onSubmit(createForm)">
          <div class="row">
-            <div class="col-md-6 py-2 px-5">
-               <div class="form-group">
+            <div class="col-md-6 py-2 center px-5">
+               <div class="inputbox">
+
+                  <input name="name" required ngModel #name='ngModel' type="text" class="form-control">
                   <label>Name*<span>:</span></label>
-                  <input name="name" required ngModel #name='ngModel' type="text" placeholder="Name"
-                     class="form-control">
-                  <div *ngIf="name.touched && name.invalid " class="a">
+                  <div *ngIf="name.touched && name.invalid " class="a p-2">
                      <span> Name is required</span>
                   </div>
 
                </div>
-               <div class="form-group">
+               <div class="inputbox">
+
+                  <input name="userName" required ngModel #userName='ngModel' type="text" class="form-control">
                   <label>UserName*<span>:</span></label>
-                  <input name="userName" required ngModel #userName='ngModel' type="text" placeholder="UserName"
-                     class="form-control">
-                  <div *ngIf="userName.touched && userName.invalid " class="a">
+                  <div *ngIf="userName.touched && userName.invalid " class="a p-2">
                      <span> UserName is required</span>
                   </div>
 
                </div>
 
-               <div class="form-group">
-                  <label>Email*<span>:</span></label>
-                  <input name="email" required ngModel #email='ngModel' type="email" placeholder="Email"
+               <div class="inputbox">
+
+                  <input name="email" required ngModel #email='ngModel' type="email"
                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" class="form-control">
-                  <div *ngIf="email?.touched && email?.invalid" class="a">
+                  <label>Email*<span>:</span></label>
+                  <div *ngIf="email?.touched && email?.invalid" class="a p-2">
                      <span>Email is required</span>
                   </div>
 
-                  <div *ngIf="email.errors?.pattern" class="a">
+                  <div *ngIf="email.errors?.pattern" class="a p-2">
                      <span *ngIf="email.errors?.pattern">This is not a valid Email </span>
                   </div>
                </div>
 
-               <div class="form-group">
-                  <label>Password*<span>:</span></label>
+               <div class="inputbox">
+
                   <input type="password" name="password" required ngModel #password='ngModel' minlength="6"
-                     placeholder="Password" class="form-control">
-                  <div *ngIf="password?.touched && password?.invalid " class="a">
+                     class="form-control">
+                  <label>Password*<span>:</span></label>
+                  <div *ngIf="password?.touched && password?.invalid " class="a p-2">
                      <span>Password is required</span>
 
                   </div>
-                  <div *ngIf="password.errors?.minlength" class="a">
+                  <div *ngIf="password.errors?.minlength" class="a p-2">
                      <span> minlength 6</span>
                   </div>
                </div>
 
 
 
-               <div class="form-group">
-                  <label>Password Confirmation*<span>:</span></label>
+               <div class="inputbox">
+
                   <input type="password" required ngModel #password_confirmation='ngModel' name="password_confirmation"
-                     placeholder="Password Confirmation" class="form-control">
-                  <div *ngIf="password_confirmation.touched && password_confirmation.invalid " class="a">
+                     class="form-control">
+                  <label>Password Confirmation*<span>:</span></label>
+                  <div *ngIf="password_confirmation.touched && password_confirmation.invalid " class="a p-2">
                      <span> Password Confirmation is required </span>
 
                   </div>
-                  <div *ngIf="password_confirmation.touched" class="a">
+                  <div *ngIf="password_confirmation.touched" class="a p-2">
                      <span *ngIf="password_confirmation.value != password.value "> Password Not Match</span>
 
                   </div>
                </div>
 
-               <div class="form-group">
+               <!-- <div class="form-group">
                   <label>Gender*<span>:</span></label>
                   <input name="gender" ngModel #gender='ngModel' type="radio" value="male" [attr.checked]="true"> Male
                   <input name="gender" ngModel #gender='ngModel' type="radio" value="female"> female
-               </div>
+               </div> -->
 
             </div>
 
@@ -101,8 +104,8 @@
          </div>
 
          <div class="row">
-            <div class="btnCreate">
-               <button [disabled]='!createForm.valid' class="btn border rounded" type="submit">Create</button>
+            <div class="btnCreate inputbox ">
+               <button [disabled]='!createForm.valid' type="submit">Create</button>
             </div>
          </div>
 
