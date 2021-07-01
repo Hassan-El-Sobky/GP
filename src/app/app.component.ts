@@ -1,6 +1,7 @@
 import { Component, OnChanges } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TokenService } from './core/services/token.service';
+import { LoaderService } from './loader/loader.service';
 
 
 @Component({
@@ -38,8 +39,13 @@ export class AppComponent {
   //   }
   // }
 
-  constructor(public tokenService: TokenService, private router: Router ) { }
+  constructor(public tokenService: TokenService, private router: Router ,public LoaderService:LoaderService ) { 
 
+    if(localStorage.getItem('token')==null || localStorage.getItem('token')==null ) {
+      this.router.navigate(['courses', 'Home']);
+    }
+  }
+  
   ngOnInit() {
 
 

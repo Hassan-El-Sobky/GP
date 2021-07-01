@@ -1,0 +1,127 @@
+<div class="container">
+  <div class="row">
+    <div class="float-end my-2 mr-4">
+      <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
+        class="btn btn-secondary rounded-left add float-end">Add</button>
+    </div>
+
+
+    <div *ngFor="let x of courses | 
+     paginate: { 
+     itemsPerPage:4,
+     currentPage: page,
+     totalItems: totalLength 
+   }" class="col-md-3 my-5">
+      <div [routerLink]="['/instructor/courseDetails',x._id]" class="card " style="width: 18rem;">
+        <img src="{{x?.imageUrl}}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h2>{{x?.courseName}} </h2>
+          <p class="card-text">{{x?.courseDepartment}}</p>
+          <p>{{x?.prerequisite}}</p>
+
+        </div>
+        <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button>
+
+      </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
+    </div>
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="m-auto">
+              <div class="center">
+                <form [formGroup]='addCourseForm'>
+
+                  <div class="inputbox">
+
+                    <input
+                      [class.is-valid]="addCourseForm.get('courseName').errors == null &&   addCourseForm.get('courseName').touched"
+                      type="text" formControlName="courseName" class="form-control" name="courseName">
+                    <span for="">Course Name</span>
+                    <p *ngIf="addCourseForm.get('courseName').errors != null && addCourseForm.get('courseName').touched"
+                      class="p-2 text-danger ">Course Name is Invalid</p>
+
+                  </div>
+
+
+                  <div class="inputbox">
+                    <input [class.is-valid]="addCourseForm.get('courseCode').errors == null && 
+                       addCourseForm.get('courseCode').touched" type="text" formControlName="courseCode"
+                      class="form-control" name="courseCode">
+                    <span for="">Course Code :</span>
+                    <p *ngIf="addCourseForm.get('courseCode').errors != null && addCourseForm.get('courseCode').touched"
+                      class="p-2 text-danger">Course Code is Invalid</p>
+
+                  </div>
+
+                  <div class="inputbox">
+
+                    <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                      addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                      class="form-control" name="courseDepartment">
+                    <span for="">Course Department:</span>
+                    <p *ngIf="addCourseForm.get('courseDepartment').errors != null && addCourseForm.get('courseDepartment').touched"
+                      class="p-2 text-danger ">Course Department is Invalid</p>
+
+                  </div>
+
+                  <div class="inputbox ">
+
+                    <input [class.is-valid]="addCourseForm.get('prerequisite').errors == null && 
+                      addCourseForm.get('prerequisite').touched" type="text" formControlName="prerequisite"
+                      class="form-control" name="prerequisite">
+                    <span for="">Prerequisite:</span>
+                    <p *ngIf="addCourseForm.get('prerequisite').errors != null && addCourseForm.get('prerequisite').touched"
+                      class="p-2 text-danger ">Prerequisite is Invalid</p>
+                  </div>
+
+                  <div class="my-2">
+                    <label for="file-input">Upload CoursePhoto</label>
+                    <br>
+                    <input type="file" formControlName="courseImage" [disabled]='addCourseForm.invalid'
+                      (change)='selectFile($event)' name="file-input" accept="images/*" id="file-input"
+                      class="file-input__input" name="photo" />
+
+                    <label class="file-input__label" for="file-input">
+
+                      <span>Upload</span></label>
+
+                    <div class="inputbox my-2">
+                      <input [disabled]='addCourseForm.invalid' type="button" value="submit">
+                    </div>
+                  </div>
+
+                </form>
+
+              </div>
+
+
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+    </div>

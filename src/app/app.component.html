@@ -1,14 +1,21 @@
 
+
  <mat-sidenav-container class="main-container">
     <mat-sidenav *ngIf="tokenService.isAuthenticated() == true"  opened mode='side' [class.menu-open]="menuOpened"
         [class.menu-close]="!menuOpened">
         <app-side-nav  [menuStatus]="menuOpened"></app-side-nav>
     </mat-sidenav>
     <mat-sidenav-content [ngStyle]="{'margin-left.px': contentMargin}">
-        <app-header (menuStatus)="GetMenuStatus($event)"></app-header>
-         <!-- <div *ngIf='LoaderService.isLoading | async'  class="loader-container">
-             <mat-spinner></mat-spinner>
+
+            
+        <app-header  (menuStatus)="GetMenuStatus($event)"></app-header>
+        <!-- <div *ngIf='LoaderService.isLoading | async' class="loader-container">
+            
+            <mat-spinner></mat-spinner>  
          </div> -->
+        <div *ngIf='LoaderService.isLoading | async'  class="loaderr">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+         </div> 
      <router-outlet></router-outlet> 
    
     </mat-sidenav-content>

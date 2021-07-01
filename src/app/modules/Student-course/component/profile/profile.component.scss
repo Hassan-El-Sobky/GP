@@ -1,0 +1,64 @@
+.section
+{
+    background-color:rgb(77, 74, 74);
+    width: 100%;
+    height: 20vh;
+}
+.img
+{
+ 
+    width: 250px;
+    height: 250px;
+    border: 3px solid orange;
+    border-radius: 50%;
+    position: relative;
+    top: 0px;
+    transform: translateY(-50);
+}
+.body
+{
+    margin: 4px 3px;
+}
+h3,h4
+{
+    margin: 0px 4px;
+}
+.icons
+{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+}
+.fb
+{
+    color: #385898;
+}
+.tt
+{
+    color:  rgba(29,161,242,1.00);
+}
+.ig
+{
+    background:linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+    ;
+}
+.li
+{
+    color: rgb(0, 115, 176);
+}
+.email
+{
+    color:rgba($color: orange, $alpha: 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+
+}
+.email span 
+{ 
+
+    color: black;
+
+}

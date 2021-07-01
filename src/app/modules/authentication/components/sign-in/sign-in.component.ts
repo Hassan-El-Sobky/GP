@@ -3,6 +3,7 @@ import { AuthenticationService } from '../../services/authentication.service';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TokenService } from 'src/app/core/services/token.service';
+import { GeneralService } from 'src/app/services/general.service';
 
 
 @Component({
@@ -11,15 +12,17 @@ import { TokenService } from 'src/app/core/services/token.service';
   styleUrls: ['./sign-in.component.scss']
 })
 export class SignInComponent implements OnInit {
-
+  logoImage: string ='/assets/logo1.png';
+  student: string ='/assets/sect1.svg';
+  status: any;
   constructor(private _authentication:AuthenticationService,
     private tokenService: TokenService,
-    private router: Router
+    private router: Router,
+    private _generalService:GeneralService
     ) { }
 
   ngOnInit(): void {
 
-    
   }
  
   onSubmit(form:NgForm)
@@ -28,18 +31,47 @@ export class SignInComponent implements OnInit {
          email:form.value.email,
          password:form.value.password
        }
-
+     
        console.log(userInfo);
        
 
        this._authentication.logIn(userInfo).subscribe(res=>{
-         console.log(res);  
+         console.log(res);
+         this.status=res.status
+         console.log(this.status);
+        console.log(res);
+        this._generalService.userName=res.uname
+        if(res.message=="instructor")
+        {
+      
+          this.router.navigate(["instructor","myCourse"])
+        }
+
+        if(res.message=="admin") {
+          this.router.navigate(["adminAnaylsis","dashboard"])
+        }
+
+        if(res.message=="student")
+        {
+          this.router.navigate(["student","course"])
+        }
+         
          if(res.token)
          {
           this.tokenService.setToken(res.token);
+
+           console.log(this.tokenService.isAuthenticated());
+
+            localStorage.setItem('username',res.uname);
+             localStorage.setItem('role',res.message);
           console.log(this.tokenService.isAuthenticated());
+          this._generalService.userName=res.message;
+          console.log(this._generalService.userName);
+      
+       
           
-           this.router.navigate(['/test/test']);
+
+          //  this.router.navigate(['/test']);
          }
      
          

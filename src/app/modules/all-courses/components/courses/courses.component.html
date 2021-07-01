@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <i class="fas fa-arrow-left back_button m-2  " *ngIf="tokenService.isAuthenticated() == true"
+        (click)='backClicked() '></i>
+      <input class="form-control m-2 serch float-end" *ngIf="tokenService.isAuthenticated() == true"
+        placeholder=" Search..." #searchName (keyup)="courseSearch(searchName.value)">
+    </div>
+  </div>
+</div>
+
+<section class="muCourses">
+<div class="container">
+  <div class="row">
+
+    <div *ngFor="let x of allCoursesArr| 
+      paginate: { 
+      itemsPerPage:8,
+      currentPage: page,
+      totalItems: totalLength 
+    }" class="col-md-3 mt-3">
+      <div class="card mx-2 p-2">
+        <img [src]="courseDeafult" class="card-img-top imageCard" alt="...">
+        <div class="card-body">
+          <h2>{{x?.courseName}}</h2>
+          <p class="card-text">{{x?.courseDepartment}}</p>
+          <p>{{x?.prerequisite}}</p>
+          <div class="button_cont" align="center">
+            <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="example_b mx-1" >Register</a>
+            <a [routerLink]="['/courses/courseProfile',x._id]" class="example_b2" >preview</a>
+          </div>
+          <!-- <div class="button_cont" align="center">
+            
+          </div> -->
+          <!-- <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="btn btn-primary">Register</a> -->
+          <!-- <a [routerLink]="['/courses/courseProfile',x._id]" class="btn btn-warning m-2">preview</a> -->
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <pagination-controls (pageChange)="page = $event"></pagination-controls>
+
+
+    </div>
+  </div>
+
+
+
+</div>
+</section>

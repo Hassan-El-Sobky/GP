@@ -1,116 +1,107 @@
-$bodybackGround:#1F1C19;
-$formbackgroud:#2E2C2A;
+$bodybackGround: #fff;
+$formbackgroud: #f9f8f8;
 
-.body
-{
-    height: 100vh;
-    background-color:$bodybackGround ;
+.body {
+    background-color: $bodybackGround;
+    overflow: hidden;
+    background-color: #58595b;
 }
-.formContainer
-{
-    width: 800px;
-    height: 650px;
-    background-color:$formbackgroud;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
+.formContainer {
+    height: 100%;
+
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%,-50%);
+    // border-radius: 15px;
 }
-.FormLogo
-{
+.FormLogo {
     color: #fff;
 }
-.FormLogo p
-{
+.FormLogo p {
     margin-top: -12px;
     font-weight: 100;
 }
-.FormLogo .signUp
-{
+.formCust {
+    
+    border-radius: 15px;
+    position: relative;
+    top: 20%;
+ 
+
+}
+.FormLogo .signUp {
     font-size: 25px;
     font-weight: 400;
 }
-.form-group
-{
- width: 75%;
+.form-group {
+    width: 75%;
+  
 }
-.form-group label
-{
-    color: #504E4E;
+.form-group label {
+    // color: #504E4E;
+    color: #c3c3c2;
     margin: 10px 0px;
-    font-weight: bold;
+    // font-weight: bold;
     font-size: 11px;
+    letter-spacing: 1px;
 }
-.form-group input
-{
+.form-group input {
     background-color: $formbackgroud;
     padding: 22px;
     font-size: 12px;
-    border: 2px solid   #565654;
-    color: white;
+    height: 20px;
+    border-radius: 25px;
+    border: 2px solid #565654;
+    color: black;
 }
-input:focus
-{
+input:focus {
     outline: none !important;
 }
-.eyeslash
-{
+.eyeslash {
     position: relative;
 }
-.form-group i
-{
+.form-group i {
     position: absolute;
     right: 15px;
     top: 15px;
-    color: #504E4E;
-    cursor: pointer;
-
-}
-.form-group button
-{
-  background-color: #FE9D2B;
-  margin-top: 20PX;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-}
-.FormLogo
-{
-
-    margin-top: 30px;
-}
-
-.keepMe
-{
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 10px;
-    color: #c3c3c2;
-    width: 75%;
-
-}
-.keepMe input
-{
- transform: scale(1.5);
- background-color: $bodybackGround;
- cursor: pointer;
- border: none;
- margin-left: 5px;
-}
-.keepMe .checkbox label
-{
-  margin-left: 10px;
-  color: #c3c3c2;
-  vertical-align: middle;
-}
-.keepMe span
-{
+    color: #504e4e;
     cursor: pointer;
 }
-
-button
-{
-    color: #FFF;
+.form-group button {
+    //   background-color: #FF4007;
+    background-color: #fcaf17;
+    margin: 20px 0px;
+    padding: 10px;
+    border-radius: 25px;
+    border: none;
 }
+
+.signUp {
+    color: #000;
+}
+
+button {
+    color: #fff;
+}
+
+.sign_Up {
+    color: black;
+    text-decoration: none;
+    font-family: "segoe ui light";
+    font-size: 18px;
+    font-weight: 600;
+}
+.errMessage {
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px;
+}
+.a span {
+    color: red;
+}
+/*new design*/

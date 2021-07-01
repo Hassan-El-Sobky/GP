@@ -1,0 +1,41 @@
+<i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
+
+<div [class.webCam]="flag" *ngIf="flag">
+  <webcam  [height]="400" 
+          [width]="1000" 
+          [trigger]="triggerObservable"
+              (imageCapture)="handleImage($event)">
+   </webcam>
+    
+  <button class="actionBtn" (click)="triggerSnapshot();">
+     Capture Photo  
+  </button>
+    
+  
+
+ 
+
+</div>
+
+<div class="container-fluid">
+
+    <div class="row m-5">
+       
+        <div *ngFor="let exam of courseExams; let i=index" class="offset-1 col-md-10 my-3">
+            <div  class="card">
+                <h4 class="card-header">Exam {{i+1}}</h4>
+                <div class="card-body">
+                  <h3 class="card-title">{{exam.title}}</h3>
+                    <h5 class="card-title">Start: {{exam.openDate}}</h5>
+                    <h5 class="card-title">End: {{exam.dueDate}} </h5>
+                    <p class="card-text">Fullmark: {{exam.fullMark}}</p>
+                    <!-- <a [routerLink]='["/instructor","examQuestions",exam._id]'  class="btn btn-primary">Go somewhere</a>  -->
+                    <button (click)="show(exam._id)">Capture Photo</button> 
+                  </div>
+            </div>
+        </div>
+
+
+
+  
+</div>

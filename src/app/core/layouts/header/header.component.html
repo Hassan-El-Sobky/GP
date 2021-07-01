@@ -1,18 +1,30 @@
-<mat-toolbar *ngIf="tokenService.isAuthenticated() == true" >
+<mat-toolbar [class.trans]="tokenService.isAuthenticated() == false"  >
+
+
+<!--  -->
     <!-- *ngIf="tokenService.isAuthenticated() == true" -->
-    <i (click)="onToolbarMenuToggle()" class="fas fa-bars"></i>
-    <span class="comp">Messages</span>
+    <i  *ngIf="tokenService.isAuthenticated() == true" (click)="onToolbarMenuToggle()" class="fas fa-bars"></i>
+    <span class="comp">Learing Gate</span>
     <span class="example-spacer"></span>
-
-
-    <div class="psearch ">
-        <div class="icon">
-            <i class="fas fa-search "></i>
-        </div>
-        <input class="search input-field" placeholder="Search">
-
+    
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/courses/Home']">Home</a>
     </div>
-    <div class="not-icon">
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/courses/Home']">About</a>
+    </div>
+    <div class="home">
+        <a class="nav-link" [routerLink]="['/courses/courses']">Courses</a>
+    </div>
+    <div  *ngIf="tokenService.isAuthenticated() !== true" class="home">
+        <a class="nav-link" [routerLink]="['/authentication/signin']">SignIn</a>
+    </div>
+    <div   *ngIf="tokenService.isAuthenticated() !== true"class="home">
+        <a class="nav-link" [routerLink]="['/authentication/signup']">SignUp</a>
+    </div>
+
+
+    <div *ngIf="tokenService.isAuthenticated() == true" class="not-icon">
         <div class="noti-fic">
             <i (click)="notiExpanded()" class="far fa-bell "></i>
             <span (click)="notiExpanded()" class="notifaction-no">1</span>
@@ -36,24 +48,28 @@
         </div>
 
     </div>
-    <div class="user">
-        <h3>Hassan El-Sobky</h3>
+
+
+
+    <div *ngIf="tokenService.isAuthenticated() == true" class="user">
+        <h6 (click)="expaded()" class="text-capitalize">{{userName}}</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
             <div class="expanded-info">
-                <i class="fas fa-user"></i>
-                <span [routerLink]=""(click)='veiwOnly()'>My Profile</span>
+                <i [routerLink]="['/adminAdmin/adminProfile']" class="fas fa-user"></i>
+                <span [routerLink]="['/adminAdmin/adminProfile']" (click)='veiwOnly()'>My Profile</span>
                 <span>
                     <div class="online">
 
                     </div>
                 </span>
             </div>
-            <div class="expanded-info">
-                <i  class="far fa-edit"></i>
+            <!-- <div class="expanded-info">
+                <i class="far fa-edit"></i>
                 <span [routerLink]="" (click)='veiwEdit()'>Edit Profile</span>
-            </div>
-            <div class="expanded-info">
+            </div> -->
+
+            <div *ngIf="role=='admin'" [routerLink]="['/adminAdmin/addAdmin']" class="expanded-info">
                 <i class="fas fa-plus"></i>
                 <span>Add Admin</span>
             </div>
@@ -64,12 +80,15 @@
         </div>
     </div>
 
+    <div  *ngIf="tokenService.isAuthenticated() == true" class="psearch ">
+
+        <input class="search input-field form-control " placeholder="Search">
+        <div class="icon">
+            <i class="fas fa-search "></i>
+        </div>
+
+    </div>
 
 
-    <div class="u-img " style="background-image: url(../../assets/photo.jpeg);">
-        <!--<img [src]="[imgSrc]" alt="ss">-->
-    </div>
-    <div>
-        <i style="margin-left: 15px;" class="fas fa-cog"></i>
-    </div>
+
 </mat-toolbar>

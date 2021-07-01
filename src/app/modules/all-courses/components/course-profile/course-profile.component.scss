@@ -1,0 +1,70 @@
+@import url(../../../../../styles.scss);
+.card
+{
+    overflow: hidden;
+}
+.image
+{
+   
+    transform: scale(0.8);
+    transition:transform 1s ;
+    
+}
+.image:hover
+{
+    transform: scale(1);
+}
+.card-body 
+{
+    margin-left:5px ;
+
+}
+
+.card-body h5
+{
+    position: relative;
+    font-weight: 700;
+    font-size: 26px;
+
+}
+.card-body h5::before
+{
+    content: '';
+    position: absolute;
+    left: -15px;
+    top: -5px;
+    width: 3px;
+    height: 30px;
+    background-color:#fe9d2b ;
+}
+.cardinfo
+{
+margin-top: 35px;
+margin-left: 40px;
+
+}
+.card-text
+{
+    padding: 2px 0px;
+    color:black ;
+}
+.card-text span
+{
+    color:#fe9d2b ;
+}
+
+.courseInf {
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fe9d2b;
+    padding: 50px;
+    border-radius: 11px;
+   cursor: pointer;
+    border: 3px solid #F1F1FE;
+}
+.courseInf h3 
+{
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}

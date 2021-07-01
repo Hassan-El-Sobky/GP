@@ -1,0 +1,62 @@
+<section id="courses-content">
+    <i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+                <div class="course-item p-3 card text-center">
+                    <img src="../../../../../assets/images/books.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+
+                        <h5 class="card-title">Materials</h5>
+                    </div>
+                    <div class="button_cont" align="center">
+                        <a [routerLink]="['/student/materials',id]" class="example_b w-100" >Materials</a>
+                    </div>
+                    <!-- <a [routerLink]="['/student/materials',id]" class="btn btn-primary">Materials</a> -->
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+                <div class="course-item card p-3 text-center">
+                    <img src="../../../../../assets/images/assignment.jpg" class="card-img-top" alt="">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Assignments</h5>
+                        
+                    </div>
+                    <div class="button_cont" align="center">
+                        <a [routerLink]="['/student/assigments',id]" class="example_b w-100" >Assignments</a>
+                    </div>
+                    <!-- <a [routerLink]="['/student/assigments',id]" class="btn btn-primary">Assignments</a> -->
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="course-item card p-3 text-center">
+                    <img src="../../../../../assets/images/exx.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">exams</h5>
+                    </div>
+                    <div class="button_cont" align="center">
+                        <a [routerLink]="['/student/exams',id]" class="example_b w-100" >Exams</a>
+                    </div>
+                    <!-- <a [routerLink]="['/student/exams',id]" class="btn btn-primary">Exams</a> -->
+                </div>
+            </div>
+
+            <div class="col-md-3">
+                <div class="course-item card p-3 text-center">
+                    <img src="../../../../../assets/images/ex.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Quizzes</h5>
+                    </div>
+                    <div class="button_cont" align="center">
+                        <a [routerLink]='["/student/quizzes",id]' class="example_b w-100" >Quizzes</a>
+                    </div>
+                    <!-- <a [routerLink]='["/student/quizzes",id]' class="btn btn-primary">Quizzes</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

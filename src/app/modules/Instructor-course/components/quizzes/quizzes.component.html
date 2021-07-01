@@ -1,0 +1,90 @@
+<i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
+
+<button id="addModal" data-bs-toggle="modal" data-bs-target="#CreateQuiz" class="float-end create_button btn btn-secondary">Create Quiz</button>
+<div class="clr"></div>
+<div class="container-fluid">
+
+    <div class="row m-5">
+       
+        <div class="offset-1 col-md-10">
+            <div [routerLink]='["/instructor","quizQuestions"]' class="card">
+                <h4 class="card-header">Quiz</h4>
+                <div class="card-body">
+                    <h5 class="card-title">duration</h5>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional
+                        content.(description)</p>
+                    <a [routerLink]='["/instructor","quizQuestions"]' class="btn btn-primary">Quiz</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+            <!-- Modal -->
+    <div class="modal fade" id="CreateQuiz" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Quiz</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="m-auto">
+  
+                <form >
+                  <div class="form-group">
+                    <label for="">Name:</label>
+                    <input placeholder="Exam1"  type="text" formControlName="" class="form-control"
+                      name="courseName">
+                    <span
+                      *ngIf=""
+                      class="py-2 text-danger "></span>
+  
+                  </div>
+  
+                  <div class="form-group">
+                    <label for="">Time:</label>
+                    <input placeholder="30min" type="text" formControlName="" class="form-control"
+                      name="">
+                    <span
+                      *ngIf=""
+                      class="py-2 text-danger "></span>
+  
+                  </div>
+                  <div class="form-group">
+                    <label for="">Description:</label>
+                    <textarea placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut unde temporibus molestiae culpa sapiente commodi?" type="text" formControlName="" class="form-control"
+                      name="" > </textarea>
+                    <span
+                      *ngIf=""
+                      class="py-2 text-danger "></span>
+  
+                  </div>
+  
+                 
+  
+             
+              <button type="submit" [disabled]='' class="btn btn-primary m-2">Submit</button>
+  
+        
+  
+  
+                </form>
+  
+  
+  
+  
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+  
+  
+  
+        </div>
+      </div>
+    </div>
+</div>

@@ -1,10 +1,17 @@
+
+$color: black;
+$bgColor:white;
+// $bgColor: #101820ff;
+
 * {
     box-sizing: border-box;
 }
 
 mat-toolbar {
-    background-color: #1f1c19;
-    color: white;
+    background-color:#fe9d2b;
+    color: $color;
+    width: 100%;
+    height: 90px;
 }
 mat-toolbar i {
     margin-right: 25px;
@@ -13,33 +20,41 @@ mat-toolbar i {
 mat-icon {
     color: #abaaa9;
 }
+.home a 
+{
+    color:white;
+    cursor: pointer;
+}
 
 .example-spacer {
     flex: 1 1 auto;
 }
 .psearch {
-    width: 25%;
-
+    width: auto;
+    background-color: $bgColor;
     display: flex;
     justify-content: center;
 }
-input {
-    border: none;
-    border-radius: 0 15px 15px 0;
-    background-color: #2e2c2a;
-    color: white;
+input { 
+    padding: 5px 5px;
+    background-color: white;
+    color: black;
+    border-top:0px transparent ;
+    position: relative;
 }
 input:focus {
     outline: none;
 }
 .icon {
-    background-color: #2e2c2a;
-    position: relative;
-    padding-left: 20px;
-    border-radius: 15px 0 0 15px;
+    background-color: transparent;
+    color: black;
+    position: absolute;
+    right: 2%;
 }
 .icon i {
-    margin-top: 6px;
+    margin:5px 5px;
+    cursor:auto ;
+ 
 }
 .u-img {
     padding: 20px;
@@ -51,28 +66,30 @@ img {
 }
 
 .user {
-    padding: 0pc 10px 0px 0px;
+    padding: 0px 10px 0px 0px;
+    margin: 0px 2px;
     display: flex;
-    color: #fff;
+    color: $color;
     justify-content: center;
     align-items: center;
     position: relative;
+    cursor: pointer;
 }
 .user mat-icon {
     cursor: pointer;
-    color: #fff;
+    color: $color;
 }
 .u-img {
     background-size: cover;
     border-radius: 50%;
 }
 .expanded {
-    background-color: #1f1c19;
+    background-color: #101820ff;
     width: 215px;
-    color: #fff;
+    color: white;
     position: absolute;
     top: 45px;
-    left: 0;
+    left: 50px;
     z-index: 5;
 }
 .expanded .expanded-info {
@@ -91,42 +108,24 @@ img {
     margin-left: 30px;
 }
 
-/*Side Nav*/
-.example-container {
-    width: 500px;
-    height: 300px;
-    border: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.example-sidenav-content {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-}
-
-.example-sidenav {
-    padding: 20px;
-}
-
 .notification {
+   
     height: 250px;
     width: 350px;
-    background-color: #1f1c19;
-    color: #fff;
-
+    background-color:#101820ff;
+    color: white;
     overflow-y: scroll;
     position: absolute;
     top: 45px;
-    right: 0;
-    border: 5px solid #1f1c19;
+    right: -70px;
+    border: 5px solid #101820ff;
     font-size: 14px;
     padding: 15px;
     z-index: 5;
 }
-.notification-info {
-    background-color: #24221f;
 
+.notification-info {
+    background-color:$bgColor;
     width: 150;
     margin: 10px 0;
     border-radius: 6px;
@@ -140,7 +139,7 @@ img {
     padding-top: 5px;
 }
 .notification-info .time {
-    color: #686665;
+    color: $color;
 
     position: absolute;
     right: 15px;
@@ -153,115 +152,20 @@ img {
 }
 ::-webkit-scrollbar {
     width: 4px;
-    background-color: #24221f;
+    background-color: black;
 }
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #24221f;
+    -webkit-box-shadow: inset 0 0 6px black;
     border-radius: 10px;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: #fff;
+    background-color: white;
     border-radius: 10px;
 }
 .notification-info:hover {
-    background-color: #353331;
+    background-color: $color;
+    color: $bgColor;
 }
-
-.main-container {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #eeeeee;
-}
-.menu-close {
-    width: 100px;
-}
-
-.menu-open {
-    width: 315px;
-}
-
-.dashContainer {
-    width: 100%;
-}
-
-.dashContent {
-    padding: 10px;
-    cursor: pointer;
-}
-.dashContent i {
-    margin: 0 10px;
-}
-.mainContainer {
-    overflow-x: hidden;
-    color: #cbcbcb;
-    font-size: 14px;
-
-    margin-left: 15px;
-}
-
-.userImageCLosed {
-    height: 50px !important;
-    width: 50px !important;
-}
-.user-dashboradClosed {
-    margin-top: 15px;
-}
-.mainContainer img {
-    border: 5px solid #f2f0f0;
-    width: 100%;
-    height: auto;
-    display: block;
-}
-.dashContent {
-    font-size: 14px;
-    font-family: "tahoma";
-    padding: 0;
-    margin-top: 15px;
-}
-.dashContent:hover {
-    color: #fe9d2b;
-    border-right: 3.5px solid #fe9d2b;
-}
-.dashContetn p {
-    margin-left: 11px;
-}
-.tCenter {
-    text-align: center;
-}
-.dBlock {
-    display: block;
-    margin-top: 15px;
-    margin-right: 0 !important;
-}
-.user-dashborad {
-    overflow: auto;
-}
-.user-dashborad p {
-    margin-top: 12px;
-    font-size: 18px;
-    font-weight: bold;
-    color: #707070;
-    margin-bottom: 5px;
-}
-.user-dashborad i {
-    margin-right: 15px;
-    cursor: pointer;
-    font-size: 18px;
-}
-.user-dashborad .logout {
-    color: #fe9d2b;
-}
-.user-closed {
-    height: 50px;
-    width: 50px;
-}
-
-
-
-
 .online {
     background-color: green;
     border-radius: 50%;
@@ -287,7 +191,7 @@ img {
 }
 
 .notifaction-no {
-    background-color: #fe9d2b;
+    background-color:white;
     position: absolute;
     top: 3px;
     left: 8px;
@@ -298,4 +202,136 @@ img {
     justify-content: center;
     align-items: center;
     border-radius: 50%;
+}
+.home a
+{
+    color: black;
+}
+
+/*Side Nav*/
+// .example-container {
+//     width: 500px;
+//     height: 300px;
+//     border: 1px solid rgba(0, 0, 0, 0.5);
+// }
+
+// .example-sidenav-content {
+//     display: flex;
+//     height: 100%;
+//     align-items: center;
+//     justify-content: center;
+// }
+
+// .example-sidenav {
+//     padding: 20px;
+// }
+
+// .main-container {
+//     position: absolute;
+//     top: 0;
+//     bottom: 0;
+//     left: 0;
+//     right: 0;
+//     background-color: #eeeeee;
+// }
+// .menu-close {
+//     width: 100px;
+// }
+
+// .menu-open {
+//     width: 315px;
+// }
+
+// .dashContainer {
+//     width: 100%;
+// }
+
+// .dashContent {
+//     padding: 10px;
+//     cursor: pointer;
+// }
+// .dashContent i {
+//     margin: 0 10px;
+// }
+// .mainContainer {
+//     overflow-x: hidden;
+//     color: #cbcbcb;
+//     font-size: 14px;
+
+//     margin-left: 15px;
+// }
+
+// .userImageCLosed {
+//     height: 50px !important;
+//     width: 50px !important;
+// }
+// .user-dashboradClosed {
+//     margin-top: 15px;
+// }
+// .mainContainer img {
+//     border: 5px solid #f2f0f0;
+//     width: 100%;
+//     height: auto;
+//     display: block;
+// }
+// .dashContent {
+//     font-size: 14px;
+//     font-family: "tahoma";
+//     padding: 0;
+//     margin-top: 15px;
+// }
+// .dashContent:hover {
+//     color: #fe9d2b;
+//     border-right: 3.5px solid #fe9d2b;
+// }
+// .dashContetn p {
+//     margin-left: 11px;
+// }
+// .tCenter {
+//     text-align: center;
+// }
+// .dBlock {
+//     display: block;
+//     margin-top: 15px;
+//     margin-right: 0 !important;
+// }
+// .user-dashborad {
+//     overflow: auto;
+// }
+// .user-dashborad p {
+//     margin-top: 12px;
+//     font-size: 18px;
+//     font-weight: bold;
+//     color: #707070;
+//     margin-bottom: 5px;
+// }
+// .user-dashborad i {
+//     margin-right: 15px;
+//     cursor: pointer;
+//     font-size: 18px;
+// }
+// .user-dashborad .logout {
+//     color: #fe9d2b;
+// }
+// .user-closed {
+//     height: 50px;
+//     width: 50px;
+// }
+
+.trans
+{
+    background-color: transparent !important;
+    position: fixed;
+    top: 0;
+
+    .comp
+    {
+        font-size: 40px;
+        font-size: 900;   
+        color:#fa8a0a ;
+    }
+    a
+    {
+        color:#fa8a0a ;
+    }
 }

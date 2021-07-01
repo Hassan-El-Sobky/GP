@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
+import { GeneralService } from 'src/app/services/general.service';
 import { TokenService } from '../../services/token.service';
 
 
@@ -13,13 +14,28 @@ export class HeaderComponent implements OnInit {
   contentMargin = 315;
   flagExpanded: boolean = false;
   flagNotiction: boolean = false;
+  userName=localStorage.getItem('username')
+  
+  role=localStorage.getItem('role');
+  X:any
+  
   @Output() menuStatus = new EventEmitter();
-  constructor(public tokenService: TokenService,private router:Router) { }
+  constructor(public tokenService: TokenService,private router:Router,private _generalService:GeneralService) {
+        
+  
+
+   }
+
+        
+  
+  
 
   ngOnInit() {
   }
   logout() {
      this.tokenService.logout();
+     localStorage.removeItem('username');
+     localStorage.removeItem('role');
      location.reload(true);
      this.router.navigate(['/authentication/signin']);
   }
