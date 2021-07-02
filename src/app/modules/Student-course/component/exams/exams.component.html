@@ -21,21 +21,33 @@
 
     <div class="row m-5">
        
-        <div *ngFor="let exam of courseExams; let i=index" class="offset-1 col-md-10 my-3">
+        <div *ngFor="let exam of courseExams |
+        paginate: { 
+          itemsPerPage:2,
+          currentPage: page,
+          totalItems: totalLength 
+        };
+        let i=index " class="offset-1 col-md-10 my-3">
             <div  class="card">
                 <h4 class="card-header">Exam {{i+1}}</h4>
                 <div class="card-body">
-                  <h3 class="card-title">{{exam.title}}</h3>
-                    <h5 class="card-title">Start: {{exam.openDate}}</h5>
-                    <h5 class="card-title">End: {{exam.dueDate}} </h5>
+                  <h3 class="card-title">{{exam.assesment.title}}</h3>
+                    <h5 class="card-title">Start: {{exam.assesment.openDate | date :'dd-MMM-yy h:mm:ss a '}} </h5>
+                    <h5 class="card-title">End: {{exam.assesment.dueDate | date :'dd-MMM-yy h:mm:ss a '}} </h5>
                     <p class="card-text">Fullmark: {{exam.fullMark}}</p>
                     <!-- <a [routerLink]='["/instructor","examQuestions",exam._id]'  class="btn btn-primary">Go somewhere</a>  -->
-                    <button (click)="show(exam._id)">Capture Photo</button> 
+                    <button *ngIf="exam.open == true " class="btn btn-info" (click)="show(exam.assesment ._id)">Enter Exam</button> 
+                    <button *ngIf="exam.open == false " [disabled]="true" class="btn btn-danger" >Closed</button>
+                 
                   </div>
             </div>
         </div>
 
-
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    
+    
+        </div>
 
   
 </div>

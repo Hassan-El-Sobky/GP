@@ -15,7 +15,7 @@
   
   </div>
 
-<div class="container mt-5">
+<div  *ngIf="Question" class="container mt-5">
 
     <div class="row">
          <p class="text-center">{{currentQuestion+1}} of {{quizzes.length}}</p>
@@ -29,7 +29,10 @@
 
             </ul>
 
-            <p>CorrectAnswer:{{correctAnswer}}||InCorrectAnswer{{incorrectAnswer}}</p>
+            
         </div>
     </div>
 </div>
+
+
+<p *ngIf="lastQuestion">CorrectAnswer:{{correctAnswer}}||InCorrectAnswer{{incorrectAnswer}}</p>

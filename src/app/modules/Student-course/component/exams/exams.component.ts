@@ -26,6 +26,8 @@ courseId:any
 courseExams:any
 examId:any
 flag:boolean=false;
+totalLength: any;
+page: number = 1;
   constructor(private _location: Location,
     private _activated:ActivatedRoute,
     private _studS:StudentCoursesService,
@@ -50,8 +52,9 @@ flag:boolean=false;
 
   getExams() {
     this._studS.getExamsById(this.courseId).subscribe(res=>{
-      console.log(res.courseExams);
-       this.courseExams=res.courseExams;
+      console.log(res);
+       this.courseExams=res.exams;
+       this.totalLength=res.exams.length
     })
    }
 

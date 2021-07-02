@@ -15,6 +15,8 @@ quizzes:any
 correctAnswer=0;
 incorrectAnswer=0;
 currentQuestion=0;
+Question:boolean=true
+lastQuestion:boolean=false
 flag:boolean=false;
   constructor(private _studS:StudentCoursesService,private _activated:ActivatedRoute,
     private router:Router
@@ -46,7 +48,10 @@ flag:boolean=false;
   onAnswers(correct:any)
   { 
     if(this.currentQuestion == this.quizzes.length-1){
-    this.currentQuestion=0;
+  
+      this.Question=false;
+      this.lastQuestion=true
+   
     console.log(this.currentQuestion);
     
     } else {
