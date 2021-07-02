@@ -42,11 +42,10 @@ body {
   align-items: center;
   height: 100vh;
   background: linear-gradient(45deg, greenyellow, dodgerblue);
-  font-family: "Sansita Swashed", cursive;
+  
 }
 .center {
   position: relative;
-  padding: 50px 50px;
   background: #fff;
   border-radius: 10px;
 }
@@ -60,35 +59,35 @@ body {
   font-weight: bold;
   padding-left: 10px;
 }
-.center .inputbox {
-  position: relative;
-  width: 300px;
-  height: 50px;
-  margin-bottom: 50px;
-}
-.center .inputbox input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border: 2px solid #000;
-  outline: none;
-  background: none;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1.2em;
-}
-.center .inputbox:last-child {
-  margin-bottom: 0;
-}
-.center .inputbox span {
-  position: absolute;
-  top: 14px;
-  left: 20px;
-  font-size: 1em;
-  transition: 0.6s;
-  font-family: sans-serif;
-}
+// .center .mainForm .inputbox {
+//   position: relative;
+//   width: 300px;
+//   height: 50px;
+//   margin-bottom: 50px;
+// }
+// .center .inputbox input {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   border: 2px solid #000;
+//   outline: none;
+//   background: none;
+//   padding: 10px;
+//   border-radius: 10px;
+//   font-size: 1.2em;
+// }
+// .center .inputbox:last-child {
+//   margin-bottom: 0;
+// }
+// .center .inputbox span {
+//   position: absolute;
+//   top: 14px;
+//   left: 20px;
+//   font-size: 1em;
+//   transition: 0.6s;
+//   font-family: sans-serif;
+//}
 .center .inputbox input:focus ~ span,
 .center .inputbox input:valid ~ span {
   transform: translateX(-13px) translateY(-35px);
@@ -133,4 +132,42 @@ transition: all 0.4s ease 0s;
 }
 .muCourses .card .card-body{
   text-align: center;
+}
+.Fexample_b {
+  cursor: pointer;
+	color: #fff !important;
+	text-transform: uppercase;
+	text-decoration: none;
+	background: #FCAF17;
+	padding: 10px;
+	border-radius: 10px;
+	display: inline-block;
+	border: none;
+	transition: all 0.4s ease 0s;
+}
+.Fexample_b:hover {
+	text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+	transition: all 0.4s ease 0s;
+}
+.mainForm{
+  font-weight: 400;
+  position: relative;
+  text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+.nameUpload{
+  font-size: 18px;
+}
+.mainForm .inputbox span{
+  font-weight: 400;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.modal-title{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
+
 }
