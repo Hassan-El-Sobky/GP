@@ -37,11 +37,11 @@ export class CourseProfileComponent implements OnInit {
           this.course = data.course;
           let insId = data.course.instructorId
 
-          // // this._courseData.userProfile(insId).subscribe(res => {
-          // //   this.insName = res.user.name
+          this._courseData.userProfile(insId).subscribe(res => {
+            this.insName = res.user.name
          
             
-          // })
+          })
         
         })
       
