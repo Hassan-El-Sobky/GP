@@ -62,4 +62,8 @@ export class StudentCoursesService {
     return this._http.get(`https://lmsapis.herokuapp.com/solveAssesment/${id}`);
   }
 
+  studentGrade(username:any,data:any):Observable<any>{
+    return this._http.post(`https://lmsapis.herokuapp.com/grade/${username}`,data)
+  }
+
 }

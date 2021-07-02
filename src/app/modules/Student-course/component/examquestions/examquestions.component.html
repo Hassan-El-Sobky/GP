@@ -15,10 +15,10 @@
   
   </div>
 
-<div class="container">
+<div  *ngIf="Question" class="container mt-5">
 
     <div class="row">
-         <p>{{currentQuestion+1}}of{{quizzes.length+1}}</p>
+         <p class="text-center">{{currentQuestion+1}} of {{quizzes.length}}</p>
         <div class="col-md-8">
             <h1>{{quizzes[currentQuestion].question}}</h1>
             <ul class="list-group" *ngFor="let x of quizzes[currentQuestion].answer">
@@ -29,7 +29,10 @@
 
             </ul>
 
-            <p>CorrectAnswer:{{correctAnswer}}||InCorrectAnswer{{incorrectAnswer}}</p>
+            
         </div>
     </div>
 </div>
+
+
+<p *ngIf="lastQuestion">CorrectAnswer:{{correctAnswer}}||InCorrectAnswer{{incorrectAnswer}}</p>

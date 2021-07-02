@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TestService } from 'src/app/modules/test/services/test.service';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 
@@ -13,7 +13,9 @@ export class CreateexamComponent implements OnInit {
 
   exam: any;
   courseId:any
-  constructor(private fb: FormBuilder,private _test:TestService,private _activated:ActivatedRoute,private _inSer:InstAddCourseService) {
+  constructor(private fb: FormBuilder,private _test:TestService,private _activated:ActivatedRoute,private _inSer:InstAddCourseService,
+    private router:Router
+    ) {
        this.getId();
   }
 
@@ -127,9 +129,13 @@ let data={
 
     this._inSer.createAssments(data).subscribe(res=>{
      console.log(res);
-      
+      if(res.message="done")
+      {
+        console.log(data);
+        this.router.navigate(['instructor','courseExams',this.courseId])
+      }
     })
-    console.log(data);
+   
     
   }
 

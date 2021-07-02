@@ -15,6 +15,8 @@ quizzes:any
 correctAnswer=0;
 incorrectAnswer=0;
 currentQuestion=0;
+Question:boolean=true
+lastQuestion:boolean=false
 flag:boolean=false;
   constructor(private _studS:StudentCoursesService,private _activated:ActivatedRoute,
     private router:Router
@@ -22,9 +24,9 @@ flag:boolean=false;
      
     this.getId();
 
-    setInterval(()=>{
-      this.flag=true
-    },50000)
+    // setInterval(()=>{
+    //   this.flag=true
+    // },50000)
    }
    
   getId(){
@@ -39,12 +41,17 @@ flag:boolean=false;
     this._studS.getSpecificExam(this.examId).subscribe(res=>{
       console.log(res.assesment.questions);
        this.quizzes=res.assesment.questions
+       console.log(this.quizzes);
+       
     })
   }
   onAnswers(correct:any)
   { 
     if(this.currentQuestion == this.quizzes.length-1){
-    this.currentQuestion=0;
+  
+      this.Question=false;
+      this.lastQuestion=true
+   
     console.log(this.currentQuestion);
     
     } else {
