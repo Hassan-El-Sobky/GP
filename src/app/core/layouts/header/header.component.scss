@@ -89,7 +89,7 @@ img {
     color: white;
     position: absolute;
     top: 45px;
-    left: 50px;
+    left: -100px;
     z-index: 5;
 }
 .expanded .expanded-info {
@@ -102,54 +102,54 @@ img {
 .expanded .expanded-info i {
     padding: 20px;
 }
-.not-icon {
-    position: relative;
-    cursor: pointer;
-    margin-left: 30px;
-}
+// .not-icon {
+//     position: relative;
+//     cursor: pointer;
+//     margin-left: 30px;
+// }
 
-.notification {
+// .notification {
    
-    height: 250px;
-    width: 350px;
-    background-color:#101820ff;
-    color: white;
-    overflow-y: scroll;
-    position: absolute;
-    top: 45px;
-    right: -70px;
-    border: 5px solid #101820ff;
-    font-size: 14px;
-    padding: 15px;
-    z-index: 5;
-}
+//     height: 250px;
+//     width: 350px;
+//     background-color:#101820ff;
+//     color: white;
+//     overflow-y: scroll;
+//     position: absolute;
+//     top: 45px;
+//     right: -70px;
+//     border: 5px solid #101820ff;
+//     font-size: 14px;
+//     padding: 15px;
+//     z-index: 5;
+// }
 
-.notification-info {
-    background-color:$bgColor;
-    width: 150;
-    margin: 10px 0;
-    border-radius: 6px;
-    position: relative;
-}
-.notification-info h5 {
-    font-size: 14px;
-    margin-left: 10px;
-    margin-top: 10px;
-    line-height: 20px;
-    padding-top: 5px;
-}
-.notification-info .time {
-    color: $color;
+// .notification-info {
+//     background-color:$bgColor;
+//     width: 150;
+//     margin: 10px 0;
+//     border-radius: 6px;
+//     position: relative;
+// }
+// .notification-info h5 {
+//     font-size: 14px;
+//     margin-left: 10px;
+//     margin-top: 10px;
+//     line-height: 20px;
+//     padding-top: 5px;
+// }
+// .notification-info .time {
+//     color: $color;
 
-    position: absolute;
-    right: 15px;
-    font-size: 10px;
-}
-.notification-info span {
-    color: #36798a;
-    margin-left: 15px;
-    font-size: 14px;
-}
+//     position: absolute;
+//     right: 15px;
+//     font-size: 10px;
+// }
+// .notification-info span {
+//     color: #36798a;
+//     margin-left: 15px;
+//     font-size: 14px;
+// }
 ::-webkit-scrollbar {
     width: 4px;
     background-color: black;
