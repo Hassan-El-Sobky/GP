@@ -39,6 +39,8 @@ flag:boolean=false;
     this._studS.getSpecificExam(this.examId).subscribe(res=>{
       console.log(res.assesment.questions);
        this.quizzes=res.assesment.questions
+       console.log(this.quizzes);
+       
     })
   }
   onAnswers(correct:any)
