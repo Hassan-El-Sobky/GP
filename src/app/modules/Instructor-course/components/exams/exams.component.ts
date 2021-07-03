@@ -34,7 +34,9 @@ export class ExamsComponent implements OnInit {
   getExams() {
    this._instS.getExamsById(this.courseId).subscribe(res=>{
      console.log(res.courseExams);
-      this.courseExams=res.courseExams;
+      this.courseExams=res.exams;
+      console.log(res);
+      
    })
   }
 }
