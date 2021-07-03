@@ -15,7 +15,8 @@ export class HeaderComponent implements OnInit {
   flagExpanded: boolean = false;
   flagNotiction: boolean = false;
   userName=localStorage.getItem('username')
-  
+  userImage=localStorage.getItem('userImage');
+
   role=localStorage.getItem('role');
   X:any
   

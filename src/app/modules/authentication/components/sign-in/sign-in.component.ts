@@ -64,6 +64,7 @@ export class SignInComponent implements OnInit {
 
             localStorage.setItem('username',res.uname);
              localStorage.setItem('role',res.message);
+             localStorage.setItem('userImage',res.message2);
           console.log(this.tokenService.isAuthenticated());
           this._generalService.userName=res.message;
           console.log(this._generalService.userName);

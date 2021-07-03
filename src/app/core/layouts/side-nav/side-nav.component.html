@@ -4,7 +4,8 @@
         <div [class.logoClosed]='!menuStatus' class="logo">
             <img [src]="logoImage" alt="">
         </div>
-        <div [class.userImageCLosed]='!menuStatus' class="userImage">
+        <div [class.userImageCLosed]='!menuStatus'  class="userImage" >    
+            <img class="uImage" src="{{userImage}}" alt="userImage">
         </div>
         <div [class.user-dashboradClosed]='!menuStatus' class="user-dashborad text-center">
             <p *ngIf="menuStatus" class="text-capitalize my-2">{{userName}}</p>

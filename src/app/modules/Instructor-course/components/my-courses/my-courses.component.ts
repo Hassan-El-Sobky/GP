@@ -60,7 +60,7 @@ export class MyCoursesComponent implements OnInit {
       formData.append('username',`${localStorage.getItem('username')}`);
       formData.append('courseImage',this.filex);
       
-console.log(this.filex);
+        console.log(this.filex);
 
    
         this._services.addCourse(formData).subscribe((data) => {
@@ -68,10 +68,7 @@ console.log(this.filex);
               this.instructorCourses();
         })
 
-    this._services.addCourse(formData).subscribe((data) => {
-      console.log(data);
-
-    })
+   
 
   };
 

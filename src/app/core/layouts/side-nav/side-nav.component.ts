@@ -12,6 +12,7 @@ export class SideNavComponent implements OnInit {
   logoImage: string ='/assets/logo.png';
   @Input() menuStatus: boolean = false;
   userName=localStorage.getItem('username');
+  userImage=localStorage.getItem('userImage');
   role=localStorage.getItem('role');
   X:any
   constructor() {

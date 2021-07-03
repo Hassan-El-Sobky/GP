@@ -18,15 +18,16 @@ currentQuestion=0;
 Question:boolean=true
 lastQuestion:boolean=false
 flag:boolean=false;
+userName=localStorage.getItem('username');
   constructor(private _studS:StudentCoursesService,private _activated:ActivatedRoute,
     private router:Router
     ) {
      
     this.getId();
 
-    setInterval(()=>{
-      this.flag=true
-    },30000)
+    // setInterval(()=>{
+    //   this.flag=true
+    // },30000)
    }
    
   getId(){
@@ -51,7 +52,15 @@ flag:boolean=false;
   
       this.Question=false;
       this.lastQuestion=true
-   
+      const data={
+        grades:{grade : this.correctAnswer+"/"+this.quizzes.length ,assesmentId:this.examId},
+        assesmentId:this.examId
+      }
+      this._studS.studentGrade(this.userName,data).subscribe(res=>{
+        console.log(res);
+        
+      })
+
     console.log(this.currentQuestion);
     
     } else {

@@ -15,36 +15,43 @@ export class StudentCoursesService {
 
   getStudent(username:any):Observable<any>
   {
-    return this._http.get(`https://lmsapis.herokuapp.com/studentcourses/${username}`);
+    // return this._http.get(`https://lmsapis.herokuapp.com/studentcourses/${username}`);
+    return this._http.get(`http://localhost:3000/studentcourses/${username}`);
   }
 
   uploadAss(data:any):Observable<any>
   {
-    return this._http.post("https://lmsapis.herokuapp.com/uploadassigmentsSolution",data);
+    // return this._http.post("https://lmsapis.herokuapp.com/uploadassigmentsSolution",data);
+    return this._http.post("http://localhost:3000/uploadassigmentsSolution",data);
   }
 
   getLectures(id:any):Observable<any>
   {
-     return this._http.get(`http://lmsapis.herokuapp.com/allLectures/${id}`);
+     //return this._http.get(`http://lmsapis.herokuapp.com/allLectures/${id}`);
+     return this._http.get(`http://localhost:3000/allLectures/${id}`);
   }
 
   getassignments(id:any):Observable<any>
   {
-     return this._http.get(`http://lmsapis.herokuapp.com/allAssigment/${id}`);
+    //  return this._http.get(`http://lmsapis.herokuapp.com/allAssigment/${id}`);
+    return this._http.get(`http://localhost:3000/allAssigment/${id}`);
   }
   
   specificCourse(id:any):Observable<any>
   {
-         return this._http.get(`https://lmsapis.herokuapp.com/course/${id}`);
+        //  return this._http.get(`https://lmsapis.herokuapp.com/course/${id}`);
+        return this._http.get(`http://localhost:3000/course/${id}`);
   }
 
   getProfile(username:any):Observable<any>
   {
-    return this._http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`)
+    // return this._http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`)
+    return this._http.get(`http://localhost:3000/userProfile/${username}`)
   }
 
   getExamsById(courseId:any):Observable<any>{
-    return this._http.get(`https://lmsapis.herokuapp.com/courseExams/${courseId}`)
+    // return this._http.get(`https://lmsapis.herokuapp.com/courseExams/${courseId}`)
+    return this._http.get(`http://localhost:3000/courseExams/${courseId}`)
   }
 
   besmallah(data:any):Observable<any>{
@@ -59,11 +66,15 @@ export class StudentCoursesService {
 
   getSpecificExam(id:any):Observable<any>{
 
-    return this._http.get(`https://lmsapis.herokuapp.com/solveAssesment/${id}`);
+    // return this._http.get(`https://lmsapis.herokuapp.com/solveAssesment/${id}`)
+    return this._http.get(`http://localhost:3000/solveAssesment/${id}`);
   }
 
   studentGrade(username:any,data:any):Observable<any>{
-    return this._http.post(`https://lmsapis.herokuapp.com/grade/${username}`,data)
+    // return this._http.post(`https://lmsapis.herokuapp.com/grade/${username}`,data)
+    return this._http.post(`http://localhost:3000/grade/${username}`,data)
   }
+  
+  
 
 }

@@ -110,6 +110,8 @@
 
     padding-bottom: 50px;
 }
+
+
 // .noti-fic {
 //     position: relative;
 // }
@@ -226,9 +228,21 @@
     margin-left: 15px;
 }
 
+.userImage {
+    display: flex;
+    justify-content: center;
+}
+
+.userImage .uImage
+{
+    width: 60px; height:60px; background-size: cover; border-radius: 50%; margin-top: 15px; 
+
+}
 .userImageCLosed {
     height: 50px !important;
     width: 50px !important;
+    margin-left: 17px;
+    margin-bottom: 20px;
 }
 .user-dashboradClosed {
     margin-top: 15px;

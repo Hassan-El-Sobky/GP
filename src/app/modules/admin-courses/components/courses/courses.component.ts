@@ -56,7 +56,7 @@ export class CoursesComponent implements OnInit {
     }
     this._allCourses.udpatedState(id, data).subscribe(res => {
       console.log(res);
-
+     this.getAllCourses()
     })
 
   }

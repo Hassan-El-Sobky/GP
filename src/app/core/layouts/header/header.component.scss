@@ -88,8 +88,8 @@ img {
     width: 215px;
     color: white;
     position: absolute;
-    top: 45px;
-    left: -100px;
+    top: 66px;
+    left: 3px;
     z-index: 5;
 }
 .expanded .expanded-info {
@@ -101,6 +101,17 @@ img {
 }
 .expanded .expanded-info i {
     padding: 20px;
+}
+
+.userImage .uImage
+{
+    width: 40px;
+    height: 40px;
+    background-size: cover;
+    border-radius: 50%;
+    margin-top: 2px;
+    margin-right: 5px; 
+
 }
 // .not-icon {
 //     position: relative;

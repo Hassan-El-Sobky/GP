@@ -52,7 +52,10 @@
 
 
     <div *ngIf="tokenService.isAuthenticated() == true" class="user">
-        <h6 (click)="expaded()" class="text-capitalize">{{userName}}</h6>
+        <div *ngIf="tokenService.isAuthenticated() == true"  class="userImage" >    
+            <img class="uImage" src="{{userImage}}" alt="userImage">
+        </div>
+        <h6 *ngIf="tokenService.isAuthenticated() == true" (click)="expaded()" class="text-capitalize">{{userName}}</h6>
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
             <div class="expanded-info">

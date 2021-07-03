@@ -107,7 +107,7 @@
                     </label>
 
                       <div class="button_cont" align="center">
-                        <input [disabled]='addCourseForm.invalid' type="button" value="submit" class="Fexample_b my-3 w-75">
+                        <input [disabled]='addCourseForm.invalid' (click)="getCourseData()" type="button" value="submit" class="Fexample_b my-3 w-75">
                       </div>
 
                     <!-- <div class="inputbox my-2">
