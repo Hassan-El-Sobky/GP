@@ -42,11 +42,11 @@ export class AddAdminComponent implements OnInit {
      formData.append('token',`${localStorage.getItem('accessToken')}`)
      formData.append('userImage',this.filex);
 
-    this._addAdmin.addInstructors(data).subscribe(res=>{
+    this._addAdmin.addInstructors(formData).subscribe(res=>{
       console.log(res);
       
     })
-   console.log(data);
+   
    
   }
   backClicked() {
