@@ -62,12 +62,27 @@ export class InstructorsComponent implements OnInit {
 
   }
 
-  instructorsearch(name: any) {
+  // instructorsearch(name: any) {
 
+  //   this._adminIns.instructorsearch(name).subscribe(res => {
+
+  //     this.dataSource = new MatTableDataSource<any>(res.searchResult);
+  //     console.log(res.searchResult);
+  //     this.dataSource.paginator = this.paginator;
+  //     this.dataSource.sort = this.sort;
+  //   })
+
+  // }
+
+  courseSearch(name: any) {
+    console.log(name);
+    
     this._adminIns.instructorsearch(name).subscribe(res => {
       this.dataSource = new MatTableDataSource<any>(res.searchResult);
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      console.log(res.searchResultes);
+      
     })
 
   }

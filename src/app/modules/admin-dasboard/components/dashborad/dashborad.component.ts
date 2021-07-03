@@ -61,10 +61,12 @@ deta:any
   getAllPCourses() {
     this._adminServices.getAllPendingCourses().subscribe((data) => {
       console.log(data);
+    
+      this.numofPcourse =  data.numOfPendingCourses ;
+      console.log(  this.numofPcourse );
       
-      this.numofPcourse = data.numOfAvailableCourses;
-      this.charts();
-
+      
+      this.barChar();
     });
 
   }
@@ -72,8 +74,8 @@ deta:any
     this._adminServices.getAllAvalCourses().subscribe((data) => {
       console.log(data);
       
-      this.numofAvacourse = data.numOfPendingCourses;
-      this.charts();
+      this.numofAvacourse = data.numOfAvailableCourses;
+      this.barChar();
 
     });
 
@@ -81,61 +83,42 @@ deta:any
   
   // 3 function get all information about the instructors,courses and students took only the count of each to fill the data of the chart 
 
-  charts() {
-    this.deta = {
-      labels: ['ava','pending'],
-      datasets: [
-        {
-          deta: [this.numofAvacourse, this.numofPcourse],
-          backgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56"
-          ],
-          hoverBackgroundColor: [
-            "#FF6384",
-            "#36A2EB",
-            "#FFCE56"
-          ]
-        }]
-    };
-    
-  }
+
   barChar() {
     this.data = {
-      labels: ['Students', 'Courses', 'Instructors'],
+      labels: ['Students', 'Courses', 'Instructors','pendingCourses','AvaliableCourses'],
       datasets: [{
         type: 'line',
-        label: 'Dataset 1',
+        label: 'DataSet 1',
         borderColor: '#42A5F5',
         borderWidth: 2,
         fill: false,
-        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors,]
+        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors,this.numofPcourse,  this.numofAvacourse]
       }, {
         type: 'bar',
-        label: 'Dataset 2',
+        label: 'DataSet 2',
         backgroundColor: '#66BB6A',
-        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors],
+        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors,this.numofPcourse,  this.numofAvacourse],
         borderColor: 'white',
         borderWidth: 2
       }, {
         type: 'bar',
-        label: 'Dataset 3',
+        label: 'DataSet 3 ',
         backgroundColor: '#FFA726',
-        data: [ this.numOfSutudents, this.numOfCourse, this.numOfInstructors]
+        data: [ this.numOfSutudents, this.numOfCourse, this.numOfInstructors,this.numofPcourse,  this.numofAvacourse]
       }]
     };
-    this.chartOptions = {
-      responsive: true,
-      title: {
-        display: true,
-        text: 'Combo Bar Line Chart'
-      },
-      tooltips: {
-        mode: 'index',
-        intersect: true
-      }
-    };
+    // this.chartOptions = {
+    //   responsive: true,
+    //   title: {
+    //     display: true,
+    //     text: 'Combo Bar Line Chart'
+    //   },
+    //   tooltips: {
+    //     mode: 'index',
+    //     intersect: true
+    //   }
+    // };
 
     // this.config = this.configService.config;
     // this.updateChartOptions();

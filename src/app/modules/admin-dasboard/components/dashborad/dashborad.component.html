@@ -6,38 +6,65 @@
         <div class="row">
             <!----------------------------------- Courses Analysis Start-------------------------------------- -->
 
-            <div class="col-md-4 courses ">
+            <div class="col-md-3 courses ">
                 <div [routerLink]="'/admin/courses'" >Courses
-                    <br><span>Number of Courses :{{numOfCourse}}</span></div>
+                    <br><span>Number of Courses : {{numOfCourse}}</span></div>
             </div>
             <!----------------------------------- Courses Analysis End-------------------------------------- -->
             <!-- --------------------------- ----------Students Analysis Start-------------------------------------------------------->
-            <div class="col-md-4 student">
+            <div class="col-md-3 student">
 
                 <div [routerLink]="'/adminSt/students'" >Students
-                    <br><span>Number of Students :{{numOfSutudents}}</span></div>
+                    <br><span>Number of Students : {{numOfSutudents}}</span></div>
 
             </div>
             <!-- -----------------------------------Students Analysis End  ---------------------------------------------->
             <!-- --------------------------------------Instructors Analysis Start--------------------------------------------------->
-            <div class="col-md-4">
+            <div class="col-md-3">
 
                 <div [routerLink]="'/adminIn/instructors'" >Instructors
-                    <br><span>Number of Instructors :{{numOfInstructors}} </span>
+                    <br><span>Number of Instructors : {{numOfInstructors}} </span>
                 </div>
             </div>
             <!--------------------------------------- Instructors Analysis End------------------------------------------------------------------ -->
+
+            <div class="col-md-3">
+
+                <div [routerLink]="''" >Instructors
+                    <br><span>Number of Pending Courses : {{numofPcourse}} </span>
+                </div>
+            </div>
+            <div class="col-md-3">
+
+                <div [routerLink]="''" >Instructors
+                    <br><span>Number of Avaliable Courses : {{numofAvacourse}} </span>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="w-50 m-auto">
+    <!-- <div class="w-50 m-auto">
         <p-chart type="pie" [data]="deta"></p-chart>
-    </div>
+    </div> -->
 
 </section>
-<section id="">
-
-    <div class="w-50 m-auto">
-        <p-chart type="bar" [data]="data" [options]="chartOptions"></p-chart>
-    </div>
+<div class="container">
+    <div class="row">
     
-</section>
+        <div class="col-md-6" id="">
+        
+            <div class=" m-auto">
+                <p-chart type="bar" [data]="data" [options]="chartOptions"></p-chart>
+            </div>
+            
+        </div>
+        <div class="col-md-6" id="">
+        
+            <div class=" m-auto">
+                <p-chart type="bar" [data]="data" [options]="chartOptions"></p-chart>
+            </div>
+            
+        </div>
+        
+        
+        </div>
+</div>
