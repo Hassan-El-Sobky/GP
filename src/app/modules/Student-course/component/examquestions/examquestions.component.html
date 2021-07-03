@@ -34,5 +34,35 @@
     </div>
 </div>
 
+<section *ngIf="lastQuestion" class="score">
+    <div class="overLay p-2">
+    <div class="card p-3 w-50 m-auto h-75 mt-5">
+        <h3 class="m-3">
+            Your total answers score is :
+        </h3>
+        <p class="boldScore m-3">{{correctAnswer}}</p>
+        <p class="correct m-3">
+            Correct answer: {{correctAnswer}}
+        </p>
+        <p class="wrong m-3">
+            Wrong answer: {{incorrectAnswer}}
+        </p>
+        <div class="button_cont" align="center">
+            <a [routerLink]="'/student/course'" class="example_b w-50 mt-5" >back</a>
+        </div>
+        <!-- <a [routerLink]="'/student/course'">
+            back
+        </a> -->
 
-<p *ngIf="lastQuestion">CorrectAnswer:{{correctAnswer}}||InCorrectAnswer{{incorrectAnswer}}</p>
+    </div>
+</div>
+</section>
+
+<!-- <section *ngIf="lastQuestion" class="scorePage">
+    <h3>Your total answers score is :</h3>
+    <p>CorrectAnswer:{{correctAnswer}}</p>
+    <p>InCorrectAnswer{{incorrectAnswer}}</p>
+    <a [routerLink]="'/student/course'">back</a>
+
+</section> -->
+
