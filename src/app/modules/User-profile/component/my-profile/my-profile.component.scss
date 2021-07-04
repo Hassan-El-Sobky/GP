@@ -11,25 +11,25 @@ $textColor:#111;
 .container
 {
     background-color: $FormBackGround;
-    width:100%;
-    height: 100%;
-    border-radius: 15px;
-    margin-top: 10px;
+    // width:100%;
+    // height: 100%;
+    // border-radius: 15px;
+    // margin-top: 10px;
 }
-.opcreate
-{
-    color: $textColor;
-    padding-top: 40px;
-    font-size: 18px;
-}
+// .opcreate
+// {
+//     color: aqua;
+//     font-size: 18px;
+//     font-family: Georgia, 'Times New Roman', Times, serif;
+// }
 .fa-user:before {
   
     margin-right: 16px;
 }
-.opcreate p span
-{
-    margin-right: 10px;
-}
+// .opcreate p span
+// {
+//     margin-right: 10px;
+// }
 .form-group
 {
     color: $textColor;
@@ -59,28 +59,28 @@ select
 {
   color: #111111;
   
-  padding: 5px;
+ 
 }
-.delete
-{
-    position: relative;
-}
-.delete .fa-trash-alt
-{
-    position: absolute;
-    right: 30px;
-    top: 15px;
-    cursor: pointer;
-    color: #3F3D3C;
-}
-.delete .fa-trash-alt:hover
-{
-    color: orangered;
-}
-.delete img
-{
-   border-radius: 15px;
-}
+// .delete
+// {
+//     position: relative;
+// }
+// .delete .fa-trash-alt
+// {
+//     position: absolute;
+//     right: 30px;
+//     top: 15px;
+//     cursor: pointer;
+//     color: #3F3D3C;
+// }
+// .delete .fa-trash-alt:hover
+// {
+//     color: orangered;
+// }
+// .delete img
+// {
+//    border-radius: 15px;
+// }
 .upBtn
 {
     border: none;
@@ -101,23 +101,7 @@ span
    color: #A5A4A3;
    font-size:14px;
 }
-.btnCreate
-{
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    padding: 20px;
-    cursor: pointer;
-   
-}
-.btnCreate button
-{
-    padding: 10px 50px;
-    border: none;
-    background-color: #38B9DD;
-    color: $textColor;
-    border-radius: 15px;
-} 
+
 .file-input__input {
     width: 0.1px;
     height: 0.1px;
@@ -171,4 +155,44 @@ h6
 }
 .aa{
     color: black;
+}
+.success{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.imageDes{
+   text-align: center;
+}
+.imageDes h4{
+    font-size: 25px;
+    font-weight: 700;
+}
+.photoCard{
+    background-color: #A5A4A3;
+    border-radius: 15px;
+}
+.photoCard img{
+    border-radius: 7px;
+}
+.form{
+    background-color: rgba(240, 240, 240, 0.6);
+    border-radius: 15px;
+
+}
+.kbyr{
+    border-radius: 30px;
+    
+    background-color: rgba(180, 180, 180, 0.6);
+    filter: blur(0.4px);
+}
+.form-group button
+{
+  
+  background-color: #fcaf17;
+  
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
 }

@@ -331,9 +331,10 @@ img {
 
 .trans
 {
-    background-color: rgba(0,0,0,0.7) !important;
+    background-color: rgba(60,60,60,0.8) !important;
     position: fixed;
     top: 0;
+    filter: blur(0.5px);
     background-attachment: fixed;
     z-index: 999999;
 

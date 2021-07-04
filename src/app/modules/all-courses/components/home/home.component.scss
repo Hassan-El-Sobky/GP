@@ -162,8 +162,17 @@ text-align: center;
 }
 .imageCard{
     border-radius: 10px;
+    background-color: #fff;
+    
+}
+.imageCard img{
+    height: 150px;
+    border-radius: 30px;
 
 }
 .description p{
     font-weight: 600;
 }
+// .card{
+//     background-color: aqua;
+// }

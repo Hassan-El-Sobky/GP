@@ -18,9 +18,11 @@
       itemsPerPage:8,
       currentPage: page,
       totalItems: totalLength 
-    }" class="col-md-3 mt-3">
-      <div class="card mx-2 p-2">
-        <img src="{{x.imageUrl}}" class="card-img-top imageCard" alt="...">
+    }" class="col-md-4 mt-3">
+      <div class="card p-2">
+        <div class="imageCard p-2">
+        <img src="{{x.imageUrl}}" class="card-img-top  image-fluid  p-2" alt="...">
+      </div>
         <div class="card-body">
           <h2>{{x?.courseName}}</h2>
           <p class="card-text">{{x?.courseDepartment}}</p>
@@ -37,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div style="display: flex; justify-content: center; align-items: center;">
+    <div style="padding: 10px; margin-top: 5px; display: flex; justify-content: center; align-items: center;">
       <pagination-controls (pageChange)="page = $event"></pagination-controls>
 
 

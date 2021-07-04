@@ -1,33 +1,46 @@
-<section>
-    <div class="container">
-        <div class="opcreate px-4">
-        
-        </div>
-        <form [formGroup]="profileForm" (ngSubmit)=' updatevalue(profileForm)' class="row">
-            <div class="col-md-6 py-2 d-flex align-content-center">
-                <div class="pImg">
-                    <span class="aa">Profile Image</span>
-                </div>
+<section class="p-3">
+    <div class="container p-3">
+        <div class="row p-2">
+        <form [formGroup]="profileForm" (ngSubmit)=' updatevalue(profileForm)' class="kbyr w-50 m-auto p-2">
+            <!-- <div class="form contain"></div> -->
+            <div class="col-md-12 m-auto">
+               
                 <div class="row">
-                    <div class="col-md-4 delete">
-                        <img class="w-75" [src]="defaultImage">
+                    <div class="success p-2">
+                    
+
+                    <div class="col-md-6 p-2">
+                        <div class="photoCard p-3">
+                        <img class="img-fluid" [src]="defaultImage">
+                    </div>
                     </div>
 
-                    <div class="col-md-4">
-                        <input  type="file" name="file-input" id="file-input" class="file-input__input" name="photo"
-                            (change)='selectFile($event)' />
-                        <label class="file-input__label" for="file-input">
-
-                            <span>Upload</span></label>
+                    <div class="col-md-6">
+                        
+                        <div class="imageDes mt-5 p-3">
+                            <h4>Profile Image</h4>
+                        
+                        <input  type="file" name="file-input" id="file-input" class="file-input__input" name="photo" (change)='selectFile($event)' />
+                        <label class="file-input__label mt-3" for="file-input">
+                            <span>
+                                Upload
+                            </span>
+                        </label>
                     </div>
-
+                    </div>
 
                 </div>
+
             </div>
+        </div>
+
+
             <div class="row">
-                <div  class="col-md-6 py-2 px-5">
+                <div class="col-md-12 p-2">
+                    <div class="form m-auto p-2">
+
                     <div class="form-group">
-                        <label>Name*<span>:</span></label>
+                        <label>Name* :</label>
                         <input name="name" type="text" placeholder="Name"  formControlName='name' class="form-control">
                         <!-- <div *ngIf="name.touched && name.invalid " class="a">
                       <span> Name is required</span>
@@ -35,7 +48,7 @@
 
                     </div>
                     <div class="form-group">
-                        <label>UserName*<span>:</span></label>
+                        <label>UserName* :</label>
                         <input name="userName" type="text" formControlName='username' placeholder="UserName" class="form-control">
                         <!-- <div *ngIf="userName.touched && userName.invalid " class="a">
                       <span> UserName is required</span>
@@ -44,7 +57,7 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Email*<span>:</span></label>
+                        <label>Email* :</label>
                         <input name="email" required type="email" formControlName='email' username placeholder="Email" class="form-control">
                         <!-- <div *ngIf="email?.touched && email?.invalid" class="a">
                             <span>Email is required</span>
@@ -56,9 +69,8 @@
                     </div>
 
                     <div class="form-group">
-                        <label>Password*<span>:</span></label>
-                        <input type="password" name="password" formControlName='password' minlength="6" placeholder="Password"
-                            class="form-control">
+                        <label>Password* :</label>
+                        <input type="password" name="password" formControlName='password' minlength="6" placeholder="Password" class="form-control">
                         <!-- <div *ngIf="password?.touched && password?.invalid " class="a">
                             <span>Password is required</span>
 
@@ -72,9 +84,8 @@
 
 
                     <div class="form-group">
-                        <label>Password Confirmation*<span>:</span></label>
-                        <input type="password" required name="password_confirmation" placeholder="Password Confirmation"
-                            class="form-control">
+                        <label>Password Confirmation* :</label>
+                        <input type="password" required name="password_confirmation" placeholder="Password Confirmation" class="form-control">
                         <!-- <div *ngIf="password_confirmation.touched && password_confirmation.invalid " class="a">
                             <span> Password Confirmation is required </span>
 
@@ -85,24 +96,19 @@
                         </div> -->
                     </div>
 
-
                 </div>
-
-
-
-
-            </div>
-
-            <div class="row">
-                <div class="btnCreate">
-                    <button  type="submit">Submit</button>
                 </div>
             </div>
+
+           
+            <div class="form-group m-auto w-25  p-2">
+                <button type="submit" class="w-100 m-auto">Sign Up</button>
+              </div> 
              
 
 
         </form>
-
+    </div>
     </div>
 
 
