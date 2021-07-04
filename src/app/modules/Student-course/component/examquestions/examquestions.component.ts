@@ -139,6 +139,14 @@ let faceId=localStorage.getItem("faceId");
     console.log(res);
    if(res.status!="success")
    {
+    const data={
+      grades:{grade : "0"+"/"+this.quizzes.length ,assesmentId:this.examId},
+      assesmentId:this.examId
+    }
+    this._studS.studentGrade(this.userName,data).subscribe(res=>{
+      console.log(res); 
+      
+    })
     this.router.navigate(['courses','Home'])
    }
  })
