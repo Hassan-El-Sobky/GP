@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { StudentCoursesService } from '../../services/student-courses.service'
+import { ProfileService } from '../../services/profile.service';
 import { Location } from '@angular/common';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  styleUrls: ['./profile.component.scss']
+  selector: 'app-viewer-profile',
+  templateUrl: './viewer-profile.component.html',
+  styleUrls: ['./viewer-profile.component.scss']
 })
-export class ProfileComponent implements OnInit {
+export class ViewerProfileComponent implements OnInit {
+
   user: any;
   courses: any;
   name: any
@@ -20,7 +21,7 @@ export class ProfileComponent implements OnInit {
   role: any
   courseDeafult:string='assets/images/course.jpg';
 
-  constructor(private _profile: StudentCoursesService, private _activated: ActivatedRoute, private _location: Location) {
+  constructor(private _profile: ProfileService, private _activated: ActivatedRoute, private _location: Location) {
     this.getProfile()
     this.role = localStorage.getItem('role');
     console.log(this.role);

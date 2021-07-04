@@ -7,20 +7,21 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { WebcamModule } from 'ngx-webcam';
-import { ExamquestionsComponent } from './component/examquestions/examquestions.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import {ReactiveFormsModule  } from '@angular/forms';
 
 
 
 
 
 @NgModule({
-  declarations: [...StudentCourseRoutingModule.componentDeclration, ExamquestionsComponent],
+  declarations: [...StudentCourseRoutingModule.componentDeclration, ],
   imports: [
     CommonModule,
     StudentCourseRoutingModule,
     MatTableModule,
     MatTableModule,
+    ReactiveFormsModule,
     MatPaginatorModule,
     MatSortModule,
     NgxPaginationModule,

@@ -89,6 +89,14 @@ const routes: Routes = [
         (m) => m.InstructorCourseModule
       ),
       canActivate:[AuthGuard]
+  },
+  {
+    path: 'userprofile',
+    loadChildren: () =>
+      import('./modules/User-profile/user-profile.module').then(
+        (m) => m.UserProfileModule
+      ),
+      
   }
 ];
 

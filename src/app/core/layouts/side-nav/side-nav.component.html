@@ -10,7 +10,7 @@
         <div [class.user-dashboradClosed]='!menuStatus' class="user-dashborad text-center">
             <p *ngIf="menuStatus" class="text-capitalize my-2">{{userName}}</p>
 
-            <i [class.dBlock]='!menuStatus'  [routerLink]="['/adminAdmin/adminProfile']" class="fas fa-cog rotaa"></i>
+            <i [class.dBlock]='!menuStatus'  [routerLink]="['/student/userProfile']" class="fas fa-cog rotaa"></i>
             <i [class.dBlock]='!menuStatus'  class="fas fa-sign-out-alt logout"></i>
 
         </div>
@@ -54,7 +54,7 @@
 <span class="dashTitle" *ngIf="menuStatus">Registered Courses</span>
 </div>
 -->
-<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/student/profile'"  routerLinkActive="active">
+<div [class.tCenter]="!menuStatus" class="dashContent" [routerLink]="'/userprofile/myProfile'"  routerLinkActive="active">
 <i class="fas fa-users"></i>
 <span class="dashTitle" *ngIf="menuStatus">My Porfile</span>
 </div>

@@ -59,11 +59,11 @@
         <mat-icon (click)="expaded()">expand_more</mat-icon>
         <div *ngIf="flagExpanded" class="expanded">
             <div class="expanded-info">
-                <i [routerLink]="['/adminAdmin/adminProfile']" class="fas fa-user"></i>
-                <span [routerLink]="['/adminAdmin/adminProfile']" (click)='veiwOnly()'>My Profile</span>
+                <i [routerLink]="['/userprofile/myProfile']" class="fas fa-user"></i>
+                <span [routerLink]="['/userprofile/myProfile']" (click)='veiwOnly()'>My Profile</span>
                 <span>
                     <div class="online">
-
+                      
                     </div>
                 </span>
             </div>
@@ -76,8 +76,8 @@
                 <i class="fas fa-plus"></i>
                 <span>Add Admin</span>
             </div>
-            <div class="expanded-info">
-                <i style="color: #38B9DD;" class="fas fa-sign-out-alt"></i>
+            <div (click)="logout()" class="expanded-info">
+                <i (click)="logout()" style="color: #38B9DD;" class="fas fa-sign-out-alt"></i>
                 <span (click)="logout()">Logout</span>
             </div>
         </div>
