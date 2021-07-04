@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import { AvailableCoursesService } from '../../Services/available-courses.service';
 import { ActivatedRoute } from '@angular/router';
-import { TokenService} from '../../../../core/services/token.service'
+import { TokenService } from '../../../../core/services/token.service'
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-course-profile',
@@ -13,11 +15,12 @@ export class CourseProfileComponent implements OnInit {
   id: any
   course: any;
   username:any
-  insName:any
+  insName: any
+  coursecode:any
 
   role=localStorage.getItem("role");
   courseDeafult:string='assets/images/course.jpg';
-  constructor(private _location: Location, private _courseData: AvailableCoursesService, private _activated: ActivatedRoute,public tokenService: TokenService) {
+  constructor(private _location: Location, private _courseData: AvailableCoursesService, private _activated: ActivatedRoute,public tokenService: TokenService, private _router:Router) {
     this.getCourseData()
 
 
@@ -33,6 +36,7 @@ export class CourseProfileComponent implements OnInit {
    
         this._courseData.specificCourse(this.id).subscribe((data) => {
           console.log(data.course);
+          this.coursecode=data.course.courseCode
         
           this.course = data.course;
           let insId = data.course.instructorId
@@ -49,6 +53,22 @@ export class CourseProfileComponent implements OnInit {
    
     }
   
+    registerd(courseCode:any) 
+    {
+   
+     const data={
+      username:localStorage.getItem('username'),
+      courseCode:courseCode,
+      token:localStorage.getItem('accessToken')
+     }
+      this._courseData.studentRegisterCourse(data).subscribe(res => {
+        this._router.navigate(['/student/course']);
+       
+      console.log(res);
+      
+     })
+     
+    }
 
   backClicked() {
     this._location.back();
