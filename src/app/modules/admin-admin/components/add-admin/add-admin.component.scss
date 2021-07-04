@@ -5,14 +5,14 @@ $textColor:#111;
 .operators
 {
     background-color: $bodyBackGround;
-    height: 100%;
+    
 }
 .container
 {
     background-color: $FormBackGround;
-    border-radius: 15px;
-    margin-top: 100px;
-    padding-bottom: 50px;
+    // border-radius: 15px;
+    // margin-top: 100px;
+    // padding-bottom: 50px;
 }
 .opcreate
 {
@@ -164,4 +164,44 @@ h6
 .container-xl, .container-lg, .container-md, .container-sm, .container {
     max-width: 1550px;
 }
+}
+.form{
+    background-color: rgba(240, 240, 240, 0.6);
+    border-radius: 15px;
+
+}
+.kbyr{
+    border-radius: 30px;
+    
+    background-color: rgba(180, 180, 180, 0.6);
+    filter: blur(0.4px);
+}
+.form-group button
+{
+  
+  background-color: #fcaf17;
+  
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+}
+.success{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.imageDes{
+   text-align: center;
+}
+.imageDes h4{
+    font-size: 25px;
+    font-weight: 700;
+}
+.photoCard{
+    background-color: #A5A4A3;
+    border-radius: 15px;
+}
+.photoCard img{
+    border-radius: 7px;
 }
