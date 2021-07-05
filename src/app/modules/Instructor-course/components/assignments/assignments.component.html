@@ -30,6 +30,11 @@
                   <td mat-cell *matCellDef="let element"> {{element?.description}} </td>
                 </ng-container>
 
+                <ng-container matColumnDef="deadline">
+                  <th mat-header-cell *matHeaderCellDef class="text-capitalize"> deadline </th>
+                  <td mat-cell *matCellDef="let element"> {{element?.deadLine | date :'dd-MMM-yy h:mm:ss a '}} </td>
+                </ng-container>
+
 
                 <ng-container matColumnDef="url">
                   <th mat-header-cell *matHeaderCellDef class="text-capitalize"> Download Assignments </th>
@@ -94,12 +99,12 @@
 
 
             <div class="form-group">
-              <label for="">Upload Date:</label>
+              <label for="">DeadLine Date:</label>
               <input [class.is-valid]="addCourseForm.get('uploadDate').errors == null && 
-              addCourseForm.get('uploadDate').touched" type="date" formControlName="uploadDate" class="form-control"
+              addCourseForm.get('uploadDate').touched" type="datetime-local" formControlName="uploadDate" class="form-control"
                 name="uploadDate">
               <span *ngIf="addCourseForm.get('uploadDate').errors != null && addCourseForm.get('uploadDate').touched"
-                class="py-2 text-danger ">uploadDate Invalid</span>
+                class="py-2 text-danger ">DeadLineDate Invalid</span>
 
             </div>
 

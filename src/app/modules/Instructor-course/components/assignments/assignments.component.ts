@@ -10,13 +10,14 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 
+
 @Component({
   selector: 'app-assignments',
   templateUrl: './assignments.component.html',
   styleUrls: ['./assignments.component.scss']
 })
 export class AssignmentsComponent implements OnInit {
-  displayedColumns: string[] = [ 'title', 'desc','url','action'];
+  displayedColumns: string[] = [ 'title', 'desc','deadline','url','action'];
   defaultImage: string = '/assets/images/default image.png';
   dataSource: any;
   isTrue: any
@@ -82,32 +83,32 @@ courseCode:any
     })
   }
 
-  assUpl(title:any,deadline:any,code:any,desc:any,file:any) 
-  {
-       console.log(title);
-       console.log(deadline);
-       console.log(code);
-       console.log(desc);
-       console.log(file.value);
+  // assUpl(title:any,deadline:any,code:any,desc:any,file:any) 
+  // {
+  //      console.log(title);
+  //      console.log(deadline);
+  //      console.log(code);
+  //      console.log(desc);
+  //      console.log(file.value);
        
-       const formData=new FormData();
+  //      const formData=new FormData();
         
-       formData.append("title",title)
-       formData.append("deadLinetitle",deadline)
-       formData.append("description",desc)
-       formData.append("assigmentCode",code)
-       formData.append("courseCode",this.courseCode)
-       formData.append("token",`${localStorage.getItem('accessToken')}`)
-       formData.append("username",`${localStorage.getItem('username')}`)
-       formData.append('assigmentFile',file.value)
+  //      formData.append("title",title)
+  //      formData.append("deadLine",this.addCourseForm.get('uploadDate').value)
+  //      formData.append("description",desc)
+  //      formData.append("assigmentCode",code)
+  //      formData.append("courseCode",this.courseCode)
+  //      formData.append("token",`${localStorage.getItem('accessToken')}`)
+  //      formData.append("username",`${localStorage.getItem('username')}`)
+  //      formData.append('assigmentFile',file.value)
 
-       this._instServ.assUpload(formData).subscribe(res=>{
-         console.log(res);
+  //      this._instServ.assUpload(formData).subscribe(res=>{
+  //        console.log(res);
          
-       })
+  //      })
        
        
-  }
+  // }
  
   
   getCourseData() {
@@ -115,7 +116,7 @@ courseCode:any
     let formData=new FormData();
     formData.append('title',`${this.addCourseForm.get('title').value}`);
     formData.append('assigmentCode',`${this.addCourseForm.get('asscode').value}`);
-    formData.append('uploadDate',`${this.addCourseForm.get('uploadDate').value}`);
+    formData.append('deadLine',`${this.addCourseForm.get('uploadDate').value}`);
     formData.append('description',`${this.addCourseForm.get('description').value}`);
     formData.append('courseCode',this.courseCode);
     formData.append('token',`${localStorage.getItem('accessToken')}`);
@@ -166,8 +167,10 @@ openDialog(id: any) {
   });
 
   dialogRef.afterClosed().subscribe(result => {
-
+  setTimeout(()=>{
     this.getAllAss();
+  },500)
+
   });
 
 }
