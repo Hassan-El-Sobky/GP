@@ -21,7 +21,11 @@ export class AssignmentsComponent implements OnInit {
   displayedColumns: string[] = [ 'cCode', 'prerequisite','courseDepartment','status','upload'];
   defaultImage: string = '/assets/images/default image.png';
   dataSource:any;
-  courseCode:any
+  courseCode: any
+  isTrue: any;
+  filetype=false;
+  show = false;
+
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   constructor(private _activated:ActivatedRoute,private _allCourses:AdminCoursesService,private _studentCourseS:StudentCoursesService,private _location: Location) {
@@ -101,7 +105,24 @@ fileName:any
       formData.append("courseCode",`${this.courseCode}`);   
       formData.append("assigmentSolutionFile",file);
     
-      this._studentCourseS.uploadAss(formData).subscribe(res=>{
+      this._studentCourseS.uploadAss(formData).subscribe(res => {
+        if (res.message == 'done')
+        {
+          this.isTrue = true
+          this.show=true
+        
+        }
+        else if (res.message=="unsupported file type")
+        {
+          this.filetype = true
+          this.show=true
+        }
+        else if (res.message == "you can't upload second solution  , thankYou")
+        {
+          this.filetype = false
+          this.isTrue = false
+          this.show=true
+        }
 
         console.log(res);
         
@@ -111,7 +132,7 @@ fileName:any
         
 
    }
-          
+   
       //  const data={title:"test" , uploadDate:Date.now() , description:"Hiii" 
       //  , courseCode:"L122", lectureCode:"1" , token:localStorage.getItem('accessToken') ,username:localStorage.getItem('username'),
       //   lectureFile:x}
@@ -124,10 +145,18 @@ fileName:any
 
 
 
-
+   
+  close()
+  {
+    this.show=false
+  }
 
 
 
 
 
 }
+// function elseIf() {
+//   throw new Error('Function not implemented.');
+// }
+

@@ -80,3 +80,17 @@
           <span>Upload</span></label>
 </div> -->
   </section>
+
+  <div class="layout" *ngIf="show">
+    <div class="first"> 
+        <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+    <div class="third">
+        
+        <p *ngIf="isTrue">uploaded  Succefuly !</p>
+        <p *ngIf="filetype">Unsupported file type </p>
+        <p *ngIf="!isTrue">you already uploaded this Assignment </p>
+    
+    </div>
+    
+    </div>
+    </div>
