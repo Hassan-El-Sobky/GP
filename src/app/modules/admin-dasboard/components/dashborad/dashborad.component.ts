@@ -45,7 +45,7 @@ deta:any
     this._adminServices.getAllcourses().subscribe((data) => {
       this.numOfCourse = data.numOfCourses;
 
-     this.barChar();
+     this.barChar2();
     });
 
   }
@@ -66,7 +66,7 @@ deta:any
       console.log(  this.numofPcourse );
       
       
-      this.barChar();
+      this.barChar2();
     });
 
   }
@@ -75,7 +75,7 @@ deta:any
       console.log(data);
       
       this.numofAvacourse = data.numOfAvailableCourses;
-      this.barChar();
+      this.barChar2();
 
     });
 
@@ -86,26 +86,21 @@ deta:any
 
   barChar() {
     this.data = {
-      labels: ['Students', 'Courses', 'Instructors','pendingCourses','AvaliableCourses'],
+      labels: ['Students', 'Instructors'],
       datasets: [{
         type: 'line',
-        label: 'DataSet 1',
+        label: 'Students',
         borderColor: '#42A5F5',
         borderWidth: 2,
         fill: false,
-        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors,this.numofPcourse,  this.numofAvacourse]
+        data: [this.numOfSutudents, this.numOfInstructors]
       }, {
         type: 'bar',
-        label: 'DataSet 2',
+        label: 'Instructors',
         backgroundColor: '#66BB6A',
-        data: [this.numOfSutudents, this.numOfCourse, this.numOfInstructors,this.numofPcourse,  this.numofAvacourse],
+        data: [this.numOfSutudents, this.numOfInstructors],
         borderColor: 'white',
         borderWidth: 2
-      }, {
-        type: 'bar',
-        label: 'DataSet 3 ',
-        backgroundColor: '#FFA726',
-        data: [ this.numOfSutudents, this.numOfCourse, this.numOfInstructors,this.numofPcourse,  this.numofAvacourse]
       }]
     };
     // this.chartOptions = {
@@ -128,6 +123,7 @@ deta:any
     // });
   }
 
+
   // updateChartOptions() {
   //   if (this.config.dark)
   //     this.applyDarkTheme();
@@ -136,7 +132,49 @@ deta:any
   // }
 
   
+ barChar2() {
+    this.deta = {
+      labels: [ 'Courses','pendingCourses','AvaliableCourses'],
+      datasets: [{
+        type: 'line',
+        label: 'Courses',
+        borderColor: '#42A5F5',
+        borderWidth: 2,
+        fill: false,
+        data: [ this.numOfCourse, this.numofPcourse,  this.numofAvacourse]
+      }, {
+        type: 'bar',
+        label: 'Pending Courses',
+        backgroundColor: '#66BB6A',
+        data: [ this.numOfCourse, this.numofPcourse,  this.numofAvacourse],
+        borderColor: 'white',
+        borderWidth: 2
+      }, {
+        type: 'bar',
+        label: 'AvaliableCourses ',
+        backgroundColor: '#FFA726',
+        data: [ this.numOfCourse, this.numofPcourse,  this.numofAvacourse]
+      }]
+    };
+    // this.chartOptions = {
+    //   responsive: true,
+    //   title: {
+    //     display: true,
+    //     text: 'Combo Bar Line Chart'
+    //   },
+    //   tooltips: {
+    //     mode: 'index',
+    //     intersect: true
+    //   }
+    // };
 
+    // this.config = this.configService.config;
+    // this.updateChartOptions();
+    // this.subscription = this.configService.configUpdate$.subscribe(config => {
+    //   this.config = config;
+    //   this.updateChartOptions();
+    // });
+  }
   ngOnInit(): void {
   }
 
