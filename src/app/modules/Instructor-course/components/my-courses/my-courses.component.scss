@@ -164,6 +164,10 @@ body {
 .modal-title {
   font-family: Georgia, "Times New Roman", Times, serif;
 }
+section
+{
+  position: relative;
+}
 .layout {
   background-color: rgba($color: black, $alpha: 0.4);
   width: 100%;

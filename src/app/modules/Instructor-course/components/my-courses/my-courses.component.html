@@ -1,170 +1,172 @@
-<div class="muCourses">
-<div class="container">
-  <div class="row">
-    <div class="float-end my-2 mr-4">
-      <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
-        class="btn btn-secondary rounded-left add float-end">Add</button>
-    </div>
-
-
-    <div *ngFor="let x of courses | 
-     paginate: { 
-     itemsPerPage:4,
-     currentPage: page,
-     totalItems: totalLength 
-   }" class="col-md-3 p-2 mb-2">
-      <div [routerLink]="['/instructor/courseDetails',x._id]" class="card p-3">
-        <img src="{{x?.imageUrl}}" class="card-img-top imageCard" alt="...">
-        <div class="card-body">
-          <h2>{{x?.courseName}} </h2>
-          <p class="card-text">{{x?.courseDepartment}}</p>
-          <p>{{x?.prerequisite}}</p>
-
+<section>
+  <div class="muCourses">
+    <div class="container">
+      <div class="row">
+        <div class="float-end my-2 mr-4">
+          <button id="addModal" data-bs-toggle="modal" data-bs-target="#addToCourse"
+            class="btn btn-secondary rounded-left add float-end">Add</button>
         </div>
-        <div class="button_cont" align="center">
-          <a [routerLink]="['/instructor/courseDetails',x._id]" class="example_b w-100" >Course info</a>
-      </div>
-        <!-- <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button> -->
-
-      </div>
-    </div>
-
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <pagination-controls (pageChange)="page = $event"></pagination-controls>
-
-
-    </div>
-
-
-
-
-    <!-- Modal -->
-    <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h3 class="modal-title" id="exampleModalLabel">Add course form</h3>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    
+    
+        <div *ngFor="let x of courses | 
+         paginate: { 
+         itemsPerPage:4,
+         currentPage: page,
+         totalItems: totalLength 
+       }" class="col-md-3 p-2 mb-2">
+          <div [routerLink]="['/instructor/courseDetails',x._id]" class="card p-3">
+            <img src="{{x?.imageUrl}}" class="card-img-top imageCard" alt="...">
+            <div class="card-body">
+              <h2>{{x?.courseName}} </h2>
+              <p class="card-text">{{x?.courseDepartment}}</p>
+              <p>{{x?.prerequisite}}</p>
+    
+            </div>
+            <div class="button_cont" align="center">
+              <a [routerLink]="['/instructor/courseDetails',x._id]" class="example_b w-100" >Course info</a>
           </div>
-          <div class="modal-body">
-           
-              <div class="center p-2">
-                <form [formGroup]='addCourseForm' class="mainForm p-2">
-
-                  <div class="inputbox p-2">
-                    <span for="">Course Name</span>
-
-                    <input
-                      [class.is-valid]="addCourseForm.get('courseName').errors == null &&   addCourseForm.get('courseName').touched"
-                      type="text" formControlName="courseName" class="form-control w-75 mt-1  m-auto" name="courseName">
-                    <p *ngIf="addCourseForm.get('courseName').errors != null && addCourseForm.get('courseName').touched"
-                      class="text-danger">Course Name is Invalid</p>
-
-                  </div>
-
-
-                  <div class="inputbox p-2">
-                    <span for="">Course Code :</span>
-                    <input [class.is-valid]="addCourseForm.get('courseCode').errors == null && 
-                       addCourseForm.get('courseCode').touched" type="text" formControlName="courseCode"
-                      class="form-control w-75 mt-1  m-auto" name="courseCode">
-                    
-                    <p *ngIf="addCourseForm.get('courseCode').errors != null && addCourseForm.get('courseCode').touched"
-                      class="text-danger">Course Code is Invalid</p>
-
-                  </div>
-
-                  <div class="inputbox p-2">
-                    <span for="">Course Department:</span>
-                    <!-- <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
-                      addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
-                      class="form-control w-75 mt-1  m-auto" name="courseDepartment"> -->
-<!--                      
-                     <select [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
-                     addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
-                     class="form-control w-75 mt-1  m-auto" name="courseDepartment"
-                      >
-                     <option value="General">General</option>
-                     <option value="Information Systems">Information Systems</option>
-                     <option value="Computer Science">Computer Science</option>
-                     <option value="Internet Technology">Internet Technology</option>
-                    </select>  -->
-
-                    <select [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
-                    addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
-                    class="form-control w-75 mt-1  m-auto" name="courseDepartment">
-                      <option [ngValue]="null" disabled>Please choose an option</option>
-                      <option *ngFor="let option of options" [ngValue]="option.title">
-                      {{ option.title}}
-                      </option>
-                   </select>
-
-                    <p *ngIf="addCourseForm.get('courseDepartment').errors != null && addCourseForm.get('courseDepartment').touched"
-                      class="text-danger ">Course Department is Invalid</p>
-
-                  </div>
-
-                  <div class="inputbox p-2">
-                    <span for="">Prerequisite:</span>
-                    <input [class.is-valid]="addCourseForm.get('prerequisite').errors == null && 
-                      addCourseForm.get('prerequisite').touched" type="text" formControlName="prerequisite"
-                      class="form-control w-75 mt-1  m-auto" name="prerequisite">
-                    
-                    <p *ngIf="addCourseForm.get('prerequisite').errors != null && addCourseForm.get('prerequisite').touched"
-                      class="text-danger ">Prerequisite is Invalid</p>
-                  </div>
-
-                  <div class="">
-                    <label class="nameUpload p-2" for="file-input">Upload course photo :</label>
-                    <br>
-                    <input type="file" formControlName="courseImage" [disabled]='addCourseForm.invalid'
-                      (change)='selectFile($event)' name="file-input" accept="images/*" id="file-input"
-                      class="file-input__input" name="photo" />
-
-                    <label class="file-input__label" for="file-input">
-                      <span>Upload</span>
-                    </label>
-
-                      <div class="button_cont" align="center">
-                        <input [disabled]='addCourseForm.invalid' (click)="getCourseData()" type="button" value="submit" class="Fexample_b my-3 w-75">
-                      </div>
-
-                    <!-- <div class="inputbox my-2">
-                      <input [disabled]='addCourseForm.invalid' type="button" value="submit" class="example_b mx-1">
-                    </div> -->
-                  </div>
-
-                </form>
-
+            <!-- <button [routerLink]="['/instructor/courseDetails',x._id]" class="btn btn-primary">Course Info</button> -->
+    
+          </div>
+        </div>
+    
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <pagination-controls (pageChange)="page = $event"></pagination-controls>
+    
+    
+        </div>
+    
+    
+    
+    
+        <!-- Modal -->
+        <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h3 class="modal-title" id="exampleModalLabel">Add course form</h3>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
-
-
-            
-          </div>
-
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <div class="modal-body">
+               
+                  <div class="center p-2">
+                    <form [formGroup]='addCourseForm' class="mainForm p-2">
+    
+                      <div class="inputbox p-2">
+                        <span for="">Course Name</span>
+    
+                        <input
+                          [class.is-valid]="addCourseForm.get('courseName').errors == null &&   addCourseForm.get('courseName').touched"
+                          type="text" formControlName="courseName" class="form-control w-75 mt-1  m-auto" name="courseName">
+                        <p *ngIf="addCourseForm.get('courseName').errors != null && addCourseForm.get('courseName').touched"
+                          class="text-danger">Course Name is Invalid</p>
+    
+                      </div>
+    
+    
+                      <div class="inputbox p-2">
+                        <span for="">Course Code :</span>
+                        <input [class.is-valid]="addCourseForm.get('courseCode').errors == null && 
+                           addCourseForm.get('courseCode').touched" type="text" formControlName="courseCode"
+                          class="form-control w-75 mt-1  m-auto" name="courseCode">
+                        
+                        <p *ngIf="addCourseForm.get('courseCode').errors != null && addCourseForm.get('courseCode').touched"
+                          class="text-danger">Course Code is Invalid</p>
+    
+                      </div>
+    
+                      <div class="inputbox p-2">
+                        <span for="">Course Department:</span>
+                        <!-- <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                          addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                          class="form-control w-75 mt-1  m-auto" name="courseDepartment"> -->
+    <!--                      
+                         <select [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                         addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                         class="form-control w-75 mt-1  m-auto" name="courseDepartment"
+                          >
+                         <option value="General">General</option>
+                         <option value="Information Systems">Information Systems</option>
+                         <option value="Computer Science">Computer Science</option>
+                         <option value="Internet Technology">Internet Technology</option>
+                        </select>  -->
+    
+                        <select [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                        addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                        class="form-control w-75 mt-1  m-auto" name="courseDepartment">
+                          <option [ngValue]="null" disabled>Please choose an option</option>
+                          <option *ngFor="let option of options" [ngValue]="option.title">
+                          {{ option.title}}
+                          </option>
+                       </select>
+    
+                        <p *ngIf="addCourseForm.get('courseDepartment').errors != null && addCourseForm.get('courseDepartment').touched"
+                          class="text-danger ">Course Department is Invalid</p>
+    
+                      </div>
+    
+                      <div class="inputbox p-2">
+                        <span for="">Prerequisite:</span>
+                        <input [class.is-valid]="addCourseForm.get('prerequisite').errors == null && 
+                          addCourseForm.get('prerequisite').touched" type="text" formControlName="prerequisite"
+                          class="form-control w-75 mt-1  m-auto" name="prerequisite">
+                        
+                        <p *ngIf="addCourseForm.get('prerequisite').errors != null && addCourseForm.get('prerequisite').touched"
+                          class="text-danger ">Prerequisite is Invalid</p>
+                      </div>
+    
+                      <div class="">
+                        <label class="nameUpload p-2" for="file-input">Upload course photo :</label>
+                        <br>
+                        <input type="file" formControlName="courseImage" [disabled]='addCourseForm.invalid'
+                          (change)='selectFile($event)' name="file-input" accept="images/*" id="file-input"
+                          class="file-input__input" name="photo" />
+    
+                        <label class="file-input__label" for="file-input">
+                          <span>Upload</span>
+                        </label>
+    
+                          <div class="button_cont" align="center">
+                            <input [disabled]='addCourseForm.invalid' (click)="getCourseData()" type="button" value="submit" class="Fexample_b my-3 w-75">
+                          </div>
+    
+                        <!-- <div class="inputbox my-2">
+                          <input [disabled]='addCourseForm.invalid' type="button" value="submit" class="example_b mx-1">
+                        </div> -->
+                      </div>
+    
+                    </form>
+    
+                  </div>
+    
+    
+                
+              </div>
+    
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+            </div>
+    
+    
+    
+    
+    
           </div>
         </div>
-
-
-
-
-
       </div>
     </div>
-  </div>
-</div>
-</div>
-<div class="layout" *ngIf="show">
-  <div class="first"> 
-      <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
-  <div class="third">
+    </div>
+    <div class="layout" *ngIf="show">
+      <div class="first"> 
+          <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+      <div class="third">
+          
+          <p *ngIf="isTrue">Created Succefuly !</p>
+          <p *ngIf="!isTrue"> There is an error</p>
       
-      <p *ngIf="isTrue">Created Succefuly !</p>
-      <p *ngIf="!isTrue"> There is an error</p>
-  
-  </div>
-  
-  </div>
-</div>
+      </div>
+      
+      </div>
+    </div>
+</section>

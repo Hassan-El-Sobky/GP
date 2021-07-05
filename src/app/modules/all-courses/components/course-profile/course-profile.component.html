@@ -1,70 +1,73 @@
-
+<section>
+    
 <i class="fas fa-arrow-left back_button m-2 " *ngIf="tokenService.isAuthenticated() == true"
-    (click)='backClicked() '></i>
+(click)='backClicked() '></i>
 
 <div class="container-fluid py-5">
-    <div class="card px-3 py-5 mt-5">
-        <div class="row">
-            <i class="fas fa-arrow-left back_button m-2  " *ngIf="tokenService.isAuthenticated() == false"
-                (click)='backClicked() '></i>
-            <div class="col-md-3 image">
-                <img class="img-fluid" src="{{course?.imageUrl}}" alt="...">
-            </div>
-            <div class="col-md-8">
-                <div class="card-body">
-                    <h5 class="card-title">CourseInfo</h5>
-                    <div class="cardinfo">
+<div class="card px-3 py-5 mt-5">
+    <div class="row">
+        <i class="fas fa-arrow-left back_button m-2  " *ngIf="tokenService.isAuthenticated() == false"
+            (click)='backClicked() '></i>
+        <div class="col-md-3 image">
+            <img class="img-fluid" src="{{course?.imageUrl}}" alt="...">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">CourseInfo</h5>
+                <div class="cardinfo">
 
-                        <p class="card-text"><span>Course Name: </span>{{course?.courseName}}</p>
-                        <p class="card-text"><span>Course Code: </span>{{course?.courseCode}}</p>
-                        <p class="card-text"><span>Course Department: </span>{{course?.courseDepartment}}</p>
-                        <p class="card-text"><span>Course prerequisite: </span>{{course?.prerequisite}}</p>
-                        <p class="card-text"><span>InstructorName: </span>{{insName}}</p>
-                    </div>
-                    <a *ngIf="tokenService.isAuthenticated() == false"
-                        [routerLink]="['/authentication/signin']" class="example_b mx-1 float-end">Register</a>
-                    <a *ngIf="role =='student'" (click)="registerd(coursecode)"
-                        class="example_b mx-1 float-end">Register</a>
+                    <p class="card-text"><span>Course Name: </span>{{course?.courseName}}</p>
+                    <p class="card-text"><span>Course Code: </span>{{course?.courseCode}}</p>
+                    <p class="card-text"><span>Course Department: </span>{{course?.courseDepartment}}</p>
+                    <p class="card-text"><span>Course prerequisite: </span>{{course?.prerequisite}}</p>
+                    <p class="card-text"><span>InstructorName: </span>{{insName}}</p>
                 </div>
+                <a *ngIf="tokenService.isAuthenticated() == false"
+                    [routerLink]="['/authentication/signin']" class="example_b mx-1 float-end">Register</a>
+                <a *ngIf="role =='student'" (click)="registerd(coursecode)"
+                    class="example_b mx-1 float-end">Register</a>
             </div>
         </div>
     </div>
 </div>
+</div>
 
 
 <div *ngIf="role=='admin'" class="container py-5">
-    <div class="row">
+<div class="row">
 
-        <div [routerLink]="['/instructor','courseMaterials',id]" class="col-md-3 courseInf">
-            <h3 [routerLink]="['/instructor','courseMaterials',id]">Materials</h3>
-        </div>
-
-
-        <div [routerLink]="['/instructor','courseAssignments',id]" class="col-md-3 courseInf">
-            <h3 [routerLink]="['/instructor','courseAssignments',id]">Assigments</h3>
-        </div>
-
-
-        <div [routerLink]="['/instructor','courseStudents',id]" class="col-md-3 courseInf">
-            <h3 [routerLink]="['/instructor','courseStudents',id]">Students</h3>
-        </div>
-        <div [routerLink]="['/instructor','studentsgrades',id]" class="col-md-3 courseInf">
-            <h3 [routerLink]="['/instructor','studentsgrades',id]">Students Grades</h3>
-        </div>
-
+    <div [routerLink]="['/instructor','courseMaterials',id]" class="col-md-3 courseInf">
+        <h3 [routerLink]="['/instructor','courseMaterials',id]">Materials</h3>
     </div>
+
+
+    <div [routerLink]="['/instructor','courseAssignments',id]" class="col-md-3 courseInf">
+        <h3 [routerLink]="['/instructor','courseAssignments',id]">Assigments</h3>
+    </div>
+
+
+    <div [routerLink]="['/instructor','courseStudents',id]" class="col-md-3 courseInf">
+        <h3 [routerLink]="['/instructor','courseStudents',id]">Students</h3>
+    </div>
+    <div [routerLink]="['/instructor','studentsgrades',id]" class="col-md-3 courseInf">
+        <h3 [routerLink]="['/instructor','studentsgrades',id]">Students Grades</h3>
+    </div>
+
+</div>
 
 </div>
 <!-- src='{{course.imageUrl}}' -->
 <div class="layout" *ngIf="show">
 <div class="first"> 
-    <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+<div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
 <div class="third">
-    
-    <p *ngIf="isTrue">Registered Succefuly !</p>
-    <p *ngIf="!isTrue">You have already Registered This Course</p>
+
+<p *ngIf="isTrue">Registered Succefuly !</p>
+<p *ngIf="!isTrue">You have already Registered This Course</p>
 
 </div>
 
 </div>
 </div>
+
+</section>

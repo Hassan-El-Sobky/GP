@@ -67,7 +67,7 @@
 
 
   <!-- Modal -->
-  <div class="modal fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal  fade" id="addToCourse" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -143,17 +143,18 @@
     </div>
   </div>
 
+  <div class="layout" *ngIf="show">
+    <div class="first">
+      <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+      <div class="third">
+  
+        <p *ngIf="isTrue">uploaded Successfuly!</p>
+        <p *ngIf="!isTrue">There is an error</p>
+  
+      </div>
+  
+    </div>
+  </div>
+
 </section>
 
-<div class="layout" *ngIf="show">
-  <div class="first">
-    <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
-    <div class="third">
-
-      <p *ngIf="isTrue">uploaded Successfuly!</p>
-      <p *ngIf="!isTrue">There is an error</p>
-
-    </div>
-
-  </div>
-</div>
