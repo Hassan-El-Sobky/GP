@@ -57,22 +57,24 @@ export class MyProfileComponent implements OnInit {
   updatevalue(profileForm:any)
   {
     
-   console.log(profileForm.value);
-  //  {oldUserName,username,userImage ,oldPassword,password,rePassword,token}
+  //  console.log(profileForm.value);
+  // { name ,username ,oldPassword,password , rePassword , userImage}
     const formData=new FormData()
-    formData.append("oldUserName",this.userName)
-    
-    formData.append("username",`${profileForm.get('username').value}`)
+
+    formData.append("username",`${localStorage.getItem('username')}`)
+    formData.append("name",`${profileForm.get('name').value}`)
     formData.append("oldPassword",`${profileForm.get('oldpassword').value}`)
     formData.append("password",`${profileForm.get('newpassword').value}`)
     formData.append("rePassword",`${profileForm.get('repassword').value}`)
-    formData.append("userImage",`${this.UserImage}`)
+    formData.append("userImage",`${this.filex}`)
+  console.log(formData);
   
     this._profile.editProfile(formData).subscribe(res=>{
       console.log(res);
-      if(res=="updated")
+      if(res.message=="updated")
       {
-        localStorage.setItem('username',profileForm.get('username').value)
+        alert('done')
+
       }
     })
 
@@ -88,7 +90,9 @@ export class MyProfileComponent implements OnInit {
 
   selectFile(event: any) {
     const file:File = event.target.files[0];
-    this.UserImage=file
+    this.filex=file
+    console.log(this.filex);
+    
     if (event.target.files) {
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);

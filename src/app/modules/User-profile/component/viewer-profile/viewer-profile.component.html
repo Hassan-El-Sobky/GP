@@ -3,9 +3,11 @@
 
     <div class="container">
         <div class="row text-center">
+       
+       
             <div class="offset-2 m-auto col-md-8">
                 <div class="d-flex justify-content-center align-content-center imd_div">
-                    <img src="../../../../../assets/images/default image.png" class=" img " alt="">
+                    <img src="{{userImage}}" class=" img " alt="">
 
                 </div>
 
@@ -18,10 +20,11 @@
                 <p>Number:{{phone}}</p>
                 <p> {{email}}</p>
             </div>
+            <h4>Regirested Courses</h4>
             <div *ngIf="role == 'admin' " class="col-md-12">
                 <p>{{status}}</p>
                 <owl-carousel-o [options]="customOptions">
-
+                
                     <ng-template *ngFor="let course of courses" carouselSlide>
                         
                         <div class="card mx-2 p-2">

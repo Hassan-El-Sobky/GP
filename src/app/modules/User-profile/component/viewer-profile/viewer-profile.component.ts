@@ -20,8 +20,9 @@ export class ViewerProfileComponent implements OnInit {
   username: any
   status: any
   role: any
+  userImage:any
   courseDeafult:string='assets/images/course.jpg';
-
+ 
   constructor(private _profile: ProfileService, private _activated: ActivatedRoute, private _location: Location) {
     this.getProfile()
     this.role = localStorage.getItem('role');
@@ -62,7 +63,7 @@ export class ViewerProfileComponent implements OnInit {
       this.email = data.user.email
       this.userName = data.user.username
       this.phone=data.user.mobilePhone
-
+      this.userImage=data.user.imageUrl
     })
 
   }

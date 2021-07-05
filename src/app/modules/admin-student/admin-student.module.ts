@@ -6,9 +6,10 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { DeletedialogComponent } from './components/deletedialog/deletedialog.component';
+import { StudentallgradesComponent } from './components/studentallgrades/studentallgrades.component';
 
 @NgModule({
-  declarations: [...AdminStudentRoutingModule.componentDecleartion, DeletedialogComponent],
+  declarations: [...AdminStudentRoutingModule.componentDecleartion, DeletedialogComponent, StudentallgradesComponent],
   imports: [
     CommonModule,
     AdminStudentRoutingModule,

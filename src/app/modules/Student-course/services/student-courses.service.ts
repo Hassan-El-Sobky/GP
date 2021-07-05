@@ -49,9 +49,10 @@ export class StudentCoursesService {
     return this._http.get(`http://localhost:3000/userProfile/${username}`)
   }
 
-  getExamsById(courseId:any):Observable<any>{
+  getExamsById(courseId:any,username:any):Observable<any>{
     // return this._http.get(`https://lmsapis.herokuapp.com/courseExams/${courseId}`)
-    return this._http.get(`http://localhost:3000/courseExams/${courseId}`)
+    return this._http.get(`http://localhost:3000/courseExams/${courseId}/${username}`)
+    
   }
 
   besmallah(data:any):Observable<any>{
@@ -75,6 +76,9 @@ export class StudentCoursesService {
     return this._http.post(`http://localhost:3000/grade/${username}`,data)
   }
   
-  
+  mygrade(courseId:any,username:any):Observable<any>{
+
+    return this._http.get(`http://localhost:3000/courseGrades/${courseId}/${username}`)
+  }
 
 }

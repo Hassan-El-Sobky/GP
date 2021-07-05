@@ -58,6 +58,20 @@
                 </div>
             </div>
 
+             
+            <div class="col-md-3 my-2">
+                <div [routerLink]="['/instructor','studentsgrades',id]"  class="course-item card p-3 text-center">
+                    <img src="../../../../../assets/images/students.jpg" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">Students Grades</h5>
+                    </div>
+                    <div class="button_cont" align="center">
+                        <a [routerLink]="['/instructor','studentsgrades',id]" class="example_b w-100" >Students Grades</a>
+                    </div>
+                    <!-- <a [routerLink]="['/instructor','courseStudents',id]" class="btn btn-primary">Students</a> -->
+                </div>
+            </div>
+
 
         </div>
     </div>

@@ -32,21 +32,24 @@
 </div>
 
 
-<div *ngIf="role=='admin'" class="container">
+<div *ngIf="role=='admin'" class="container py-5">
     <div class="row">
 
-        <div [routerLink]="['/instructor','courseMaterials',id]" class="col-md-4 courseInf">
+        <div [routerLink]="['/instructor','courseMaterials',id]" class="col-md-3 courseInf">
             <h3 [routerLink]="['/instructor','courseMaterials',id]">Materials</h3>
         </div>
 
 
-        <div [routerLink]="['/instructor','courseAssignments',id]" class="col-md-4 courseInf">
+        <div [routerLink]="['/instructor','courseAssignments',id]" class="col-md-3 courseInf">
             <h3 [routerLink]="['/instructor','courseAssignments',id]">Assigments</h3>
         </div>
 
 
-        <div [routerLink]="['/instructor','courseStudents',id]" class="col-md-4 courseInf">
+        <div [routerLink]="['/instructor','courseStudents',id]" class="col-md-3 courseInf">
             <h3 [routerLink]="['/instructor','courseStudents',id]">Students</h3>
+        </div>
+        <div [routerLink]="['/instructor','studentsgrades',id]" class="col-md-3 courseInf">
+            <h3 [routerLink]="['/instructor','studentsgrades',id]">Students Grades</h3>
         </div>
 
     </div>

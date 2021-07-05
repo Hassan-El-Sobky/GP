@@ -13,7 +13,7 @@ import { AdminStudentsService } from '../../services/admin-students.service';
   styleUrls: ['./students.component.scss']
 })
 export class StudentsComponent implements OnInit {
-  displayedColumns: string[] = [ 'name', 'username', 'email','action','view-detials'];
+  displayedColumns: string[] = [ 'name', 'username', 'email','grades','view-detials','action'];
   dataSource:any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

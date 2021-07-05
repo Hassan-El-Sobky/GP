@@ -85,12 +85,16 @@ export class InstAddCourseService {
 
   getExamsById(courseId:any):Observable<any>{
     // return this._http.get(`https://lmsapis.herokuapp.com/courseExams/${courseId}`)
-    return this._http.get(`http://localhost:3000/courseExams/${courseId}`)
+    return this._http.get(`http://localhost:3000/Exams/${courseId}`)
   }
 
   deleteExams(exmaId: any,data:any): Observable<any>
   {
     return this._http.request('delete',`http://localhost:3000/deleteAssesment/${exmaId}`,{body:data})
+  }
+  
+  studentsGrades(courseId:any):Observable<any>{
+    return this._http.get(`http://localhost:3000/gradesCourse/${courseId}`)
   }
 
 }

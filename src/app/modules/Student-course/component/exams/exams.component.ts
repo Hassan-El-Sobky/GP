@@ -51,7 +51,7 @@ page: number = 1;
 
 
   getExams() {
-    this._studS.getExamsById(this.courseId).subscribe(res=>{
+    this._studS.getExamsById(this.courseId,localStorage.getItem('username')).subscribe(res=>{
       console.log(res);
        this.courseExams=res.exams;
        this.totalLength=res.exams.length

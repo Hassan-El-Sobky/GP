@@ -25,6 +25,11 @@ export class AdminStudentsService {
     // return this._http.get(`https://lmsapis.herokuapp.com/searchStudent/?username=${name}`)
     return this._http.get(`http://localhost:3000/searchStudent/?username=${name}`)
     }
+
+    studentAllGrades(username:any):Observable<any>{
+
+      return this._http.get(`http://localhost:3000/grades/${username}`)
+    }
    
   
 }

@@ -8,6 +8,7 @@ import { QuizzesComponent } from './component/quizzes/quizzes.component';
 import { CourseInfoComponent } from './component/course-info/course-info.component';
 import { ExamQuestionsComponent } from '../Instructor-course/components/exam-questions/exam-questions.component';
 import { ExamquestionsComponent } from './component/examquestions/examquestions.component';
+import { MygradeComponent } from './component/mygrade/mygrade.component';
 
 
 
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'quizzes/:id', component: QuizzesComponent },
   { path: 'course-info/:id', component: CourseInfoComponent },
   { path: 'examquestion/:id', component: ExamquestionsComponent },
-  
+  {path:'mygrade/:id',component:MygradeComponent}
 
   
 

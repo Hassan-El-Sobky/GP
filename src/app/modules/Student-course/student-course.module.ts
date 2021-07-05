@@ -9,13 +9,14 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { WebcamModule } from 'ngx-webcam';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {ReactiveFormsModule  } from '@angular/forms';
+import { MygradeComponent } from './component/mygrade/mygrade.component';
 
 
 
 
 
 @NgModule({
-  declarations: [...StudentCourseRoutingModule.componentDeclration, ],
+  declarations: [...StudentCourseRoutingModule.componentDeclration, MygradeComponent, ],
   imports: [
     CommonModule,
     StudentCourseRoutingModule,

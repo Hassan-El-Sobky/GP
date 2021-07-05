@@ -14,6 +14,7 @@ import { ExamQuestionsComponent } from './components/exam-questions/exam-questio
 import { QuizQuestionsComponent } from './components/quiz-questions/quiz-questions.component';
 import { CreateexamComponent } from './components/createexam/createexam.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { StudentgradeComponent } from './components/studentgrade/studentgrade.component';
 const routes: Routes = [
   {path:'addCourse',component:AddCourseComponent},
   {path:'myCourse',component:MyCoursesComponent},
@@ -26,6 +27,7 @@ const routes: Routes = [
   { path: 'examQuestions/:id', component: ExamQuestionsComponent },
   {path:'quizQuestions',component:QuizQuestionsComponent},
   {path:'createexam/:id',component:CreateexamComponent},
+  {path:'studentsgrades/:id',component:StudentgradeComponent},
   {path:'schedule',component:ScheduleComponent}
 ];
 

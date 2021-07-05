@@ -1,0 +1,66 @@
+<section class="userList">
+    <div class="ss">
+      <!-- <i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i> -->
+      <div class="tableContainer">
+        <div class="mainContainer">
+  
+          <div class="tableContent">
+            <div class="inputTableSearch">
+              <h6>My Grade</h6>
+              <div class="form-group">
+                <!-- <input placeholder=" Search..." #searchName (change)=""> -->
+                <input placeholder=" Search..." #searchName>
+                <i class="fas fa-search"></i>
+              </div>
+            </div>
+            <div class="tables">
+              <div class="mat-elevation-z8">
+                <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+               
+  
+                  <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Course Name</th>
+                    <td mat-cell *matCellDef="let element"> {{element?.courseName}} </td>
+                  </ng-container>
+  
+                  <ng-container matColumnDef="title">
+                    <th mat-header-cell *matHeaderCellDef > Exam title </th>
+                    <td mat-cell *matCellDef="let element"> {{element?.assesmentTitle}} </td>
+                  </ng-container>
+
+
+                  <ng-container matColumnDef="grade">
+                    <th mat-header-cell *matHeaderCellDef>Grade</th>
+                    <td mat-cell *matCellDef="let element">{{element?.grade}} </td>
+                  </ng-container>
+
+
+             
+
+                  
+                  
+                 
+  
+                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator [pageSizeOptions]="[10,15,20]"
+                 showFirstLastButtons>
+              </mat-paginator>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+  
+    
+    </div>
+    <!-- <div class="col-md-4">
+      <input  type="file" name="file-input" accept="images/*" id="file-input" class="file-input__input" name="photo"
+          (change)='selectFile($event)' />
+      <label class="file-input__label" for="file-input">
+
+          <span>Upload</span></label>
+</div> -->
+  </section>

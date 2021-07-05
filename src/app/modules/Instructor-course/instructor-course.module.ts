@@ -18,9 +18,10 @@ import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleMo
 import { DeletedialogComponent } from './components/deletedialog/deletedialog.component';
 import { DeletelecturedialogComponent } from './components/deletelecturedialog/deletelecturedialog.component';
 import { DeletedialogexamComponent } from './components/deletedialogexam/deletedialogexam.component';
+import { StudentgradeComponent } from './components/studentgrade/studentgrade.component';
 
 @NgModule({
-  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent, DeletedialogexamComponent],
+  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent, DeletedialogexamComponent, StudentgradeComponent],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,
