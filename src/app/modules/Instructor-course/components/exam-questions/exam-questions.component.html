@@ -7,31 +7,16 @@
 
     <div class="row m-5">
 
-        <div class="offset-1 col-md-10">
+        <div  *ngFor="let q of questions; let i=index" class="offset-1 col-md-10 my-5">
             <div class="card">
-                <h4 class="card-header fw-bold">Quistion 1</h4>
+                <h4 class="card-header fw-bold">Quistion {{i+1}}</h4>
                 <div class="card-body">
-                    <h5 class="fs-4">what is ay 7aga </h5>
+                    <h5 class="fs-4">{{q.question}} </h5>
                     <div class="mt-4">
-                        <div class="form-check form-check-inline">
+                        <div *ngFor="let a of q.answer" class="form-check form-check-inline">
                             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                value="option1">
-                            <label class="form-check-label" for="inlineRadio1">hello1</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                value="option2">
-                            <label class="form-check-label" for="inlineRadio2">hello2</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                value="option1">
-                            <label class="form-check-label" for="inlineRadio1">hello3</label>
-                        </div>
-                        <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                value="option2">
-                            <label class="form-check-label" for="inlineRadio2">hello4</label>
+                                value="{{a.option}}">
+                            <label class="form-check-label" for="inlineRadio1">{{a.option}}</label>
                         </div>
 
                     </div>
@@ -39,69 +24,6 @@
             </div>
         </div>
 
-        <!-- Modal -->
-        <div class="modal fade" id="addQuestion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Exam</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="m-auto">
-
-                            <form class="clearfix">
-                                <div class="form-group">
-                                    <label for="">Question</label>
-                                    <input placeholder="Exam1" type="text" formControlName="" class="form-control"
-                                        name="">
-                                    <span *ngIf="" class="py-2 text-danger "></span>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="">answer</label>
-                                    <input placeholder="ay 7aga" type="text" formControlName="" class="form-control"
-                                        name="">
-                                    <span *ngIf="" class="py-2 text-danger "></span>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="">answer</label>
-                                    <input placeholder="ay 7aga" type="text" formControlName="" class="form-control"
-                                        name="">
-                                    <span *ngIf="" class="py-2 text-danger "></span>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="">answer</label>
-                                    <input placeholder="ay 7aga" type="text" formControlName="" class="form-control"
-                                        name="">
-                                    <span *ngIf="" class="py-2 text-danger "></span>
-
-                                </div>
-                                <div class="form-group">
-                                    <label for="">answer</label>
-                                    <input placeholder="" type="text" formControlName="" class="form-control" name="">
-                                    <span *ngIf="" class="py-2 text-danger "></span>
-
-                                </div>
-
-                                <div class="float-end">
-                                    <button type="submit" [disabled]='' class="btn btn-success m-2">Submit</button>
-                                </div>
-
-                            </form>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    </div>
-                </div>
-
-
-
-            </div>
-        </div>
+     
     </div>
 </div>
