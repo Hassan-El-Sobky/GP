@@ -19,9 +19,10 @@ import { DeletedialogComponent } from './components/deletedialog/deletedialog.co
 import { DeletelecturedialogComponent } from './components/deletelecturedialog/deletelecturedialog.component';
 import { DeletedialogexamComponent } from './components/deletedialogexam/deletedialogexam.component';
 import { StudentgradeComponent } from './components/studentgrade/studentgrade.component';
+import { StudentsassComponent } from './components/studentsass/studentsass.component';
 
 @NgModule({
-  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent, DeletedialogexamComponent, StudentgradeComponent],
+  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent, DeletedialogexamComponent, StudentgradeComponent, StudentsassComponent],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,

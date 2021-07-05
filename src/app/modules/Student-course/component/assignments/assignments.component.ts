@@ -31,6 +31,7 @@ export class AssignmentsComponent implements OnInit {
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   constructor(private _activated:ActivatedRoute,private _allCourses:AdminCoursesService,private _studentCourseS:StudentCoursesService,private _location: Location) {
     this.getAllCourses()
+    
    }
 
   ngOnInit(): void {
@@ -87,53 +88,21 @@ id:any
 
   // } }
 fileName:any 
-  selectFile(event:any,code:any)
+  selectFile(event:any)
   {
-    const file:File = event.target.files[0];
-    if (file) {
-
-      this.fileName = file.name;
-      const formData = new FormData();
-      
-      console.log(code);
+     const file:File = event.target.files[0];
+     if (file) {
       console.log(file);
       
-      
-       formData.append("username",`${localStorage.getItem('username')}`);
-      formData.append("additionPoint",`No additon Point`);
-      formData.append("assigmentCode",code);
-      formData.append("token",`${localStorage.getItem('accessToken')}`);
-      formData.append("courseCode",`${this.courseCode}`);   
-      formData.append("assigmentSolutionFile",file);
-    
-      this._studentCourseS.uploadAss(formData).subscribe(res => {
-        if (res.message == 'done')
-        {
-          this.isTrue = true
-          this.show=true
-        
-        }
-        else if (res.message =="unsupported file type")
-        {
-          this.filetype = true
-          this.show=true
-        }
-        else if (res.message == "you can't upload second solution  , thankYou")
-        {
-          this.filetype = false
-          this.isTrue = false
-          this.uploadagin=true
-          this.show=true
-        }
-
-        console.log(res);
-        
-      })
+     
+      this.fileName=file
+      // this.fileName = file.name;
+     
 
       
         
 
-   }
+   
    
       //  const data={title:"test" , uploadDate:Date.now() , description:"Hiii" 
       //  , courseCode:"L122", lectureCode:"1" , token:localStorage.getItem('accessToken') ,username:localStorage.getItem('username'),
@@ -144,8 +113,46 @@ fileName:any
       //   })
      
   }
+}
 
+ha(a:any)
+{
+  console.log(a);
+  
+  const formData = new FormData();
+    
+      
+   formData.append("username",`${localStorage.getItem('username')}`);
+  formData.append("additionPoint",`No additon Point`);
+  formData.append("assigmentCode",a);
+  formData.append("token",`${localStorage.getItem('accessToken')}`);
+  formData.append("courseCode",`${this.courseCode}`);   
+  formData.append("assigmentSolutionFile",this.fileName);
 
+  this._studentCourseS.uploadAss(formData).subscribe(res => {
+    if (res.message == 'done')
+    {
+      this.isTrue = true
+      this.show=true
+    
+    }
+    else if (res.message =="unsupported file type")
+    {
+      this.filetype = true
+      this.show=true
+    }
+    else if (res.message == "you can't upload second solution  , thankYou")
+    {
+      this.filetype = false
+      this.isTrue = false
+      this.uploadagin=true
+      this.show=true
+    }
+
+    console.log(res);
+    
+  })
+}
 
    
   close()
