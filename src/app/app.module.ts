@@ -22,6 +22,7 @@ import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleMo
 import { DeletelecturedialogComponent } from './modules/Instructor-course/components/deletelecturedialog/deletelecturedialog.component';
 import { InstructorGuard } from './modules/authentication/gurads/instructor.guard';
 import { WebcamModule } from 'ngx-webcam';
+import { DeletedialogexamComponent } from './modules/Instructor-course/components/deletedialogexam/deletedialogexam.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { WebcamModule } from 'ngx-webcam';
   ],
   entryComponents: [
     DeletedialogComponent,
-    DeletelecturedialogComponent
+    DeletelecturedialogComponent,
+    DeletedialogexamComponent
   ],
   providers: [
     AuthGuard,

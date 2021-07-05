@@ -7,8 +7,8 @@
     <div class="row m-5">
        
         <div *ngFor="let exam of courseExams; let i=index" class="offset-1 col-md-10 my-3">
-            <div [routerLink]='["/instructor","examQuestions"]' class="card">
-                <h4 class="card-header">Exam {{i+1}}</h4>
+            <div  class="card">
+                <h4 class="card-header">Exam {{i+1}} <span class="float-end"> <i (click)="openDialog(exam.assesment._id)" class="far fa-trash-alt"></i>  </span></h4>
                 <div class="card-body">
                   <h3 class="card-title">{{exam.assesment.title}}</h3>
                     <h5 class="card-title">Start: {{exam.assesment.openDate}}</h5>

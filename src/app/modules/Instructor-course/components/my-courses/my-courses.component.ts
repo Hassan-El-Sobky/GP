@@ -67,7 +67,7 @@ export class MyCoursesComponent implements OnInit {
 
    
     this._services.addCourse(formData).subscribe((data) => {
-      if (data.message == "done")
+      if (data.message == "Course Created")
       {
         this.show=true
         this.isTrue = true

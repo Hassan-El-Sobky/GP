@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormArray } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { TestService } from 'src/app/modules/test/services/test.service';
+import {Location} from '@angular/common';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
 
 @Component({
@@ -12,13 +13,18 @@ import { InstAddCourseService } from '../../services/inst-add-course.service';
 export class CreateexamComponent implements OnInit {
 
   exam: any;
-  courseId:any
+  courseId: any
+  isTrue: any;
+  show=false
   constructor(private fb: FormBuilder,private _test:TestService,private _activated:ActivatedRoute,private _inSer:InstAddCourseService,
-    private router:Router
+    private router:Router,private _location: Location
     ) {
        this.getId();
   }
 
+  backClicked() {
+    this._location.back();
+  }
   getId(){
     this._activated.paramMap.subscribe(params => {
       this.courseId = params.get('id');
@@ -131,12 +137,25 @@ let data={
      console.log(res);
       if(res.message="done")
       {
+        this.isTrue = true
+        this.show=true
         console.log(data);
-        this.router.navigate(['instructor','courseExams',this.courseId])
+        
+      }
+      else
+      {
+        this.isTrue = false
+        this.show=true
       }
     })
    
     
   }
 
+
+  close()
+  {
+    this.router.navigate(['instructor','courseExams',this.courseId])
+    this.show=false
+  }
 }

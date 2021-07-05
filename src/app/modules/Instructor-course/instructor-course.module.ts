@@ -17,9 +17,10 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { AgendaService, DayService, MonthAgendaService, MonthService, ScheduleModule, TimelineMonthService, TimelineViewsService, WeekService, WorkWeekService } from '@syncfusion/ej2-angular-schedule';
 import { DeletedialogComponent } from './components/deletedialog/deletedialog.component';
 import { DeletelecturedialogComponent } from './components/deletelecturedialog/deletelecturedialog.component';
+import { DeletedialogexamComponent } from './components/deletedialogexam/deletedialogexam.component';
 
 @NgModule({
-  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent],
+  declarations: [...InstructorCourseRoutingModule.componentsDeclarations, CreateexamComponent, ScheduleComponent, DeletedialogComponent, DeletelecturedialogComponent, DeletedialogexamComponent],
   imports: [
     CommonModule,
     InstructorCourseRoutingModule,

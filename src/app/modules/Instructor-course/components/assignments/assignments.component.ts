@@ -18,7 +18,9 @@ import { DeletedialogComponent } from '../deletedialog/deletedialog.component';
 export class AssignmentsComponent implements OnInit {
   displayedColumns: string[] = [ 'title', 'desc','url','action'];
   defaultImage: string = '/assets/images/default image.png';
-  dataSource:any;
+  dataSource: any;
+  isTrue: any
+  show = false;
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
@@ -54,6 +56,10 @@ export class AssignmentsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  close()
+{
+  this.show = false;
+}
 
 courseCode:any
   getCourse()
@@ -119,7 +125,19 @@ courseCode:any
 console.log(this.filex);
 
  
-      this._instServ.assUpload(formData).subscribe(res=>{
+    this._instServ.assUpload(formData).subscribe(res => {
+        
+      if (res.message == 'done')
+      {
+        this.isTrue = true
+        this.show=true
+      }
+      else
+      {
+        this.show = true
+        this.isTrue=false
+       }
+     
         console.log(res);
          this.getAllAss();
       })

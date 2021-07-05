@@ -88,4 +88,9 @@ export class InstAddCourseService {
     return this._http.get(`http://localhost:3000/courseExams/${courseId}`)
   }
 
+  deleteExams(exmaId: any,data:any): Observable<any>
+  {
+    return this._http.request('delete',`http://localhost:3000/deleteAssesment/${exmaId}`,{body:data})
+  }
+
 }

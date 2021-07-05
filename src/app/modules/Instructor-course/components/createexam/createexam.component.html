@@ -1,5 +1,7 @@
 <section class="createExam">
+    <i class="fas fa-arrow-left back_button m-2  " (click)='backClicked() '></i>
 <div class="container-fluid p-5">
+
     <div class="form-group">
     <label for="">Title</label>
     <input class="form-control w-75" type="text" #title>
@@ -84,3 +86,16 @@
 
 </form>
 </section>
+<div class="layout" *ngIf="show">
+    <div class="first">
+      <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+      <div class="third">
+  
+        <p *ngIf="isTrue">Created Successfuly!</p>
+        <p *ngIf="!isTrue">There is an error</p>
+        
+        <button (click)="close()" class="btn btn-success">Back to all Exams</button>
+      </div>
+  
+    </div>
+  </div>
