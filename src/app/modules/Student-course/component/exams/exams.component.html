@@ -34,7 +34,7 @@
                   <h3 class="card-title">{{exam.assesment.title}}</h3>
                     <h5 class="card-title">Start: {{exam.assesment.openDate | date :'dd-MMM-yy h:mm:ss a '}} </h5>
                     <h5 class="card-title">End: {{exam.assesment.dueDate | date :'dd-MMM-yy h:mm:ss a '}} </h5>
-                    <p class="card-text">Fullmark: {{exam.fullMark}}</p>
+                    <!-- <p class="card-text">Fullmark: {{exam.fullMark}}</p> -->
                     <!-- <a [routerLink]='["/instructor","examQuestions",exam._id]'  class="btn btn-primary">Go somewhere</a>  -->
                     <button *ngIf="exam.open == true " class="btn btn-info" (click)="show(exam.assesment ._id)">Enter Exam</button> 
                     <button *ngIf="exam.open == false " [disabled]="true" class="btn btn-danger" >Closed</button>

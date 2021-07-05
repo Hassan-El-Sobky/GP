@@ -29,7 +29,7 @@ export class AvailableCoursesService {
     return this._Http.post('http://localhost:3000/registerCourse', data);
   }
 
-  courseSearch(name: any) {
+  courseSearch(name: any): Observable<any> {
     // return this._Http.get(`https://lmsapis.herokuapp.com/searchCourse/?coursename=${name}`);
     return this._Http.get(`http://localhost:3000/searchCourse/?coursename=${name}`);
   }

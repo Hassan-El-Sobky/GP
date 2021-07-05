@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-my-profile',
@@ -19,12 +20,16 @@ export class MyProfileComponent implements OnInit {
   userName: any
   Password: any
   filex:any
-  constructor( private _profile:ProfileService  ) {
+  constructor( private _profile:ProfileService,private _location:Location  ) {
     this.getProfile();
 
   }
 
 
+  backClicked()
+  {
+    this._location.back()
+  }
   
   getProfile() {
     this._profile.getProfile(this.username).subscribe((data) => {
