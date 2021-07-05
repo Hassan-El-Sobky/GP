@@ -11,7 +11,8 @@
 
                     <div class="col-md-6 p-2">
                         <div class="photoCard p-3">
-                        <img class="img-fluid" [src]="defaultImage">
+                        <img *ngIf="UserImage == 'null' " class="img-fluid" [src]="defaultImage">
+                        <img  *ngIf="UserImage != null " class="img-fluid" src="{{UserImage}}">
                     </div>
                     </div>
 
@@ -41,7 +42,7 @@
 
                     <div class="form-group">
                         <label>Name* :</label>
-                        <input name="name" type="text" placeholder="Name"  formControlName='name' class="form-control">
+                        <input name="name" type="text" placeholder="Name" [disabled]="true"  formControlName='name' class="form-control">
                         <!-- <div *ngIf="name.touched && name.invalid " class="a">
                       <span> Name is required</span>
                    </div> -->
@@ -70,7 +71,7 @@
 
                     <div class="form-group">
                         <label>Password* :</label>
-                        <input type="password" name="password" formControlName='password' minlength="6" placeholder="Password" class="form-control">
+                        <input type="password" name="password" formControlName='oldpassword' minlength="6" placeholder="Password" class="form-control">
                         <!-- <div *ngIf="password?.touched && password?.invalid " class="a">
                             <span>Password is required</span>
 
@@ -80,12 +81,26 @@
                             <span> minlength 6</span>
                         </div> -->
                     </div>
+                     
+                    <div class="form-group">
+                        <label>New Password* :</label>
+                        <input type="password" name="password" formControlName='newpassword' minlength="6" placeholder="Password" class="form-control">
+                        <!-- <div *ngIf="password?.touched && password?.invalid " class="a">
+                            <span>Password is required</span>
 
+                        </div> -->
+
+                        <!-- <div *ngIf="password.errors?.minlength" class="a">
+                            <span> minlength 6</span>
+                        </div> -->
+                    </div>
+                     
+                    
 
 
                     <div class="form-group">
                         <label>Password Confirmation* :</label>
-                        <input type="password" required name="password_confirmation" placeholder="Password Confirmation" class="form-control">
+                        <input type="password" formControlName='repassword' required name="password_confirmation" placeholder="Password Confirmation" class="form-control">
                         <!-- <div *ngIf="password_confirmation.touched && password_confirmation.invalid " class="a">
                             <span> Password Confirmation is required </span>
 
@@ -102,7 +117,7 @@
 
            
             <div class="form-group m-auto w-50  p-2">
-                <button type="submit" class="w-100 m-auto">Sign Up</button>
+                <button type="submit" class="w-100 m-auto">Update</button>
               </div> 
              
 

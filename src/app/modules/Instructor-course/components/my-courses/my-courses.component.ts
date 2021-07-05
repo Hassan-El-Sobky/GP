@@ -16,6 +16,7 @@ export class MyCoursesComponent implements OnInit {
   addCourseForm: any
   courses:any
     fileName = '';
+    options = [{title:'Information Systems' }, { title: 'Computer Science' },{ title: 'Internet Technology' },{ title: 'General' }];
   constructor(private _services:InstAddCourseService,private fb:FormBuilder) { 
      this.instructorCourses()
         this.addCourseForm = this.fb.group({

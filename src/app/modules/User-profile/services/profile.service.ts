@@ -13,4 +13,8 @@ export class ProfileService {
     // return this._http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`)
     return this._http.get(`http://localhost:3000/userProfile/${username}`)
   }
+
+  editProfile(data:any):Observable<any> {
+    return this._http.request('put',"http://localhost:3000/userEdit",data)
+  }
 }

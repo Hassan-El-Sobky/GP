@@ -40,6 +40,20 @@
                   </div>
                </div>
 
+               
+               <div class="inputbox">
+
+                  <input name="phone" required ngModel #phone='ngModel' type="number"
+                   class="form-control">
+                  <label>Phone*<span>:</span></label>
+                  <div *ngIf="phone?.touched && phone?.invalid" class="a p-2">
+                     <span>phone is required</span>
+                  </div>
+
+                  <div *ngIf="email.errors?.pattern" class="a p-2">
+                     <span *ngIf="email.errors?.pattern">This is not a valid Email </span>
+                  </div>
+               </div>
                <div class="inputbox">
 
                   <input type="password" name="password" required ngModel #password='ngModel' minlength="6"

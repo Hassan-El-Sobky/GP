@@ -76,10 +76,29 @@
 
                   <div class="inputbox p-2">
                     <span for="">Course Department:</span>
-                    <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                    <!-- <input [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
                       addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
-                      class="form-control w-75 mt-1  m-auto" name="courseDepartment">
-                    
+                      class="form-control w-75 mt-1  m-auto" name="courseDepartment"> -->
+<!--                      
+                     <select [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                     addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                     class="form-control w-75 mt-1  m-auto" name="courseDepartment"
+                      >
+                     <option value="General">General</option>
+                     <option value="Information Systems">Information Systems</option>
+                     <option value="Computer Science">Computer Science</option>
+                     <option value="Internet Technology">Internet Technology</option>
+                    </select>  -->
+
+                    <select [class.is-valid]="addCourseForm.get('courseDepartment').errors == null && 
+                    addCourseForm.get('courseDepartment').touched" type="text" formControlName="courseDepartment"
+                    class="form-control w-75 mt-1  m-auto" name="courseDepartment">
+                      <option [ngValue]="null" disabled>Please choose an option</option>
+                      <option *ngFor="let option of options" [ngValue]="option.title">
+                      {{ option.title}}
+                      </option>
+                   </select>
+
                     <p *ngIf="addCourseForm.get('courseDepartment').errors != null && addCourseForm.get('courseDepartment').touched"
                       class="text-danger ">Course Department is Invalid</p>
 
