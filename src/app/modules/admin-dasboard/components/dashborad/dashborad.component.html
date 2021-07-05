@@ -6,13 +6,13 @@
         <div class="row">
             <!----------------------------------- Courses Analysis Start-------------------------------------- -->
 
-            <div class="col-md-3 courses ">
+            <div class="col-md-4 courses ">
                 <div [routerLink]="'/admin/courses'" >Courses
                     <br><span>Number of Courses : {{numOfCourse}}</span></div>
             </div>
             <!----------------------------------- Courses Analysis End-------------------------------------- -->
             <!-- --------------------------- ----------Students Analysis Start-------------------------------------------------------->
-            <div class="col-md-3 student">
+            <div class="col-md-4 student">
 
                 <div [routerLink]="'/adminSt/students'" >Students
                     <br><span>Number of Students : {{numOfSutudents}}</span></div>
@@ -20,7 +20,7 @@
             </div>
             <!-- -----------------------------------Students Analysis End  ---------------------------------------------->
             <!-- --------------------------------------Instructors Analysis Start--------------------------------------------------->
-            <div class="col-md-3">
+            <div class="col-md-4">
 
                 <div [routerLink]="'/adminIn/instructors'" >Instructors
                     <br><span>Number of Instructors : {{numOfInstructors}} </span>
@@ -28,15 +28,15 @@
             </div>
             <!--------------------------------------- Instructors Analysis End------------------------------------------------------------------ -->
 
-            <div class="col-md-3">
+            <div class="col-md-6 col6">
 
-                <div [routerLink]="''" >Instructors
+                <div [routerLink]="''" >Pending Courses
                     <br><span>Number of Pending Courses : {{numofPcourse}} </span>
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-6 col6">
 
-                <div [routerLink]="''" >Instructors
+                <div [routerLink]="''" >Avalible Courses
                     <br><span>Number of Avaliable Courses : {{numofAvacourse}} </span>
                 </div>
             </div>
