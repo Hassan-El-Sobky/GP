@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { InstAddCourseService } from '../../services/inst-add-course.service';
-
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-courses',
@@ -14,9 +14,11 @@ export class MyCoursesComponent implements OnInit {
   totalLength: any;
   page: number = 1;
   addCourseForm: any
-  courses:any
+  courses: any
+  isTrue: any;
+  show = false;
     fileName = '';
-  constructor(private _services:InstAddCourseService,private fb:FormBuilder) { 
+  constructor(private _services:InstAddCourseService,private fb:FormBuilder, private _router:Router) { 
      this.instructorCourses()
         this.addCourseForm = this.fb.group({
           courseName:  [null,Validators.required,],
@@ -63,7 +65,19 @@ export class MyCoursesComponent implements OnInit {
         console.log(this.filex);
 
    
-        this._services.addCourse(formData).subscribe((data) => {
+    this._services.addCourse(formData).subscribe((data) => {
+      if (data.message == "done")
+      {
+        this.show=true
+        this.isTrue = true
+       
+      }
+      else
+      {
+        this.isTrue = false
+
+        
+      }
           console.log(data);
               this.instructorCourses();
         })
@@ -72,6 +86,12 @@ export class MyCoursesComponent implements OnInit {
 
   };
 
+  close()
+  {
+    
+    this.show = false;
+    this._router.navigate(['']);
+  }
   form() {
     this.addCourseForm = this.fb.group({
       courseName: [null, Validators.required,],

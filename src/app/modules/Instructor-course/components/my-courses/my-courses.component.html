@@ -137,3 +137,15 @@
   </div>
 </div>
 </div>
+<div class="layout" *ngIf="show">
+  <div class="first"> 
+      <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+  <div class="third">
+      
+      <p *ngIf="isTrue">Registered Succefuly !</p>
+      <p *ngIf="!isTrue">You have already Registered This Course</p>
+  
+  </div>
+  
+  </div>
+</div>

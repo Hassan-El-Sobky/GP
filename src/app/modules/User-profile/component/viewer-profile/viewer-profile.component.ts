@@ -16,6 +16,7 @@ export class ViewerProfileComponent implements OnInit {
   name: any
   email: any
   userName: any
+  phone:any
   username: any
   status: any
   role: any
@@ -60,6 +61,7 @@ export class ViewerProfileComponent implements OnInit {
       this.name = data.user.name
       this.email = data.user.email
       this.userName = data.user.username
+      this.phone=data.user.mobilePhone
 
     })
 

@@ -28,7 +28,7 @@
           <p class="card-text">{{x?.courseDepartment}}</p>
           <p>{{x?.prerequisite}}</p>
           <div class="button_cont" align="center">
-            <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="example_b mx-1" >Register</a>
+            <!-- <a *ngIf="student=='student'" (click)="registerd(x?.courseCode)" class="example_b mx-1" >Register</a> -->
             <a [routerLink]="['/courses/courseProfile',x._id]" class="example_b2" >preview</a>
           </div>
           <!-- <div class="button_cont" align="center">

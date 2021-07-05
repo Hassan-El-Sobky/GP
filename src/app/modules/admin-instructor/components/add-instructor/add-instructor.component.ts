@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AdminInstructorsService } from '../../services/admin-instructors.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-instructor',
@@ -10,7 +11,9 @@ import { AdminInstructorsService } from '../../services/admin-instructors.servic
 export class AddInstructorComponent implements OnInit {
   defaultImage: string = '/assets/images/squared.jpg';
   flag: any;
-  constructor(private _adminInsServ:AdminInstructorsService) {
+  isTrue: any;
+  show = false;
+  constructor(private _adminInsServ:AdminInstructorsService,private _router:Router) {
     this.flag="male"
    }
 
@@ -29,14 +32,34 @@ export class AddInstructorComponent implements OnInit {
      , rePassword:form.value.password_confirmation , gender:form.value.gender , token:localStorage.getItem('accessToken') }
 
     this._adminInsServ.addInstructors(data).subscribe(res=>{
-      console.log(res);
-      
+      console.log(res.message);
+
+      if (res.message == `Instructor${form.value.userName}Created`)
+        {
+          this.show=true
+          this.isTrue = true
+         
+        }
+        else
+      {
+        this.show=true
+          this.isTrue = false
+
+          
+        }
+
+
     })
    console.log(data);
    
   }
 
-
+  close()
+  {
+    
+    this.show = false;
+    this._router.navigate([]);
+  }
   selectFile(event:any)
   {
      if(event.target.files)

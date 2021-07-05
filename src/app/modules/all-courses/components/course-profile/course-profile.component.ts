@@ -16,7 +16,9 @@ export class CourseProfileComponent implements OnInit {
   course: any;
   username:any
   insName: any
-  coursecode:any
+  coursecode: any
+  isTrue: any;
+  show = false;
 
   role=localStorage.getItem("role");
   courseDeafult:string='assets/images/course.jpg';
@@ -28,6 +30,7 @@ export class CourseProfileComponent implements OnInit {
 
    }
   
+ 
 
   getCourseData() {
     this._activated.paramMap.subscribe(params => {
@@ -62,13 +65,34 @@ export class CourseProfileComponent implements OnInit {
       token:localStorage.getItem('accessToken')
      }
       this._courseData.studentRegisterCourse(data).subscribe(res => {
-        this._router.navigate(['/student/course']);
+
+        if (res.message == "done")
+        {
+          this.show=true
+          this.isTrue = true
+         
+        }
+        else
+        {
+          this.isTrue = false
+
+          
+        }
+
+       
        
       console.log(res);
       
      })
      
-    }
+  }
+  
+  close()
+  {
+    
+    this.show = false;
+    this._router.navigate(['/student/course']);
+  }
 
   backClicked() {
     this._location.back();

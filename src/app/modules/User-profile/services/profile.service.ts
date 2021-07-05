@@ -13,4 +13,5 @@ export class ProfileService {
     // return this._http.get(`http://lmsapis.herokuapp.com/userProfile/${username}`)
     return this._http.get(`http://localhost:3000/userProfile/${username}`)
   }
+
 }

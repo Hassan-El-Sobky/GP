@@ -10,8 +10,8 @@
         <div [class.user-dashboradClosed]='!menuStatus' class="user-dashborad text-center">
             <p *ngIf="menuStatus" class="text-capitalize my-2">{{userName}}</p>
 
-            <i [class.dBlock]='!menuStatus'  [routerLink]="['/student/userProfile']" class="fas fa-cog rotaa"></i>
-            <i [class.dBlock]='!menuStatus'  class="fas fa-sign-out-alt logout"></i>
+            <i [class.dBlock]='!menuStatus'  [routerLink]="['/userprofile/myProfile']" class="fas fa-cog rotaa"></i>
+            <i [class.dBlock]='!menuStatus' (click)="logout()"  class="fas fa-sign-out-alt logout"></i>
 
         </div>
     </div>
