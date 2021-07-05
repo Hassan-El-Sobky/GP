@@ -4,7 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { StudentCoursesService } from '../../services/student-courses.service';
-
+import {Location} from '@angular/common';
 @Component({
   selector: 'app-mygrade',
   templateUrl: './mygrade.component.html',
@@ -16,13 +16,16 @@ export class MygradeComponent implements OnInit {
   dataSource:any;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  constructor(private _studentCourseS:StudentCoursesService,private _activated:ActivatedRoute) { }
+  constructor(private _studentCourseS:StudentCoursesService,private _activated:ActivatedRoute,private _location: Location) { }
 
   ngOnInit(): void {
 
 this.getMygrades();
   }
-
+  backClicked() {
+    this._location.back();
+  }
+ 
 
   id:any
   getMygrades()
