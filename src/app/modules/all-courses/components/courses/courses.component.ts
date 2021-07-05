@@ -82,12 +82,12 @@ export class CoursesComponent implements OnInit {
 
   courseSearch(name:any)
   {
-    // this._allCourses.courseSearch(name).subscribe((res) => {
-    //   console.log(res.searchResult);
+    this._allCourses.courseSearch(name).subscribe((res) => {
+      console.log(res.searchResult);
       
-    //   this.allCoursesArr = res.searchResult;
+      this.allCoursesArr = res.searchResult;
 
-    // })
+    })
     
   }
 

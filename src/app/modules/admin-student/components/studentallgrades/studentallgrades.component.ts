@@ -4,6 +4,7 @@ import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ActivatedRoute } from '@angular/router';
 import { AdminStudentsService } from '../../services/admin-students.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-studentallgrades',
@@ -17,7 +18,7 @@ export class StudentallgradesComponent implements OnInit {
   dataSource:any;
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
-  constructor(private _activated:ActivatedRoute,private _adminS:AdminStudentsService) { }
+  constructor(private _activated:ActivatedRoute,private _adminS:AdminStudentsService,private _location:Location) { }
 
   ngOnInit(): void {
     this.studentAllGrade()
@@ -42,5 +43,10 @@ export class StudentallgradesComponent implements OnInit {
      })
     })
    }
+
+  backClicked()
+  {
+    this._location.back()
+  }
 
 }
