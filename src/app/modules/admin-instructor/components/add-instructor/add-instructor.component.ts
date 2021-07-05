@@ -11,9 +11,9 @@ import { Router } from '@angular/router';
 export class AddInstructorComponent implements OnInit {
   defaultImage: string = '/assets/images/squared.jpg';
   flag: any;
-  filex: any
-  show = false;
   isTrue: any;
+  show = false;
+  filex:any
   constructor(private _adminInsServ:AdminInstructorsService,private _router:Router) {
     this.flag="male"
    }
@@ -43,21 +43,24 @@ export class AddInstructorComponent implements OnInit {
      formData.append('token',`${localStorage.getItem('accessToken')}`);
      formData.append('userImage',this.filex);
 
-    this._adminInsServ.addInstructors(formData).subscribe(res=>{
-      console.log(res);
+    this._adminInsServ.addInstructors(data).subscribe(res=>{
+      console.log(res.message);
 
-      if (res.message = `Instructor${form.value.userName}Created`)
+      if (res.message == `Instructor${form.value.userName}Created`)
+        {
+          this.show=true
+          this.isTrue = true
+         
+        }
+        else
       {
-        this.isTrue = true
-        this.show = true
-        form.form.reset();
-      }
-      else
-      {
-        this.isTrue = false;
-        this.show = true;
-      }
-      
+        this.show=true
+          this.isTrue = false
+
+          
+        }
+
+
     })
    console.log(data);
    
