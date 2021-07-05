@@ -20,6 +20,7 @@ export class AddInstructorComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   onSubmit(form:NgForm)
   {
     var re = /(?:\.([^.]+))?$/;
@@ -30,7 +31,7 @@ export class AddInstructorComponent implements OnInit {
   //   password_confirmation:form.value.password_confirmation,
   // } 
   const data= {name:form.value.name , username:form.value.userName , email:form.value.email , password:form.value.password
-     , rePassword:form.value.password_confirmation , gender:form.value.gender , token:localStorage.getItem('accessToken') }
+     , rePassword:form.value.password_confirmation , gender:form.value.gender , token:localStorage.getItem('accessToken'),}
      let formData=new FormData();
      formData.append('name',form.value.name)
      formData.append('email',form.value.email);
@@ -67,9 +68,9 @@ export class AddInstructorComponent implements OnInit {
 
   close()
   {
-    
+  
     this.show = false;
-    this._router.navigate([]);
+
   }
   selectFile(event:any)
   {
