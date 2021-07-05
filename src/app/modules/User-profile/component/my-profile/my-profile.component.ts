@@ -11,12 +11,14 @@ import { ProfileService } from '../../services/profile.service';
 export class MyProfileComponent implements OnInit {
 
   defaultImage: string = '/assets/images/squared.jpg';
+  UserImage:any
   username = localStorage.getItem('username');
   user: any
   name: any
   email: any
   userName: any
   Password: any
+  filex:any
   constructor( private _profile:ProfileService  ) {
     this.getProfile();
 
@@ -30,13 +32,14 @@ export class MyProfileComponent implements OnInit {
       this.name= data.user.name
       this.email = data.user.email
       this.userName = data.user.username
-      this.Password = data.user.password  
+      this.Password = data.user.password 
+      this.UserImage=data.user.imageUrl; 
       console.log(  this.user);
 
       this.profileForm.controls['name'].setValue(this.name)
       this.profileForm.controls['email'].setValue( this.email)
       this.profileForm.controls['username'].setValue(  this.userName)
-      this.profileForm.controls['password'].setValue(this.Password)
+     
     })
    ;
   }
@@ -44,7 +47,9 @@ export class MyProfileComponent implements OnInit {
     name: new FormControl(),
     email: new FormControl(),
     username: new FormControl(),
-    password: new FormControl(),
+    oldpassword: new FormControl(),
+    newpassword: new FormControl(),
+    repassword: new FormControl(),
     
 
   })
@@ -53,8 +58,23 @@ export class MyProfileComponent implements OnInit {
   {
     
    console.log(profileForm.value);
-   
+  //  {oldUserName,username,userImage ,oldPassword,password,rePassword,token}
+    const formData=new FormData()
+    formData.append("oldUserName",this.userName)
     
+    formData.append("username",`${profileForm.get('username').value}`)
+    formData.append("oldPassword",`${profileForm.get('oldpassword').value}`)
+    formData.append("password",`${profileForm.get('newpassword').value}`)
+    formData.append("rePassword",`${profileForm.get('repassword').value}`)
+    formData.append("userImage",`${this.UserImage}`)
+  
+    this._profile.editProfile(formData).subscribe(res=>{
+      console.log(res);
+      if(res=="updated")
+      {
+        localStorage.setItem('username',profileForm.get('username').value)
+      }
+    })
 
   }
  
@@ -67,11 +87,13 @@ export class MyProfileComponent implements OnInit {
   }
 
   selectFile(event: any) {
+    const file:File = event.target.files[0];
+    this.UserImage=file
     if (event.target.files) {
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (event: any) => {
-        this.defaultImage = event.target.result
+        this.UserImage= event.target.result
       }
     }
   }

@@ -14,4 +14,10 @@ export class ProfileService {
     return this._http.get(`http://localhost:3000/userProfile/${username}`)
   }
 
+<<<<<<< HEAD
+=======
+  editProfile(data:any):Observable<any> {
+    return this._http.put("http://localhost:3000/userEdit",data)
+  }
+>>>>>>> 17cb54274e06dfc7d3ae537f5ac5ad60b3f71832
 }
