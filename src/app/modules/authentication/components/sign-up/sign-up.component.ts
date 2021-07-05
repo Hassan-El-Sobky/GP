@@ -15,7 +15,8 @@ filex:any
    }
  
   flag: boolean = false;
-
+  isTrue: any;
+  show = false;
   getRegisterInfo(registerForm:any) {
     
     
@@ -36,17 +37,26 @@ filex:any
     if (registerForm.valid == true) {
       this._authServ.register(formData).subscribe((data) => {
         console.log(data);
-        this._Router.navigate(['authentication', 'signin'])
+
         if (data.message == `user${data.username}Created`) {
+          this.show = true
+          this.isTrue=true
           this._Router.navigate(['authentication', 'signin']);
         }
         else {
           this.flag = true;
+          this.show = true
+          this.isTrue=false
         }
       })
     }
     
 
+  }
+  close()
+  {
+    this.show = false
+ 
   }
   
   selectFile(event:any)
