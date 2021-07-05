@@ -18,12 +18,8 @@ export class MyCoursesComponent implements OnInit {
   isTrue: any;
   show = false;
     fileName = '';
-<<<<<<< HEAD
-  constructor(private _services:InstAddCourseService,private fb:FormBuilder, private _router:Router) { 
-=======
     options = [{title:'Information Systems' }, { title: 'Computer Science' },{ title: 'Internet Technology' },{ title: 'General' }];
-  constructor(private _services:InstAddCourseService,private fb:FormBuilder) { 
->>>>>>> 17cb54274e06dfc7d3ae537f5ac5ad60b3f71832
+  constructor(private _services:InstAddCourseService,private fb:FormBuilder,private _router:Router) { 
      this.instructorCourses()
         this.addCourseForm = this.fb.group({
           courseName:  [null,Validators.required,],

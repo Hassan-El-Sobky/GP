@@ -11,19 +11,16 @@ import { Router } from '@angular/router';
 export class AddInstructorComponent implements OnInit {
   defaultImage: string = '/assets/images/squared.jpg';
   flag: any;
-<<<<<<< HEAD
-  isTrue: any;
+  filex: any
   show = false;
+  isTrue: any;
   constructor(private _adminInsServ:AdminInstructorsService,private _router:Router) {
-=======
-  filex:any
-  constructor(private _adminInsServ:AdminInstructorsService) {
->>>>>>> 17cb54274e06dfc7d3ae537f5ac5ad60b3f71832
     this.flag="male"
    }
 
   ngOnInit(): void {
   }
+
   onSubmit(form:NgForm)
   {
     var re = /(?:\.([^.]+))?$/;
@@ -34,7 +31,7 @@ export class AddInstructorComponent implements OnInit {
   //   password_confirmation:form.value.password_confirmation,
   // } 
   const data= {name:form.value.name , username:form.value.userName , email:form.value.email , password:form.value.password
-     , rePassword:form.value.password_confirmation , gender:form.value.gender , token:localStorage.getItem('accessToken') }
+     , rePassword:form.value.password_confirmation , gender:form.value.gender , token:localStorage.getItem('accessToken'),}
      let formData=new FormData();
      formData.append('name',form.value.name)
      formData.append('email',form.value.email);
@@ -46,30 +43,21 @@ export class AddInstructorComponent implements OnInit {
      formData.append('token',`${localStorage.getItem('accessToken')}`);
      formData.append('userImage',this.filex);
 
-<<<<<<< HEAD
-    this._adminInsServ.addInstructors(data).subscribe(res=>{
-      console.log(res.message);
-
-      if (res.message == `Instructor${form.value.userName}Created`)
-        {
-          this.show=true
-          this.isTrue = true
-         
-        }
-        else
-      {
-        this.show=true
-          this.isTrue = false
-
-          
-        }
-
-
-=======
     this._adminInsServ.addInstructors(formData).subscribe(res=>{
       console.log(res);
+
+      if (res.message = `Instructor${form.value.userName}Created`)
+      {
+        this.isTrue = true
+        this.show = true
+        form.form.reset();
+      }
+      else
+      {
+        this.isTrue = false;
+        this.show = true;
+      }
       
->>>>>>> 17cb54274e06dfc7d3ae537f5ac5ad60b3f71832
     })
    console.log(data);
    
@@ -77,9 +65,9 @@ export class AddInstructorComponent implements OnInit {
 
   close()
   {
-    
+  
     this.show = false;
-    this._router.navigate([]);
+
   }
   selectFile(event:any)
   {

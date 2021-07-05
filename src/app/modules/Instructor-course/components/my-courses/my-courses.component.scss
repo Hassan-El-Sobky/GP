@@ -1,34 +1,33 @@
 .btnInf {
-    background-color: #e9501c;
+  background-color: #e9501c;
 }
 
 .container {
-    overflow: hidden;
+  overflow: hidden;
 }
 .file-input__input {
-    width: 0.1px;
-    height: 0.1px;
-    opacity: 0;
-    overflow: hidden;
-    position: absolute;
-    z-index: -1;
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
 }
 
 .file-input__label {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 12px;
-    padding: 10px 30px;
-    background-color: #393939;
-    cursor: pointer;
-    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 12px;
+  padding: 10px 30px;
+  background-color: #393939;
+  cursor: pointer;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
 }
-.card
-{
-    cursor: pointer;
+.card {
+  cursor: pointer;
 }
 
 /*new*/
@@ -42,7 +41,6 @@ body {
   align-items: center;
   height: 100vh;
   background: linear-gradient(45deg, greenyellow, dodgerblue);
-  
 }
 .center {
   position: relative;
@@ -95,84 +93,77 @@ body {
 }
 .center .inputbox [type="button"] {
   width: 50%;
-  background:#FCAF17 ;
+  background: #fcaf17;
   color: #fff;
   border: #fff;
 }
-.imageCard{
+.imageCard {
   border-radius: 10px;
   height: 150px;
-
 }
 .example_b {
   cursor: pointer;
-color: #fff !important;
-text-transform: uppercase;
-text-decoration: none;
-background: #ff726f;
-padding: 10px;
-border-radius: 10px;
-display: inline-block;
-border: none;
-transition: all 0.4s ease 0s;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #ff726f;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
 .example_b:hover {
-text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
--webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
--moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-transition: all 0.4s ease 0s;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
-.muCourses .card{
+.muCourses .card {
   border-radius: 20px;
   transition: 0.4s;
-  
 }
-.muCourses .card:hover{
+.muCourses .card:hover {
   transition: 0.4s;
   box-shadow: 10px 10px 20px darkgrey;
 }
-.muCourses .card .card-body{
+.muCourses .card .card-body {
   text-align: center;
 }
 .Fexample_b {
   cursor: pointer;
-	color: #fff !important;
-	text-transform: uppercase;
-	text-decoration: none;
-	background: #FCAF17;
-	padding: 10px;
-	border-radius: 10px;
-	display: inline-block;
-	border: none;
-	transition: all 0.4s ease 0s;
+  color: #fff !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #fcaf17;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
 }
 .Fexample_b:hover {
-	text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
-	-webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	-moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
-	transition: all 0.4s ease 0s;
+  text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
 }
-.mainForm{
+.mainForm {
   font-weight: 400;
   position: relative;
   text-align: center;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.nameUpload{
+.nameUpload {
   font-size: 18px;
 }
-.mainForm .inputbox span{
+.mainForm .inputbox span {
   font-weight: 400;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-.modal-title{
-  font-family: Georgia, 'Times New Roman', Times, serif;
-
-
+.modal-title {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
-<<<<<<< HEAD
 .layout {
   background-color: rgba($color: black, $alpha: 0.4);
   width: 100%;
@@ -187,8 +178,8 @@ transition: all 0.4s ease 0s;
 .layout .first {
   width: 400px;
   height: 200px;
-  background-color:#fe9d2b;
-  color:white  ;
+  background-color: #fe9d2b;
+  color: white;
   margin: auto;
   text-align: center;
   display: flex;
@@ -204,12 +195,9 @@ transition: all 0.4s ease 0s;
   position: absolute;
   cursor: pointer;
 }
-.second i
-{
-color: white;
-background-color: red;
-border-radius: 5px;
-padding:10px;
+.second i {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  padding: 10px;
 }
-=======
->>>>>>> 17cb54274e06dfc7d3ae537f5ac5ad60b3f71832
