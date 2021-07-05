@@ -23,7 +23,8 @@ export class CourseStudentsComponent implements OnInit {
 
   ngOnInit(): void {
   }
- id:any
+  id: any
+  
   getCourse()
   {
    
