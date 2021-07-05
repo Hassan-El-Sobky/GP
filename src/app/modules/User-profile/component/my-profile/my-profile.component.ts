@@ -60,16 +60,20 @@ export class MyProfileComponent implements OnInit {
    console.log(profileForm.value);
   //  {oldUserName,username,userImage ,oldPassword,password,rePassword,token}
     const formData=new FormData()
-    formData.append("oldUserName",`${localStorage.getItem('username')}`)
+    formData.append("oldUserName",this.userName)
+    
     formData.append("username",`${profileForm.get('username').value}`)
     formData.append("oldPassword",`${profileForm.get('oldpassword').value}`)
     formData.append("password",`${profileForm.get('newpassword').value}`)
     formData.append("rePassword",`${profileForm.get('repassword').value}`)
     formData.append("userImage",`${this.UserImage}`)
-    formData.append("token",`${localStorage.getItem('accessToken')}`)
+  
     this._profile.editProfile(formData).subscribe(res=>{
       console.log(res);
-      
+      if(res=="updated")
+      {
+        localStorage.setItem('username',profileForm.get('username').value)
+      }
     })
 
   }
@@ -89,7 +93,7 @@ export class MyProfileComponent implements OnInit {
       let reader = new FileReader();
       reader.readAsDataURL(event.target.files[0]);
       reader.onload = (event: any) => {
-        this.defaultImage = event.target.result
+        this.UserImage= event.target.result
       }
     }
   }
