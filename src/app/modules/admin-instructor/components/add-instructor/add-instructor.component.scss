@@ -237,7 +237,10 @@ body {
 .center .inputbox:hover [type="button"] {
   background: linear-gradient(45deg, orange, dodgerblue);
 }
-
+section
+{
+  position: relative;
+}
 .layout {
   background-color: rgba($color: black, $alpha: 0.4);
   width: 100%;
