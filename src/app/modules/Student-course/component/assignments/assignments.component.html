@@ -6,7 +6,7 @@
   
           <div class="tableContent">
             <div class="inputTableSearch">
-              <h6>Course List</h6>
+              <h6>Assigments List</h6>
               <div class="form-group">
                 <!-- <input placeholder=" Search..." #searchName (change)=""> -->
                 <input placeholder=" Search..." #searchName>
@@ -79,18 +79,22 @@
 
           <span>Upload</span></label>
 </div> -->
+
+
+<div class="layout" *ngIf="show">
+  <div class="first"> 
+      <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+  <div class="third">
+      
+      <p *ngIf="isTrue">uploaded  Succefuly !</p>
+      <p *ngIf="filetype">Unsupported file type </p>
+      <p *ngIf="uploadagin">you already uploaded this Assignment </p>
+  
+  </div>
+  
+  </div>
+  </div>
+
   </section>
 
-  <div class="layout" *ngIf="show">
-    <div class="first"> 
-        <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
-    <div class="third">
-        
-        <p *ngIf="isTrue">uploaded  Succefuly !</p>
-        <p *ngIf="filetype">Unsupported file type </p>
-        <p *ngIf="!isTrue">you already uploaded this Assignment </p>
-    
-    </div>
-    
-    </div>
-    </div>
+ 

@@ -22,9 +22,10 @@ export class AssignmentsComponent implements OnInit {
   defaultImage: string = '/assets/images/default image.png';
   dataSource:any;
   courseCode: any
-  isTrue: any;
+  isTrue=false;
   filetype=false;
   show = false;
+  uploadagin=false
 
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
@@ -112,7 +113,7 @@ fileName:any
           this.show=true
         
         }
-        else if (res.message=="unsupported file type")
+        else if (res.message =="unsupported file type")
         {
           this.filetype = true
           this.show=true
@@ -121,6 +122,7 @@ fileName:any
         {
           this.filetype = false
           this.isTrue = false
+          this.uploadagin=true
           this.show=true
         }
 
@@ -149,6 +151,10 @@ fileName:any
   close()
   {
     this.show=false
+    this.isTrue=false;
+    this.uploadagin=false;
+    this.filetype=false;
+    
   }
 
 
