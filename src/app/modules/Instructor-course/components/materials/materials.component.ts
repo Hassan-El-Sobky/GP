@@ -24,6 +24,9 @@ export class MaterialsComponent implements OnInit {
   defaultImage: string = '/assets/images/default image.png';
   dataSource:any;
   addCourseForm: any
+  isTrue: any
+  show = false;
+
   @ViewChild(MatPaginator, { static: false }) paginator!: MatPaginator;
   @ViewChild(MatSort, { static: false }) sort!: MatSort;
   id:any
@@ -136,15 +139,30 @@ console.log(this.filex);
 
  this._instServ.lecUpload(formData).subscribe(res=>{
    console.log(res);
+   if (res.message == 'done')
+   {
+     this.isTrue = true
+     this.show=true
+   }
+   else
+   {
+     this.show = true
+     this.isTrue=false
+    }
+  
    this.cousresLectures();
+
    
  })
       
-
-
+ 
   
 }
 
+close()
+{
+  this.show = false;
+}
 
          
   form() {

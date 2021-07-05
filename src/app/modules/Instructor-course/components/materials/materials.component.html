@@ -79,7 +79,18 @@
 
 
 
-
+<div class="layout" *ngIf="show">
+  <div class="first"> 
+      <div class="second"> <i class="fas fa-times" (click)="close()"></i></div>
+  <div class="third">
+      
+      <p *ngIf="isTrue">uploaded Successfuly!</p>
+      <p *ngIf="!isTrue">There is an error</p>
+  
+  </div>
+  
+  </div>
+  </div>
 
 
 
@@ -159,3 +170,4 @@
    
    </div>
   </div>
+
