@@ -28,7 +28,9 @@ questions:any
     this._activated.paramMap.subscribe(params => {
       this.id = params.get('id');
       console.log(this.id);  
-   this.instS.getSpecificExam(this.id).subscribe(res=>{
+      this.instS.getSpecificExam(this.id).subscribe(res => {
+     console.log(res);
+     
      console.log(res.assesment.questions);
      this.questions=res.assesment.questions
    })
