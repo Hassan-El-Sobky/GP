@@ -99,16 +99,16 @@ page: number = 1;
  formDataToUpload.append("photo", blob);
  formDataToUpload.append("name","hassaaan")
  
-//  this._studS.besmallah(formDataToUpload).subscribe(res=>{
-//    console.log(res);
-//     if(res.status=="success")
-//     {
-//       localStorage.setItem("faceId",res.id);
-//       this.route.navigate(['student','examquestion',this.examId])
-//     }
+ this._studS.besmallah(formDataToUpload).subscribe(res=>{
+   console.log(res);
+    if(res.status=="success")
+    {
+      localStorage.setItem("faceId",res.id);
+      this.route.navigate(['student','examquestion',this.examId])
+    }
    
  
-//  })
+ })
 this.route.navigate(['student','examquestion',this.examId])
 //  this._testSt.faceVerifed(219446,formDataToUpload).subscribe(res=>{
 //    console.log(res);

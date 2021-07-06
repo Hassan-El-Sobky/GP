@@ -25,9 +25,9 @@ userName=localStorage.getItem('username');
      
     this.getId();
 
-    // setInterval(()=>{
-    //   this.flag=true
-    // },30000)
+    setInterval(()=>{
+      this.flag=true
+    },10000)
    }
    
   getId(){

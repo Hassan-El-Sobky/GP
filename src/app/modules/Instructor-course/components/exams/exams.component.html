@@ -13,7 +13,7 @@
                   <h3 class="card-title">{{exam.assesment.title }}</h3>
                     <h5 class="card-title">Start: {{exam.assesment.openDate | date :'dd-MMM-yy h:mm:ss a '}}</h5>
                     <h5 class="card-title">End: {{exam.assesment.dueDate | date :'dd-MMM-yy h:mm:ss a '}} </h5>
-                    <a [routerLink]='["/instructor","examQuestions",exam.assesment._id]'  class="btn btn-primary">Exam</a> 
+                    <a [routerLink]='["/instructor","examQuestions",exam.assesment._id]'  class="btn btn-primary">Show Exam</a> 
                 </div>
             </div>
         </div>

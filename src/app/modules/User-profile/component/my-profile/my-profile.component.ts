@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileService } from '../../services/profile.service';
 import { Location } from '@angular/common';
 
@@ -20,7 +20,8 @@ export class MyProfileComponent implements OnInit {
   userName: any
   Password: any
   filex:any
-  constructor( private _profile:ProfileService,private _location:Location  ) {
+  dis=true
+  constructor( private _profile:ProfileService,private _location:Location,private router:Router) {
     this.getProfile();
 
   }
@@ -50,9 +51,9 @@ export class MyProfileComponent implements OnInit {
   }
   profileForm = new FormGroup({
     name: new FormControl(),
-    email: new FormControl(),
-    username: new FormControl(),
-    oldpassword: new FormControl(),
+    email: new FormControl({value: '', disabled:true}),
+    username: new FormControl({value: '', disabled:true}),
+    oldpassword: new FormControl('',Validators.required),
     newpassword: new FormControl(),
     repassword: new FormControl(),
     
@@ -71,16 +72,17 @@ export class MyProfileComponent implements OnInit {
     formData.append("oldPassword",`${profileForm.get('oldpassword').value}`)
     formData.append("password",`${profileForm.get('newpassword').value}`)
     formData.append("rePassword",`${profileForm.get('repassword').value}`)
-    formData.append("userImage",`${this.filex}`)
+    formData.append("userImage",this.filex)
   console.log(formData);
   
     this._profile.editProfile(formData).subscribe(res=>{
       console.log(res);
-      if(res.message=="updated")
+      if(res.message="updated")
       {
-        alert('done')
-
+        localStorage.removeItem('accessToken')
+        this.router.navigate(['/authentication/signin']);
       }
+    
     })
 
   }
@@ -96,7 +98,8 @@ export class MyProfileComponent implements OnInit {
   selectFile(event: any) {
     const file:File = event.target.files[0];
     this.filex=file
-    console.log(this.filex);
+
+    
     
     if (event.target.files) {
       let reader = new FileReader();
