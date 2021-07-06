@@ -66,6 +66,7 @@ h6
 .inputTableSearch
 {
     display: flex;
+    
     justify-content: space-between;
     align-items:center;
     padding: 20px 20px 10px 20px;
@@ -92,11 +93,11 @@ h6
 .inputTableSearch .form-group input
 {
     background-color: transparent;
+    color: black;
     border: 1px solid #111;
     width: 240px;
     padding: 40x;
     border-radius: 5px;
-    color: #1111;
     height: 30px;
 }
 .inputTableSearch input:focus
