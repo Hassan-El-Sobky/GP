@@ -81,7 +81,7 @@ export class StudentCoursesService {
     return this._http.get(`http://localhost:3000/courseGrades/${courseId}/${username}`)
   }
 
-  searchGrade(AssessmentTitle: any ,username:any): Observable<any>{
-    return this._http.get(`http://localhost:3000/searchGradeUser/${username}/?${AssessmentTitle}`)
+  searchGrade(AssessmentTitle: any ,id:any,username:any): Observable<any>{
+    return this._http.get(`http://localhost:3000/searchGradeUser/${username}/${id}/?title=${AssessmentTitle}`)
   }
 }

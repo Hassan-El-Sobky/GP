@@ -46,7 +46,19 @@ export class StudentgradeComponent implements OnInit {
      })
     })
   }
-  
+  searchGrade(username:any)
+  {
+    this._instS.searchGrade(this.id, username).subscribe((res) => {
+      this.dataSource = new MatTableDataSource<any>(res.searchResult);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+     
+      console.log(res);
+
+
+    })
+    
+  }
 
 
 }
