@@ -39,7 +39,6 @@ this.getMygrades();
         this.dataSource = new MatTableDataSource<any>(res.container);
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
-       console.log(res.assigments);
     console.log(res);
     
        
@@ -47,6 +46,16 @@ this.getMygrades();
     })
    }
 
-  
+   searchGrade(AssessmentTitle:any)
+   {
+     this._studentCourseS.searchGrade(AssessmentTitle,localStorage.getItem('username')).subscribe((res) => {
+       console.log(res);
+       
+       this._studentCourseS = res.searchResult;
+ 
+     })
+     
+   }
+ 
 
 }

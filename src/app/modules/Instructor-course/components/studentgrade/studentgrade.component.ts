@@ -45,7 +45,8 @@ export class StudentgradeComponent implements OnInit {
        
      })
     })
-   }
+  }
+  
 
 
 }

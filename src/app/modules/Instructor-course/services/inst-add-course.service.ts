@@ -106,4 +106,7 @@ export class InstAddCourseService {
     return this._http.get(`http://localhost:3000/allStudentAssigments/${uId}/${courseId}`)
   }
 
+  searchGrade(AssessmentTitle: any): Observable<any>{
+    return this._http.get(``)
+  }
 }
